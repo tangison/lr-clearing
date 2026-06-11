@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://github.com/sunfishcode/origin-studio",
+    "name": "sunfishcode/origin-studio: An alternative `std` - GitHub",
+    "snippet": "Origin Stdio is an alternative std -like implementation built on origin . At this time, it only works on Linux (x86-64, aarch64, riscv64, 32-bit x86), ...",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/modelscope/diffsynth-studio",
+    "name": "modelscope/DiffSynth-Studio: Enjoy the magic of Diffusion models!",
+    "snippet": "Welcome to the magical world of Diffusion models! DiffSynth-Studio is an open-source Diffusion model engine developed and maintained by the ModelScope ...",
+    "host_name": "github.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=J-_RWUc_s9I",
+    "name": "GitHub CEO Interview, Mac Porting Toolkit, Swift in GHAS and more",
+    "snippet": "On this episode of The Download, Christina is back with some of the top dev news of the week, including: 1:18 GitHub CEO Interview 6:07 ...",
+    "host_name": "www.youtube.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/Nakilon/git-to-os",
+    "name": "Nakilon/git-to-os: Sync Object Storage buckets with git repo directories",
+    "snippet": "After pushing to the master branch of the repository that uses this Github Action contents of its directories will be syncronized with corresponding Object ...",
+    "host_name": "github.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/@ochwada/linking-github-to-android-studio-6c6db76f70d3",
+    "name": "Linking GitHub to Android Studio - Medium",
+    "snippet": "Linking GitHub to Android Studio · 1. Install GitHub · 2. Enable Version Control Integration on Android Studio · 3. Sharing on GitHub.",
+    "host_name": "medium.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/fish-quant/big-fish-examples/blob/master/.gitignore",
+    "name": "big-fish-examples/.gitignore at master - GitHub",
+    "snippet": "Notebooks to illustrate how BigFISH is working. Contribute to fish-quant/big-fish-examples development by creating an account on GitHub.",
+    "host_name": "github.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=RjpqsR7GIMg",
+    "name": "Import Github Project to Android Studio || Github Tutorial - YouTube",
+    "snippet": "Import Github Project to Android Studio || Github Tutorial || Android Studio 4.2 || FoxAndroid Join our discord ...",
+    "host_name": "www.youtube.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/topics/tizen-studio",
+    "name": "tizen-studio · GitHub Topics",
+    "snippet": "TizenFeed is an application for Samsung TV developed using Tizen Studio Ide and web languages. This app shows the user different photos published on ...",
+    "host_name": "github.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/NoriginMedia/tizen-studio-setup-cli/actions",
+    "name": "Actions · NoriginMedia/tizen-studio-setup-cli - GitHub",
+    "snippet": "This repo is for Tizen Studio IDE. Contribute to NoriginMedia ... Hosted runners for every major OS make it easy to build and test all your projects.",
+    "host_name": "github.com",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://help.zend.com/zendstudio/current/content/git_and_github.htm",
+    "name": "Git and GitHub- Zend Studio 13.6",
+    "snippet": "GitHub is a Web-based hosting service for software development projects that use the Git revision control system. Both Git and GitHub are built-in to Zend ...",
+    "host_name": "help.zend.com",
+    "rank": 9,
+    "date": "",
+    "favicon": ""
+  }
+]
