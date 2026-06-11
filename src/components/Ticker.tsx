@@ -11,57 +11,35 @@ export function Ticker() {
     'ALL INLAND CUSTOMS POSTS',
   ];
 
-  const separator = ' · ';
+  const separator = ' \u00B7 ';
   const content = items.join(separator) + separator;
 
   return (
     <div
+      aria-hidden="true"
       className="w-full overflow-hidden"
       style={{
         backgroundColor: 'var(--color-primary-mid)',
-        height: '40px',
+        height: '2.5rem',
         display: 'flex',
         alignItems: 'center',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: `1px solid var(--border-faint)`,
       }}
     >
       <div className="ticker-animate flex whitespace-nowrap">
         <span
-          className="inline-flex items-center"
-          style={{
-            fontFamily: 'var(--font-jetbrains-mono), monospace',
-            fontWeight: 400,
-            fontSize: '11px',
-            textTransform: 'uppercase',
-            letterSpacing: '0.1em',
-            color: 'var(--color-body-light)',
-            opacity: 0.7,
-            paddingRight: '2rem',
-          }}
+          className="inline-flex items-center font-mono font-normal text-[0.6875rem] uppercase tracking-widest text-[var(--color-body-light)] opacity-70"
+          style={{ paddingRight: '2rem' }}
         >
           {content}
         </span>
         <span
-          className="inline-flex items-center"
-          style={{
-            fontFamily: 'var(--font-jetbrains-mono), monospace',
-            fontWeight: 400,
-            fontSize: '11px',
-            textTransform: 'uppercase',
-            letterSpacing: '0.1em',
-            color: 'var(--color-body-light)',
-            opacity: 0.7,
-            paddingRight: '2rem',
-          }}
+          className="inline-flex items-center font-mono font-normal text-[0.6875rem] uppercase tracking-widest text-[var(--color-body-light)] opacity-70"
+          style={{ paddingRight: '2rem' }}
         >
           {content}
         </span>
       </div>
-      <style jsx>{`
-        .ticker-animate span {
-          /* Accent color for separator dots */
-        }
-      `}</style>
     </div>
   );
 }

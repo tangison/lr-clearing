@@ -65,15 +65,7 @@ export function WhyLR() {
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         {/* Header */}
         <div className="mb-16 md:mb-24">
-          <span
-            className="block mb-3 uppercase tracking-widest"
-            style={{
-              fontFamily: 'var(--font-jetbrains-mono), monospace',
-              fontWeight: 400,
-              fontSize: '11px',
-              color: 'var(--color-accent)',
-            }}
-          >
+          <span className="font-mono font-normal text-[0.6875rem] block mb-3 uppercase tracking-widest text-[var(--color-accent)]">
             WHY L&amp;R
           </span>
         </div>
@@ -86,44 +78,21 @@ export function WhyLR() {
               className={`stat-block ${i > 0 ? 'md:pl-10 lg:pl-16' : ''}`}
               style={{
                 borderLeft:
-                  i > 0 ? '1px solid rgba(27,42,74,0.15)' : 'none',
+                  i > 0 ? `1px solid var(--border-divider)` : 'none',
               }}
             >
               <div className="stat-number" style={{ lineHeight: 1 }}>
                 <span
-                  style={{
-                    fontFamily: 'var(--font-barlow-condensed), sans-serif',
-                    fontWeight: 800,
-                    fontSize: 'clamp(3rem, 6vw, 5rem)',
-                    color: 'var(--color-primary)',
-                    display: 'block',
-                  }}
+                  className="font-display font-extrabold block text-[var(--color-primary)]"
+                  style={{ fontSize: 'clamp(3rem, 6vw, 5rem)' }}
                 >
                   {stat.number}
                 </span>
               </div>
-              <span
-                className="block mt-1 uppercase tracking-widest"
-                style={{
-                  fontFamily: 'var(--font-jetbrains-mono), monospace',
-                  fontWeight: 400,
-                  fontSize: '11px',
-                  color: 'var(--color-accent)',
-                }}
-              >
+              <span className="font-mono font-normal text-[0.6875rem] block mt-1 uppercase tracking-widest text-[var(--color-accent)]">
                 {stat.label}
               </span>
-              <p
-                className="mt-4 leading-relaxed"
-                style={{
-                  fontFamily: 'var(--font-dm-sans), sans-serif',
-                  fontWeight: 400,
-                  fontSize: '15px',
-                  color: '#4A5568',
-                  lineHeight: '1.7',
-                  maxWidth: '280px',
-                }}
-              >
+              <p className="font-body font-normal text-[0.9375rem] mt-4 leading-[1.7] text-[var(--color-secondary)]" style={{ maxWidth: '280px' }}>
                 {stat.description}
               </p>
             </div>

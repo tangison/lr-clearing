@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <Navbar />
       <Ticker />
-      <main>
+      <main id="main-content">
         <Hero />
         <TrustBar />
         <Services />

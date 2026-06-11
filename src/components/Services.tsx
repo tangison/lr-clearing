@@ -92,25 +92,12 @@ export function Services() {
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         {/* Header */}
         <div className="mb-16 md:mb-24">
-          <span
-            className="block mb-3 uppercase tracking-widest"
-            style={{
-              fontFamily: 'var(--font-jetbrains-mono), monospace',
-              fontWeight: 400,
-              fontSize: '11px',
-              color: 'var(--color-accent)',
-            }}
-          >
+          <span className="font-mono font-normal text-[0.6875rem] block mb-3 uppercase tracking-widest text-[var(--color-accent)]">
             WHAT WE DO
           </span>
           <h2
-            className="uppercase tracking-tight"
-            style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(2rem, 4vw, 3rem)',
-              color: 'var(--color-body-light)',
-            }}
+            className="font-display font-bold uppercase tracking-tight text-[var(--color-body-light)]"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
           >
             CORE SERVICES
           </h2>
@@ -124,7 +111,7 @@ export function Services() {
         <div
           ref={cardsRef}
           className="grid grid-cols-1 md:grid-cols-2"
-          style={{ gap: '1px', backgroundColor: 'rgba(255,255,255,0.06)' }}
+          style={{ gap: '1px', backgroundColor: 'var(--border-faint)' }}
         >
           {services.map((service) => (
             <div
@@ -145,34 +132,17 @@ export function Services() {
               }}
             >
               {/* Icon */}
-              <div className="mb-6" style={{ color: 'var(--color-accent)' }}>
+              <div className="mb-6 text-[var(--color-accent)]">
                 {service.icon}
               </div>
 
               {/* Title */}
-              <h3
-                className="uppercase mb-3"
-                style={{
-                  fontFamily: 'var(--font-barlow-condensed), sans-serif',
-                  fontWeight: 700,
-                  fontSize: '22px',
-                  color: 'var(--color-body-light)',
-                }}
-              >
+              <h3 className="font-display font-bold text-[1.375rem] uppercase mb-3 text-[var(--color-body-light)]">
                 {service.title}
               </h3>
 
               {/* Body */}
-              <p
-                className="leading-relaxed"
-                style={{
-                  fontFamily: 'var(--font-dm-sans), sans-serif',
-                  fontWeight: 400,
-                  fontSize: '15px',
-                  color: 'var(--color-secondary)',
-                  lineHeight: '1.7',
-                }}
-              >
+              <p className="font-body font-normal text-[0.9375rem] leading-[1.7] text-[var(--color-secondary)]">
                 {service.description}
               </p>
             </div>

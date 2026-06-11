@@ -8,25 +8,12 @@ export function ContactCTA() {
     >
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <h2
-          className="uppercase tracking-tight"
-          style={{
-            fontFamily: 'var(--font-barlow-condensed), sans-serif',
-            fontWeight: 800,
-            fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
-            color: 'var(--color-body-light)',
-          }}
+          className="font-display font-extrabold uppercase tracking-tight text-[var(--color-body-light)]"
+          style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}
         >
           READY TO CLEAR YOUR NEXT SHIPMENT?
         </h2>
-        <p
-          className="mt-4"
-          style={{
-            fontFamily: 'var(--font-dm-sans), sans-serif',
-            fontWeight: 400,
-            fontSize: '17px',
-            color: 'var(--color-secondary)',
-          }}
-        >
+        <p className="font-body font-normal text-[1.0625rem] mt-4 text-[var(--color-secondary)]">
           Get in touch with our operations team — we respond fast.
         </p>
 
@@ -36,15 +23,8 @@ export function ContactCTA() {
             href="https://wa.me/264813759901"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2.5 text-white text-sm tracking-widest uppercase transition-all duration-300"
-            style={{
-              fontFamily: 'var(--font-dm-sans), sans-serif',
-              fontWeight: 500,
-              backgroundColor: 'var(--color-accent)',
-              borderRadius: 'var(--radius-btn)',
-              padding: '18px 36px',
-              minWidth: '220px',
-            }}
+            className="font-body font-medium inline-flex items-center justify-center gap-2.5 text-white text-sm tracking-widest uppercase transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
+            style={{ padding: '1.125rem 2.25rem', minWidth: '220px' }}
             onMouseEnter={(e) => {
               e.currentTarget.style.boxShadow = 'inset 0 0 0 1px white';
             }}
@@ -61,14 +41,10 @@ export function ContactCTA() {
           {/* Email — Ghost */}
           <a
             href="mailto:ops.clearing@gmail.com"
-            className="inline-flex items-center justify-center gap-2.5 text-sm tracking-widest uppercase transition-all duration-300"
+            className="font-body font-medium inline-flex items-center justify-center gap-2.5 text-sm tracking-widest uppercase transition-all duration-300 text-[var(--color-body-light)] rounded-[var(--radius-btn)]"
             style={{
-              fontFamily: 'var(--font-dm-sans), sans-serif',
-              fontWeight: 500,
               border: '1px solid var(--color-body-light)',
-              color: 'var(--color-body-light)',
-              borderRadius: 'var(--radius-btn)',
-              padding: '18px 36px',
+              padding: '1.125rem 2.25rem',
               minWidth: '220px',
             }}
             onMouseEnter={(e) => {

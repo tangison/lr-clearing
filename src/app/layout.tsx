@@ -61,9 +61,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${barlowCondensed.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased`}
-        style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+        className={`${barlowCondensed.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased font-body`}
       >
+        <a href="#main-content" className="skip-to-content">
+          Skip to content
+        </a>
         {children}
       </body>
     </html>

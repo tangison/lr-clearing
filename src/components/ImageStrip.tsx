@@ -64,24 +64,14 @@ export function ImageStrip() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-20 h-full flex items-center">
         <div>
           <p
-            className="leading-none"
-            style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
-              fontWeight: 800,
-              fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
-              color: 'white',
-            }}
+            className="font-display font-extrabold leading-none text-white"
+            style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)' }}
           >
             FROM WALVIS BAY TO THE BORDER —
           </p>
           <p
-            className="leading-none mt-1"
-            style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
-              fontWeight: 800,
-              fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
-              color: 'var(--color-accent)',
-            }}
+            className="font-display font-extrabold leading-none mt-1 text-[var(--color-accent)]"
+            style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)' }}
           >
             WE CLEAR IT.
           </p>

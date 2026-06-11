@@ -13,23 +13,16 @@ export function ComingSoon({ pageTitle }: ComingSoonProps) {
       <div className="flex-1 flex flex-col items-center justify-center px-6 text-center relative">
         {/* Background page name */}
         <h1
-          className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
-          style={{
-            fontFamily: 'var(--font-barlow-condensed), sans-serif',
-            fontWeight: 800,
-            fontSize: '96px',
-            color: 'var(--color-body-light)',
-            opacity: 0.08,
-          }}
+          className="font-display font-extrabold absolute inset-0 flex items-center justify-center pointer-events-none select-none text-[var(--color-body-light)]"
+          style={{ fontSize: '6rem', opacity: 0.08 }}
         >
           {pageTitle.toUpperCase()}
         </h1>
 
         {/* Lock icon */}
-        <div className="relative z-10 mb-4">
+        <div className="relative z-10 mb-4 text-[var(--color-secondary)]">
           <svg
             className="w-6 h-6"
-            style={{ color: 'var(--color-secondary)' }}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -42,29 +35,11 @@ export function ComingSoon({ pageTitle }: ComingSoonProps) {
           </svg>
         </div>
 
-        <p
-          className="relative z-10"
-          style={{
-            fontFamily: 'var(--font-dm-sans), sans-serif',
-            fontWeight: 400,
-            fontSize: '18px',
-            color: 'var(--color-body-light)',
-            marginTop: '16px',
-          }}
-        >
+        <p className="font-body font-normal text-lg relative z-10 text-[var(--color-body-light)]" style={{ marginTop: '1rem' }}>
           Full site coming soon.
         </p>
 
-        <p
-          className="relative z-10"
-          style={{
-            fontFamily: 'var(--font-dm-sans), sans-serif',
-            fontWeight: 400,
-            fontSize: '15px',
-            color: 'var(--color-secondary)',
-            marginTop: '8px',
-          }}
-        >
+        <p className="font-body font-normal text-[0.9375rem] relative z-10 text-[var(--color-secondary)]" style={{ marginTop: '0.5rem' }}>
           Interested in the complete website?
         </p>
 
@@ -72,14 +47,8 @@ export function ComingSoon({ pageTitle }: ComingSoonProps) {
           href="https://studio.tangison.com/contact"
           target="_blank"
           rel="noopener noreferrer"
-          className="relative z-10 inline-flex items-center justify-center text-white text-xs tracking-widest uppercase mt-8 transition-all duration-300"
-          style={{
-            fontFamily: 'var(--font-dm-sans), sans-serif',
-            fontWeight: 500,
-            backgroundColor: 'var(--color-accent)',
-            borderRadius: 'var(--radius-btn)',
-            padding: '14px 28px',
-          }}
+          className="font-body font-medium relative z-10 inline-flex items-center justify-center text-white text-xs tracking-widest uppercase mt-8 transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
+          style={{ padding: '0.875rem 1.75rem' }}
           onMouseEnter={(e) => {
             e.currentTarget.style.boxShadow = 'inset 0 0 0 1px white';
           }}
@@ -92,14 +61,8 @@ export function ComingSoon({ pageTitle }: ComingSoonProps) {
 
         <Link
           href="/"
-          className="relative z-10 mt-6 transition-colors"
-          style={{
-            fontFamily: 'var(--font-dm-sans), sans-serif',
-            fontSize: '14px',
-            color: 'var(--color-secondary)',
-            textDecoration: 'underline',
-            textUnderlineOffset: '4px',
-          }}
+          className="font-body font-normal text-sm relative z-10 mt-6 transition-colors text-[var(--color-secondary)]"
+          style={{ textDecoration: 'underline', textUnderlineOffset: '4px' }}
         >
           ← Back to Home
         </Link>

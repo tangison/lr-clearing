@@ -4,7 +4,7 @@ export function TrustBar() {
   return (
     <section
       className="w-full"
-      style={{ backgroundColor: 'var(--color-light-bg)', padding: '20px 0' }}
+      style={{ backgroundColor: 'var(--color-light-bg)', padding: '1.25rem 0' }}
     >
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4">
@@ -14,19 +14,10 @@ export function TrustBar() {
               className="flex items-center justify-center py-3"
               style={{
                 borderRight:
-                  i < items.length - 1 ? '1px solid rgba(27,42,74,0.15)' : 'none',
+                  i < items.length - 1 ? `1px solid var(--border-divider)` : 'none',
               }}
             >
-              <span
-                className="uppercase tracking-widest"
-                style={{
-                  fontFamily: 'var(--font-jetbrains-mono), monospace',
-                  fontWeight: 400,
-                  fontSize: '11px',
-                  color: 'var(--color-primary)',
-                  opacity: 0.6,
-                }}
-              >
+              <span className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest text-[var(--color-primary)] opacity-60">
                 {item}
               </span>
             </div>

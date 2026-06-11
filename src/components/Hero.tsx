@@ -32,7 +32,7 @@ export function Hero() {
         className="absolute top-1/2 left-1/4 -translate-y-1/2 -translate-x-1/2 w-[600px] h-[600px] pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle at center, rgba(232,100,42,0.06) 0%, transparent 70%)',
+            `radial-gradient(circle at center, var(--glow-accent) 0%, transparent 70%)`,
         }}
       />
 
@@ -44,14 +44,7 @@ export function Hero() {
             className="pl-3 mb-6"
             style={{ borderLeft: '2px solid var(--color-accent)' }}
           >
-            <span
-              className="text-xs md:text-sm tracking-widest uppercase"
-              style={{
-                fontFamily: 'var(--font-jetbrains-mono), monospace',
-                fontWeight: 400,
-                color: 'var(--color-accent)',
-              }}
-            >
+            <span className="font-mono font-normal text-xs md:text-sm tracking-widest uppercase text-[var(--color-accent)]">
               NAMIBIA · EST. 2012
             </span>
           </div>
@@ -59,14 +52,11 @@ export function Hero() {
           {/* Headline */}
           <h1
             ref={headlineRef}
-              className="mb-6 uppercase leading-[0.95] tracking-tight"
-              style={{
-                fontFamily: 'var(--font-barlow-condensed), sans-serif',
-                fontWeight: 800,
-                fontSize: 'clamp(2.8rem, 5.5vw, 4.5rem)',
-                color: 'var(--color-body-light)',
-                letterSpacing: '-0.5px',
-              }}
+            className="font-display font-extrabold mb-6 uppercase leading-[0.95] tracking-tight text-[var(--color-body-light)]"
+            style={{
+              fontSize: 'clamp(2.8rem, 5.5vw, 4.5rem)',
+              letterSpacing: '-0.5px',
+            }}
           >
             <span className="hero-word">CUSTOMS </span>
             <span className="hero-word">CLEARING </span>
@@ -74,19 +64,11 @@ export function Hero() {
             <span className="hero-word">FREIGHT </span>
             <span className="hero-word">FORWARDING </span>
             <span className="hero-word">IN </span>
-            <span className="hero-word" style={{ color: 'var(--color-accent)' }}>NAMIBIA.</span>
+            <span className="hero-word text-[var(--color-accent)]">NAMIBIA.</span>
           </h1>
 
           {/* Subtext */}
-          <p
-            className="max-w-xl leading-relaxed mb-10"
-            style={{
-              fontFamily: 'var(--font-dm-sans), sans-serif',
-              fontWeight: 400,
-              fontSize: '16px',
-              color: 'var(--color-secondary)',
-            }}
-          >
+          <p className="font-body font-normal text-base max-w-xl leading-relaxed mb-10 text-[var(--color-secondary)]">
             Your reliable local partner for seamless cargo clearance across every port, airport, and border post.
           </p>
 
@@ -96,13 +78,7 @@ export function Hero() {
               href="https://wa.me/264813759901"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 text-white text-sm tracking-widest uppercase transition-all duration-300"
-              style={{
-                fontFamily: 'var(--font-dm-sans), sans-serif',
-                fontWeight: 500,
-                backgroundColor: 'var(--color-accent)',
-                borderRadius: 'var(--radius-btn)',
-              }}
+              className="font-body font-medium px-8 py-4 text-white text-sm tracking-widest uppercase transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
               onMouseEnter={(e) => {
                 e.currentTarget.style.boxShadow = 'inset 0 0 0 1px white';
               }}
@@ -114,19 +90,13 @@ export function Hero() {
             </a>
             <Link
               href="/services"
-              className="px-8 py-4 text-sm tracking-widest uppercase transition-all duration-300"
-              style={{
-                fontFamily: 'var(--font-dm-sans), sans-serif',
-                fontWeight: 500,
-                border: '1px solid rgba(255,255,255,0.3)',
-                color: 'var(--color-body-light)',
-                borderRadius: 'var(--radius-btn)',
-              }}
+              className="font-body font-medium px-8 py-4 text-sm tracking-widest uppercase transition-all duration-300 text-[var(--color-body-light)] rounded-[var(--radius-btn)]"
+              style={{ border: `1px solid var(--border-ghost)` }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'var(--color-body-light)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)';
+                e.currentTarget.style.borderColor = 'var(--border-ghost)';
               }}
             >
               OUR SERVICES
@@ -136,77 +106,29 @@ export function Hero() {
           {/* Micro-stats Row */}
           <div
             className="grid grid-cols-3 pt-8 gap-4"
-            style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+            style={{ borderTop: `1px solid var(--border-faint)` }}
           >
             <div>
-              <p
-                className="mb-1"
-                style={{
-                  fontFamily: 'var(--font-barlow-condensed), sans-serif',
-                  fontWeight: 700,
-                  fontSize: '28px',
-                  color: 'var(--color-body-light)',
-                }}
-              >
+              <p className="font-display font-bold text-[1.75rem] mb-1 text-[var(--color-body-light)]">
                 7
               </p>
-              <p
-                className="uppercase tracking-widest"
-                style={{
-                  fontFamily: 'var(--font-jetbrains-mono), monospace',
-                  fontWeight: 400,
-                  fontSize: '10px',
-                  color: 'var(--color-secondary)',
-                }}
-              >
+              <p className="font-mono font-normal text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
                 PORTS &amp; BORDERS
               </p>
             </div>
-            <div style={{ borderLeft: '1px solid rgba(255,255,255,0.08)' }} className="pl-4 md:pl-6">
-              <p
-                className="mb-1"
-                style={{
-                  fontFamily: 'var(--font-barlow-condensed), sans-serif',
-                  fontWeight: 700,
-                  fontSize: '28px',
-                  color: 'var(--color-body-light)',
-                }}
-              >
+            <div style={{ borderLeft: `1px solid var(--border-subtle)` }} className="pl-4 md:pl-6">
+              <p className="font-display font-bold text-[1.75rem] mb-1 text-[var(--color-body-light)]">
                 48HR
               </p>
-              <p
-                className="uppercase tracking-widest"
-                style={{
-                  fontFamily: 'var(--font-jetbrains-mono), monospace',
-                  fontWeight: 400,
-                  fontSize: '10px',
-                  color: 'var(--color-secondary)',
-                }}
-              >
+              <p className="font-mono font-normal text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
                 CLEARANCE
               </p>
             </div>
-            <div style={{ borderLeft: '1px solid rgba(255,255,255,0.08)' }} className="pl-4 md:pl-6">
-              <p
-                className="mb-1"
-                style={{
-                  fontFamily: 'var(--font-barlow-condensed), sans-serif',
-                  fontWeight: 700,
-                  fontSize: '28px',
-                  color: 'var(--color-body-light)',
-                }}
-              >
+            <div style={{ borderLeft: `1px solid var(--border-subtle)` }} className="pl-4 md:pl-6">
+              <p className="font-display font-bold text-[1.75rem] mb-1 text-[var(--color-body-light)]">
                 2012
               </p>
-              <p
-                className="uppercase tracking-widest"
-                style={{
-                  fontFamily: 'var(--font-jetbrains-mono), monospace',
-                  fontWeight: 400,
-                  fontSize: '10px',
-                  color: 'var(--color-secondary)',
-                }}
-              >
+              <p className="font-mono font-normal text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
                 EST.
               </p>
             </div>
