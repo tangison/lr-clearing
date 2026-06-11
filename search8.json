@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://github.com/buildermethods/agent-os",
+    "name": "Agent OS is a system for injecting your codebase standards  - GitHub",
+    "snippet": "Agent OS helps you shape better specs, keeps agents aligned in a lightweight system that fits how you already build. Works alongside Claude Code, Cursor, ...",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=sWB-lvWj3f8",
+    "name": "How to Build Your Own Agent Operating System - YouTube",
+    "snippet": "... GitHub Agent 00:56 Hermes Mission Control Demo 01:22 Local vs ... Agent OS Pack.",
+    "host_name": "www.youtube.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/agiresearch/AIOS",
+    "name": "agiresearch/AIOS: AIOS: AI Agent Operating System - GitHub",
+    "snippet": "AIOS is the AI Agent Operating System, which embeds large language model (LLM) into the operating system and facilitates the development and deployment of LLM- ...",
+    "host_name": "github.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/AIAgentsInAction/comments/1rhii7x/worlds_first_bootable_ai_agentic_os_is_here",
+    "name": "Worlds first bootable ai agentic OS is here, TensorAgent OS - Reddit",
+    "snippet": "Today I'm announcing TensorAgent OS. An AI native operating system where the agent is the primary interface to the machine.",
+    "host_name": "www.reddit.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://os-for-agent.github.io",
+    "name": "AgenticOS 2026 | Operating Systems Design for AI Agents",
+    "snippet": "The 2nd Workshop on Operating Systems Design for AI Agents, co-located with SOSP 2026. Explore primitives, isolation models, and scheduling for agent ...",
+    "host_name": "os-for-agent.github.io",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/buildermethods/agent-os/discussions/310",
+    "name": "Agent OS v3 - Leaner and more aligned for 2026 #310 - GitHub",
+    "snippet": "Agent OS v3 focuses more squarely on the original problems it set out to solve: Establishes standards — A system to align your agents to how you build products ...",
+    "host_name": "github.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/@ritukampani/github-has-become-the-operating-system-for-open-source-ai-heres-what-s-actually-being-built-964d5228873b",
+    "name": "GitHub Has Become the Operating System for Open Source AI",
+    "snippet": "GitHub Has Become the Operating System for Open Source AI — Here's What's Actually Being Built There's a quiet revolution happening on ...",
+    "host_name": "medium.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=4PlVnrliN3Q",
+    "name": "Agent OS: The System for Spec-Driven Development - YouTube",
+    "snippet": "Update! Agent OS v2 has been released. All new video demo here: https://youtu.be/kApsR0l9Jfw?si=x7IKxRHLIC3DktuT --- Two months ago, ...",
+    "host_name": "www.youtube.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://devblogs.microsoft.com/all-things-azure/the-os-for-intelligence-how-github-bridges-the-fragmented-ai-landscape",
+    "name": "How GitHub Bridges the Fragmented AI Landscape | All things Azure",
+    "snippet": "GitHub's answer isn't just another tool; it's an Operating System for Agents. With GitHub Agent HQ, the Copilot CLI, and the Copilot SDK, we ...",
+    "host_name": "devblogs.microsoft.com",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/buildermethods/agent-os/discussions/285",
+    "name": "agent-os is not really working in Antigravity #285 - GitHub",
+    "snippet": "I am trying the new Gemini 3 in antigravity and gemini is having hard time to handle Agent-OS commands, basically not really working, anyone has any ...",
+    "host_name": "github.com",
+    "rank": 9,
+    "date": "",
+    "favicon": ""
+  }
+]

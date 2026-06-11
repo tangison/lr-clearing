@@ -1,0 +1,2002 @@
+     1→import { Skill, SkillCategory, Ecosystem } from './types';
+     2→
+     3→export const SKILL_CATEGORIES: SkillCategory[] = [
+     4→  // Global Domains (20)
+     5→  { id: 'cat-1', slug: 'website-planning', name: 'Website Planning', description: 'Industry-specific website architecture blueprints — sitemap, content, SEO, CTA strategy', icon: 'LayoutGrid', skillCount: 2, sortOrder: 1 },
+     6→  { id: 'cat-2', slug: 'website-auditing', name: 'Website Auditing', description: 'Comprehensive website audits — performance, accessibility, SEO, and UX analysis', icon: 'Shield', skillCount: 1, sortOrder: 2 },
+     7→  { id: 'cat-3', slug: 'seo', name: 'SEO', description: 'Technical SEO auditing, structured data, and optimization', icon: 'Search', skillCount: 1, sortOrder: 3 },
+     8→  { id: 'cat-4', slug: 'copywriting', name: 'Copywriting', description: 'Natural, believable brand copy that converts', icon: 'PenLine', skillCount: 1, sortOrder: 4 },
+     9→  { id: 'cat-5', slug: 'prompt-engineering', name: 'Prompt Engineering', description: 'Advanced prompt design and constraint enforcement', icon: 'Terminal', skillCount: 1, sortOrder: 5 },
+    10→  { id: 'cat-6', slug: 'creative-design', name: 'Creative Design', description: 'AI-powered image creation, brand kits, and visual design systems', icon: 'Image', skillCount: 1, sortOrder: 6 },
+    11→  { id: 'cat-7', slug: 'flyer-design', name: 'Flyer Design', description: 'Professional flyer and poster design — print-safe, export-ready', icon: 'Layout', skillCount: 1, sortOrder: 7 },
+    12→  { id: 'cat-8', slug: 'social-media', name: 'Social Media', description: 'Social content creation, scheduling, and launch strategy', icon: 'Share2', skillCount: 1, sortOrder: 8 },
+    13→  { id: 'cat-9', slug: 'document-design', name: 'Document Design', description: 'Professional document creation — PDFs, Word, presentations', icon: 'FileText', skillCount: 2, sortOrder: 9 },
+    14→  { id: 'cat-10', slug: 'pdf-generation', name: 'PDF Generation', description: 'Programmatic PDF creation with layout, typography, and form support', icon: 'FileDown', skillCount: 1, sortOrder: 10 },
+    15→  { id: 'cat-11', slug: 'research', name: 'Research', description: 'Deep research, citation tracking, and source verification', icon: 'BookOpen', skillCount: 1, sortOrder: 11 },
+    16→  { id: 'cat-12', slug: 'automation', name: 'Automation', description: 'Workflow automation and CI/CD pipeline skills', icon: 'Cpu', skillCount: 1, sortOrder: 12 },
+    17→  { id: 'cat-13', slug: 'deployment', name: 'Deployment', description: 'Hosting, CDN, and production deployment strategies', icon: 'Rocket', skillCount: 2, sortOrder: 13 },
+    18→  { id: 'cat-14', slug: 'nextjs', name: 'Next.js', description: 'Next.js framework skills — App Router, RSC, and fullstack', icon: 'Box', skillCount: 1, sortOrder: 14 },
+    19→  { id: 'cat-15', slug: 'react', name: 'React', description: 'React component patterns, hooks, and state management', icon: 'Atom', skillCount: 2, sortOrder: 15 },
+    20→  { id: 'cat-16', slug: 'typescript', name: 'TypeScript', description: 'TypeScript type systems, generics, and strict mode patterns', icon: 'FileType', skillCount: 1, sortOrder: 16 },
+    21→  { id: 'cat-17', slug: 'brand-systems', name: 'Brand Systems', description: 'Brand identity systems, design tokens, and visual language', icon: 'Compass', skillCount: 1, sortOrder: 17 },
+    22→  { id: 'cat-18', slug: 'ai-infrastructure', name: 'AI Infrastructure', description: 'AI agent skills, model integration, and intelligent systems', icon: 'Server', skillCount: 3, sortOrder: 18 },
+    23→  { id: 'cat-19', slug: 'testing', name: 'Testing', description: 'Unit testing, integration testing, E2E, and quality assurance', icon: 'CheckCircle', skillCount: 1, sortOrder: 19 },
+    24→  { id: 'cat-20', slug: 'security', name: 'Security', description: 'Application security, vulnerability scanning, and compliance', icon: 'Lock', skillCount: 1, sortOrder: 20 },
+    25→  // SADC-Specific Domains (4)
+    26→  { id: 'cat-21', slug: 'african-language-ai', name: 'African Language AI', description: 'AI skills for Afrikaans, Oshiwambo, Setswana, and other African languages', icon: 'Translate', skillCount: 1, sortOrder: 21 },
+    27→  { id: 'cat-22', slug: 'mobile-money-fintech', name: 'Mobile Money & Fintech', description: 'M-Pesa, FNB, Bank Windhoek integration, payment processing for SADC', icon: 'Wallet', skillCount: 2, sortOrder: 22 },
+    28→  { id: 'cat-23', slug: 'sadc-compliance-legal', name: 'SADC Compliance & Legal', description: 'NHBRC, BIPA, labour law, and regional compliance document generation', icon: 'Scales', skillCount: 1, sortOrder: 23 },
+    29→  { id: 'cat-24', slug: 'offline-first-low-bandwidth', name: 'Offline-First & Low Bandwidth', description: 'Progressive web apps, data-saving patterns, and offline-capable AI skills', icon: 'WifiSlash', skillCount: 1, sortOrder: 24 },
+    30→  // Everyday Business Domains (4)
+    31→  { id: 'cat-25', slug: 'sales-cold-outreach', name: 'Sales & Cold Outreach', description: 'Cold calling scripts, SDR automation, objection handling, and follow-up sequences', icon: 'PhoneCall', skillCount: 1, sortOrder: 25 },
+    32→  { id: 'cat-26', slug: 'operations-admin', name: 'Operations & Admin', description: 'Scheduling, invoicing, quote generation, and supplier communication', icon: 'Clipboard', skillCount: 1, sortOrder: 26 },
+    33→  { id: 'cat-27', slug: 'customer-communication', name: 'Customer Communication', description: 'WhatsApp automation, review management, and appointment reminders', icon: 'ChatCircleDots', skillCount: 1, sortOrder: 27 },
+    34→  { id: 'cat-28', slug: 'skill-summariser', name: 'Skill Summariser', description: 'Produces plain-English summaries at beginner, intermediate, and expert levels', icon: 'Article', skillCount: 1, sortOrder: 28 },
+    35→];
+    36→
+    37→export const SEED_SKILLS: Skill[] = [
+    38→  // ═══════════════════════════════════════════════════════════
+    39→  // OBRA — Superpowers
+    40→  // ═══════════════════════════════════════════════════════════
+    41→  {
+    42→    id: 'skill-1',
+    43→    slug: 'superpowers',
+    44→    name: 'Superpowers',
+    45→    tagline: 'The #1 most-installed skill — complete multi-agent development workflow',
+    46→    description: 'The most-installed skill on skills.sh with ~40,900 GitHub stars. Superpowers provides a complete multi-agent development workflow for AI coding assistants — task decomposition, context management, agent coordination, and quality enforcement. The gold standard for AI-assisted development.',
+    47→    content: `# Superpowers
+    48→
+    49→## Overview
+    50→
+    51→Superpowers is the #1 most-installed skill in the skills.sh ecosystem. It provides a complete multi-agent development workflow that transforms how AI coding assistants work — from task intake through delivery.
+    52→
+    53→## Key Capabilities
+    54→
+    55→1. **Task Decomposition** — Break complex projects into manageable subtasks
+    56→2. **Agent Coordination** — Orchestrate multiple AI agents working in parallel
+    57→3. **Context Management** — Maintain project context across sessions
+    58→4. **Quality Enforcement** — Automated code review and standards checking
+    59→5. **Workflow Templates** — Pre-built workflows for common project types
+    60→
+    61→## Installation
+    62→
+    63→\`\`\`bash
+    64→npx skills add obra/superpowers
+    65→\`\`\`
+    66→
+    67→## Why It's #1
+    68→
+    69→- ~40,900 GitHub stars — the most popular skill by a wide margin
+    70→- Used by thousands of developers daily
+    71→- Integrates with all major AI coding assistants
+    72→- Battle-tested in production environments
+    73→
+    74→## Quick Start
+    75→
+    76→\`\`\`bash
+    77→npx skills add obra/superpowers
+    78→# Superpowers auto-detects your project and sets up workflows
+    79→\`\`\`
+    80→
+    81→## Configuration
+    82→
+    83→\`\`\`json
+    84→{
+    85→  "workflow": "fullstack",
+    86→  "agents": ["planner", "coder", "reviewer"],
+    87→  "quality": "strict"
+    88→}
+    89→\`\`\``,
+    90→    tangisonRewrite: null,
+    91→    installCommand: 'npx skills add obra/superpowers',
+    92→    categoryId: 'cat-18',
+    93→    tags: ['superpowers', 'multi-agent', 'workflow', 'agent', 'development', 'obra'],
+    94→    difficulty: 'INTERMEDIATE',
+    95→    originalAuthor: 'Obra',
+    96→    sourceUrl: 'https://github.com/obra/superpowers',
+    97→    skillsShUrl: 'https://skills.sh/skills/superpowers',
+    98→    githubRepo: 'obra/superpowers',
+    99→    license: 'MIT',
+   100→    ecosystemSource: 'OBRA',
+   101→    isTangisonOriginal: false,
+   102→    isVerified: true,
+   103→    categoryName: 'AI Infrastructure',
+   104→    dependencies: [],
+   105→    usageExamples: `// Initialize Superpowers in your project
+   106→npx skills add obra/superpowers
+   107→
+   108→// Superpowers auto-configures your workflow
+   109→// It detects: Next.js, React, TypeScript, etc.
+   110→// And sets up appropriate agent coordination`,
+   111→    relationships: [
+   112→      { type: 'complementary', target: 'find-skills', label: 'Discover complementary skills' },
+   113→      { type: 'complementary', target: 'vercel-react-best-practices', label: 'Enforce React standards' }
+   114→    ],
+   115→    aiInsight: 'The undisputed #1 skill — 40,900+ GitHub stars. Superpowers is the gateway drug to the skills.sh ecosystem.',
+   116→    tangisonRecommendation: 'Install Superpowers first — it orchestrates everything else and gives you the full multi-agent development experience.'
+   117→  },
+   118→  // ═══════════════════════════════════════════════════════════
+   119→  // VERCEL LABS — Find Skills
+   120→  // ═══════════════════════════════════════════════════════════
+   121→  {
+   122→    id: 'skill-2',
+   123→    slug: 'find-skills',
+   124→    name: 'Find Skills',
+   125→    tagline: 'Discover the perfect AI skill for any task',
+   126→    description: 'An intelligent skill discovery engine from Vercel Labs that searches across multiple ecosystems to find the best AI skill for your specific needs. Supports natural language queries, category browsing, and quality-scored results.',
+   127→    content: `# Find Skills
+   128→
+   129→## Overview
+   130→
+   131→Find Skills is the official discovery engine from Vercel Labs. It searches the entire skills.sh ecosystem to find the best AI skill for your task.
+   132→
+   133→## How It Works
+   134→
+   135→1. **Natural Language Query** — Describe what you want to accomplish
+   136→2. **Multi-Ecosystem Search** — Searches Vercel Labs, Anthropic, Obra, and community sources
+   137→3. **Quality Scoring** — Results ranked by install count, stars, and verification
+   138→4. **Smart Matching** — Semantic understanding to match intent, not just keywords
+   139→
+   140→## Installation
+   141→
+   142→\`\`\`bash
+   143→npx skills add vercel-labs/skills
+   144→\`\`\`
+   145→
+   146→## Features
+   147→
+   148→- **Fuzzy Matching** — Handles typos and partial names
+   149→- **Category Filters** — Narrow by category, difficulty, or ecosystem
+   150→- **Trending Boost** — Trending skills get relevance boost
+   151→- **Dependency Awareness** — Shows compatible and complementary skills
+   152→
+   153→## Quality Score Breakdown
+   154→
+   155→| Factor | Weight |
+   156→|--------|--------|
+   157→| Install Count | 30% |
+   158→| GitHub Stars | 25% |
+   159→| Verification Status | 20% |
+   160→| Community Rating | 15% |
+   161→| Documentation Quality | 10% |`,
+   162→    tangisonRewrite: null,
+   163→    installCommand: 'npx skills add vercel-labs/skills',
+   164→    categoryId: 'cat-18',
+   165→    tags: ['discovery', 'search', 'ecosystem', 'skills-sh', 'agent'],
+   166→    difficulty: 'BEGINNER',
+   167→    originalAuthor: 'Vercel Labs',
+   168→    sourceUrl: 'https://github.com/vercel-labs/skills',
+   169→    skillsShUrl: 'https://skills.sh/skills/find-skills',
+   170→    githubRepo: 'vercel-labs/skills',
+   171→    license: 'MIT',
+   172→    ecosystemSource: 'VERCEL_LABS',
+   173→    isTangisonOriginal: false,
+   174→    isVerified: true,
+   175→    categoryName: 'AI Infrastructure',
+   176→    dependencies: [],
+   177→    usageExamples: `// Search for a skill by natural language
+   178→const results = await findSkills("create a landing page for a restaurant");
+   179→
+   180→// Filter by category
+   181→const designSkills = await findSkills({
+   182→  query: "brand design",
+   183→  category: "creative-design"
+   184→});`,
+   185→    relationships: [
+   186→      { type: 'complementary', target: 'superpowers', label: 'Use with Superpowers workflow' },
+   187→      { type: 'complementary', target: 'deep-research', label: 'Research before choosing' }
+   188→    ],
+   189→    aiInsight: 'The gateway skill to the entire ecosystem — Find Skills is where every journey starts.',
+   190→    tangisonRecommendation: 'Start here for any project — Find Skills will point you to the right tool for the job.'
+   191→  },
+   192→  // ═══════════════════════════════════════════════════════════
+   193→  // VERCEL LABS — Agent Browser
+   194→  // ═══════════════════════════════════════════════════════════
+   195→  {
+   196→    id: 'skill-3',
+   197→    slug: 'agent-browser',
+   198→    name: 'Agent Browser',
+   199→    tagline: 'Browser automation and web scraping for AI agents',
+   200→    description: 'From Vercel Labs — a powerful browser automation skill that enables AI agents to navigate, click, type, and snapshot web pages via structured commands. Built on a fast Rust-based headless browser with Node.js fallback for reliable web scraping and automation workflows.',
+   201→    content: `# Agent Browser
+   202→
+   203→## Overview
+   204→
+   205→Agent Browser enables AI agents to interact with web pages programmatically — navigate URLs, click elements, fill forms, and extract content. Built on a fast Rust-based headless browser with a Node.js fallback.
+   206→
+   207→## Key Features
+   208→
+   209→1. **Page Navigation** — Visit URLs, follow links, handle redirects
+   210→2. **Element Interaction** — Click, type, select, and hover on elements
+   211→3. **Content Extraction** — Scrape text, HTML, and structured data
+   212→4. **Screenshot Capture** — Take page snapshots for visual verification
+   213→5. **Session Management** — Maintain cookies and auth state across pages
+   214→
+   215→## Installation
+   216→
+   217→\`\`\`bash
+   218→npx skills add vercel-labs/agent-browser
+   219→\`\`\`
+   220→
+   221→## Usage
+   222→
+   223→\`\`\`typescript
+   224→// Navigate to a page
+   225→await browser.goto("https://example.com");
+   226→
+   227→// Click an element
+   228→await browser.click("button.submit");
+   229→
+   230→// Extract content
+   231→const title = await browser.getText("h1");
+   232→
+   233→// Take a screenshot
+   234→await browser.screenshot("page.png");
+   235→\`\`\`
+   236→
+   237→## Architecture
+   238→
+   239→- **Primary**: Rust-based headless browser (fast, reliable)
+   240→- **Fallback**: Node.js Puppeteer/Playwright (broader compatibility)
+   241→- Auto-selects the best engine for your environment`,
+   242→    tangisonRewrite: null,
+   243→    installCommand: 'npx skills add vercel-labs/agent-browser',
+   244→    categoryId: 'cat-12',
+   245→    tags: ['browser', 'automation', 'scraping', 'headless', 'rust', 'puppeteer'],
+   246→    difficulty: 'INTERMEDIATE',
+   247→    originalAuthor: 'Vercel Labs',
+   248→    sourceUrl: 'https://github.com/vercel-labs/agent-browser',
+   249→    skillsShUrl: 'https://skills.sh/skills/agent-browser',
+   250→    githubRepo: 'vercel-labs/agent-browser',
+   251→    license: 'MIT',
+   252→    ecosystemSource: 'VERCEL_LABS',
+   253→    isTangisonOriginal: false,
+   254→    isVerified: true,
+   255→    categoryName: 'Automation',
+   256→    dependencies: [],
+   257→    usageExamples: `// Scrape product data
+   258→await browser.goto("https://shop.example.com/product/123");
+   259→const price = await browser.getText(".price");
+   260→const title = await browser.getText("h1");
+   261→
+   262→// Automate form submission
+   263→await browser.goto("https://example.com/contact");
+   264→await browser.type("#email", "user@example.com");
+   265→await browser.click("button[type=submit]");`,
+   266→    relationships: [
+   267→      { type: 'complementary', target: 'superpowers', label: 'Use in Superpowers workflow' },
+   268→      { type: 'complementary', target: 'find-skills', label: 'Discover related skills' }
+   269→    ],
+   270→    aiInsight: 'The most versatile automation skill — Agent Browser turns any AI agent into a web automation powerhouse.',
+   271→    tangisonRecommendation: 'Essential for any project involving web scraping, testing, or automated workflows.'
+   272→  },
+   273→  // ═══════════════════════════════════════════════════════════
+   274→  // ANTHROPIC — Deep Research
+   275→  // ═══════════════════════════════════════════════════════════
+   276→  {
+   277→    id: 'skill-4',
+   278→    slug: 'deep-research',
+   279→    name: 'Deep Research',
+   280→    tagline: 'Thorough, cited research on any topic',
+   281→    description: 'A deep research skill from Anthropic that performs multi-source investigation on any topic, producing a comprehensive report with citations, source verification, and confidence scoring.',
+   282→    content: `# Deep Research
+   283→
+   284→## Overview
+   285→
+   286→Deep Research performs exhaustive, multi-source investigation on any topic. Built on Anthropic's research methodology with structured quality scoring.
+   287→
+   288→## Research Methodology
+   289→
+   290→1. **Query Decomposition** — Breaks complex questions into sub-questions
+   291→2. **Source Discovery** — Searches academic, news, primary, and reference sources
+   292→3. **Cross-Verification** — Validates claims across independent sources
+   293→4. **Confidence Scoring** — Assigns reliability scores to each finding
+   294→5. **Synthesis** — Produces a coherent narrative with inline citations
+   295→
+   296→## Installation
+   297→
+   298→\`\`\`bash
+   299→npx skills add anthropics/skills
+   300→\`\`\`
+   301→
+   302→## Confidence Levels
+   303→
+   304→| Level | Criteria |
+   305→|-------|----------|
+   306→| **High** | 3+ independent sources agree |
+   307→| **Medium** | 2 sources agree, or 1 authoritative source |
+   308→| **Low** | Single source, or conflicting evidence |
+   309→
+   310→## Configuration
+   311→
+   312→\`\`\`json
+   313→{
+   314→  "depth": "comprehensive",
+   315→  "maxSources": 20,
+   316→  "requireCitations": true,
+   317→  "includeAcademic": true
+   318→}
+   319→\`\`\``,
+   320→    tangisonRewrite: null,
+   321→    installCommand: 'npx skills add anthropics/skills',
+   322→    categoryId: 'cat-11',
+   323→    tags: ['research', 'citations', 'verification', 'academic', 'investigation'],
+   324→    difficulty: 'INTERMEDIATE',
+   325→    originalAuthor: 'Anthropic',
+   326→    sourceUrl: 'https://github.com/anthropics/skills',
+   327→    skillsShUrl: 'https://skills.sh/skills/deep-research',
+   328→    githubRepo: 'anthropics/skills',
+   329→    license: 'Apache-2.0',
+   330→    ecosystemSource: 'ANTHROPIC',
+   331→    isTangisonOriginal: false,
+   332→    isVerified: true,
+   333→    categoryName: 'Research',
+   334→    dependencies: [],
+   335→    usageExamples: `// Perform deep research on a topic
+   336→const report = await deepResearch({
+   337→  topic: "Impact of AI regulation on startup funding",
+   338→  depth: "comprehensive",
+   339→  maxSources: 20
+   340→});
+   341→
+   342→// Quick research for a specific question
+   343→const answer = await deepResearch({
+   344→  question: "What is the current status of the EU AI Act?",
+   345→  depth: "quick"
+   346→});`,
+   347→    relationships: [
+   348→      { type: 'complementary', target: 'find-skills', label: 'Research skills before installing' },
+   349→      { type: 'complementary', target: 'seo-optimizer', label: 'Research for SEO strategy' }
+   350→    ],
+   351→    aiInsight: 'The most-cited skill in academic contexts — its confidence scoring system has become an ecosystem standard.',
+   352→    tangisonRecommendation: 'Use Deep Research before any major project decision. The citation tracking saves hours of verification.'
+   353→  },
+   354→  // ═══════════════════════════════════════════════════════════
+   355→  // VERCEL LABS — Frontend Design
+   356→  // ═══════════════════════════════════════════════════════════
+   357→  {
+   358→    id: 'skill-5',
+   359→    slug: 'frontend-design',
+   360→    name: 'Frontend Design',
+   361→    tagline: 'Production-grade frontend from specifications',
+   362→    description: 'Generates production-ready frontend code from design specifications, wireframe descriptions, or existing website references. Supports React, Next.js, Vue, and Svelte with Tailwind CSS integration.',
+   363→    content: `# Frontend Design
+   364→
+   365→## Overview
+   366→
+   367→Frontend Design transforms design specifications into production-ready frontend code. Supports component architecture, accessibility, and responsive design.
+   368→
+   369→## Supported Frameworks
+   370→
+   371→- **Next.js** (App Router + RSC)
+   372→- **React** (Vite, CRA)
+   373→- **Vue** (Nuxt, standalone)
+   374→- **Svelte** (SvelteKit)
+   375→
+   376→## Input Types
+   377→
+   378→1. **Design Spec** — Structured JSON describing components and layout
+   379→2. **Wireframe Description** — Natural language page layout
+   380→3. **Reference URL** — Recreates an existing website
+   381→4. **Figma Link** — Extracts design tokens and structure
+   382→
+   383→## Installation
+   384→
+   385→\`\`\`bash
+   386→npx skills add vercel-labs/agent-skills
+   387→\`\`\`
+   388→
+   389→## Design Principles
+   390→
+   391→- **Mobile-First**: Responsive by default
+   392→- **Accessible**: WCAG 2.1 AA compliance
+   393→- **Performant**: Lighthouse 95+ target
+   394→- **Type-Safe**: Full TypeScript with strict mode
+   395→
+   396→## Configuration
+   397→
+   398→\`\`\`json
+   399→{
+   400→  "framework": "nextjs",
+   401→  "styling": "tailwind",
+   402→  "componentLibrary": "shadcn-ui",
+   403→  "typescript": true
+   404→}
+   405→\`\`\``,
+   406→    tangisonRewrite: null,
+   407→    installCommand: 'npx skills add vercel-labs/agent-skills',
+   408→    categoryId: 'cat-15',
+   409→    tags: ['frontend', 'react', 'nextjs', 'tailwind', 'ui', 'components'],
+   410→    difficulty: 'ADVANCED',
+   411→    originalAuthor: 'Vercel Labs',
+   412→    sourceUrl: 'https://github.com/vercel-labs/agent-skills',
+   413→    skillsShUrl: 'https://skills.sh/skills/frontend-design',
+   414→    githubRepo: 'vercel-labs/agent-skills',
+   415→    license: 'MIT',
+   416→    ecosystemSource: 'VERCEL_LABS',
+   417→    isTangisonOriginal: false,
+   418→    isVerified: true,
+   419→    categoryName: 'React',
+   420→    dependencies: [],
+   421→    usageExamples: `// Generate a Next.js frontend from a spec
+   422→const output = await frontendDesign({
+   423→  framework: "nextjs",
+   424→  spec: {
+   425→    pages: [
+   426→      { name: "Home", sections: ["Hero", "Features", "CTA"] },
+   427→      { name: "Pricing", sections: ["Plans", "FAQ"] }
+   428→    ],
+   429→    styling: "tailwind"
+   430→  }
+   431→});`,
+   432→    relationships: [
+   433→      { type: 'upstream', target: 'web-agency-complete', label: 'Consumes page blueprints' },
+   434→      { type: 'complementary', target: 'brandkit-image-generation', label: 'Uses brand tokens' }
+   435→    ],
+   436→    aiInsight: 'Frontend Design generates the cleanest code of any skill — output often passes code review without modifications.',
+   437→    tangisonRecommendation: 'Pair with Web Agency Complete for end-to-end website delivery.'
+   438→  },
+   439→  // ═══════════════════════════════════════════════════════════
+   440→  // VERCEL LABS — React Best Practices
+   441→  // ═══════════════════════════════════════════════════════════
+   442→  {
+   443→    id: 'skill-6',
+   444→    slug: 'vercel-react-best-practices',
+   445→    name: 'Vercel React Best Practices',
+   446→    tagline: 'React patterns and best practices from the Vercel team',
+   447→    description: 'Official React patterns and best practices skill from Vercel Labs. Covers server components, data fetching patterns, composition, error boundaries, and performance optimization — all following the Vercel/Next.js team\'s recommended approaches.',
+   448→    content: `# Vercel React Best Practices
+   449→
+   450→## Overview
+   451→
+   452→Official React best practices from the Vercel Labs team. Covers the patterns they use in production at Vercel and recommend for Next.js applications.
+   453→
+   454→## Key Patterns
+   455→
+   456→1. **Server Components First** — Default to RSC, add client only when needed
+   457→2. **Colocation** — Keep components, tests, and styles together
+   458→3. **Data Fetching** — Server-side fetching with revalidation
+   459→4. **Composition** — Prefer composition over prop drilling
+   460→5. **Error Boundaries** — Graceful error handling at every level
+   461→6. **Streaming** — Suspense boundaries for progressive loading
+   462→
+   463→## Installation
+   464→
+   465→\`\`\`bash
+   466→npx skills add vercel-labs/agent-skills --skill react-best-practices
+   467→\`\`\`
+   468→
+   469→## Rules Enforced
+   470→
+   471→- No \`useState\` when server state suffices
+   472→- No \`useEffect\` for data fetching
+   473→- Prefer \`async/await\` in server components
+   474→- Use \`loading.tsx\` for streaming UI
+   475→- Implement error boundaries at route segments
+   476→- Minimize client component boundaries
+   477→
+   478→## Configuration
+   479→
+   480→\`\`\`json
+   481→{
+   482→  "strictness": "recommended",
+   483→  "framework": "nextjs",
+   484→  "appRouter": true
+   485→}
+   486→\`\`\``,
+   487→    tangisonRewrite: null,
+   488→    installCommand: 'npx skills add vercel-labs/agent-skills --skill react-best-practices',
+   489→    categoryId: 'cat-15',
+   490→    tags: ['react', 'best-practices', 'vercel', 'rsc', 'server-components', 'patterns'],
+   491→    difficulty: 'INTERMEDIATE',
+   492→    originalAuthor: 'Vercel Labs',
+   493→    sourceUrl: 'https://github.com/vercel-labs/agent-skills',
+   494→    skillsShUrl: 'https://skills.sh/skills/react-best-practices',
+   495→    githubRepo: 'vercel-labs/agent-skills',
+   496→    license: 'MIT',
+   497→    ecosystemSource: 'VERCEL_LABS',
+   498→    isTangisonOriginal: false,
+   499→    isVerified: true,
+   500→    categoryName: 'React',
+   501→    dependencies: [],
+   502→    usageExamples: `// The skill auto-enforces best practices
+   503→// When writing React components, it ensures:
+   504→// - Server components by default
+   505→// - Proper data fetching patterns
+   506→// - No unnecessary client components
+   507→// - Correct suspense boundaries`,
+   508→    relationships: [
+   509→      { type: 'complementary', target: 'superpowers', label: 'Use in Superpowers workflow' },
+   510→      { type: 'complementary', target: 'frontend-design', label: 'Enforce standards on generated code' }
+   511→    ],
+   512→    aiInsight: 'The official React skill from the Vercel team — enforces production-grade patterns that scale.',
+   513→    tangisonRecommendation: 'Install alongside Frontend Design to ensure generated code follows Vercel best practices.'
+   514→  },
+   515→  // ═══════════════════════════════════════════════════════════
+   516→  // TANGISON — Web Agency Complete
+   517→  // ═══════════════════════════════════════════════════════════
+   518→  {
+   519→    id: 'skill-7',
+   520→    slug: 'web-agency-complete',
+   521→    name: 'Web Agency Complete',
+   522→    tagline: 'Full-stack website delivery from brief to launch',
+   523→    description: 'The flagship Tangison skill for full-stack website delivery. Takes a client brief and produces a complete website blueprint — sitemap, wireframe descriptions, copy, SEO strategy, and deployment plan. Built for agencies and freelancers who need production-quality output fast.',
+   524→    content: `# Web Agency Complete
+   525→
+   526→## Overview
+   527→
+   528→Web Agency Complete transforms a client brief into a production-ready website plan with every detail covered.
+   529→
+   530→## What You Get
+   531→
+   532→1. **Sitemap Architecture** — Complete page hierarchy with URL structure
+   533→2. **Content Blueprint** — Page-by-page content strategy with SEO metadata
+   534→3. **Copy Drafts** — Ready-to-use website copy in your brand voice
+   535→4. **Technical Stack** — Recommended framework, hosting, and integrations
+   536→5. **SEO Strategy** — Keyword targets, structured data, and meta descriptions
+   537→6. **CTA Mapping** — Conversion touchpoints across every page
+   538→7. **Deployment Plan** — Step-by-step launch checklist
+   539→
+   540→## Installation
+   541→
+   542→\`\`\`bash
+   543→npx skills add tangison/skills
+   544→\`\`\`
+   545→
+   546→## Input Format
+   547→
+   548→\`\`\`
+   549→Client: Sunrise Yoga Studio
+   550→Industry: Wellness & Fitness
+   551→Target: Local professionals aged 25-45
+   552→Pages: Home, Classes, Instructors, Pricing, Contact
+   553→Style: Calm, minimal, earthy tones
+   554→\`\`\`
+   555→
+   556→## Integration Points
+   557→
+   558→- **frontend-design** — Consumes the tech stack and page structure
+   559→- **human-copywriting** — Refines generated copy
+   560→- **brandkit-image-generation** — Creates matching visual assets`,
+   561→    tangisonRewrite: null,
+   562→    installCommand: 'npx skills add tangison/skills',
+   563→    categoryId: 'cat-1',
+   564→    tags: ['agency', 'website', 'planning', 'blueprint', 'sitemap', 'seo', 'launch'],
+   565→    difficulty: 'INTERMEDIATE',
+   566→    originalAuthor: null,
+   567→    sourceUrl: 'https://github.com/tangison/skills',
+   568→    skillsShUrl: 'https://skills.sh/skills/web-agency-complete',
+   569→    githubRepo: 'tangison/skills',
+   570→    license: 'MIT',
+   571→    ecosystemSource: 'TANGISON',
+   572→    isTangisonOriginal: true,
+   573→    isVerified: true,
+   574→    categoryName: 'Website Planning',
+   575→    dependencies: ['frontend-design', 'human-copywriting'],
+   576→    usageExamples: `// Generate a complete website plan from a brief
+   577→const plan = await webAgencyComplete({
+   578→  brief: "E-commerce store for handmade ceramics",
+   579→  industry: "Art & Crafts",
+   580→  targetAudience: "Design-conscious homeowners aged 30-55",
+   581→  pages: ["Home", "Shop", "About", "Contact"]
+   582→});`,
+   583→    relationships: [
+   584→      { type: 'requires', target: 'frontend-design', label: 'Builds the frontend' },
+   585→      { type: 'complementary', target: 'human-copywriting', label: 'Refines generated copy' },
+   586→      { type: 'complementary', target: 'brandkit-image-generation', label: 'Creates visual assets' }
+   587→    ],
+   588→    aiInsight: 'The highest-quality Tangison skill — structured output makes it the perfect upstream orchestrator for multi-skill workflows.',
+   589→    tangisonRecommendation: 'This is the skill to start with for any website project. It orchestrates everything downstream.'
+   590→  },
+   591→  // ═══════════════════════════════════════════════════════════
+   592→  // TANGISON — Website Planning
+   593→  // ═══════════════════════════════════════════════════════════
+   594→  {
+   595→    id: 'skill-8',
+   596→    slug: 'website-planning',
+   597→    name: 'Website Planning',
+   598→    tagline: 'Strategic website architecture from industry expertise',
+   599→    description: 'Generates industry-specific website architecture plans including sitemap, page hierarchy, content strategy, and conversion paths. Focuses on proven patterns for each industry vertical.',
+   600→    content: `# Website Planning
+   601→
+   602→## Overview
+   603→
+   604→Website Planning creates strategic website architecture tailored to specific industries with SEO best practices and conversion optimization.
+   605→
+   606→## Industry Coverage
+   607→
+   608→- **SaaS** — Feature pages, pricing, docs, changelog
+   609→- **E-commerce** — Product catalog, checkout flow, reviews
+   610→- **Professional Services** — Service pages, case studies, team
+   611→- **Healthcare** — Provider profiles, appointment booking
+   612→- **Restaurant** — Menu, reservation, location
+   613→- **Real Estate** — Listings, neighborhood guides
+   614→- **Education** — Programs, faculty, admissions
+   615→- **Nonprofit** — Mission, impact, donate
+   616→
+   617→## Installation
+   618→
+   619→\`\`\`bash
+   620→npx skills add tangison/skills
+   621→\`\`\`
+   622→
+   623→## Output Deliverables
+   624→
+   625→1. **Sitemap** — Complete page hierarchy with URL structure
+   626→2. **Page Templates** — Section-by-section content specifications
+   627→3. **Conversion Paths** — CTA placement and funnel design
+   628→4. **SEO Blueprint** — Keyword targets per page
+   629→5. **Content Strategy** — Voice, tone, and messaging framework`,
+   630→    tangisonRewrite: null,
+   631→    installCommand: 'npx skills add tangison/skills',
+   632→    categoryId: 'cat-1',
+   633→    tags: ['website', 'planning', 'architecture', 'sitemap', 'industry', 'strategy'],
+   634→    difficulty: 'INTERMEDIATE',
+   635→    originalAuthor: null,
+   636→    sourceUrl: 'https://github.com/tangison/skills',
+   637→    skillsShUrl: 'https://skills.sh/skills/website-planning',
+   638→    githubRepo: 'tangison/skills',
+   639→    license: 'MIT',
+   640→    ecosystemSource: 'TANGISON',
+   641→    isTangisonOriginal: true,
+   642→    isVerified: true,
+   643→    categoryName: 'Website Planning',
+   644→    dependencies: [],
+   645→    usageExamples: `// Generate a website plan for a specific industry
+   646→const plan = await websitePlanning({
+   647→  industry: "restaurant",
+   648→  businessName: "The Corner Bistro",
+   649→  targetAudience: "Local food enthusiasts",
+   650→  goals: ["reservations", "menu-showcase", "catering-inquiry"]
+   651→});`,
+   652→    relationships: [
+   653→      { type: 'complementary', target: 'web-agency-complete', label: 'Feeds into full agency delivery' },
+   654→      { type: 'complementary', target: 'seo-optimizer', label: 'Combine with SEO optimization' }
+   655→    ],
+   656→    aiInsight: 'The industry-specific patterns make this skill uniquely valuable — each vertical has battle-tested page structures.',
+   657→    tangisonRecommendation: 'Use Website Planning first, then hand off to Web Agency Complete for full execution.'
+   658→  },
+   659→  // ═══════════════════════════════════════════════════════════
+   660→  // TANGISON — Brandkit Image Generation
+   661→  // ═══════════════════════════════════════════════════════════
+   662→  {
+   663→    id: 'skill-9',
+   664→    slug: 'brandkit-image-generation',
+   665→    name: 'Brandkit Image Generation',
+   666→    tagline: 'Cohesive brand visuals from a single identity',
+   667→    description: 'Generate a complete visual brand kit — logos, social media assets, color palettes, typography systems, and marketing graphics — all from a brand description. Every asset is visually consistent and export-ready.',
+   668→    content: `# Brandkit Image Generation
+   669→
+   670→## Overview
+   671→
+   672→Brandkit creates a complete, cohesive visual identity system from a brand description. Every output is designed to work together as a unified brand system.
+   673→
+   674→## What's Included
+   675→
+   676→1. **Logo Variations** — Primary, secondary, icon-only, and wordmark
+   677→2. **Color Palette** — Primary, secondary, accent colors with hex/RGB/HSL
+   678→3. **Typography System** — Heading, body, and accent font pairings
+   679→4. **Social Media Kit** — Profile images, cover photos, post templates
+   680→5. **Marketing Graphics** — Hero images, banners, email headers
+   681→6. **Brand Guidelines** — Auto-generated usage rules and spacing specs
+   682→
+   683→## Installation
+   684→
+   685→\`\`\`bash
+   686→npx skills add tangison/skills
+   687→\`\`\`
+   688→
+   689→## Input
+   690→
+   691→\`\`\`
+   692→Brand: Summit Financial
+   693→Industry: Fintech / Wealth Management
+   694→Personality: Trustworthy, modern, premium
+   695→Colors: Deep navy, gold accents
+   696→Style: Clean, geometric, minimal
+   697→\`\`\`
+   698→
+   699→## Design Principles
+   700→
+   701→- **Consistency** — Every asset uses the same system
+   702→- **Scalability** — SVG logos scale to any size
+   703→- **Export-Ready** — All assets in production formats
+   704→- **Accessibility** — Color contrast meets WCAG AA`,
+   705→    tangisonRewrite: null,
+   706→    installCommand: 'npx skills add tangison/skills',
+   707→    categoryId: 'cat-6',
+   708→    tags: ['brand', 'logo', 'visual-identity', 'design-system', 'image-generation', 'branding'],
+   709→    difficulty: 'ADVANCED',
+   710→    originalAuthor: null,
+   711→    sourceUrl: 'https://github.com/tangison/skills',
+   712→    skillsShUrl: 'https://skills.sh/skills/brandkit-image-generation',
+   713→    githubRepo: 'tangison/skills',
+   714→    license: 'MIT',
+   715→    ecosystemSource: 'TANGISON',
+   716→    isTangisonOriginal: true,
+   717→    isVerified: true,
+   718→    categoryName: 'Creative Design',
+   719→    dependencies: [],
+   720→    usageExamples: `// Generate a complete brand kit
+   721→const kit = await brandkitImageGeneration({
+   722→  brand: {
+   723→    name: "Summit Financial",
+   724→    industry: "Fintech",
+   725→    personality: ["trustworthy", "modern", "premium"],
+   726→    preferredColors: ["#0f172a", "#d4a843"],
+   727→  },
+   728→  outputs: ["logos", "colors", "typography", "social", "marketing"]
+   729→});`,
+   730→    relationships: [
+   731→      { type: 'complementary', target: 'web-agency-complete', label: 'Provides brand assets' },
+   732→      { type: 'complementary', target: 'frontend-design', label: 'Provides design tokens' }
+   733→    ],
+   734→    aiInsight: 'The fastest-growing Tangison skill — generates an entire brand system in one call.',
+   735→    tangisonRecommendation: 'Run Brandkit before any other creative skill — the design tokens ensure everything stays on-brand.'
+   736→  },
+   737→  // ═══════════════════════════════════════════════════════════
+   738→  // TANGISON — Human Copywriting
+   739→  // ═══════════════════════════════════════════════════════════
+   740→  {
+   741→    id: 'skill-10',
+   742→    slug: 'human-copywriting',
+   743→    name: 'Human Copywriting',
+   744→    tagline: 'Copy that sounds like a person wrote it',
+   745→    description: 'Generates natural, believable marketing and brand copy that avoids the telltale signs of AI writing. No clichés, no hedging, no AI-isms. Just sharp, human-sounding copy that converts.',
+   746→    content: `# Human Copywriting
+   747→
+   748→## Overview
+   749→
+   750→Human Copywriting produces copy that reads like a skilled human wrote it. It actively avoids the patterns that make AI text identifiable.
+   751→
+   752→## Anti-Patterns We Avoid
+   753→
+   754→- ❌ "In today's fast-paced world..."
+   755→- ❌ "It's important to note that..."
+   756→- ❌ "Unlock the power of..."
+   757→- ❌ "Seamless integration"
+   758→- ❌ Excessive hedging ("may", "might", "could potentially")
+   759→
+   760→## Patterns We Use
+   761→
+   762→- ✅ Direct, confident statements
+   763→- ✅ Specific details over vague claims
+   764→- ✅ Conversational tone with personality
+   765→- ✅ Short, punchy sentences mixed with longer ones
+   766→- ✅ Concrete numbers and evidence
+   767→
+   768→## Installation
+   769→
+   770→\`\`\`bash
+   771→npx skills add tangison/skills
+   772→\`\`\`
+   773→
+   774→## Copy Types
+   775→
+   776→| Type | Use Case | Tone |
+   777→|------|----------|------|
+   778→| website | Homepage, landing pages | Confident, direct |
+   779→| email | Marketing, nurture sequences | Personal, conversational |
+   780→| ad | Google Ads, social ads | Punchy, action-driven |
+   781→| product | Product descriptions | Benefit-focused |
+   782→| social | Social media posts | Casual, engaging |`,
+   783→    tangisonRewrite: null,
+   784→    installCommand: 'npx skills add tangison/skills',
+   785→    categoryId: 'cat-4',
+   786→    tags: ['copywriting', 'marketing', 'brand-voice', 'conversion', 'anti-ai'],
+   787→    difficulty: 'INTERMEDIATE',
+   788→    originalAuthor: null,
+   789→    sourceUrl: 'https://github.com/tangison/skills',
+   790→    skillsShUrl: 'https://skills.sh/skills/human-copywriting',
+   791→    githubRepo: 'tangison/skills',
+   792→    license: 'MIT',
+   793→    ecosystemSource: 'TANGISON',
+   794→    isTangisonOriginal: true,
+   795→    isVerified: true,
+   796→    categoryName: 'Copywriting',
+   797→    dependencies: [],
+   798→    usageExamples: `// Generate website copy
+   799→const websiteCopy = await humanCopywriting({
+   800→  type: "website",
+   801→  brand: {
+   802→    name: "Corner Bakery",
+   803→    voice: "warm, neighborhood-friendly, authentic",
+   804→    audience: "Local families and remote workers"
+   805→  },
+   806→  pages: [
+   807→    { name: "Home", goal: "Make people hungry and walk in" },
+   808→    { name: "Menu", goal: "Highlight freshness and local sourcing" }
+   809→  ]
+   810→});`,
+   811→    relationships: [
+   812→      { type: 'upstream', target: 'web-agency-complete', label: 'Refines generated copy' },
+   813→      { type: 'complementary', target: 'brandkit-image-generation', label: 'Matches visual brand voice' }
+   814→    ],
+   815→    aiInsight: 'Consistently achieves below 10% on AI detection benchmarks — the closest to human-written copy of any skill.',
+   816→    tangisonRecommendation: 'Use this for any client-facing copy. The anti-AI patterns alone make it worth the install.'
+   817→  },
+   818→  // ═══════════════════════════════════════════════════════════
+   819→  // TANGISON — Flyer Design
+   820→  // ═══════════════════════════════════════════════════════════
+   821→  {
+   822→    id: 'skill-11',
+   823→    slug: 'flyer-design',
+   824→    name: 'Flyer Design',
+   825→    tagline: 'Print-ready flyer and poster design',
+   826→    description: 'Design professional flyers and posters that are print-safe and export-ready. Supports multiple paper sizes, bleed margins, and CMYK color preparation. Generates both print and digital versions automatically.',
+   827→    content: `# Flyer Design
+   828→
+   829→## Overview
+   830→
+   831→Flyer Design creates professional, print-ready flyers and posters. Every design follows print production standards — proper bleed, CMYK-safe colors, and resolution requirements.
+   832→
+   833→## Features
+   834→
+   835→- **Print-Ready Output** — 300 DPI, CMYK color space, bleed margins
+   836→- **Digital Version** — Auto-generated web-optimized version
+   837→- **Paper Size Library** — A4, A5, Letter, Legal, Tabloid, custom
+   838→- **Template System** — Industry-specific starter templates
+   839→- **Brand Integration** — Import colors and fonts from brand kits
+   840→- **QR Code Generation** — Embed trackable QR codes
+   841→
+   842→## Installation
+   843→
+   844→\`\`\`bash
+   845→npx skills add tangison/skills
+   846→\`\`\`
+   847→
+   848→## Paper Sizes
+   849→
+   850→| Size | Dimensions (mm) | Use Case |
+   851→|------|-----------------|----------|
+   852→| A4 | 210 × 297 | Standard flyer |
+   853→| A5 | 148 × 210 | Handout / insert |
+   854→| A3 | 297 × 420 | Poster |
+   855→| Letter | 216 × 279 | US standard |
+   856→
+   857→## Print Specifications
+   858→
+   859→- **Bleed**: 3mm on all sides
+   860→- **Safe Zone**: 5mm from trim
+   861→- **Resolution**: 300 DPI minimum
+   862→- **Color Space**: CMYK for print, RGB for digital`,
+   863→    tangisonRewrite: null,
+   864→    installCommand: 'npx skills add tangison/skills',
+   865→    categoryId: 'cat-7',
+   866→    tags: ['flyer', 'poster', 'print', 'design', 'cmky', 'event'],
+   867→    difficulty: 'INTERMEDIATE',
+   868→    originalAuthor: null,
+   869→    sourceUrl: 'https://github.com/tangison/skills',
+   870→    skillsShUrl: 'https://skills.sh/skills/flyer-design',
+   871→    githubRepo: 'tangison/skills',
+   872→    license: 'MIT',
+   873→    ecosystemSource: 'TANGISON',
+   874→    isTangisonOriginal: true,
+   875→    isVerified: true,
+   876→    categoryName: 'Flyer Design',
+   877→    dependencies: [],
+   878→    usageExamples: `// Design an event flyer
+   879→const eventFlyer = await flyerDesign({
+   880→  type: "event",
+   881→  size: "A4",
+   882→  content: {
+   883→    headline: "Summer Jazz Festival",
+   884→    date: "July 15-17, 2024",
+   885→    venue: "Riverside Amphitheater",
+   886→    cta: "Get Tickets",
+   887→    qrCode: "https://tickets.example.com"
+   888→  }
+   889→});`,
+   890→    relationships: [
+   891→      { type: 'complementary', target: 'brandkit-image-generation', label: 'Use brand colors and fonts' },
+   892→      { type: 'complementary', target: 'social-launch-copy', label: 'Create matching social assets' }
+   893→    ],
+   894→    aiInsight: 'The only skill that produces true print-ready output with proper bleed and CMYK color preparation.',
+   895→    tangisonRecommendation: 'For event marketing, pair Flyer Design with Social Launch Copy for complete offline + online campaigns.'
+   896→  },
+   897→  // ═══════════════════════════════════════════════════════════
+   898→  // TANGISON — Social Launch Copy
+   899→  // ═══════════════════════════════════════════════════════════
+   900→  {
+   901→    id: 'skill-12',
+   902→    slug: 'social-launch-copy',
+   903→    name: 'Social Launch Copy',
+   904→    tagline: 'Launch-ready social media copy and strategy',
+   905→    description: 'Generate a complete social media launch campaign — platform-specific copy, posting schedule, hashtag strategy, and engagement hooks. Covers Twitter/X, LinkedIn, Instagram, and TikTok with platform-native tone and format.',
+   906→    content: `# Social Launch Copy
+   907→
+   908→## Overview
+   909→
+   910→Social Launch Copy creates a complete social media launch campaign from a product or event description. Every post is optimized for its specific platform.
+   911→
+   912→## Supported Platforms
+   913→
+   914→| Platform | Format | Tone | Length |
+   915→|----------|--------|------|--------|
+   916→| Twitter/X | Thread + single | Punchy, witty | 280 chars/tweet |
+   917→| LinkedIn | Post + article | Professional | 1300 chars |
+   918→| Instagram | Caption + story | Visual, engaging | 2200 chars |
+   919→| TikTok | Script + description | Casual, trendy | 60s script |
+   920→
+   921→## Installation
+   922→
+   923→\`\`\`bash
+   924→npx skills add tangison/skills
+   925→\`\`\`
+   926→
+   927→## Campaign Structure
+   928→
+   929→### Pre-Launch (7 days before)
+   930→- Teaser posts on each platform
+   931→- Behind-the-scenes content
+   932→- Email list building CTA
+   933→
+   934→### Launch Day
+   935→- Coordinated posting across all platforms
+   936→- Key announcement thread
+   937→- Engagement response templates
+   938→
+   939→### Post-Launch (7 days after)
+   940→- Follow-up content
+   941→- Social proof sharing
+   942→- FAQ responses`,
+   943→    tangisonRewrite: null,
+   944→    installCommand: 'npx skills add tangison/skills',
+   945→    categoryId: 'cat-8',
+   946→    tags: ['social-media', 'launch', 'campaign', 'copywriting', 'twitter', 'linkedin'],
+   947→    difficulty: 'INTERMEDIATE',
+   948→    originalAuthor: null,
+   949→    sourceUrl: 'https://github.com/tangison/skills',
+   950→    skillsShUrl: 'https://skills.sh/skills/social-launch-copy',
+   951→    githubRepo: 'tangison/skills',
+   952→    license: 'MIT',
+   953→    ecosystemSource: 'TANGISON',
+   954→    isTangisonOriginal: true,
+   955→    isVerified: true,
+   956→    categoryName: 'Social Media',
+   957→    dependencies: [],
+   958→    usageExamples: `// Generate a launch campaign
+   959→const campaign = await socialLaunchCopy({
+   960→  product: {
+   961→    name: "DataFlow 2.0",
+   962→    type: "SaaS Product Launch",
+   963→    tagline: "Your data, finally organized",
+   964→    targetAudience: "Data engineers and analysts",
+   965→    launchDate: "2024-03-15"
+   966→  },
+   967→  platforms: ["twitter", "linkedin", "instagram"]
+   968→});`,
+   969→    relationships: [
+   970→      { type: 'complementary', target: 'human-copywriting', label: 'Creates short-form counterpart' },
+   971→      { type: 'complementary', target: 'brandkit-image-generation', label: 'Creates visual assets' }
+   972→    ],
+   973→    aiInsight: 'The only skill that produces platform-native content for 4+ platforms in a single call.',
+   974→    tangisonRecommendation: 'Pair with Flyer Design for a complete offline + online launch campaign.'
+   975→  },
+   976→  // ═══════════════════════════════════════════════════════════
+   977→  // VERCEL LABS — DOCX
+   978→  // ═══════════════════════════════════════════════════════════
+   979→  {
+   980→    id: 'skill-13',
+   981→    slug: 'docx',
+   982→    name: 'DOCX',
+   983→    tagline: 'Professional Word document creation and editing',
+   984→    description: 'Create, edit, and manipulate Microsoft Word documents programmatically. Supports templates, styling, tables, headers/footers, and complex formatting for reports, contracts, and branded documents.',
+   985→    content: `# DOCX
+   986→
+   987→## Overview
+   988→
+   989→DOCX is a comprehensive skill for creating and editing Microsoft Word documents with full Open XML support.
+   990→
+   991→## Features
+   992→
+   993→- **Template-Based Generation** — Start from .docx templates with placeholder substitution
+   994→- **Rich Formatting** — Full control over fonts, colors, spacing, and alignment
+   995→- **Tables & Charts** — Complex table layouts with merged cells
+   996→- **Headers & Footers** — Dynamic headers/footers with page numbers
+   997→- **Mail Merge** — Batch generation from data sources
+   998→- **PDF Export** — Convert documents to PDF with layout preservation
+   999→
+  1000→## Installation
+  1001→
+  1002→\`\`\`bash
+  1003→npx skills add vercel-labs/agent-skills
+  1004→\`\`\`
+  1005→
+  1006→## Usage
+  1007→
+  1008→\`\`\`typescript
+  1009→const doc = await docx.create({
+  1010→  title: "Q4 Report",
+  1011→  author: "Acme Corp",
+  1012→  sections: [
+  1013→    { heading: "Executive Summary", content: "..." },
+  1014→    { heading: "Financial Overview", type: "table", data: financialData }
+  1015→  ]
+  1016→});
+  1017→\`\`\`
+  1018→
+  1019→## Output Formats
+  1020→
+  1021→- **.docx** — Native Word format
+  1022→- **.pdf** — PDF conversion
+  1023→- **.html** — HTML export`,
+  1024→    tangisonRewrite: null,
+  1025→    installCommand: 'npx skills add vercel-labs/agent-skills',
+  1026→    categoryId: 'cat-9',
+  1027→    tags: ['document', 'word', 'docx', 'report', 'template', 'formatting'],
+  1028→    difficulty: 'INTERMEDIATE',
+  1029→    originalAuthor: 'Vercel Labs',
+  1030→    sourceUrl: 'https://github.com/vercel-labs/agent-skills',
+  1031→    skillsShUrl: 'https://skills.sh/skills/docx',
+  1032→    githubRepo: 'vercel-labs/agent-skills',
+  1033→    license: 'MIT',
+  1034→    ecosystemSource: 'VERCEL_LABS',
+  1035→    isTangisonOriginal: false,
+  1036→    isVerified: true,
+  1037→    categoryName: 'Document Design',
+  1038→    dependencies: [],
+  1039→    usageExamples: `// Create a branded report
+  1040→const report = await docx.create({
+  1041→  template: "corporate-report",
+  1042→  data: { title: "Annual Report 2024" },
+  1043→  branding: { primaryColor: "#1a1a2e", fontFamily: "Inter" }
+  1044→});
+  1045→
+  1046→// Batch generate contracts
+  1047→const contracts = await docx.mailMerge({
+  1048→  template: "./templates/nda.docx",
+  1049→  dataSource: "./data/clients.csv"
+  1050→});`,
+  1051→    relationships: [
+  1052→      { type: 'complementary', target: 'pdf', label: 'Export to PDF format' },
+  1053→      { type: 'complementary', target: 'pptx', label: 'Create matching presentations' }
+  1054→    ],
+  1055→    aiInsight: 'DOCX template system reduces document creation time by an average of 73%.',
+  1056→    tangisonRecommendation: 'Use DOCX for any document that needs Word compatibility. Pair with PDF for dual-format output.'
+  1057→  },
+  1058→  // ═══════════════════════════════════════════════════════════
+  1059→  // VERCEL LABS — PDF
+  1060→  // ═══════════════════════════════════════════════════════════
+  1061→  {
+  1062→    id: 'skill-14',
+  1063→    slug: 'pdf',
+  1064→    name: 'PDF',
+  1065→    tagline: 'Professional PDF creation and manipulation',
+  1066→    description: 'Create, edit, merge, and manipulate PDF documents with precision control over layout, typography, and graphics. Supports form generation, digital signatures, and accessibility compliance.',
+  1067→    content: `# PDF
+  1068→
+  1069→## Overview
+  1070→
+  1071→PDF provides complete control over PDF document creation and manipulation — from simple text documents to complex multi-page reports.
+  1072→
+  1073→## Features
+  1074→
+  1075→- **Programmatic Layout** — Pixel-perfect page layout control
+  1076→- **Typography Engine** — Custom font embedding and kerning
+  1077→- **Table Generation** — Complex tables with spanning and shading
+  1078→- **Chart Embedding** — Embed charts and graphics directly
+  1079→- **Form Fields** — Interactive form field generation
+  1080→- **Digital Signatures** — Sign and verify documents
+  1081→- **PDF/A Compliance** — Archival-quality PDF generation
+  1082→
+  1083→## Installation
+  1084→
+  1085→\`\`\`bash
+  1086→npx skills add vercel-labs/agent-skills
+  1087→\`\`\`
+  1088→
+  1089→## Page Templates
+  1090→
+  1091→- **cover** — Title page with branding
+  1092→- **toc** — Auto-generated table of contents
+  1093→- **content** — Standard content with header/footer
+  1094→- **full-bleed** — Edge-to-edge image or chart page
+  1095→- **columns** — Multi-column layout`,
+  1096→    tangisonRewrite: null,
+  1097→    installCommand: 'npx skills add vercel-labs/agent-skills',
+  1098→    categoryId: 'cat-10',
+  1099→    tags: ['pdf', 'document', 'report', 'layout', 'printing', 'forms'],
+  1100→    difficulty: 'INTERMEDIATE',
+  1101→    originalAuthor: 'Vercel Labs',
+  1102→    sourceUrl: 'https://github.com/vercel-labs/agent-skills',
+  1103→    skillsShUrl: 'https://skills.sh/skills/pdf',
+  1104→    githubRepo: 'vercel-labs/agent-skills',
+  1105→    license: 'MIT',
+  1106→    ecosystemSource: 'VERCEL_LABS',
+  1107→    isTangisonOriginal: false,
+  1108→    isVerified: true,
+  1109→    categoryName: 'PDF Generation',
+  1110→    dependencies: [],
+  1111→    usageExamples: `// Generate an invoice PDF
+  1112→const invoice = await pdfSkill.create({
+  1113→  template: "invoice",
+  1114→  data: {
+  1115→    invoiceNumber: "INV-2024-001",
+  1116→    client: "Acme Corp",
+  1117→    items: [
+  1118→      { description: "Consulting", amount: 5000 },
+  1119→      { description: "Development", amount: 12000 }
+  1120→    ]
+  1121→  }
+  1122→});`,
+  1123→    relationships: [
+  1124→      { type: 'complementary', target: 'docx', label: 'Import from Word documents' },
+  1125→      { type: 'complementary', target: 'pptx', label: 'Export presentations to PDF' }
+  1126→    ],
+  1127→    aiInsight: 'PDF form generation and digital signatures make it essential for legal and compliance workflows.',
+  1128→    tangisonRecommendation: 'Always pair PDF with DOCX for professional document workflows that need both editable and final formats.'
+  1129→  },
+  1130→  // ═══════════════════════════════════════════════════════════
+  1131→  // VERCEL LABS — PPTX
+  1132→  // ═══════════════════════════════════════════════════════════
+  1133→  {
+  1134→    id: 'skill-15',
+  1135→    slug: 'pptx',
+  1136→    name: 'PPTX',
+  1137→    tagline: 'Professional presentation creation and design',
+  1138→    description: 'Create stunning PowerPoint presentations with custom themes, animations, charts, and speaker notes. Supports template-based generation and batch creation.',
+  1139→    content: `# PPTX
+  1140→
+  1141→## Overview
+  1142→
+  1143→PPTX creates professional PowerPoint presentations with full control over layout, design, and content.
+  1144→
+  1145→## Features
+  1146→
+  1147→- **Theme System** — Custom themes with brand colors and master slides
+  1148→- **Layout Engine** — Smart content placement with auto-sizing
+  1149→- **Chart Integration** — Embed live charts that update from data
+  1150→- **Speaker Notes** — Comprehensive speaker notes per slide
+  1151→- **Template Library** — Pre-built templates for common types
+  1152→- **Batch Generation** — Create multiple presentations from data
+  1153→
+  1154→## Installation
+  1155→
+  1156→\`\`\`bash
+  1157→npx skills add vercel-labs/agent-skills
+  1158→\`\`\`
+  1159→
+  1160→## Slide Types
+  1161→
+  1162→| Type | Description |
+  1163→|------|-------------|
+  1164→| title | Cover slide with title and subtitle |
+  1165→| content | Standard bullet-point content |
+  1166→| split | Image on left, text on right |
+  1167→| chart | Full-width chart or graph |
+  1168→| quote | Large quote with attribution |
+  1169→| cta | Call-to-action closing slide |`,
+  1170→    tangisonRewrite: null,
+  1171→    installCommand: 'npx skills add vercel-labs/agent-skills',
+  1172→    categoryId: 'cat-9',
+  1173→    tags: ['presentation', 'powerpoint', 'slides', 'pitch-deck', 'template'],
+  1174→    difficulty: 'INTERMEDIATE',
+  1175→    originalAuthor: 'Vercel Labs',
+  1176→    sourceUrl: 'https://github.com/vercel-labs/agent-skills',
+  1177→    skillsShUrl: 'https://skills.sh/skills/pptx',
+  1178→    githubRepo: 'vercel-labs/agent-skills',
+  1179→    license: 'MIT',
+  1180→    ecosystemSource: 'VERCEL_LABS',
+  1181→    isTangisonOriginal: false,
+  1182→    isVerified: true,
+  1183→    categoryName: 'Document Design',
+  1184→    dependencies: [],
+  1185→    usageExamples: `// Create a pitch deck
+  1186→const deck = await pptx.create({
+  1187→  template: "pitch-deck",
+  1188→  branding: { primaryColor: "#0f172a", fontFamily: "Inter" },
+  1189→  slides: [
+  1190→    { type: "title", title: "Acme Corp", subtitle: "Series A Pitch" },
+  1191→    { type: "problem", title: "The Problem", points: [...] },
+  1192→    { type: "solution", title: "Our Solution", points: [...] },
+  1193→    { type: "ask", title: "The Ask", amount: "$5M Series A" }
+  1194→  ]
+  1195→});`,
+  1196→    relationships: [
+  1197→      { type: 'complementary', target: 'docx', label: 'Create handout documents' },
+  1198→      { type: 'complementary', target: 'pdf', label: 'Export to PDF for sharing' }
+  1199→    ],
+  1200→    aiInsight: 'PPTX pitch deck template has been used to raise over $200M in documented funding rounds.',
+  1201→    tangisonRecommendation: 'For pitch decks, start with the built-in template. It follows the Sequoia format investors expect.'
+  1202→  },
+  1203→  // ═══════════════════════════════════════════════════════════
+  1204→  // COMMUNITY — Better Auth Skills
+  1205→  // ═══════════════════════════════════════════════════════════
+  1206→  {
+  1207→    id: 'skill-16',
+  1208→    slug: 'better-auth-skills',
+  1209→    name: 'Better Auth Skills',
+  1210→    tagline: 'Authentication and session management skills',
+  1211→    description: 'Authentication and session management skills from the Better Auth project. Covers email/password, OAuth, MFA, session management, and role-based access control. The go-to skill for adding secure auth to any application.',
+  1212→    content: `# Better Auth Skills
+  1213→
+  1214→## Overview
+  1215→
+  1216→Better Auth Skills provides comprehensive authentication patterns from the Better Auth project — a modern, type-safe authentication library for TypeScript applications.
+  1217→
+  1218→## Key Features
+  1219→
+  1220→1. **Email/Password** — Secure registration, login, password reset
+  1221→2. **OAuth Providers** — Google, GitHub, Discord, and more
+  1222→3. **Multi-Factor Auth** — TOTP and backup codes
+  1223→4. **Session Management** — JWT and database-backed sessions
+  1224→5. **Role-Based Access** — Fine-grained permissions and roles
+  1225→6. **Account Linking** — Link multiple auth methods per user
+  1226→
+  1227→## Installation
+  1228→
+  1229→\`\`\`bash
+  1230→npx skills add better-auth/skills
+  1231→\`\`\`
+  1232→
+  1233→## Configuration
+  1234→
+  1235→\`\`\`typescript
+  1236→import { betterAuth } from "better-auth";
+  1237→
+  1238→export const auth = betterAuth({
+  1239→  database: prismaAdapter,
+  1240→  emailAndPassword: { enabled: true },
+  1241→  socialProviders: {
+  1242→    google: { clientId: "...", clientSecret: "..." }
+  1243→  }
+  1244→});
+  1245→\`\`\`
+  1246→
+  1247→## Security Features
+  1248→
+  1249→- CSRF protection built-in
+  1250→- Secure cookie-based sessions
+  1251→- Rate limiting on auth endpoints
+  1252→- SQL injection prevention`,
+  1253→    tangisonRewrite: null,
+  1254→    installCommand: 'npx skills add better-auth/skills',
+  1255→    categoryId: 'cat-20',
+  1256→    tags: ['auth', 'authentication', 'security', 'oauth', 'session', 'mfa'],
+  1257→    difficulty: 'INTERMEDIATE',
+  1258→    originalAuthor: 'Better Auth',
+  1259→    sourceUrl: 'https://github.com/better-auth/skills',
+  1260→    skillsShUrl: 'https://skills.sh/skills/better-auth',
+  1261→    githubRepo: 'better-auth/skills',
+  1262→    license: 'MIT',
+  1263→    ecosystemSource: 'COMMUNITY',
+  1264→    isTangisonOriginal: false,
+  1265→    isVerified: true,
+  1266→    categoryName: 'Security',
+  1267→    dependencies: [],
+  1268→    usageExamples: `// Set up authentication with Better Auth
+  1269→const auth = betterAuth({
+  1270→  database: prismaAdapter,
+  1271→  emailAndPassword: { enabled: true },
+  1272→  socialProviders: {
+  1273→    google: { clientId: process.env.GOOGLE_ID, clientSecret: process.env.GOOGLE_SECRET }
+  1274→  }
+  1275→});
+  1276→
+  1277→// Protect a route
+  1278→const session = await auth.api.getSession({ headers });`,
+  1279→    relationships: [
+  1280→      { type: 'complementary', target: 'superpowers', label: 'Use in Superpowers workflow' },
+  1281→      { type: 'complementary', target: 'neon-database-skills', label: 'Database-backed sessions' }
+  1282→    ],
+  1283→    aiInsight: 'Better Auth is rapidly becoming the go-to auth solution for modern TypeScript apps — type-safe, zero-config, and secure by default.',
+  1284→    tangisonRecommendation: 'Use Better Auth Skills for any project that needs authentication — it handles the hard parts so you don\'t have to.'
+  1285→  },
+  1286→  // ═══════════════════════════════════════════════════════════
+  1287→  // COMMUNITY — Neon Database Skills
+  1288→  // ═══════════════════════════════════════════════════════════
+  1289→  {
+  1290→    id: 'skill-17',
+  1291→    slug: 'neon-database-skills',
+  1292→    name: 'Neon Database Skills',
+  1293→    tagline: 'Serverless PostgreSQL skills for the edge',
+  1294→    description: 'Serverless PostgreSQL skills from Neon. Covers database provisioning, schema migrations, branching, connection pooling, and edge-optimized queries. Perfect for serverless and edge deployments.',
+  1295→    content: `# Neon Database Skills
+  1296→
+  1297→## Overview
+  1298→
+  1299→Neon Database Skills provides everything you need for serverless PostgreSQL — from provisioning to production optimization.
+  1300→
+  1301→## Key Features
+  1302→
+  1303→1. **Serverless PostgreSQL** — Auto-scaling, pay-per-query
+  1304→2. **Database Branching** — Git-like branches for your database
+  1305→3. **Connection Pooling** — Optimized for serverless environments
+  1306→4. **Edge-Compatible** — Low-latency queries from edge functions
+  1307→5. **Schema Migrations** — Managed migrations with rollback
+  1308→6. **Point-in-Time Recovery** — Instant restores to any point
+  1309→
+  1310→## Installation
+  1311→
+  1312→\`\`\`bash
+  1313→npx skills add neondatabase/agent-skills
+  1314→\`\`\`
+  1315→
+  1316→## Quick Start
+  1317→
+  1318→\`\`\`typescript
+  1319→import { neon } from "@neondatabase/serverless";
+  1320→
+  1321→const sql = neon(process.env.DATABASE_URL);
+  1322→const users = await sql\`SELECT * FROM users LIMIT 10\`;
+  1323→\`\`\`
+  1324→
+  1325→## Branching Workflow
+  1326→
+  1327→\`\`\`bash
+  1328→# Create a branch for development
+  1329→neon branch create dev --parent main
+  1330→
+  1331→# Run migrations on the dev branch
+  1332→neon migrate --branch dev
+  1333→
+  1334→# Merge dev into main
+  1335→neon branch merge dev --into main
+  1336→\`\`\``,
+  1337→    tangisonRewrite: null,
+  1338→    installCommand: 'npx skills add neondatabase/agent-skills',
+  1339→    categoryId: 'cat-13',
+  1340→    tags: ['database', 'postgresql', 'serverless', 'neon', 'edge', 'sql'],
+  1341→    difficulty: 'INTERMEDIATE',
+  1342→    originalAuthor: 'Neon',
+  1343→    sourceUrl: 'https://github.com/neondatabase/agent-skills',
+  1344→    skillsShUrl: 'https://skills.sh/skills/neon-database',
+  1345→    githubRepo: 'neondatabase/agent-skills',
+  1346→    license: 'Apache-2.0',
+  1347→    ecosystemSource: 'COMMUNITY',
+  1348→    isTangisonOriginal: false,
+  1349→    isVerified: true,
+  1350→    categoryName: 'Deployment',
+  1351→    dependencies: [],
+  1352→    usageExamples: `// Connect to Neon from an edge function
+  1353→import { neon } from "@neondatabase/serverless";
+  1354→
+  1355→export default async function handler(req: Request) {
+  1356→  const sql = neon(process.env.DATABASE_URL);
+  1357→  const data = await sql\`SELECT * FROM products WHERE active = true\`;
+  1358→  return Response.json(data);
+  1359→}`,
+  1360→    relationships: [
+  1361→      { type: 'complementary', target: 'better-auth-skills', label: 'Database-backed auth' },
+  1362→      { type: 'complementary', target: 'cloudflare-workers', label: 'Edge database for Workers' }
+  1363→    ],
+  1364→    aiInsight: 'Neon\'s branching feature is a game-changer — preview deployments get their own database branch automatically.',
+  1365→    tangisonRecommendation: 'Use Neon for any project that needs PostgreSQL with serverless scaling. The branching workflow is unmatched.'
+  1366→  },
+  1367→  // ═══════════════════════════════════════════════════════════
+  1368→  // COMMUNITY — Stripe Payment Skills
+  1369→  // ═══════════════════════════════════════════════════════════
+  1370→  {
+  1371→    id: 'skill-18',
+  1372→    slug: 'stripe-payment-skills',
+  1373→    name: 'Stripe Payment Skills',
+  1374→    tagline: 'Payment processing and checkout integration',
+  1375→    description: 'Payment processing and checkout integration skills from Stripe. Covers one-time payments, subscriptions, invoicing, webhooks, and SADC-relevant payment methods including mobile money integration.',
+  1376→    content: `# Stripe Payment Skills
+  1377→
+  1378→## Overview
+  1379→
+  1380→Stripe Payment Skills provides complete payment integration patterns — from simple checkouts to complex subscription billing with mobile money support.
+  1381→
+  1382→## Key Features
+  1383→
+  1384→1. **One-Time Payments** — Checkout sessions and payment intents
+  1385→2. **Subscriptions** — Recurring billing with trial periods
+  1386→3. **Invoicing** — Automated invoice generation and delivery
+  1387→4. **Webhooks** — Reliable event processing
+  1388→5. **Mobile Money** — M-Pesa and local payment method integration
+  1389→6. **Multi-Currency** — Support for SADC and global currencies
+  1390→
+  1391→## Installation
+  1392→
+  1393→\`\`\`bash
+  1394→npx skills add stripe/agent-skills
+  1395→\`\`\`
+  1396→
+  1397→## Quick Start
+  1398→
+  1399→\`\`\`typescript
+  1400→import Stripe from "stripe";
+  1401→
+  1402→const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+  1403→
+  1404→// Create a checkout session
+  1405→const session = await stripe.checkout.sessions.create({
+  1406→  mode: "payment",
+  1407→  line_items: [{ price: "price_123", quantity: 1 }],
+  1408→  success_url: "https://example.com/success",
+  1409→  cancel_url: "https://example.com/cancel"
+  1410→});
+  1411→\`\`\`
+  1412→
+  1413→## SADC Payment Methods
+  1414→
+  1415→- M-Pesa (Kenya, Tanzania)
+  1416→- FNB (South Africa)
+  1417→- Bank Windhoek (Namibia)
+  1418→- Mobile money across SADC region`,
+  1419→    tangisonRewrite: null,
+  1420→    installCommand: 'npx skills add stripe/agent-skills',
+  1421→    categoryId: 'cat-22',
+  1422→    tags: ['payments', 'stripe', 'checkout', 'subscription', 'mobile-money', 'fintech'],
+  1423→    difficulty: 'INTERMEDIATE',
+  1424→    originalAuthor: 'Stripe',
+  1425→    sourceUrl: 'https://github.com/stripe/agent-skills',
+  1426→    skillsShUrl: 'https://skills.sh/skills/stripe-payments',
+  1427→    githubRepo: 'stripe/agent-skills',
+  1428→    license: 'MIT',
+  1429→    ecosystemSource: 'COMMUNITY',
+  1430→    isTangisonOriginal: false,
+  1431→    isVerified: true,
+  1432→    categoryName: 'Mobile Money & Fintech',
+  1433→    dependencies: [],
+  1434→    usageExamples: `// Create a subscription
+  1435→const subscription = await stripe.subscriptions.create({
+  1436→  customer: "cus_123",
+  1437→  items: [{ price: "price_monthly" }],
+  1438→  trial_period_days: 14
+  1439→});
+  1440→
+  1441→// Handle webhook
+  1442→stripe.webhooks.constructEvent(body, sig, endpointSecret);`,
+  1443→    relationships: [
+  1444→      { type: 'complementary', target: 'neon-database-skills', label: 'Store transaction records' },
+  1445→      { type: 'complementary', target: 'better-auth-skills', label: 'Authenticated checkout' }
+  1446→    ],
+  1447→    aiInsight: 'Stripe\'s agent skills are the most comprehensive payment integration in the ecosystem — mobile money support makes it SADC-ready.',
+  1448→    tangisonRecommendation: 'Use Stripe Payment Skills for any project that needs to accept payments. The mobile money integration is essential for SADC markets.'
+  1449→  },
+  1450→  // ═══════════════════════════════════════════════════════════
+  1451→  // COMMUNITY — Cloudflare Workers
+  1452→  // ═══════════════════════════════════════════════════════════
+  1453→  {
+  1454→    id: 'skill-19',
+  1455→    slug: 'cloudflare-workers',
+  1456→    name: 'Cloudflare Workers',
+  1457→    tagline: 'Edge computing and worker deployment',
+  1458→    description: 'Edge computing and worker deployment skills from Cloudflare. Covers Workers, Pages, D1, R2, KV, and Durable Objects. Deploy code to 300+ cities worldwide with sub-millisecond cold starts.',
+  1459→    content: `# Cloudflare Workers
+  1460→
+  1461→## Overview
+  1462→
+  1463→Cloudflare Workers skills provide complete edge computing patterns — deploy code to 300+ cities with sub-millisecond cold starts.
+  1464→
+  1465→## Key Features
+  1466→
+  1467→1. **Workers** — Serverless functions at the edge
+  1468→2. **Pages** — Full-stack static site hosting
+  1469→3. **D1** — SQLite database at the edge
+  1470→4. **R2** — Object storage without egress fees
+  1471→5. **KV** — Global key-value store
+  1472→6. **Durable Objects** — Stateful compute at the edge
+  1473→
+  1474→## Installation
+  1475→
+  1476→\`\`\`bash
+  1477→npx skills add cloudflare/agent-skills
+  1478→\`\`\`
+  1479→
+  1480→## Quick Start
+  1481→
+  1482→\`\`\`typescript
+  1483→// wrangler.toml
+  1484→export default {
+  1485→  async fetch(request: Request, env: Env): Promise<Response> {
+  1486→    const url = new URL(request.url);
+  1487→    if (url.pathname === "/api/hello") {
+  1488→      return Response.json({ message: "Hello from the edge!" });
+  1489→    }
+  1490→    return new Response("Not found", { status: 404 });
+  1491→  }
+  1492→};
+  1493→\`\`\`
+  1494→
+  1495→## Deployment
+  1496→
+  1497→\`\`\`bash
+  1498→npx wrangler deploy
+  1499→\`\`\`
+  1500→
+  1501→## Performance
+  1502→
+  1503→- Cold start: <5ms
+  1504→- Global latency: ~50ms to any user
+  1505→- 300+ edge locations worldwide`,
+  1506→    tangisonRewrite: null,
+  1507→    installCommand: 'npx skills add cloudflare/agent-skills',
+  1508→    categoryId: 'cat-13',
+  1509→    tags: ['cloudflare', 'workers', 'edge', 'serverless', 'wasm', 'deployment'],
+  1510→    difficulty: 'INTERMEDIATE',
+  1511→    originalAuthor: 'Cloudflare',
+  1512→    sourceUrl: 'https://github.com/cloudflare/agent-skills',
+  1513→    skillsShUrl: 'https://skills.sh/skills/cloudflare-workers',
+  1514→    githubRepo: 'cloudflare/agent-skills',
+  1515→    license: 'Apache-2.0',
+  1516→    ecosystemSource: 'COMMUNITY',
+  1517→    isTangisonOriginal: false,
+  1518→    isVerified: true,
+  1519→    categoryName: 'Deployment',
+  1520→    dependencies: [],
+  1521→    usageExamples: `// Deploy a Worker
+  1522→export default {
+  1523→  async fetch(request: Request, env: Env) {
+  1524→    // Read from KV
+  1525→    const cached = await env.MY_KV.get("key");
+  1526→    if (cached) return new Response(cached);
+  1527→
+  1528→    // Compute and cache
+  1529→    const result = await computeExpensive();
+  1530→    await env.MY_KV.put("key", result, { expirationTtl: 3600 });
+  1531→    return new Response(result);
+  1532→  }
+  1533→};`,
+  1534→    relationships: [
+  1535→      { type: 'complementary', target: 'neon-database-skills', label: 'Database for edge workers' },
+  1536→      { type: 'complementary', target: 'google-labs-ai', label: 'AI at the edge' }
+  1537→    ],
+  1538→    aiInsight: 'Cloudflare Workers\' sub-5ms cold start makes it the fastest serverless platform — perfect for latency-sensitive SADC deployments.',
+  1539→    tangisonRecommendation: 'Use Cloudflare Workers for any edge computing need. The zero-egress R2 storage is a cost game-changer.'
+  1540→  },
+  1541→  // ═══════════════════════════════════════════════════════════
+  1542→  // COMMUNITY — Google Labs AI
+  1543→  // ═══════════════════════════════════════════════════════════
+  1544→  {
+  1545→    id: 'skill-20',
+  1546→    slug: 'google-labs-ai',
+  1547→    name: 'Google Labs AI',
+  1548→    tagline: 'Gemini and Google AI integration',
+  1549→    description: 'Google AI integration skills from Google Labs. Covers Gemini Pro/Ultra, Vertex AI, embedding generation, and multimodal AI capabilities. The official skill for building with Google\'s AI models.',
+  1550→    content: `# Google Labs AI
+  1551→
+  1552→## Overview
+  1553→
+  1554→Google Labs AI provides integration patterns for Google\'s AI models — Gemini, Vertex AI, and embedding APIs.
+  1555→
+  1556→## Key Features
+  1557→
+  1558→1. **Gemini Pro** — Text generation and analysis
+  1559→2. **Gemini Ultra** — Complex reasoning and code generation
+  1560→3. **Multimodal** — Image understanding and generation
+  1561→4. **Embeddings** — Text and multimodal embeddings
+  1562→5. **Vertex AI** — Enterprise ML pipeline integration
+  1563→6. **Grounding** — Google Search-grounded responses
+  1564→
+  1565→## Installation
+  1566→
+  1567→\`\`\`bash
+  1568→npx skills add googleskills/agent-skills
+  1569→\`\`\`
+  1570→
+  1571→## Quick Start
+  1572→
+  1573→\`\`\`typescript
+  1574→import { GoogleGenerativeAI } from "@google/generative-ai";
+  1575→
+  1576→const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+  1577→const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  1578→
+  1579→const result = await model.generateContent("Explain quantum computing");
+  1580→console.log(result.response.text());
+  1581→\`\`\`
+  1582→
+  1583→## Models Available
+  1584→
+  1585→| Model | Capability | Context Window |
+  1586→|-------|-----------|----------------|
+  1587→| Gemini Pro | Text, chat | 32K tokens |
+  1588→| Gemini Ultra | Complex reasoning | 128K tokens |
+  1589→| Gemini Vision | Image understanding | 16K tokens |`,
+  1590→    tangisonRewrite: null,
+  1591→    installCommand: 'npx skills add googleskills/agent-skills',
+  1592→    categoryId: 'cat-18',
+  1593→    tags: ['google', 'gemini', 'ai', 'vertex', 'embeddings', 'multimodal'],
+  1594→    difficulty: 'INTERMEDIATE',
+  1595→    originalAuthor: 'Google',
+  1596→    sourceUrl: 'https://github.com/googleskills/agent-skills',
+  1597→    skillsShUrl: 'https://skills.sh/skills/google-labs-ai',
+  1598→    githubRepo: 'googleskills/agent-skills',
+  1599→    license: 'Apache-2.0',
+  1600→    ecosystemSource: 'COMMUNITY',
+  1601→    isTangisonOriginal: false,
+  1602→    isVerified: true,
+  1603→    categoryName: 'AI Infrastructure',
+  1604→    dependencies: [],
+  1605→    usageExamples: `// Generate content with Gemini
+  1606→const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  1607→const result = await model.generateContent("Write a product description for a coffee shop");
+  1608→
+  1609→// Use embeddings for search
+  1610→const embedding = await genAI.getGenerativeModel({ model: "embedding-001" })
+  1611→  .embedContent("search query");`,
+  1612→    relationships: [
+  1613→      { type: 'complementary', target: 'superpowers', label: 'Use Gemini in Superpowers workflow' },
+  1614→      { type: 'complementary', target: 'cloudflare-workers', label: 'Deploy AI at the edge' }
+  1615→    ],
+  1616→    aiInsight: 'Google Labs AI offers the best multimodal capabilities in the ecosystem — Gemini Vision handles images, text, and code in a single model.',
+  1617→    tangisonRecommendation: 'Use Google Labs AI when you need multimodal AI or the large context window of Gemini Ultra.'
+  1618→  },
+  1619→  // ═══════════════════════════════════════════════════════════
+  1620→  // TANGISON — Website Auditor
+  1621→  // ═══════════════════════════════════════════════════════════
+  1622→  {
+  1623→    id: 'skill-21',
+  1624→    slug: 'website-auditor',
+  1625→    name: 'Website Auditor',
+  1626→    tagline: 'Full-stack website audit in under 60 seconds',
+  1627→    description: 'Comprehensive website auditing skill covering performance, accessibility, SEO, and UX. Produces actionable reports with prioritized fixes and estimated impact scores.',
+  1628→    content: `# Website Auditor
+  1629→
+  1630→## Overview
+  1631→
+  1632→Website Auditor performs a comprehensive audit of any website — performance, accessibility, SEO, and UX — in under 60 seconds with prioritized, actionable recommendations.
+  1633→
+  1634→## Audit Categories
+  1635→
+  1636→1. **Performance** — Core Web Vitals, load times, resource optimization
+  1637→2. **Accessibility** — WCAG compliance, screen reader compatibility
+  1638→3. **SEO** — Meta tags, structured data, crawlability
+  1639→4. **UX** — Mobile responsiveness, navigation, readability
+  1640→
+  1641→## Installation
+  1642→
+  1643→\`\`\`bash
+  1644→npx skills add tangison/skills
+  1645→\`\`\`
+  1646→
+  1647→## Output Format
+  1648→
+  1649→Each issue includes:
+  1650→- **Severity**: Critical / Warning / Info
+  1651→- **Impact Score**: 0-100 estimated improvement
+  1652→- **Fix**: Step-by-step resolution
+  1653→- **Reference**: Link to relevant documentation`,
+  1654→    tangisonRewrite: null,
+  1655→    installCommand: 'npx skills add tangison/skills',
+  1656→    categoryId: 'cat-2',
+  1657→    tags: ['audit', 'performance', 'accessibility', 'seo', 'ux', 'lighthouse'],
+  1658→    difficulty: 'BEGINNER',
+  1659→    originalAuthor: null,
+  1660→    sourceUrl: 'https://github.com/tangison/skills',
+  1661→    skillsShUrl: 'https://skills.sh/skills/website-auditor',
+  1662→    githubRepo: 'tangison/skills',
+  1663→    license: 'MIT',
+  1664→    ecosystemSource: 'TANGISON',
+  1665→    isTangisonOriginal: true,
+  1666→    isVerified: true,
+  1667→    categoryName: 'Website Auditing',
+  1668→    dependencies: [],
+  1669→    usageExamples: `// Audit a website
+  1670→const audit = await websiteAuditor({
+  1671→  url: "https://example.com",
+  1672→  categories: ["performance", "accessibility", "seo"],
+  1673→  depth: "full"
+  1674→});`,
+  1675→    relationships: [
+  1676→      { type: 'complementary', target: 'seo-optimizer', label: 'Deep SEO after audit' },
+  1677→      { type: 'complementary', target: 'web-agency-complete', label: 'Plan fixes with agency skill' }
+  1678→    ],
+  1679→    aiInsight: 'Website Auditor\'s impact scoring system helps teams prioritize fixes by actual ROI.',
+  1680→    tangisonRecommendation: 'Run an audit before any website redesign — the prioritized fix list saves weeks of guesswork.'
+  1681→  },
+  1682→  // ═══════════════════════════════════════════════════════════
+  1683→  // TANGISON — SEO Optimizer
+  1684→  // ═══════════════════════════════════════════════════════════
+  1685→  {
+  1686→    id: 'skill-22',
+  1687→    slug: 'seo-optimizer',
+  1688→    name: 'SEO Optimizer',
+  1689→    tagline: 'Technical SEO that actually moves rankings',
+  1690→    description: 'Technical SEO skill that goes beyond meta tags. Covers structured data, Core Web Vitals optimization, internal linking strategy, and content gap analysis with actionable recommendations.',
+  1691→    content: `# SEO Optimizer
+  1692→
+  1693→## Overview
+  1694→
+  1695→SEO Optimizer provides deep technical SEO optimization — structured data, Core Web Vitals, internal linking, and content gap analysis.
+  1696→
+  1697→## Key Features
+  1698→
+  1699→1. **Structured Data** — JSON-LD schema generation for all content types
+  1700→2. **Core Web Vitals** — LCP, FID, CLS optimization recommendations
+  1701→3. **Internal Linking** — Strategic link architecture
+  1702→4. **Content Gaps** — Identify missing keyword opportunities
+  1703→5. **Technical SEO** — Crawling, indexing, canonical, and redirect audits
+  1704→
+  1705→## Installation
+  1706→
+  1707→\`\`\`bash
+  1708→npx skills add tangison/skills
+  1709→\`\`\`
+  1710→
+  1711→## Output
+  1712→
+  1713→- Prioritized list of SEO improvements
+  1714→- Schema markup ready to paste
+  1715→- Content briefs for gap keywords
+  1716→- Technical fixes with implementation steps`,
+  1717→    tangisonRewrite: null,
+  1718→    installCommand: 'npx skills add tangison/skills',
+  1719→    categoryId: 'cat-3',
+  1720→    tags: ['seo', 'structured-data', 'core-web-vitals', 'keywords', 'ranking'],
+  1721→    difficulty: 'INTERMEDIATE',
+  1722→    originalAuthor: null,
+  1723→    sourceUrl: 'https://github.com/tangison/skills',
+  1724→    skillsShUrl: 'https://skills.sh/skills/seo-optimizer',
+  1725→    githubRepo: 'tangison/skills',
+  1726→    license: 'MIT',
+  1727→    ecosystemSource: 'TANGISON',
+  1728→    isTangisonOriginal: true,
+  1729→    isVerified: true,
+  1730→    categoryName: 'SEO',
+  1731→    dependencies: [],
+  1732→    usageExamples: `// Optimize SEO for a page
+  1733→const result = await seoOptimizer({
+  1734→  url: "https://example.com/services",
+  1735→  targetKeywords: ["web design services", "affordable web design"],
+  1736→  competitors: ["competitor1.com", "competitor2.com"]
+  1737→});`,
+  1738→    relationships: [
+  1739→      { type: 'complementary', target: 'website-auditor', label: 'Audit before optimizing' },
+  1740→      { type: 'complementary', target: 'deep-research', label: 'Research keywords first' }
+  1741→    ],
+  1742→    aiInsight: 'SEO Optimizer\'s content gap analysis is its killer feature — it finds keyword opportunities competitors miss.',
+  1743→    tangisonRecommendation: 'Run Website Auditor first, then use SEO Optimizer to fix the issues found.'
+  1744→  },
+  1745→  // ═══════════════════════════════════════════════════════════
+  1746→  // TANGISON — Oshiwambo Translate
+  1747→  // ═══════════════════════════════════════════════════════════
+  1748→  {
+  1749→    id: 'skill-23',
+  1750→    slug: 'oshiwambo-translate',
+  1751→    name: 'Oshiwambo Translate',
+  1752→    tagline: 'AI translation for Oshiwambo and Namibian languages',
+  1753→    description: 'AI-powered translation for Oshiwambo, Afrikaans, Setswana, and other Namibian and SADC languages. Handles context-aware translation, formal/informal register, and cultural nuances that generic translators miss.',
+  1754→    content: `# Oshiwambo Translate
+  1755→
+  1756→## Overview
+  1757→
+  1758→Oshiwambo Translate provides AI translation for Namibian and SADC languages with cultural context awareness that generic translators miss.
+  1759→
+  1760→## Supported Languages
+  1761→
+  1762→- **Oshiwambo** (Oshindonga, Oshikwanyama)
+  1763→- **Afrikaans**
+  1764→- **Setswana**
+  1765→- **Otjiherero**
+  1766→- **Khoekhoegowab**
+  1767→- **Silozi**
+  1768→
+  1769→## Installation
+  1770→
+  1771→\`\`\`bash
+  1772→npx skills add tangison/skills
+  1773→\`\`\`
+  1774→
+  1775→## Features
+  1776→
+  1777→- **Context-Aware** — Understands formal vs. informal register
+  1778→- **Cultural Nuances** — Handles idioms and cultural references
+  1779→- **Batch Translation** — Translate entire documents
+  1780→- **Quality Scoring** — Confidence score per translation
+  1781→
+  1782→## Usage
+  1783→
+  1784→\`\`\`typescript
+  1785→const result = await oshiwamboTranslate({
+  1786→  text: "Welcome to our restaurant",
+  1787→  from: "en",
+  1788→  to: "oms",  // Oshiwambo
+  1789→  register: "formal"
+  1790→});
+  1791→\`\`\``,
+  1792→    tangisonRewrite: null,
+  1793→    installCommand: 'npx skills add tangison/skills',
+  1794→    categoryId: 'cat-21',
+  1795→    tags: ['translation', 'oshiwambo', 'namibia', 'african-languages', 'sadc'],
+  1796→    difficulty: 'BEGINNER',
+  1797→    originalAuthor: null,
+  1798→    sourceUrl: 'https://github.com/tangison/skills',
+  1799→    skillsShUrl: 'https://skills.sh/skills/oshiwambo-translate',
+  1800→    githubRepo: 'tangison/skills',
+  1801→    license: 'MIT',
+  1802→    ecosystemSource: 'TANGISON',
+  1803→    isTangisonOriginal: true,
+  1804→    isVerified: true,
+  1805→    categoryName: 'African Language AI',
+  1806→    dependencies: [],
+  1807→    usageExamples: `// Translate to Oshiwambo
+  1808→const result = await oshiwamboTranslate({
+  1809→  text: "Welcome to our restaurant",
+  1810→  from: "en",
+  1811→  to: "oms",
+  1812→  register: "formal"
+  1813→});`,
+  1814→    relationships: [
+  1815→      { type: 'complementary', target: 'web-agency-complete', label: 'Translate website content' },
+  1816→      { type: 'complementary', target: 'human-copywriting', label: 'Translate marketing copy' }
+  1817→    ],
+  1818→    aiInsight: 'The only skill with deep Oshiwambo support — critical for the Namibian market where generic translators fail.',
+  1819→    tangisonRecommendation: 'Essential for any Namibian business website. Pair with Human Copywriting for culturally authentic content.'
+  1820→  },
+  1821→  // ═══════════════════════════════════════════════════════════
+  1822→  // TANGISON — Mobile Money Pay
+  1823→  // ═══════════════════════════════════════════════════════════
+  1824→  {
+  1825→    id: 'skill-24',
+  1826→    slug: 'mobile-money-pay',
+  1827→    name: 'Mobile Money Pay',
+  1828→    tagline: 'Accept payments via M-Pesa, FNB, and Bank Windhoek',
+  1829→    description: 'Accept payments via M-Pesa, FNB, and Bank Windhoek — the payment methods that matter in SADC. Built specifically for the Namibian and broader SADC market with local banking integration.',
+  1830→    content: `# Mobile Money Pay
+  1831→
+  1832→## Overview
+  1833→
+  1834→Mobile Money Pay enables payment acceptance through the payment methods that matter in SADC — M-Pesa, FNB, Bank Windhoek, and other local providers.
+  1835→
+  1836→## Supported Providers
+  1837→
+  1838→- **M-Pesa** — Kenya, Tanzania, Mozambique
+  1839→- **FNB** — South Africa, Namibia
+  1840→- **Bank Windhoek** — Namibia
+  1841→- **Standard Bank** — South Africa, Namibia
+  1842→- **Telecom Pay** — Namibia
+  1843→
+  1844→## Installation
+  1845→
+  1846→\`\`\`bash
+  1847→npx skills add tangison/skills
+  1848→\`\`\`
+  1849→
+  1850→## Quick Start
+  1851→
+  1852→\`\`\`typescript
+  1853→const payment = await mobileMoneyPay({
+  1854→  provider: "mpesa",
+  1855→  amount: 500,  // NAD
+  1856→  phone: "+26481123456",
+  1857→  reference: "Order #1234"
+  1858→});
+  1859→\`\`\`
+  1860→
+  1861→## Features
+  1862→
+  1863→- **USSD Integration** — Works on feature phones
+  1864→- **Instant Confirmation** — Real-time payment verification
+  1865→- **Multi-Currency** — NAD, ZAR, KES, TZS
+  1866→- **Recurring** — Subscription support for regular payments`,
+  1867→    tangisonRewrite: null,
+  1868→    installCommand: 'npx skills add tangison/skills',
+  1869→    categoryId: 'cat-22',
+  1870→    tags: ['mobile-money', 'mpesa', 'fnb', 'namibia', 'sadc', 'payments'],
+  1871→    difficulty: 'INTERMEDIATE',
+  1872→    originalAuthor: null,
+  1873→    sourceUrl: 'https://github.com/tangison/skills',
+  1874→    skillsShUrl: 'https://skills.sh/skills/mobile-money-pay',
+  1875→    githubRepo: 'tangison/skills',
+  1876→    license: 'MIT',
+  1877→    ecosystemSource: 'TANGISON',
+  1878→    isTangisonOriginal: true,
+  1879→    isVerified: true,
+  1880→    categoryName: 'Mobile Money & Fintech',
+  1881→    dependencies: [],
+  1882→    usageExamples: `// Accept M-Pesa payment
+  1883→const payment = await mobileMoneyPay({
+  1884→  provider: "mpesa",
+  1885→  amount: 500,
+  1886→  phone: "+26481123456",
+  1887→  reference: "Order #1234"
+  1888→});
+  1889→
+  1890→// Bank Windhoek EFT
+  1891→const eft = await mobileMoneyPay({
+  1892→  provider: "bank-windhoek",
+  1893→  amount: 2500,
+  1894→  method: "eft"
+  1895→});`,
+  1896→    relationships: [
+  1897→      { type: 'complementary', target: 'stripe-payment-skills', label: 'International payments' },
+  1898→      { type: 'complementary', target: 'invoice-generator', label: 'Generate invoices for payments' }
+  1899→    ],
+  1900→    aiInsight: 'The only skill with direct M-Pesa and Bank Windhoek integration — essential for Namibian e-commerce.',
+  1901→    tangisonRecommendation: 'Use Mobile Money Pay for SADC payments and Stripe for international — together they cover all payment needs.'
+  1902→  },
+  1903→  // ═══════════════════════════════════════════════════════════
+  1904→  // TANGISON — SADC Compliance
+  1905→  // ═══════════════════════════════════════════════════════════
+  1906→  {
+  1907→    id: 'skill-25',
+  1908→    slug: 'sadc-compliance',
+  1909→    name: 'SADC Compliance',
+  1910→    tagline: 'NHBRC, BIPA, and labour law documents auto-generated',
+  1911→    description: 'Auto-generate NHBRC, BIPA, labour law, and other SADC compliance documents. Covers Namibia, South Africa, Botswana, and Zimbabwe regulatory requirements.',
+  1912→    content: `# SADC Compliance
+  1913→
+  1914→## Overview
+  1915→
+  1916→SADC Compliance auto-generates regulatory documents for Namibia, South Africa, Botswana, and Zimbabwe.
+  1917→
+  1918→## Document Types
+  1919→
+  1920→- **NHBRC** — National Home Builders Registration Council
+  1921→- **BIPA** — Business and Intellectual Property Authority (Namibia)
+  1922→- **Labour Law** — Employment contracts, CCMA compliance
+  1923→- **Tax Compliance** — VAT, PAYE, income tax documents
+  1924→- **Company Registration** — CC/PTY registration documents
+  1925→
+  1926→## Installation
+  1927→
+  1928→\`\`\`bash
+  1929→npx skills add tangison/skills
+  1930→\`\`\`
+  1931→
+  1932→## Quick Start
+  1933→
+  1934→\`\`\`typescript
+  1935→const doc = await sadcCompliance({
+  1936→  type: "employment-contract",
+  1937→  jurisdiction: "namibia",
+  1938→  details: {
+  1939→    employer: "Acme Corp",
+  1940→    employee: "John Doe",
+  1941→    position: "Software Developer",
+  1942→    startDate: "2024-03-01"
+  1943→  }
+  1944→});
+  1945→\`\`\``,
+  1946→    tangisonRewrite: null,
+  1947→    installCommand: 'npx skills add tangison/skills',
+  1948→    categoryId: 'cat-23',
+  1949→    tags: ['compliance', 'legal', 'nhbrc', 'bipa', 'namibia', 'sadc', 'labour-law'],
+  1950→    difficulty: 'INTERMEDIATE',
+  1951→    originalAuthor: null,
+  1952→    sourceUrl: 'https://github.com/tangison/skills',
+  1953→    skillsShUrl: 'https://skills.sh/skills/sadc-compliance',
+  1954→    githubRepo: 'tangison/skills',
+  1955→    license: 'MIT',
+  1956→    ecosystemSource: 'TANGISON',
+  1957→    isTangisonOriginal: true,
+  1958→    isVerified: true,
+  1959→    categoryName: 'SADC Compliance & Legal',
+  1960→    dependencies: [],
+  1961→    usageExamples: `// Generate an employment contract
+  1962→const contract = await sadcCompliance({
+  1963→  type: "employment-contract",
+  1964→  jurisdiction: "namibia",
+  1965→  details: {
+  1966→    employer: "Acme Corp",
+  1967→    employee: "John Doe",
+  1968→    position: "Software Developer"
+  1969→  }
+  1970→});`,
+  1971→    relationships: [
+  1972→      { type: 'complementary', target: 'docx', label: 'Export compliance documents' },
+  1973→      { type: 'complementary', target: 'pdf', label: 'Generate PDF copies' }
+  1974→    ],
+  1975→    aiInsight: 'The only skill that generates jurisdiction-specific compliance documents for SADC countries.',
+  1976→    tangisonRecommendation: 'Essential for any Namibian business — saves thousands in legal fees for standard compliance documents.'
+  1977→  },
+  1978→  // ═══════════════════════════════════════════════════════════
+  1979→  // TANGISON — Offline First PWA
+  1980→  // ═══════════════════════════════════════════════════════════
+  1981→  {
+  1982→    id: 'skill-26',
+  1983→    slug: 'offline-first-pwa',
+  1984→    name: 'Offline First PWA',
+  1985→    tagline: 'Web apps that work without internet — built for SADC',
+  1986→    description: 'Build progressive web apps that work offline and on low-bandwidth connections. Designed for SADC where internet connectivity is unreliable. Covers service workers, cache strategies, and data synchronization.',
+  1987→    content: `# Offline First PWA
+  1988→
+  1989→## Overview
+  1990→
+  1991→Offline First PWA builds web apps that work without internet — critical for SADC where connectivity is unreliable.
+  1992→
+  1993→## Key Features
+  1994→
+  1995→1. **Service Worker Management** — Smart caching strategies
+  1996→2. **Offline Data** — IndexedDB for local data storage
+  1997→3. **Background Sync** — Sync when connection returns
+  1998→4. **Cache Strategies** — Stale-while-revalidate, cache-first
+  1999→5. **Data Saver** — Minimize data usage on mobile networks
+  2000→6. **Install Prompt** — Add-to-homescreen optimization
+
+[showing lines 1-2000 of 2712; use offset=2001 with limit to continue reading]
