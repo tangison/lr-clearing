@@ -1,5 +1,13 @@
-import { ComingSoon } from '@/components/coming-soon';
+import { Navbar } from '@/components/Navbar';
+import { Ticker } from '@/components/Ticker';
+import { ComingSoon } from '@/components/ComingSoon';
 
 export default function ContactPage() {
-  return <ComingSoon pageTitle="Contact" />;
+  return (
+    <>
+      <Navbar />
+      <Ticker />
+      <ComingSoon pageTitle="Contact" />
+    </>
+  );
 }

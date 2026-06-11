@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Navigation } from '@/components/navigation';
-import { Footer } from '@/components/footer';
+import { Navbar } from '@/components/Navbar';
+import { Ticker } from '@/components/Ticker';
+import { Footer } from '@/components/Footer';
 
 const brandColors = [
   { name: 'Navy Deep', hex: '#1B2A4A', usage: 'Primary backgrounds, headers, footers' },
@@ -14,106 +15,151 @@ const brandColors = [
 
 export default function BrandPage() {
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: 'var(--port-sand)' }}>
-      <Navigation />
-
-      <main className="flex-1">
+    <>
+      <Navbar />
+      <Ticker />
+      <main className="flex-1" style={{ backgroundColor: 'var(--color-light-bg)' }}>
         {/* Header */}
-        <section className="bg-[var(--navy-deep)] pt-12 pb-16">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="pt-24 pb-16" style={{ backgroundColor: 'var(--color-primary)' }}>
+          <div className="mx-auto max-w-7xl px-6 md:px-12">
             <Link
               href="/"
-              className="text-sm text-[var(--iron-grey)] hover:text-[var(--manifest-white)] transition-colors mb-6 inline-block"
-              style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
+              className="inline-block mb-6 transition-colors"
+              style={{
+                fontFamily: 'var(--font-dm-sans), sans-serif',
+                fontSize: '14px',
+                color: 'var(--color-secondary)',
+              }}
             >
               ← Back to Home
             </Link>
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl text-[var(--manifest-white)] uppercase tracking-tight"
-              style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 800 }}
+              className="uppercase tracking-tight"
+              style={{
+                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontWeight: 800,
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                color: 'var(--color-body-light)',
+              }}
             >
               Brand Guidelines
             </h1>
             <p
-              className="text-base text-[var(--iron-grey)] mt-4 max-w-2xl"
-              style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
+              className="mt-4 max-w-2xl"
+              style={{
+                fontFamily: 'var(--font-dm-sans), sans-serif',
+                fontWeight: 400,
+                fontSize: '16px',
+                color: 'var(--color-secondary)',
+              }}
             >
               The official brand system for L&amp;R Clearing Agency Close Corporation. Use these assets and guidelines to maintain consistent visual identity across all communications.
             </p>
-            <div className="w-16 h-1 bg-[var(--signal-orange)] rounded-full mt-6" />
+            <div className="mt-6" style={{ width: '64px', height: '2px', backgroundColor: 'var(--color-accent)' }} />
           </div>
         </section>
 
         {/* Logo Downloads */}
-        <section className="py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-7xl px-6 md:px-12">
             <h2
-              className="text-2xl sm:text-3xl text-[var(--navy-deep)] uppercase tracking-tight mb-8"
-              style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 800 }}
+              className="uppercase tracking-tight mb-8"
+              style={{
+                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontWeight: 800,
+                fontSize: '28px',
+                color: 'var(--color-primary)',
+              }}
             >
               Logo Assets
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* Light logo on dark */}
-              <div className="bg-[var(--navy-deep)] rounded-[2px] p-8 sm:p-12 flex flex-col items-center justify-center gap-6 border border-white/5">
+              {/* Full Logo on Dark */}
+              <div className="p-8 md:p-12 flex flex-col items-center justify-center gap-6" style={{ backgroundColor: 'var(--color-primary)', borderRadius: '0px' }}>
                 <Image
-                  src="/logo-light.png"
-                  alt="L&R Clearing Agency Logo — Light variant"
+                  src="/brand/logo-full.png"
+                  alt="L&R Clearing Agency Logo — Full variant"
                   width={200}
                   height={68}
-                  className="h-16 sm:h-20 w-auto object-contain"
+                  className="h-16 md:h-20 w-auto object-contain"
+                  style={{ filter: 'brightness(0) invert(1)' }}
                 />
                 <div className="text-center">
                   <p
-                    className="text-xs uppercase tracking-[0.15em] text-[var(--manifest-white)] mb-1"
-                    style={{ fontFamily: 'var(--font-jetbrains-mono), monospace' }}
+                    className="uppercase tracking-widest mb-1"
+                    style={{
+                      fontFamily: 'var(--font-jetbrains-mono), monospace',
+                      fontWeight: 400,
+                      fontSize: '11px',
+                      color: 'var(--color-body-light)',
+                    }}
                   >
-                    Logo — Light
+                    Logo — Full (Light)
                   </p>
-                  <p
-                    className="text-xs text-[var(--iron-grey)]"
-                    style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
-                  >
+                  <p style={{ fontFamily: 'var(--font-dm-sans), sans-serif', fontSize: '12px', color: 'var(--color-secondary)' }}>
                     For use on dark backgrounds
                   </p>
                 </div>
+                <a
+                  href="/brand/logo-full.png"
+                  download
+                  className="text-white text-xs tracking-widest uppercase px-6 py-3 transition-all duration-300"
+                  style={{ fontFamily: 'var(--font-dm-sans), sans-serif', fontWeight: 500, backgroundColor: 'var(--color-accent)', borderRadius: 'var(--radius-btn)' }}
+                >
+                  DOWNLOAD PNG
+                </a>
               </div>
 
-              {/* Dark logo on light */}
-              <div className="bg-white rounded-[2px] p-8 sm:p-12 flex flex-col items-center justify-center gap-6 border border-[var(--port-sand)]">
+              {/* Icon Mark on Light */}
+              <div className="p-8 md:p-12 flex flex-col items-center justify-center gap-6 border" style={{ backgroundColor: 'white', borderRadius: '0px', borderColor: 'var(--color-light-bg)' }}>
                 <Image
-                  src="/logo-dark.png"
-                  alt="L&R Clearing Agency Logo — Dark variant"
-                  width={200}
-                  height={68}
-                  className="h-16 sm:h-20 w-auto object-contain"
+                  src="/brand/logo-icon.png"
+                  alt="L&R Clearing Agency Logo — Icon mark"
+                  width={80}
+                  height={80}
+                  className="h-16 md:h-20 w-auto object-contain"
                 />
                 <div className="text-center">
                   <p
-                    className="text-xs uppercase tracking-[0.15em] text-[var(--navy-deep)] mb-1"
-                    style={{ fontFamily: 'var(--font-jetbrains-mono), monospace' }}
+                    className="uppercase tracking-widest mb-1"
+                    style={{
+                      fontFamily: 'var(--font-jetbrains-mono), monospace',
+                      fontWeight: 400,
+                      fontSize: '11px',
+                      color: 'var(--color-primary)',
+                    }}
                   >
-                    Logo — Dark
+                    Logo — Icon Mark
                   </p>
-                  <p
-                    className="text-xs text-[var(--iron-grey)]"
-                    style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
-                  >
-                    For use on light backgrounds
+                  <p style={{ fontFamily: 'var(--font-dm-sans), sans-serif', fontSize: '12px', color: 'var(--color-secondary)' }}>
+                    For use on light backgrounds / navbar
                   </p>
                 </div>
+                <a
+                  href="/brand/logo-icon.png"
+                  download
+                  className="text-white text-xs tracking-widest uppercase px-6 py-3 transition-all duration-300"
+                  style={{ fontFamily: 'var(--font-dm-sans), sans-serif', fontWeight: 500, backgroundColor: 'var(--color-accent)', borderRadius: 'var(--radius-btn)' }}
+                >
+                  DOWNLOAD PNG
+                </a>
               </div>
             </div>
           </div>
         </section>
 
         {/* Color Swatches */}
-        <section className="py-16 sm:py-20 bg-white">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-20 bg-white">
+          <div className="mx-auto max-w-7xl px-6 md:px-12">
             <h2
-              className="text-2xl sm:text-3xl text-[var(--navy-deep)] uppercase tracking-tight mb-8"
-              style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 800 }}
+              className="uppercase tracking-tight mb-8"
+              style={{
+                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontWeight: 800,
+                fontSize: '28px',
+                color: 'var(--color-primary)',
+              }}
             >
               Color Palette
             </h2>
@@ -122,25 +168,40 @@ export default function BrandPage() {
               {brandColors.map((color) => (
                 <div key={color.hex} className="space-y-3">
                   <div
-                    className="aspect-square rounded-[2px] border border-black/5"
-                    style={{ backgroundColor: color.hex }}
+                    className="aspect-square"
+                    style={{ backgroundColor: color.hex, borderRadius: '0px', border: '1px solid rgba(0,0,0,0.05)' }}
                   />
                   <div>
                     <p
-                      className="text-xs uppercase tracking-[0.1em] text-[var(--navy-deep)] font-medium"
-                      style={{ fontFamily: 'var(--font-jetbrains-mono), monospace' }}
+                      className="uppercase tracking-widest font-medium"
+                      style={{
+                        fontFamily: 'var(--font-jetbrains-mono), monospace',
+                        fontWeight: 400,
+                        fontSize: '11px',
+                        color: 'var(--color-primary)',
+                      }}
                     >
                       {color.hex}
                     </p>
                     <p
-                      className="text-sm text-[var(--navy-deep)] mt-0.5"
-                      style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 700 }}
+                      className="mt-0.5"
+                      style={{
+                        fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                        fontWeight: 700,
+                        fontSize: '14px',
+                        color: 'var(--color-primary)',
+                      }}
                     >
                       {color.name}
                     </p>
                     <p
-                      className="text-xs text-[var(--iron-grey)] mt-0.5 leading-relaxed"
-                      style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
+                      className="mt-0.5 leading-relaxed"
+                      style={{
+                        fontFamily: 'var(--font-dm-sans), sans-serif',
+                        fontWeight: 400,
+                        fontSize: '12px',
+                        color: 'var(--color-secondary)',
+                      }}
                     >
                       {color.usage}
                     </p>
@@ -152,119 +213,148 @@ export default function BrandPage() {
         </section>
 
         {/* Typography */}
-        <section className="py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-7xl px-6 md:px-12">
             <h2
-              className="text-2xl sm:text-3xl text-[var(--navy-deep)] uppercase tracking-tight mb-8"
-              style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 800 }}
+              className="uppercase tracking-tight mb-8"
+              style={{
+                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontWeight: 800,
+                fontSize: '28px',
+                color: 'var(--color-primary)',
+              }}
             >
               Typography
             </h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Barlow Condensed */}
-              <div className="bg-white rounded-[2px] p-6 sm:p-8 border border-black/5">
+              <div className="p-6 md:p-8 bg-white border" style={{ borderColor: 'rgba(0,0,0,0.05)' }}>
                 <p
-                  className="text-xs uppercase tracking-[0.15em] text-[var(--signal-orange)] mb-4"
-                  style={{ fontFamily: 'var(--font-jetbrains-mono), monospace' }}
+                  className="uppercase tracking-widest mb-4"
+                  style={{
+                    fontFamily: 'var(--font-jetbrains-mono), monospace',
+                    fontWeight: 400,
+                    fontSize: '11px',
+                    color: 'var(--color-accent)',
+                  }}
                 >
                   Display — Headlines
                 </p>
                 <p
-                  className="text-4xl sm:text-5xl text-[var(--navy-deep)] uppercase tracking-tight leading-none mb-3"
-                  style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 800 }}
+                  className="uppercase tracking-tight leading-none mb-3"
+                  style={{
+                    fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                    fontWeight: 800,
+                    fontSize: '48px',
+                    color: 'var(--color-primary)',
+                  }}
                 >
                   Barlow Condensed
                 </p>
                 <p
-                  className="text-sm text-[var(--iron-grey)]"
-                  style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
+                  style={{
+                    fontFamily: 'var(--font-dm-sans), sans-serif',
+                    fontWeight: 400,
+                    fontSize: '14px',
+                    color: 'var(--color-secondary)',
+                  }}
                 >
                   Weights: 700, 800. Used for all headlines, section titles, and display text. Always uppercase.
                 </p>
                 <div className="mt-6 space-y-2">
-                  <p
-                    className="text-3xl text-[var(--navy-deep)] uppercase"
-                    style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 700 }}
-                  >
+                  <p className="uppercase" style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 700, fontSize: '28px', color: 'var(--color-primary)' }}>
                     Bold 700
                   </p>
-                  <p
-                    className="text-3xl text-[var(--navy-deep)] uppercase"
-                    style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 800 }}
-                  >
+                  <p className="uppercase" style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 800, fontSize: '28px', color: 'var(--color-primary)' }}>
                     Extra Bold 800
                   </p>
                 </div>
               </div>
 
               {/* DM Sans */}
-              <div className="bg-white rounded-[2px] p-6 sm:p-8 border border-black/5">
+              <div className="p-6 md:p-8 bg-white border" style={{ borderColor: 'rgba(0,0,0,0.05)' }}>
                 <p
-                  className="text-xs uppercase tracking-[0.15em] text-[var(--signal-orange)] mb-4"
-                  style={{ fontFamily: 'var(--font-jetbrains-mono), monospace' }}
+                  className="uppercase tracking-widest mb-4"
+                  style={{
+                    fontFamily: 'var(--font-jetbrains-mono), monospace',
+                    fontWeight: 400,
+                    fontSize: '11px',
+                    color: 'var(--color-accent)',
+                  }}
                 >
                   Body — Copy &amp; Navigation
                 </p>
                 <p
-                  className="text-3xl sm:text-4xl text-[var(--navy-deep)] leading-tight mb-3"
-                  style={{ fontFamily: 'var(--font-dm-sans), sans-serif', fontWeight: 500 }}
+                  className="leading-tight mb-3"
+                  style={{
+                    fontFamily: 'var(--font-dm-sans), sans-serif',
+                    fontWeight: 500,
+                    fontSize: '36px',
+                    color: 'var(--color-primary)',
+                  }}
                 >
                   DM Sans
                 </p>
                 <p
-                  className="text-sm text-[var(--iron-grey)]"
-                  style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
+                  style={{
+                    fontFamily: 'var(--font-dm-sans), sans-serif',
+                    fontWeight: 400,
+                    fontSize: '14px',
+                    color: 'var(--color-secondary)',
+                  }}
                 >
                   Weights: 400, 500. Used for all body copy, navigation labels, button text, and subheadings.
                 </p>
                 <div className="mt-6 space-y-2">
-                  <p
-                    className="text-xl text-[var(--navy-deep)]"
-                    style={{ fontFamily: 'var(--font-dm-sans), sans-serif', fontWeight: 400 }}
-                  >
+                  <p style={{ fontFamily: 'var(--font-dm-sans), sans-serif', fontWeight: 400, fontSize: '20px', color: 'var(--color-primary)' }}>
                     Regular 400
                   </p>
-                  <p
-                    className="text-xl text-[var(--navy-deep)]"
-                    style={{ fontFamily: 'var(--font-dm-sans), sans-serif', fontWeight: 500 }}
-                  >
+                  <p style={{ fontFamily: 'var(--font-dm-sans), sans-serif', fontWeight: 500, fontSize: '20px', color: 'var(--color-primary)' }}>
                     Medium 500
                   </p>
                 </div>
               </div>
 
               {/* JetBrains Mono */}
-              <div className="bg-white rounded-[2px] p-6 sm:p-8 border border-black/5">
+              <div className="p-6 md:p-8 bg-white border" style={{ borderColor: 'rgba(0,0,0,0.05)' }}>
                 <p
-                  className="text-xs uppercase tracking-[0.15em] text-[var(--signal-orange)] mb-4"
-                  style={{ fontFamily: 'var(--font-jetbrains-mono), monospace' }}
+                  className="uppercase tracking-widest mb-4"
+                  style={{
+                    fontFamily: 'var(--font-jetbrains-mono), monospace',
+                    fontWeight: 400,
+                    fontSize: '11px',
+                    color: 'var(--color-accent)',
+                  }}
                 >
                   Mono — Metadata &amp; Ticker
                 </p>
                 <p
-                  className="text-3xl sm:text-4xl text-[var(--navy-deep)] leading-tight mb-3"
-                  style={{ fontFamily: 'var(--font-jetbrains-mono), monospace', fontWeight: 400 }}
+                  className="leading-tight mb-3"
+                  style={{
+                    fontFamily: 'var(--font-jetbrains-mono), monospace',
+                    fontWeight: 400,
+                    fontSize: '32px',
+                    color: 'var(--color-primary)',
+                  }}
                 >
                   JetBrains Mono
                 </p>
                 <p
-                  className="text-sm text-[var(--iron-grey)]"
-                  style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
+                  style={{
+                    fontFamily: 'var(--font-dm-sans), sans-serif',
+                    fontWeight: 400,
+                    fontSize: '14px',
+                    color: 'var(--color-secondary)',
+                  }}
                 >
                   Weight: 400. Used for ticker text, captions, registration numbers, metadata, and labels.
                 </p>
                 <div className="mt-6 space-y-2">
-                  <p
-                    className="text-lg text-[var(--navy-deep)]"
-                    style={{ fontFamily: 'var(--font-jetbrains-mono), monospace', fontWeight: 400 }}
-                  >
+                  <p style={{ fontFamily: 'var(--font-jetbrains-mono), monospace', fontWeight: 400, fontSize: '18px', color: 'var(--color-primary)' }}>
                     Regular 400
                   </p>
-                  <p
-                    className="text-sm text-[var(--navy-deep)]/60 tracking-[0.15em] uppercase"
-                    style={{ fontFamily: 'var(--font-jetbrains-mono), monospace', fontWeight: 400 }}
-                  >
+                  <p className="uppercase tracking-widest" style={{ fontFamily: 'var(--font-jetbrains-mono), monospace', fontWeight: 400, fontSize: '14px', color: 'var(--color-primary)', opacity: 0.6 }}>
                     TRACKING WIDE
                   </p>
                 </div>
@@ -273,123 +363,47 @@ export default function BrandPage() {
           </div>
         </section>
 
-        {/* Usage Guidelines */}
-        <section className="py-16 sm:py-20 bg-white">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2
-              className="text-2xl sm:text-3xl text-[var(--navy-deep)] uppercase tracking-tight mb-8"
-              style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 800 }}
-            >
-              Usage Guidelines
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-[var(--port-sand)] rounded-[2px] p-6 border border-black/5">
-                <h3
-                  className="text-lg text-[var(--navy-deep)] uppercase mb-3"
-                  style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 700 }}
-                >
-                  Logo Usage
-                </h3>
-                <ul
-                  className="space-y-2 text-sm text-[var(--navy-deep)]/70"
-                  style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
-                >
-                  <li>• Always maintain clear space around the logo equal to the height of the &quot;L&quot; in the mark</li>
-                  <li>• Never stretch, skew, or rotate the logo</li>
-                  <li>• Use the light variant on Navy Deep or Navy Mid backgrounds</li>
-                  <li>• Use the dark variant on Port Sand, white, or light backgrounds</li>
-                  <li>• Minimum logo width: 80px for digital, 20mm for print</li>
-                </ul>
-              </div>
-
-              <div className="bg-[var(--port-sand)] rounded-[2px] p-6 border border-black/5">
-                <h3
-                  className="text-lg text-[var(--navy-deep)] uppercase mb-3"
-                  style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 700 }}
-                >
-                  Color Rules
-                </h3>
-                <ul
-                  className="space-y-2 text-sm text-[var(--navy-deep)]/70"
-                  style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
-                >
-                  <li>• Navy Deep is the dominant brand color — use it for large areas and primary backgrounds</li>
-                  <li>• Signal Orange is for accents only — buttons, highlights, and hover states</li>
-                  <li>• Never use Signal Orange as a background color for large sections</li>
-                  <li>• Iron Grey for secondary text, never for headlines</li>
-                  <li>• Port Sand for light sections that need warmth beyond plain white</li>
-                </ul>
-              </div>
-
-              <div className="bg-[var(--port-sand)] rounded-[2px] p-6 border border-black/5">
-                <h3
-                  className="text-lg text-[var(--navy-deep)] uppercase mb-3"
-                  style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 700 }}
-                >
-                  Typography Rules
-                </h3>
-                <ul
-                  className="space-y-2 text-sm text-[var(--navy-deep)]/70"
-                  style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
-                >
-                  <li>• Barlow Condensed is always uppercase in headlines</li>
-                  <li>• DM Sans for all body copy — never use for display headlines</li>
-                  <li>• JetBrains Mono for metadata, codes, and the ticker only</li>
-                  <li>• Button text: DM Sans 500, 14px, uppercase, tracking 0.05em</li>
-                  <li>• Never use Inter, Roboto, Arial, or system-ui as primary font</li>
-                </ul>
-              </div>
-
-              <div className="bg-[var(--port-sand)] rounded-[2px] p-6 border border-black/5">
-                <h3
-                  className="text-lg text-[var(--navy-deep)] uppercase mb-3"
-                  style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 700 }}
-                >
-                  Design Principles
-                </h3>
-                <ul
-                  className="space-y-2 text-sm text-[var(--navy-deep)]/70"
-                  style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
-                >
-                  <li>• One bold moment per section — everything else quiet</li>
-                  <li>• Border-radius 2px on buttons — industrial, not bubbly</li>
-                  <li>• Mobile-first: 375px base, responsive up</li>
-                  <li>• WhatsApp preferred over email for CTAs</li>
-                  <li>• All spacing and colors via CSS custom properties</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Contact for Assets */}
-        <section className="py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-16 md:py-20 text-center">
+          <div className="mx-auto max-w-7xl px-6 md:px-12">
             <h2
-              className="text-2xl sm:text-3xl text-[var(--navy-deep)] uppercase tracking-tight mb-4"
-              style={{ fontFamily: 'var(--font-barlow-condensed), sans-serif', fontWeight: 800 }}
+              className="uppercase tracking-tight mb-4"
+              style={{
+                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontWeight: 800,
+                fontSize: '28px',
+                color: 'var(--color-primary)',
+              }}
             >
               Need Brand Assets?
             </h2>
             <p
-              className="text-base text-[var(--iron-grey)] mb-8 max-w-lg mx-auto"
-              style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
+              className="mb-8 max-w-lg mx-auto"
+              style={{
+                fontFamily: 'var(--font-dm-sans), sans-serif',
+                fontWeight: 400,
+                fontSize: '16px',
+                color: 'var(--color-secondary)',
+              }}
             >
               For high-resolution logo files, brand guidelines PDF, or custom asset requests, contact our team.
             </p>
             <a
               href="mailto:ops.clearing@gmail.com"
-              className="inline-flex items-center justify-center bg-[var(--signal-orange)] text-[var(--manifest-white)] text-sm uppercase tracking-[0.05em] px-7 py-3.5 rounded-[2px] hover:bg-[var(--signal-orange)]/90 transition-colors duration-200"
-              style={{ fontFamily: 'var(--font-dm-sans), sans-serif', fontWeight: 500 }}
+              className="inline-flex items-center justify-center text-white text-sm tracking-widest uppercase px-7 py-3.5 transition-all duration-300"
+              style={{
+                fontFamily: 'var(--font-dm-sans), sans-serif',
+                fontWeight: 500,
+                backgroundColor: 'var(--color-accent)',
+                borderRadius: 'var(--radius-btn)',
+              }}
             >
               ops.clearing@gmail.com
             </a>
           </div>
         </section>
       </main>
-
       <Footer />
-    </div>
+    </>
   );
 }

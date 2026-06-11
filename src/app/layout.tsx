@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -42,7 +41,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "L&R Clearing Agency CC" }],
   icons: {
-    icon: "/logo-dark.png",
+    icon: "/brand/logo-icon.png",
   },
   openGraph: {
     title: "L&R Clearing Agency CC — Customs Clearing & Freight Forwarding",
@@ -66,7 +65,6 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
       >
         {children}
-        <Toaster />
       </body>
     </html>
   );
