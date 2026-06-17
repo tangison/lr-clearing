@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Ticker } from '@/components/Ticker';
 import { Footer } from '@/components/Footer';
+import { company } from '@/lib/content';
 
 const brandColors = [
   { name: 'Navy Deep', hex: '#1B2A4A', usage: 'Primary backgrounds, headers, footers' },
@@ -220,10 +221,10 @@ export default function BrandPage() {
               For high-resolution logo files, brand guidelines PDF, or custom asset requests, contact our team.
             </p>
             <a
-              href="mailto:ops.clearing@gmail.com"
+              href={`mailto:${company.email}`}
               className="font-body font-medium inline-flex items-center justify-center text-white text-sm tracking-widest uppercase px-7 py-3.5 transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
             >
-              ops.clearing@gmail.com
+              {company.email}
             </a>
           </div>
         </section>

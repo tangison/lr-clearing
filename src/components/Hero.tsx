@@ -4,13 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { company } from '@/lib/content';
 
 export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    // GSAP Hero headline animation — words fade up staggered
     if (headlineRef.current) {
       const words = headlineRef.current.querySelectorAll('.hero-word');
       gsap.fromTo(
@@ -45,7 +45,7 @@ export function Hero() {
             style={{ borderLeft: '2px solid var(--color-accent)' }}
           >
             <span className="font-mono font-normal text-xs md:text-sm tracking-widest uppercase text-[var(--color-accent)]">
-              NAMIBIA · EST. 2012
+              NAMIBIA · WALVIS BAY · LÜDERITZ
             </span>
           </div>
 
@@ -69,13 +69,13 @@ export function Hero() {
 
           {/* Subtext */}
           <p className="font-body font-normal text-base max-w-xl leading-relaxed mb-10 text-[var(--color-secondary)]">
-            Your reliable local partner for seamless cargo clearance across every port, airport, and border post.
+            Your trusted partner in customs clearing, freight forwarding, and logistics solutions — operating across Namibia and the Southern African region.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 items-center mb-12">
             <a
-              href="https://wa.me/264813759901"
+              href={company.social.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="font-body font-medium px-8 py-4 text-white text-sm tracking-widest uppercase transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
@@ -110,26 +110,26 @@ export function Hero() {
           >
             <div>
               <p className="font-display font-bold text-[1.75rem] mb-1 text-[var(--color-body-light)]">
+                2
+              </p>
+              <p className="font-mono font-normal text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
+                PORTS SERVED
+              </p>
+            </div>
+            <div style={{ borderLeft: `1px solid var(--border-subtle)` }} className="pl-4 md:pl-6">
+              <p className="font-display font-bold text-[1.75rem] mb-1 text-[var(--color-body-light)]">
                 7
               </p>
               <p className="font-mono font-normal text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
-                PORTS &amp; BORDERS
+                SERVICE LINES
               </p>
             </div>
             <div style={{ borderLeft: `1px solid var(--border-subtle)` }} className="pl-4 md:pl-6">
               <p className="font-display font-bold text-[1.75rem] mb-1 text-[var(--color-body-light)]">
-                48HR
+                10
               </p>
               <p className="font-mono font-normal text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
-                CLEARANCE
-              </p>
-            </div>
-            <div style={{ borderLeft: `1px solid var(--border-subtle)` }} className="pl-4 md:pl-6">
-              <p className="font-display font-bold text-[1.75rem] mb-1 text-[var(--color-body-light)]">
-                2012
-              </p>
-              <p className="font-mono font-normal text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
-                EST.
+                INDUSTRIES
               </p>
             </div>
           </div>

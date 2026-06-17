@@ -1,5 +1,10 @@
 export function TrustBar() {
-  const items = ['REGISTERED CC', 'VAT REGISTERED', 'NATIONWIDE COVERAGE', 'EST. 2012'];
+  const items = [
+    'REGISTERED NAMIBIAN CC',
+    'VAT REGISTERED',
+    'WALVIS BAY & LÜDERITZ PORTS',
+    'SADC CROSS-BORDER',
+  ];
 
   return (
     <section

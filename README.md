@@ -1,0 +1,122 @@
+# L&R Clearing Agency CC
+
+**Customs Clearing, Freight Forwarding & Logistics Solutions**
+
+A production-ready Next.js 16 corporate website for L&R Clearing Agency CC — a proudly Namibian-owned customs clearing and forwarding company based in Walvis Bay, Namibia.
+
+## Stack
+
+- **Next.js 16** (App Router, standalone output)
+- **React 19**
+- **TypeScript 5**
+- **Tailwind CSS v4**
+- **GSAP 3** (scroll-triggered animations)
+- **Sharp** (image optimization)
+
+## Design System
+
+| Token | Value | Usage |
+|------|-------|-------|
+| `--color-primary` | `#1B2A4A` (Navy Deep) | Primary backgrounds, headers, footers |
+| `--color-primary-mid` | `#243561` (Navy Mid) | Secondary backgrounds, cards |
+| `--color-accent` | `#E8642A` (Signal Orange) | CTAs, highlights, hover states |
+| `--color-light-bg` | `#F0EBE1` (Port Sand) | Light section fills |
+| `--color-body-light` | `#FAFAF8` (Manifest White) | Body text on dark, page backgrounds |
+| `--color-secondary` | `#9DB0C8` (Iron Grey) | Captions, secondary text |
+| `--color-near-black` | `#111827` | Footer background |
+
+Typography: **Barlow Condensed** (display), **DM Sans** (body), **JetBrains Mono** (mono labels).
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx                  # Root layout, fonts, JSON-LD, metadata
+│   ├── page.tsx                    # Home
+│   ├── about/
+│   │   ├── page.tsx                # About overview
+│   │   ├── vision-mission/
+│   │   ├── core-values/
+│   │   ├── why-choose-us/
+│   │   └── operational-coverage/
+│   ├── services/
+│   │   ├── page.tsx                # All services index
+│   │   └── [slug]/page.tsx         # 7 dynamic service detail pages
+│   ├── industries/page.tsx         # 10 industries
+│   ├── compliance/
+│   │   ├── health-safety/
+│   │   ├── regulations/
+│   │   ├── customs-advisory/
+│   │   └── risk-management/
+│   ├── contact/page.tsx            # Contact + inquiry form
+│   ├── faq/page.tsx                # 18 FAQs across 8 categories
+│   ├── terms/page.tsx
+│   ├── privacy/page.tsx
+│   ├── sitemap/page.tsx            # HTML sitemap
+│   ├── sitemap.ts                  # sitemap.xml
+│   ├── manifest.ts                 # PWA manifest
+│   ├── brand/page.tsx              # Brand guidelines
+│   ├── portfolio/page.tsx          # 308 redirect → /services
+│   └── api/inquiry/route.ts        # Contact form endpoint
+├── components/
+│   ├── Navbar.tsx                  # Sticky nav + services dropdown + search
+│   ├── Footer.tsx                  # 4-column footer
+│   ├── Hero.tsx                    # GSAP-animated hero
+│   ├── Ticker.tsx                  # Marquee of served locations
+│   ├── TrustBar.tsx                # Trust indicators band
+│   ├── Services.tsx                # Home page services grid
+│   ├── WhyLR.tsx                   # Competitive advantages grid
+│   ├── ImageStrip.tsx              # Parallax CTA strip
+│   ├── ContactCTA.tsx              # Reusable CTA section
+│   ├── ContactForm.tsx             # Inquiry form (POST /api/inquiry)
+│   ├── PageHeader.tsx              # Interior page hero
+│   ├── FAQAccordion.tsx            # Expandable FAQ item
+│   └── FAQClient.tsx               # Searchable FAQ with category filter
+└── lib/
+    ├── content.ts                  # Single source of truth for all copy
+    ├── icons.tsx                   # SVG icon registry
+    └── utils.ts                    # cn() helper
+
+skills/
+└── tangison-audit/
+    └── SKILL.md                    # Autonomous audit orchestration skill
+```
+
+## Brand Assets
+
+- `/public/brand/logo-full.png` — Full logo (mark + wordmark + tagline). Used in footer + brand page.
+- `/public/brand/logo-icon.png` — Monogram only. Used in navbar + favicon + manifest.
+- `/public/images/hero.jpeg` — Port straddle carrier. Hero image.
+- `/public/images/forklift.jpeg` — Forklift operations. Image strip.
+- `/public/images/office.jpeg` — Customs office. (Reserved.)
+
+## Contact
+
+- **L&R Clearing Agency CC**
+- **CC/2012/1572 · VAT 05757590615**
+- Cnr 10th Road & Sam Nujoma Ave, Walvis Bay, Namibia
+- Phone: +264 81 375 9901
+- Email: ops.clearing@gmail.com
+- WhatsApp: https://wa.me/264813759901
+
+## Development
+
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build
+npm run lint
+```
+
+## Deployment
+
+The site is configured for Vercel. Push to `main` on GitHub to trigger an automatic production deployment. Production URL: https://lr-clearing.vercel.app
+
+## Skills
+
+The repo contains the **Tangison Audit** skill at `skills/tangison-audit/SKILL.md` — an autonomous self-healing audit orchestration spec that can be invoked to continuously audit, fix, and re-audit the project until quality targets are met.
+
+---
+
+Built by [Tangison Studio](https://studio.tangison.com).
