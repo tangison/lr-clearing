@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Ticker } from '@/components/Ticker';
@@ -35,46 +36,46 @@ export default function ServicesPage() {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="group block p-8 md:p-10 rounded-[var(--radius-card)] transition-all duration-300 hover:translate-x-1"
+                  className="group grid md:grid-cols-12 gap-6 md:gap-10 p-6 md:p-8 rounded-[var(--radius-card)] transition-all duration-300 hover:translate-x-1 overflow-hidden"
                   style={{
                     backgroundColor: 'white',
                     border: '1px solid var(--border-divider)',
                     borderLeft: '4px solid var(--color-accent)',
                   }}
                 >
-                  <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-start">
-                    <div className="md:col-span-1">
+                  {/* Image */}
+                  <div className="md:col-span-4 relative overflow-hidden rounded-[var(--radius-card)]" style={{ aspectRatio: '4 / 3' }}>
+                    <Image
+                      src={s.image}
+                      alt={s.imageAlt}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 400px"
+                    />
+                  </div>
+                  {/* Content */}
+                  <div className="md:col-span-8 flex flex-col justify-center">
+                    <div className="flex items-center gap-4 mb-3">
                       <span className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)]">
                         {s.number}
                       </span>
-                    </div>
-                    <div className="md:col-span-2 flex md:justify-center">
-                      <span
-                        className="inline-flex items-center justify-center w-14 h-14 rounded-[var(--radius-card)]"
-                        style={{ backgroundColor: 'var(--color-light-bg)', color: 'var(--color-accent)' }}
-                      >
-                        <Icon name={s.icon} className="w-7 h-7" />
+                      <span className="inline-flex w-8 h-8 items-center justify-center rounded-[var(--radius-card)]" style={{ backgroundColor: 'var(--color-light-bg)', color: 'var(--color-accent)' }}>
+                        <Icon name={s.icon} className="w-4 h-4" />
                       </span>
                     </div>
-                    <div className="md:col-span-6">
-                      <h3
-                        className="font-display font-bold text-[var(--color-primary)] mb-3 group-hover:text-[var(--color-accent)] transition-colors"
-                        style={{ fontSize: '1.75rem', lineHeight: 1.2 }}
-                      >
-                        {s.title}
-                      </h3>
-                      <p className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/75">
-                        {s.shortDescription}
-                      </p>
-                    </div>
-                    <div className="md:col-span-3 flex md:justify-end items-start">
-                      <span
-                        className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] group-hover:translate-x-1 transition-transform"
-                      >
-                        Explore
-                        <Icon name="arrow-right" className="w-4 h-4" />
-                      </span>
-                    </div>
+                    <h3
+                      className="font-display font-bold text-[var(--color-primary)] mb-3 group-hover:text-[var(--color-accent)] transition-colors"
+                      style={{ fontSize: '1.75rem', lineHeight: 1.2 }}
+                    >
+                      {s.title}
+                    </h3>
+                    <p className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/75 mb-4">
+                      {s.shortDescription}
+                    </p>
+                    <span className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] group-hover:translate-x-1 transition-transform">
+                      Explore
+                      <Icon name="arrow-right" className="w-4 h-4" />
+                    </span>
                   </div>
                 </Link>
               ))}

@@ -39,11 +39,11 @@ export function ImageStrip() {
       className="relative w-full overflow-hidden"
       style={{ height: 'clamp(280px, 30vw, 400px)' }}
     >
-      {/* Forklift Image */}
+      {/* Port sunset image */}
       <div ref={imageRef} className="absolute inset-0 w-full h-full">
         <Image
-          src="/images/forklift.jpeg"
-          alt="Forklift unloading cargo vessel at Walvis Bay Port"
+          src="/images/scenes/port-sunset.jpeg"
+          alt="Commercial cargo ship docked at container terminal at sunset"
           fill
           className="object-cover"
           sizes="100vw"
@@ -56,7 +56,7 @@ export function ImageStrip() {
         style={{
           background:
             'linear-gradient(to right, var(--color-primary) 40%, transparent 100%)',
-          opacity: 0.75,
+          opacity: 0.85,
         }}
       />
 

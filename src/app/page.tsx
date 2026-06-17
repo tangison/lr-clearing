@@ -5,6 +5,7 @@ import { TrustBar } from '@/components/TrustBar';
 import { Services } from '@/components/Services';
 import { WhyLR } from '@/components/WhyLR';
 import { ImageStrip } from '@/components/ImageStrip';
+import { ScenesGallery } from '@/components/ScenesGallery';
 import { ContactCTA } from '@/components/ContactCTA';
 import { Footer } from '@/components/Footer';
 
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <TrustBar />
         <Services />
+        <ScenesGallery />
         <WhyLR />
         <ImageStrip />
         <ContactCTA />

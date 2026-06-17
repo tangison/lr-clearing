@@ -87,6 +87,8 @@ export type Service = {
   longDescription: string;
   items: string[];
   icon: "customs" | "freight" | "port" | "documents" | "cargo" | "logistics" | "specialized";
+  image: string;
+  imageAlt: string;
 };
 
 export const services: Service[] = [
@@ -110,6 +112,8 @@ export const services: Service[] = [
       "Customs consultancy and advisory services",
     ],
     icon: "customs",
+    image: "/images/services/customs-clearing.jpeg",
+    imageAlt: "Customs officer inspecting cargo documents at a border crossing",
   },
   {
     slug: "freight-forwarding",
@@ -128,6 +132,8 @@ export const services: Service[] = [
       "Door-to-door delivery coordination",
     ],
     icon: "freight",
+    image: "/images/services/freight-forwarding.jpeg",
+    imageAlt: "Container ship being loaded at a port terminal",
   },
   {
     slug: "port-and-border-operations",
@@ -145,6 +151,8 @@ export const services: Service[] = [
       "Container movement coordination",
     ],
     icon: "port",
+    image: "/images/services/walvis-bay-port.jpeg",
+    imageAlt: "Aerial view of Walvis Bay port container terminal",
   },
   {
     slug: "import-export-documentation",
@@ -164,6 +172,8 @@ export const services: Service[] = [
       "Shipping and transport documentation",
     ],
     icon: "documents",
+    image: "/images/scenes/customs-2.jpeg",
+    imageAlt: "Customs documentation review at a border post",
   },
   {
     slug: "cargo-management",
@@ -181,6 +191,8 @@ export const services: Service[] = [
       "Cargo release arrangements",
     ],
     icon: "cargo",
+    image: "/images/scenes/cargo-ship-2.jpeg",
+    imageAlt: "Cargo ship docked at container terminal",
   },
   {
     slug: "supply-chain-solutions",
@@ -198,6 +210,8 @@ export const services: Service[] = [
       "Third-party logistics (3PL) support",
     ],
     icon: "logistics",
+    image: "/images/services/warehouse.jpeg",
+    imageAlt: "Warehouse interior with storage racks at a distribution center",
   },
   {
     slug: "specialized-services",
@@ -217,6 +231,8 @@ export const services: Service[] = [
       "Oversized and abnormal cargo coordination",
     ],
     icon: "specialized",
+    image: "/images/scenes/truck-highway.jpeg",
+    imageAlt: "Long-haul truck on highway carrying specialized cargo",
   },
 ];
 
@@ -226,60 +242,80 @@ export const industries = [
     description:
       "Import of heavy machinery, explosives precursors, reagents, and consumables for Namibia's uranium, gold, zinc, and diamond operations; export of mineral concentrates.",
     icon: "mining",
+    image: "/images/industries/mining.jpeg",
+    imageAlt: "Mining dump truck operating in an open-pit mine",
   },
   {
     name: "Agriculture Sector",
     description:
       "Export of beef, grapes, dates, and other primary produce; import of farming equipment, fertilizers, and agrochemicals with full phytosanitary and permit support.",
     icon: "agriculture",
+    image: "/images/industries/agriculture.jpeg",
+    imageAlt: "Agricultural grape vineyard at harvest time",
   },
   {
     name: "Manufacturing Industry",
     description:
       "Inbound raw materials and outbound finished goods, with bonded warehouse arrangements and drawback claims where applicable.",
     icon: "manufacturing",
+    image: "/images/industries/manufacturing.jpeg",
+    imageAlt: "Factory manufacturing production line",
   },
   {
     name: "Construction Sector",
     description:
       "Clearance of structural steel, cement, roofing materials, and project equipment for civil and building contractors across Namibia.",
     icon: "construction",
+    image: "/images/industries/construction.jpeg",
+    imageAlt: "Construction site with building materials and crane",
   },
   {
     name: "Retail & Wholesale Businesses",
     description:
       "High-volume containerized imports of consumer goods through Walvis Bay, with consolidation and distribution support to inland distribution centres.",
     icon: "retail",
+    image: "/images/scenes/warehouse-wide.jpeg",
+    imageAlt: "Warehouse distribution center with storage racks",
   },
   {
     name: "Automotive Industry",
     description:
       "Vehicle imports (new and used), spare parts, and the specific clearance regime that applies to used vehicle imports into Namibia.",
     icon: "automotive",
+    image: "/images/scenes/truck-highway.jpeg",
+    imageAlt: "Vehicles being transported by long-haul truck",
   },
   {
     name: "Fisheries Sector",
     description:
       "Export of fresh and frozen fish and fishmeal through Lüderitz and Walvis Bay, including cold-chain coordination and health certificate verification.",
     icon: "fisheries",
+    image: "/images/industries/fisheries.jpeg",
+    imageAlt: "Fishing trawler vessel at port",
   },
   {
     name: "Oil & Gas Industry",
     description:
       "Support for exploration and production campaigns, including temporary imports of drilling equipment and dangerous goods documentation.",
     icon: "oilgas",
+    image: "/images/scenes/port-sunset.jpeg",
+    imageAlt: "Industrial port operations at sunset",
   },
   {
     name: "General Trading Companies",
     description:
       "Routine import/export clearance for traders across all commodity categories, with competitive per-line pricing.",
     icon: "trading",
+    image: "/images/scenes/port-wide.jpeg",
+    imageAlt: "Wide view of commercial port operations",
   },
   {
     name: "Small & Medium Enterprises (SMEs)",
     description:
       "Accessible, advisory-led clearance for first-time importers and growing SMEs, with plain-language explanations of every step.",
     icon: "sme",
+    image: "/images/scenes/port-aerial.jpeg",
+    imageAlt: "Aerial view of port logistics infrastructure",
   },
 ];
 

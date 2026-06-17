@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -38,7 +39,6 @@ export function Services() {
     };
   }, []);
 
-  // Show first 4 services on home; rest on /services
   const homeServices = services.slice(0, 4);
 
   return (
@@ -72,47 +72,54 @@ export function Services() {
           </Link>
         </div>
 
-        <div
-          ref={cardsRef}
-          className="grid grid-cols-1 md:grid-cols-2"
-          style={{ gap: '1px', backgroundColor: 'var(--border-faint)' }}
-        >
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {homeServices.map((service) => (
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="service-card group relative p-8 md:p-10 transition-all duration-200 block"
+              className="service-card group relative overflow-hidden rounded-[var(--radius-card)] block transition-all duration-300 hover:translate-y-1"
               style={{
                 backgroundColor: 'var(--color-primary-mid)',
-                borderRadius: '0px',
-                borderLeft: '2px solid transparent',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderLeftColor = 'var(--color-accent)';
-                e.currentTarget.style.transform = 'translateX(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderLeftColor = 'transparent';
-                e.currentTarget.style.transform = 'translateX(0)';
+                border: '1px solid var(--border-subtle)',
               }}
             >
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-[var(--color-accent)]">
-                  <Icon name={service.icon} className="w-8 h-8" />
-                </span>
-                <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
-                  {service.number}
+              {/* Background image */}
+              <div className="relative w-full overflow-hidden" style={{ aspectRatio: '16 / 10' }}>
+                <Image
+                  src={service.image}
+                  alt={service.imageAlt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: 'linear-gradient(180deg, rgba(27,42,74,0.2) 0%, rgba(27,42,74,0.95) 100%)',
+                  }}
+                />
+              </div>
+
+              {/* Content overlay */}
+              <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="inline-flex w-9 h-9 items-center justify-center rounded-[var(--radius-card)] backdrop-blur-sm" style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: 'var(--color-accent)' }}>
+                    <Icon name={service.icon} className="w-5 h-5" />
+                  </span>
+                  <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
+                    {service.number}
+                  </span>
+                </div>
+                <h3 className="font-display font-bold text-[1.375rem] mb-2 text-white group-hover:text-[var(--color-accent)] transition-colors">
+                  {service.title}
+                </h3>
+                <p className="font-body font-normal text-[0.9375rem] leading-[1.6] text-[var(--color-secondary)] line-clamp-2">
+                  {service.shortDescription}
+                </p>
+                <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent)] mt-4 inline-flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                  Explore →
                 </span>
               </div>
-              <h3 className="font-display font-bold text-[1.375rem] mb-3 text-[var(--color-body-light)]">
-                {service.title}
-              </h3>
-              <p className="font-body font-normal text-[0.9375rem] leading-[1.7] text-[var(--color-secondary)]">
-                {service.shortDescription}
-              </p>
-              <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent)] mt-6 inline-block group-hover:translate-x-1 transition-transform">
-                Explore →
-              </span>
             </Link>
           ))}
         </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Navbar } from '@/components/Navbar';
 import { Ticker } from '@/components/Ticker';
 import { Footer } from '@/components/Footer';
@@ -33,24 +34,45 @@ export default function IndustriesPage() {
               {industries.map((ind) => (
                 <div
                   key={ind.name}
-                  className="p-8 rounded-[var(--radius-card)] transition-all duration-300"
+                  className="group rounded-[var(--radius-card)] overflow-hidden transition-all duration-300 hover:translate-y-1"
                   style={{
                     backgroundColor: 'white',
                     border: '1px solid var(--border-divider)',
                   }}
                 >
-                  <span
-                    className="inline-flex items-center justify-center w-12 h-12 rounded-[var(--radius-card)] mb-5"
-                    style={{ backgroundColor: 'var(--color-light-bg)', color: 'var(--color-accent)' }}
-                  >
-                    <Icon name={ind.icon as IconName} className="w-6 h-6" />
-                  </span>
-                  <h3 className="font-display font-bold text-xl text-[var(--color-primary)] mb-3">
-                    {ind.name}
-                  </h3>
-                  <p className="font-body text-[0.9375rem] leading-relaxed text-[var(--color-primary)]/75">
-                    {ind.description}
-                  </p>
+                  {/* Image */}
+                  <div className="relative overflow-hidden" style={{ aspectRatio: '16 / 10' }}>
+                    <Image
+                      src={ind.image}
+                      alt={ind.imageAlt}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background: 'linear-gradient(180deg, rgba(27,42,74,0) 40%, rgba(27,42,74,0.9) 100%)',
+                      }}
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span
+                        className="inline-flex w-10 h-10 items-center justify-center rounded-[var(--radius-card)] backdrop-blur-sm"
+                        style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: 'white' }}
+                      >
+                        <Icon name={ind.icon as IconName} className="w-5 h-5" />
+                      </span>
+                    </div>
+                    <h3 className="absolute bottom-4 left-4 right-4 font-display font-bold text-white text-lg leading-tight">
+                      {ind.name}
+                    </h3>
+                  </div>
+                  {/* Body */}
+                  <div className="p-6">
+                    <p className="font-body text-[0.9375rem] leading-relaxed text-[var(--color-primary)]/75">
+                      {ind.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

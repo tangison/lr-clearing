@@ -130,7 +130,8 @@ export default function ContactPage() {
                   Submit a shipment inquiry.
                 </h2>
                 <p className="mt-4 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/80">
-                  Provide as much detail as you have. The more we know about your cargo, route, and
+                  Fill in the details below and we'll open WhatsApp with your inquiry
+                  pre-filled — just hit send. The more we know about your cargo, route, and
                   timeline, the more precise our response will be.
                 </p>
                 <div className="mt-8">

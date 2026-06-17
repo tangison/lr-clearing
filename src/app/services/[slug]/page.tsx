@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Navbar } from '@/components/Navbar';
@@ -53,6 +54,39 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
             { label: service.title },
           ]}
         />
+
+        {/* Hero image */}
+        <section style={{ backgroundColor: 'var(--color-body-light)' }}>
+          <div className="mx-auto max-w-7xl px-6 md:px-12 -mt-8 md:-mt-12 pb-8 md:pb-12 relative z-10">
+            <div
+              className="relative w-full overflow-hidden rounded-[var(--radius-card)]"
+              style={{ aspectRatio: '21 / 9', boxShadow: '0 20px 50px -20px rgba(27,42,74,0.45)' }}
+            >
+              <Image
+                src={service.image}
+                alt={service.imageAlt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 1200px"
+                priority
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: 'linear-gradient(180deg, rgba(27,42,74,0) 50%, rgba(27,42,74,0.85) 100%)',
+                }}
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent)] mb-2">
+                  Service {service.number}
+                </p>
+                <h2 className="font-display font-extrabold text-white text-2xl md:text-4xl leading-tight">
+                  {service.title}
+                </h2>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section style={{ backgroundColor: 'var(--color-body-light)' }}>
           <div className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-24">

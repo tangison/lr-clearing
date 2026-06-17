@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Navbar } from '@/components/Navbar';
 import { Ticker } from '@/components/Ticker';
 import { Footer } from '@/components/Footer';
@@ -34,7 +35,7 @@ export default function AboutPage() {
           breadcrumb={[{ label: 'Home', href: '/' }, { label: 'About' }]}
         />
 
-        {/* About body */}
+        {/* About body with image */}
         <section style={{ backgroundColor: 'var(--color-body-light)' }}>
           <div className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-24">
             <div className="grid lg:grid-cols-3 gap-12">
@@ -48,39 +49,70 @@ export default function AboutPage() {
                   </p>
                 ))}
               </div>
-              <aside
-                className="rounded-[var(--radius-card)] p-8 h-fit"
-                style={{ backgroundColor: 'var(--color-light-bg)', border: '1px solid var(--border-divider)' }}
-              >
-                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">
-                  At a Glance
-                </p>
-                <dl className="space-y-4 font-body text-sm">
-                  <div>
-                    <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Legal Name</dt>
-                    <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.legalName}</dd>
+              <aside className="space-y-6">
+                {/* Hero image of port operations */}
+                <div
+                  className="relative w-full overflow-hidden rounded-[var(--radius-card)]"
+                  style={{ aspectRatio: '4 / 5' }}
+                >
+                  <Image
+                    src="/images/scenes/port-sunset.jpeg"
+                    alt="Commercial cargo ship docked at container terminal at sunset"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 400px"
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: 'linear-gradient(180deg, rgba(27,42,74,0) 40%, rgba(27,42,74,0.95) 100%)',
+                    }}
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent)] mb-2">
+                      Based in
+                    </p>
+                    <p className="font-display font-bold text-white text-2xl leading-tight">
+                      {company.address.city}, {company.address.country}
+                    </p>
                   </div>
-                  <div>
-                    <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Registration</dt>
-                    <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.registration}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">VAT Number</dt>
-                    <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.vat}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Country</dt>
-                    <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.country}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Ports Served</dt>
-                    <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.ports.join(' · ')}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Region</dt>
-                    <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.regions.join(' · ')}</dd>
-                  </div>
-                </dl>
+                </div>
+
+                {/* At a Glance card */}
+                <div
+                  className="rounded-[var(--radius-card)] p-8"
+                  style={{ backgroundColor: 'var(--color-light-bg)', border: '1px solid var(--border-divider)' }}
+                >
+                  <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">
+                    At a Glance
+                  </p>
+                  <dl className="space-y-4 font-body text-sm">
+                    <div>
+                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Legal Name</dt>
+                      <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.legalName}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Registration</dt>
+                      <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.registration}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">VAT Number</dt>
+                      <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.vat}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Country</dt>
+                      <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.country}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Ports Served</dt>
+                      <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.ports.join(' · ')}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Region</dt>
+                      <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.regions.join(' · ')}</dd>
+                    </div>
+                  </dl>
+                </div>
               </aside>
             </div>
           </div>

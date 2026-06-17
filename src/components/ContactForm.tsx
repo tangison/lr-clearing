@@ -4,60 +4,65 @@ import { useState } from 'react';
 import { company } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
-type Status = 'idle' | 'submitting' | 'success' | 'error';
+type Status = 'idle' | 'submitting';
 
+/**
+ * ContactForm — gathers inquiry details, then redirects to WhatsApp
+ * with a pre-filled message addressed to the L&R ops team.
+ *
+ * Rationale: the client requested that all contact form submissions
+ * land directly in WhatsApp, where the team already operates and
+ * responds fastest. No backend endpoint is needed.
+ */
 export function ContactForm() {
   const [status, setStatus] = useState<Status>('idle');
-  const [error, setError] = useState<string>('');
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus('submitting');
-    setError('');
 
-    const formData = new FormData(e.currentTarget);
-    const payload = Object.fromEntries(formData.entries());
+    const form = e.currentTarget;
+    const fd = new FormData(form);
 
-    try {
-      const res = await fetch('/api/inquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) {
-        throw new Error(`Request failed (${res.status})`);
-      }
-      setStatus('success');
-      (e.target as HTMLFormElement).reset();
-    } catch (err) {
-      setStatus('error');
-      setError(err instanceof Error ? err.message : 'Unknown error');
+    const name = String(fd.get('name') || '').trim();
+    const company_name = String(fd.get('company') || '').trim();
+    const email = String(fd.get('email') || '').trim();
+    const phone = String(fd.get('phone') || '').trim();
+    const cargo = String(fd.get('cargo') || '').trim();
+    const origin = String(fd.get('origin') || '').trim();
+    const destination = String(fd.get('destination') || '').trim();
+    const serviceType = String(fd.get('serviceType') || '').trim();
+    const message = String(fd.get('message') || '').trim();
+
+    // Build a clean WhatsApp message
+    const lines: string[] = [];
+    lines.push('*L&R Clearing — New Inquiry*');
+    lines.push('');
+    if (name) lines.push(`*Name:* ${name}`);
+    if (company_name) lines.push(`*Company:* ${company_name}`);
+    if (email) lines.push(`*Email:* ${email}`);
+    if (phone) lines.push(`*Phone:* ${phone}`);
+    if (serviceType) lines.push(`*Service:* ${serviceType}`);
+    if (cargo) lines.push(`*Cargo:* ${cargo}`);
+    if (origin) lines.push(`*Origin:* ${origin}`);
+    if (destination) lines.push(`*Destination:* ${destination}`);
+    if (message) {
+      lines.push('');
+      lines.push('*Message:*');
+      lines.push(message);
     }
-  }
+    lines.push('');
+    lines.push('_Sent from lr-clearing.vercel.app_');
 
-  if (status === 'success') {
-    return (
-      <div
-        className="p-10 rounded-[var(--radius-card)] text-center"
-        style={{ backgroundColor: 'white', border: '1px solid var(--border-divider)' }}
-      >
-        <div className="inline-flex w-14 h-14 items-center justify-center rounded-full mb-4" style={{ backgroundColor: 'var(--color-accent)', color: 'white' }}>
-          <Icon name="check" className="w-7 h-7" />
-        </div>
-        <h3 className="font-display font-bold text-2xl text-[var(--color-primary)] mb-2">Inquiry received.</h3>
-        <p className="font-body text-[var(--color-primary)]/75 max-w-md mx-auto">
-          Thank you. Our team will respond within one business hour during office hours. For urgent
-          matters, message us on WhatsApp at {company.phoneDisplay}.
-        </p>
-        <button
-          type="button"
-          onClick={() => setStatus('idle')}
-          className="mt-6 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] hover:underline"
-        >
-          Submit another inquiry →
-        </button>
-      </div>
-    );
+    const text = encodeURIComponent(lines.join('\n'));
+    const url = `https://wa.me/${company.whatsapp}?text=${text}`;
+
+    // Brief delay so the user sees the "Sending…" state, then redirect
+    setTimeout(() => {
+      window.open(url, '_blank', 'noopener,noreferrer');
+      setStatus('idle');
+      form.reset();
+    }, 400);
   }
 
   return (
@@ -115,24 +120,18 @@ export function ContactForm() {
         />
       </div>
 
-      {status === 'error' && (
-        <p className="font-body text-sm text-red-600" role="alert">
-          Could not submit: {error}. Please email us directly at {company.email}.
-        </p>
-      )}
-
       <button
         type="submit"
         disabled={status === 'submitting'}
         className="w-full inline-flex items-center justify-center gap-2 font-body font-medium px-7 py-4 text-xs tracking-widest uppercase transition-all duration-300 rounded-[var(--radius-btn)] disabled:opacity-60"
         style={{ backgroundColor: 'var(--color-accent)', color: 'white' }}
       >
-        {status === 'submitting' ? 'Submitting…' : 'Submit Inquiry'}
-        {status !== 'submitting' && <Icon name="arrow-right" className="w-4 h-4" />}
+        <Icon name="whatsapp" className="w-4 h-4" />
+        {status === 'submitting' ? 'Opening WhatsApp…' : 'Send via WhatsApp'}
       </button>
 
-      <p className="font-body text-xs text-[var(--color-secondary)] text-center">
-        By submitting you agree to be contacted by {company.legalName} regarding your inquiry. We do not share your data with third parties.
+      <p className="font-body text-xs text-[var(--color-secondary)] text-center leading-relaxed">
+        Submitting opens WhatsApp with your details pre-filled — just hit send. We respond within one business hour during office hours (07:30–17:00 CAT, Mon–Fri).
       </p>
     </form>
   );
