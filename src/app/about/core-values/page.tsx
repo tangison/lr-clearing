@@ -5,7 +5,6 @@ import { Footer } from '@/components/Footer';
 import { ContactCTA } from '@/components/ContactCTA';
 import { PageHeader } from '@/components/PageHeader';
 import { coreValues } from '@/lib/content';
-import { Icon } from '@/lib/icons';
 
 export const metadata: Metadata = {
   title: "Core Values — L&R Clearing Agency CC",

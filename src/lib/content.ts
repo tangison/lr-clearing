@@ -474,6 +474,47 @@ export const stats = [
   { value: "10", label: "Industries Served", suffix: "" },
 ];
 
+export type TeamMember = {
+  name: string;
+  title: string;
+  credentials: string;
+  bio: string;
+  phone: string;
+  whatsapp: string;
+  email: string;
+  image: string;
+  imageAlt: string;
+};
+
+export const team: TeamMember[] = [
+  {
+    name: "Linus Sibungo",
+    title: "Founder & Managing Director",
+    credentials: "PhD — Transportation & Logistics Management",
+    bio: "Linus founded L&R Clearing Agency CC with a vision to build a world-class, proudly Namibian customs clearing and freight forwarding company. With a doctorate in Transportation & Logistics Management and years of hands-on experience at Namibia's ports and border posts, he leads the company's operations, strategic growth, and international partnerships.",
+    phone: "+264 83 785 7640",
+    whatsapp: "+264 81 375 9901",
+    email: "ops.clearing@gmail.com",
+    image: "/images/team/linus-sibungo.jpeg",
+    imageAlt: "Linus Sibungo — Founder & Managing Director of L&R Clearing Agency CC",
+  },
+  {
+    name: "Patience Sibungo",
+    title: "Admin & Finance Director",
+    credentials: "",
+    bio: "Patience oversees the financial health, administrative operations, and compliance framework of L&R Clearing Agency CC. Her meticulous approach to financial management and client administration ensures that every shipment is handled with full accountability and transparency from first contact through to final delivery.",
+    phone: "+264 81 842 5922",
+    whatsapp: "+264 81 842 5922",
+    email: "ops.clearing@gmail.com",
+    image: "/images/team/patience-sibungo.jpeg",
+    imageAlt: "Patience Sibungo — Admin & Finance Director of L&R Clearing Agency CC",
+  },
+];
+
+// TODO: source a real construction.jpeg — current placeholder remains on the
+// Construction industry card only. All other industry/scene/service images
+// have been replaced with client-supplied Namibia-authentic photos (2026-06-26).
+
 export const nav = {
   primary: [
     { label: "Home", href: "/" },

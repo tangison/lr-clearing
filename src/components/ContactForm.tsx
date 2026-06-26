@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { company } from '@/lib/content';
+import { siteUrl } from '@/lib/siteConfig';
 import { Icon } from '@/lib/icons';
 
 type Status = 'idle' | 'submitting';
@@ -52,7 +53,7 @@ export function ContactForm() {
       lines.push(message);
     }
     lines.push('');
-    lines.push('_Sent from lr-clearing.vercel.app_');
+    lines.push(`_Sent from ${siteUrl}_`);
 
     const text = encodeURIComponent(lines.join('\n'));
     const url = `https://wa.me/${company.whatsapp}?text=${text}`;
@@ -91,18 +92,20 @@ export function ContactForm() {
         <select
           id="serviceType"
           name="serviceType"
+          defaultValue=""
           className="w-full px-4 py-3 rounded-[var(--radius-btn)] border-0 font-body text-[var(--color-primary)]"
           style={{ backgroundColor: 'var(--color-light-bg)' }}
         >
-          <option>Customs clearance</option>
-          <option>Sea freight forwarding</option>
-          <option>Air freight forwarding</option>
-          <option>Road / cross-border freight</option>
-          <option>Port &amp; border operations</option>
-          <option>Documentation support</option>
-          <option>Supply chain / 3PL</option>
-          <option>Specialized cargo</option>
-          <option>Not sure — please advise</option>
+          <option value="" disabled>Select a service…</option>
+          <option value="Customs clearance">Customs clearance</option>
+          <option value="Sea freight forwarding">Sea freight forwarding</option>
+          <option value="Air freight forwarding">Air freight forwarding</option>
+          <option value="Road / cross-border freight">Road / cross-border freight</option>
+          <option value="Port & border operations">Port &amp; border operations</option>
+          <option value="Documentation support">Documentation support</option>
+          <option value="Supply chain / 3PL">Supply chain / 3PL</option>
+          <option value="Specialized cargo">Specialized cargo</option>
+          <option value="Not sure — please advise">Not sure — please advise</option>
         </select>
       </div>
       <div>

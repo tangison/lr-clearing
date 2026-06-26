@@ -12,6 +12,8 @@ export function WhyLR() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
     if (sectionRef.current) {
       const blocks = sectionRef.current.querySelectorAll('.advantage-block');
       blocks.forEach((block) => {

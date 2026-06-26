@@ -4,13 +4,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { company } from '@/lib/content';
+import { company, stats } from '@/lib/content';
 
 export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
     if (headlineRef.current) {
       const words = headlineRef.current.querySelectorAll('.hero-word');
       gsap.fromTo(
@@ -78,60 +80,38 @@ export function Hero() {
               href={company.social.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body font-medium px-8 py-4 text-white text-sm tracking-widest uppercase transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = 'inset 0 0 0 1px white';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = 'none';
-              }}
+              className="lr-btn-quote font-body font-medium px-8 py-4 text-white text-sm tracking-widest uppercase transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
             >
               GET A QUOTE →
             </a>
             <Link
               href="/services"
-              className="font-body font-medium px-8 py-4 text-sm tracking-widest uppercase transition-all duration-300 text-[var(--color-body-light)] rounded-[var(--radius-btn)]"
+              className="lr-btn-services font-body font-medium px-8 py-4 text-sm tracking-widest uppercase transition-all duration-300 text-[var(--color-body-light)] rounded-[var(--radius-btn)]"
               style={{ border: `1px solid var(--border-ghost)` }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'var(--color-body-light)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'var(--border-ghost)';
-              }}
             >
               OUR SERVICES
             </Link>
           </div>
 
-          {/* Micro-stats Row */}
+          {/* Micro-stats Row — driven by stats[] in content.ts (single source of truth) */}
           <div
             className="grid grid-cols-3 pt-8 gap-4"
             style={{ borderTop: `1px solid var(--border-faint)` }}
           >
-            <div>
-              <p className="font-display font-bold text-[1.75rem] mb-1 text-[var(--color-body-light)]">
-                2
-              </p>
-              <p className="font-mono font-normal text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
-                PORTS SERVED
-              </p>
-            </div>
-            <div style={{ borderLeft: `1px solid var(--border-subtle)` }} className="pl-4 md:pl-6">
-              <p className="font-display font-bold text-[1.75rem] mb-1 text-[var(--color-body-light)]">
-                7
-              </p>
-              <p className="font-mono font-normal text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
-                SERVICE LINES
-              </p>
-            </div>
-            <div style={{ borderLeft: `1px solid var(--border-subtle)` }} className="pl-4 md:pl-6">
-              <p className="font-display font-bold text-[1.75rem] mb-1 text-[var(--color-body-light)]">
-                10
-              </p>
-              <p className="font-mono font-normal text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
-                INDUSTRIES
-              </p>
-            </div>
+            {stats.map((s, i) => (
+              <div
+                key={s.label}
+                className={i > 0 ? 'pl-4 md:pl-6' : ''}
+                style={i > 0 ? { borderLeft: `1px solid var(--border-subtle)` } : undefined}
+              >
+                <p className="font-display font-bold text-[1.75rem] mb-1 text-[var(--color-body-light)]">
+                  {s.value}{s.suffix}
+                </p>
+                <p className="font-mono font-normal text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
+                  {s.label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 

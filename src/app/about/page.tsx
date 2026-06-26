@@ -7,6 +7,7 @@ import { ContactCTA } from '@/components/ContactCTA';
 import { PageHeader } from '@/components/PageHeader';
 import { about, vision, mission, coreValues, commitment, company } from '@/lib/content';
 import { Icon } from '@/lib/icons';
+import { TeamSection } from '@/components/TeamSection';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -117,6 +118,9 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* Team */}
+        <TeamSection />
 
         {/* Vision + Mission */}
         <section style={{ backgroundColor: 'var(--color-primary)' }}>

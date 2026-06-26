@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import type { FAQItem } from '@/lib/content';
-import { Icon } from '@/lib/icons';
 
 export function FAQAccordion({ items }: { items: FAQItem[] }) {
   const [open, setOpen] = useState<number | null>(0);
@@ -47,15 +46,18 @@ export function FAQAccordion({ items }: { items: FAQItem[] }) {
             <div
               className="overflow-hidden transition-all duration-300"
               style={{
-                maxHeight: isOpen ? '500px' : '0px',
+                display: 'grid',
+                gridTemplateRows: isOpen ? '1fr' : '0fr',
                 opacity: isOpen ? 1 : 0,
               }}
             >
-              <p
-                className="pb-6 pr-12 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/80"
-              >
-                {item.answer}
-              </p>
+              <div style={{ overflow: 'hidden' }}>
+                <p
+                  className="pb-6 pr-12 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/80"
+                >
+                  {item.answer}
+                </p>
+              </div>
             </div>
           </div>
         );

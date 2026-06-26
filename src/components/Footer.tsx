@@ -1,9 +1,31 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { company, services, nav as navData } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
+/**
+ * Footer is a Client Component so it can mark the current page's nav link
+ * with aria-current="page" for screen-reader users.
+ */
+function FooterLink({ href, label }: { href: string; label: string }) {
+  const pathname = usePathname();
+  const isCurrent = pathname === href || (href !== '/' && pathname.startsWith(href));
+  return (
+    <Link
+      href={href}
+      aria-current={isCurrent ? 'page' : undefined}
+      className="hover:text-[var(--color-accent)] transition-colors py-1 inline-block"
+    >
+      {label}
+    </Link>
+  );
+}
+
 export function Footer() {
+  const pathname = usePathname();
   return (
     <footer style={{ backgroundColor: 'var(--color-near-black)' }}>
       <div className="mx-auto max-w-7xl px-6 md:px-12 py-12 md:py-16">
@@ -36,18 +58,11 @@ export function Footer() {
             <ul className="font-body font-normal text-sm space-y-2 text-[var(--color-secondary)]">
               {services.slice(0, 5).map((s) => (
                 <li key={s.slug}>
-                  <Link
-                    href={`/services/${s.slug}`}
-                    className="hover:text-[var(--color-accent)] transition-colors py-1 inline-block"
-                  >
-                    {s.title}
-                  </Link>
+                  <FooterLink href={`/services/${s.slug}`} label={s.title} />
                 </li>
               ))}
               <li>
-                <Link href="/services" className="hover:text-[var(--color-accent)] transition-colors py-1 inline-block font-mono text-[0.625rem] uppercase tracking-widest">
-                  View all →
-                </Link>
+                <FooterLink href="/services" label="View all →" />
               </li>
             </ul>
           </div>
@@ -60,20 +75,14 @@ export function Footer() {
             <ul className="font-body font-normal text-sm space-y-2 text-[var(--color-secondary)]">
               {navData.company.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="hover:text-[var(--color-accent)] transition-colors py-1 inline-block">
-                    {l.label}
-                  </Link>
+                  <FooterLink href={l.href} label={l.label} />
                 </li>
               ))}
               <li>
-                <Link href="/industries" className="hover:text-[var(--color-accent)] transition-colors py-1 inline-block">
-                  Industries We Serve
-                </Link>
+                <FooterLink href="/industries" label="Industries We Serve" />
               </li>
               <li>
-                <Link href="/compliance/health-safety" className="hover:text-[var(--color-accent)] transition-colors py-1 inline-block">
-                  Health &amp; Safety
-                </Link>
+                <FooterLink href="/compliance/health-safety" label="Health & Safety" />
               </li>
             </ul>
           </div>
@@ -122,9 +131,9 @@ export function Footer() {
             {company.registration} · VAT {company.vat} · {company.address.line1}, {company.address.city}, {company.address.country}
           </p>
           <div className="flex flex-wrap gap-4 md:justify-end font-body font-normal text-xs text-[var(--color-secondary)]">
-            <Link href="/terms" className="hover:text-[var(--color-accent)] transition-colors">Terms &amp; Conditions</Link>
-            <Link href="/privacy" className="hover:text-[var(--color-accent)] transition-colors">Privacy Policy</Link>
-            <Link href="/sitemap" className="hover:text-[var(--color-accent)] transition-colors">Sitemap</Link>
+            <Link href="/terms" aria-current={pathname === '/terms' ? 'page' : undefined} className="hover:text-[var(--color-accent)] transition-colors">Terms &amp; Conditions</Link>
+            <Link href="/privacy" aria-current={pathname === '/privacy' ? 'page' : undefined} className="hover:text-[var(--color-accent)] transition-colors">Privacy Policy</Link>
+            <Link href="/sitemap" aria-current={pathname === '/sitemap' ? 'page' : undefined} className="hover:text-[var(--color-accent)] transition-colors">Sitemap</Link>
             <span>© {new Date().getFullYear()} {company.legalName}</span>
           </div>
         </div>

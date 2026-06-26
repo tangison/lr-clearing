@@ -1,11 +1,10 @@
-'use client';
-
 import Link from 'next/link';
 import { company } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
 /**
  * ContactCTA — strong call-to-action band, used on home + bottom of interior pages.
+ * Server Component — no hooks, no event handlers. Hover effects via CSS classes.
  */
 export function ContactCTA({
   title = 'Ready to move your cargo with confidence?',
@@ -51,13 +50,11 @@ export function ContactCTA({
               href={primaryHref}
               target={primaryHref.startsWith('http') ? '_blank' : undefined}
               rel={primaryHref.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className="inline-flex items-center justify-center gap-2 font-body font-medium px-7 py-4 text-xs tracking-widest uppercase transition-all duration-300 rounded-[var(--radius-btn)]"
+              className="lr-cta-primary inline-flex items-center justify-center gap-2 font-body font-medium px-7 py-4 text-xs tracking-widest uppercase transition-all duration-300 rounded-[var(--radius-btn)]"
               style={{
                 backgroundColor: variant === 'accent' ? 'var(--color-primary)' : 'var(--color-accent)',
                 color: 'white',
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.boxShadow = 'inset 0 0 0 1px white'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; }}
             >
               <Icon name="whatsapp" className="w-4 h-4" />
               {primaryLabel}

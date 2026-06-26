@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Barlow_Condensed, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { company } from "@/lib/content";
+import { siteUrl } from "@/lib/siteConfig";
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -25,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lr-clearing.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "L&R Clearing Agency CC — Customs Clearing, Freight Forwarding & Logistics",
     template: "%s",
@@ -49,6 +50,8 @@ export const metadata: Metadata = {
   publisher: company.legalName,
   applicationName: company.legalName,
   icons: {
+    // TODO: export a 180×180 square apple-touch-icon from the logo source.
+    // logo-icon.png is 669×373 — works but not ideal for iOS home screen.
     icon: "/brand/logo-icon.png",
     apple: "/brand/logo-icon.png",
   },
@@ -60,12 +63,12 @@ export const metadata: Metadata = {
     siteName: company.legalName,
     type: "website",
     locale: "en_NA",
-    url: "https://lr-clearing.vercel.app",
+    url: siteUrl,
     images: [
       {
         url: "/images/hero.jpeg",
         width: 1200,
-        height: 630,
+        height: 896,
         alt: "Port straddle carrier moving L&R branded container at Walvis Bay",
       },
     ],
@@ -83,7 +86,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   alternates: {
-    canonical: "https://lr-clearing.vercel.app",
+    canonical: siteUrl,
   },
 };
 
@@ -93,9 +96,9 @@ const jsonLdOrganization = {
   name: company.legalName,
   alternateName: "L&R Clearing",
   description: company.tagline,
-  url: "https://lr-clearing.vercel.app",
-  logo: "https://lr-clearing.vercel.app/brand/logo-full.png",
-  image: "https://lr-clearing.vercel.app/images/hero.jpeg",
+  url: siteUrl,
+  logo: `${siteUrl}/brand/logo-full.png`,
+  image: `${siteUrl}/images/hero.jpeg`,
   email: company.email,
   telephone: company.phone,
   address: {
@@ -121,6 +124,7 @@ const jsonLdOrganization = {
     "SACU customs",
     "SADC trade",
   ],
+  // TODO: add social profile URLs when available (LinkedIn, Facebook, etc.)
   sameAs: [],
 };
 
@@ -128,7 +132,7 @@ const jsonLdWebsite = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: company.legalName,
-  url: "https://lr-clearing.vercel.app",
+  url: siteUrl,
   inLanguage: "en",
   publisher: { "@type": "Organization", name: company.legalName },
 };

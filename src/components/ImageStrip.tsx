@@ -12,6 +12,8 @@ export function ImageStrip() {
   const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
     if (imageRef.current && containerRef.current) {
       gsap.fromTo(
         imageRef.current,

@@ -50,6 +50,8 @@ export function ScenesGallery() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
     if (sectionRef.current) {
       const items = sectionRef.current.querySelectorAll('.scene-item');
       items.forEach((item) => {

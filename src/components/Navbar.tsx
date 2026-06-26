@@ -235,9 +235,7 @@ export function Navbar() {
               href={company.social.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body font-medium px-5 py-2.5 text-white text-xs tracking-widest uppercase transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
-              onMouseEnter={(e) => { e.currentTarget.style.boxShadow = 'inset 0 0 0 1px white'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; }}
+              className="lr-cta-primary font-body font-medium px-5 py-2.5 text-white text-xs tracking-widest uppercase transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
             >
               Get a Quote
             </a>
@@ -379,6 +377,10 @@ export function Navbar() {
           className="fixed inset-0 z-[60] flex items-start justify-center pt-24 px-6"
           style={{ backgroundColor: 'rgba(17,24,39,0.92)' }}
           onClick={() => setSearchOpen(false)}
+          onKeyDown={(e) => { if (e.key === 'Escape') setSearchOpen(false); }}
+          role="button"
+          tabIndex={-1}
+          aria-label="Close search"
         >
           <div
             className="w-full max-w-2xl rounded-[var(--radius-card)] overflow-hidden shadow-2xl"

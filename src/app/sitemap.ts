@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { services, nav as navData } from '@/lib/content';
-
-const BASE_URL = 'https://lr-clearing.vercel.app';
+import { siteUrl as BASE_URL } from '@/lib/siteConfig';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

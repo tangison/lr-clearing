@@ -15,6 +15,8 @@ export function Services() {
   const cardsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
     if (cardsRef.current) {
       const cards = cardsRef.current.querySelectorAll('.service-card');
       gsap.fromTo(
