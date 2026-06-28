@@ -11,7 +11,7 @@ import { Icon } from '@/lib/icons';
  *  - Mobile:  single column stack.
  *
  * Each card has:
- *  - Square (1:1) photo, object-cover object-top, sharp corners.
+ *  - Portrait (3:4) photo, object-cover object-top, sharp corners.
  *  - Name (display bold navy), Title (accent orange medium), Credentials (italic gray small).
  *  - Bio paragraph (gray-700 body).
  *  - Email + WhatsApp contact links with icons, hover underline, WhatsApp opens new tab.
@@ -56,8 +56,8 @@ export function TeamSection() {
                   boxShadow: '0 4px 20px -8px rgba(27,42,74,0.12)',
                 }}
               >
-                {/* Square photo */}
-                <div className="relative w-full overflow-hidden" style={{ aspectRatio: '1 / 1' }}>
+                {/* Portrait photo (3:4) */}
+                <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3 / 4' }}>
                   <Image
                     src={member.image}
                     alt={member.imageAlt}
