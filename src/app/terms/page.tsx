@@ -8,7 +8,7 @@ import { company } from '@/lib/content';
 export const metadata: Metadata = {
   title: "Terms & Conditions, L&R Clearing Agency CC",
   description:
-    "Terms and conditions governing use of the L&R Clearing Agency CC website and the provision of our customs clearing and freight forwarding services to clients in Namibia and Southern Africa.",
+    "Terms governing use of the L&R Clearing Agency CC website and our customs clearing and freight forwarding services to clients in Namibia and Southern Africa.",
   alternates: { canonical: '/terms' },
 };
 
