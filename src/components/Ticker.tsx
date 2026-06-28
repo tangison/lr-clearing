@@ -1,13 +1,15 @@
 // Server Component, no hooks, no event handlers, no browser APIs.
 // The marquee animation is pure CSS (see .ticker-animate in globals.css).
 
+import { borderPosts } from '@/lib/content';
+
 export function Ticker() {
+  // Derive the marquee items from the canonical borderPosts[] in content.ts
+  // so the ticker always stays in sync with the operational-coverage page.
   const items = [
     'WALVIS BAY PORT',
     'LÜDERITZ PORT',
-    'OSHIKANGO BORDER POST',
-    'ARIAMSVLEI',
-    'NOORDOEWER',
+    ...borderPosts.map((b) => `${b.name.toUpperCase()} BORDER POST`),
     'HOSEA KUTAKO INTERNATIONAL AIRPORT',
     'ALL INLAND CUSTOMS POSTS',
   ];

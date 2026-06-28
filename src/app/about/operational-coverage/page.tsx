@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Navbar } from '@/components/Navbar';
 import { Ticker } from '@/components/Ticker';
 import { Footer } from '@/components/Footer';
 import { ContactCTA } from '@/components/ContactCTA';
 import { PageHeader } from '@/components/PageHeader';
-import { company } from '@/lib/content';
+import { company, borderPosts } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
 export const metadata: Metadata = {
@@ -27,17 +28,6 @@ export default function OperationalCoveragePage() {
       detail: 'Specialised in fishing industry exports, mining inputs for the southern Karas region, and smaller containerised imports. We coordinate the specific carrier and shipping line schedules serving this port.',
       icon: 'ship' as const,
     },
-  ];
-
-  const borders = [
-    { name: 'Ariamsveld', country: 'South Africa', corridor: 'Keetmanshoop–Upington– Gauteng' },
-    { name: 'Noordoewer', country: 'South Africa', corridor: 'Windhoek–Vioolsdrif–Cape Town' },
-    { name: 'Ngoma', country: 'Botswana', corridor: 'Katima Mulilo–Chobe–Livingstone' },
-    { name: 'Katima Mulilo (Mamuno)', country: 'Botswana', corridor: 'Trans-Caprivi' },
-    { name: 'Oshikango (Santa Clara)', country: 'Angola', corridor: 'Northern trade' },
-    { name: 'Buitepos', country: 'Botswana', corridor: 'Trans-Kalahari to South Africa' },
-    { name: 'Aroab', country: 'South Africa', corridor: 'Southern agricultural trade' },
-    { name: 'Omahenene', country: 'Angola', corridor: 'Northern cross-border trade' },
   ];
 
   return (
@@ -74,28 +64,60 @@ export default function OperationalCoveragePage() {
           </div>
         </section>
 
-        {/* Border posts */}
+        {/* Border posts — image cards */}
         <section style={{ backgroundColor: 'var(--color-primary)' }}>
           <div className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-24">
             <div className="max-w-2xl mb-12">
               <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">Border Posts</p>
               <h2 className="font-display font-extrabold tracking-tight text-white" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}>
-                Eight border crossings. One paperwork handover.
+                Six border crossings. One paperwork handover.
               </h2>
               <p className="mt-4 font-body text-[1.0625rem] leading-relaxed text-[var(--color-secondary)]">
                 We coordinate with counterpart clearing agents on the other side of each border to ensure
                 transit documents are accepted on arrival and your cargo is not delayed at the gate.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {borders.map((b) => (
-                <div key={b.name} className="p-5 rounded-[var(--radius-card)]" style={{ backgroundColor: 'var(--color-primary-mid)', border: '1px solid var(--border-subtle)' }}>
-                  <p className="font-display font-bold text-white text-lg">{b.name}</p>
-                  <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent)] mt-1">{b.country}</p>
-                  <p className="font-body text-xs text-[var(--color-secondary)] mt-3 leading-relaxed">{b.corridor}</p>
-                </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {borderPosts.map((b) => (
+                <article
+                  key={b.name}
+                  className="overflow-hidden rounded-[var(--radius-card)]"
+                  style={{ backgroundColor: 'var(--color-primary-mid)', border: '1px solid var(--border-subtle)' }}
+                >
+                  {/* 16:9 image */}
+                  <div className="relative w-full overflow-hidden" style={{ aspectRatio: '16 / 9' }}>
+                    <Image
+                      src={b.image}
+                      alt={b.imageAlt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover"
+                      priority={false}
+                    />
+                  </div>
+                  {/* Body */}
+                  <div className="p-6">
+                    <h3 className="font-display font-bold text-white text-xl">
+                      {b.name} <span className="font-body font-normal text-base text-[var(--color-secondary)]">Border Post</span>
+                    </h3>
+                    <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent)] mt-1">
+                      {b.country}
+                    </p>
+                    <p className="font-body text-sm text-[var(--color-secondary)] mt-3 leading-relaxed">
+                      {b.corridor}
+                    </p>
+                    {b.imageNote && (
+                      <p className="font-body text-[0.6875rem] text-[var(--color-secondary)]/60 mt-4 italic leading-relaxed border-t border-[var(--border-subtle)] pt-3">
+                        {b.imageNote}
+                      </p>
+                    )}
+                  </div>
+                </article>
               ))}
             </div>
+            <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] mt-8 text-center opacity-70">
+              All border post images sourced under free licences (CC0 / CC BY / CC BY-SA). See full attribution in /images/borders/SOURCES.md.
+            </p>
           </div>
         </section>
 

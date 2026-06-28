@@ -393,7 +393,7 @@ export const faqs: FAQItem[] = [
     category: "Freight Forwarding",
     question: "Which ports do you operate through?",
     answer:
-      "We clear cargo through both Namibian ports (Walvis Bay and Lüderitz), and arrange cross-border road freight via the major border posts (Ariamsveld, Noordoewer, Ngoma, Katima Mulilo, Oshikango, Trans-Kalahari) into South Africa, Botswana, Zambia, Zimbabwe, and beyond.",
+      "We clear cargo through both Namibian ports (Walvis Bay and Lüderitz), and arrange cross-border road freight via the major border posts (Trans-Kalahari, Ariamsvlei, Noordoewer, Wenela, Ngoma, Oshikango) into Botswana, South Africa, Zambia, Zimbabwe, and Angola.",
   },
   {
     category: "Imports",
@@ -471,9 +471,90 @@ export const faqs: FAQItem[] = [
 
 export const stats = [
   { value: "2", label: "Namibian Ports Served", suffix: "" },
-  { value: "5", label: "Major Border Posts Covered", suffix: "+" },
+  { value: "6", label: "Major Border Posts Covered", suffix: "" },
   { value: "7", label: "Service Categories", suffix: "" },
   { value: "10", label: "Industries Served", suffix: "" },
+];
+
+/**
+ * Canonical list of border posts L&R Clearing Agency CC operates through.
+ *
+ * Single source of truth — consumed by:
+ *   - src/app/about/operational-coverage/page.tsx  (renders cards with images)
+ *   - src/components/Ticker.tsx                    (marquee strip)
+ *   - FAQ answer string below (kept in sync manually)
+ *
+ * All six images are licence-free (CC0 / CC BY / CC BY-SA) from Wikimedia
+ * Commons. See /public/images/borders/SOURCES.md for full attribution.
+ *
+ * Note on oshikango-border.jpeg: no Oshikango-specific photo was available;
+ * the image shows a similar Namibia-Angola border crossing facility
+ * (Okavango River bridges). Flagged per task spec preference order #2.
+ */
+export type BorderPost = {
+  /** Display name (without "Border Post" suffix — that's added in render) */
+  name: string;
+  /** Country on the other side of the border */
+  country: string;
+  /** Corridor / trade route this post serves */
+  corridor: string;
+  /** Path to the image in /public/images/borders/ */
+  image: string;
+  /** SEO alt text — pattern: "{Name} — L&R Clearing Agency CC operations" */
+  imageAlt: string;
+  /** Short note for the image (used in figure caption or aria-description) */
+  imageNote?: string;
+};
+
+export const borderPosts: BorderPost[] = [
+  {
+    name: "Trans-Kalahari",
+    country: "Botswana",
+    corridor: "Walvis Bay → Windhoek → Buitepos → Lobatse → Johannesburg",
+    image: "/images/borders/trans-kalahari-border.jpeg",
+    imageAlt: "Trans-Kalahari Border Post — L&R Clearing Agency CC operations",
+    imageNote: "Buitepos border post on the Namibia-Botswana border.",
+  },
+  {
+    name: "Ariamsvlei",
+    country: "South Africa",
+    corridor: "Keetmanshoop → Upington → Gauteng",
+    image: "/images/borders/ariamsvlei-border.jpeg",
+    imageAlt: "Ariamsvlei Border Post — L&R Clearing Agency CC operations",
+    imageNote: "Ariamsvlei border post between Namibia and South Africa.",
+  },
+  {
+    name: "Noordoewer",
+    country: "South Africa",
+    corridor: "Windhoek → Vioolsdrif → Cape Town",
+    image: "/images/borders/noordoewer-border.jpeg",
+    imageAlt: "Noordoewer Border Post — L&R Clearing Agency CC operations",
+    imageNote: "Noordoewer border post at the Namibia - South Africa border.",
+  },
+  {
+    name: "Wenela",
+    country: "Zambia",
+    corridor: "Katima Mulilo → Livingstone → Lusaka",
+    image: "/images/borders/wenela-border.jpeg",
+    imageAlt: "Wenela Border Post — L&R Clearing Agency CC operations",
+    imageNote: "Katima Mulilo Bridge, the Wenela border crossing over the Zambezi.",
+  },
+  {
+    name: "Ngoma",
+    country: "Botswana",
+    corridor: "Katima Mulilo → Chobe → Livingstone",
+    image: "/images/borders/ngoma-border.jpeg",
+    imageAlt: "Ngoma Border Post — L&R Clearing Agency CC operations",
+    imageNote: "Ngoma Bridge on the Chobe River, Namibia-Botswana border.",
+  },
+  {
+    name: "Oshikango",
+    country: "Angola",
+    corridor: "Oshakati → Santa Clara → Lubango",
+    image: "/images/borders/oshikango-border.jpeg",
+    imageAlt: "Oshikango Border Post — L&R Clearing Agency CC operations",
+    imageNote: "Namibia-Angola border crossing infrastructure (stand-in for Oshikango).",
+  },
 ];
 
 export type TeamMember = {
