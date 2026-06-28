@@ -8,7 +8,7 @@ import { vision, mission, company } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
 export const metadata: Metadata = {
-  title: "Vision & Mission — L&R Clearing Agency CC",
+  title: "Vision & Mission, L&R Clearing Agency CC",
   description: "Our vision to be the preferred customs clearing and logistics partner in Namibia and Southern Africa, and our mission to deliver compliant, timely, customer-focused service.",
   alternates: { canonical: '/about/vision-mission' },
 };
@@ -62,7 +62,7 @@ export default function VisionMissionPage() {
               <div className="p-10 rounded-[var(--radius-card)]" style={{ backgroundColor: 'var(--color-accent)', direction: 'ltr' }}>
                 <Icon name="anchor" className="w-10 h-10 text-white mb-6" />
                 <p className="font-display font-bold text-2xl text-white leading-tight">
-                  Professionalism, compliance, and exceptional customer satisfaction — in that order, every time.
+                  Professionalism, compliance, and exceptional customer satisfaction, in that order, every time.
                 </p>
                 <div className="mt-8 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }}>
                   <p className="font-mono text-[0.625rem] uppercase tracking-widest text-white/80 mb-2">Operating discipline</p>

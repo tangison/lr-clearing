@@ -3,8 +3,8 @@ import { company } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
 /**
- * ContactCTA — strong call-to-action band, used on home + bottom of interior pages.
- * Server Component — no hooks, no event handlers. Hover effects via CSS classes.
+ * ContactCTA, strong call-to-action band, used on home + bottom of interior pages.
+ * Server Component, no hooks, no event handlers. Hover effects via CSS classes.
  */
 export function ContactCTA({
   title = 'Ready to move your cargo with confidence?',

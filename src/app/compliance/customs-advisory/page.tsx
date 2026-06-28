@@ -7,8 +7,8 @@ import { PageHeader } from '@/components/PageHeader';
 import { Icon } from '@/lib/icons';
 
 export const metadata: Metadata = {
-  title: "Customs Advisory Services — L&R Clearing Agency CC",
-  description: "Tariff classification, valuation, origin, duty drawback, and trade compliance advisory — consultative support that goes beyond filing declarations.",
+  title: "Customs Advisory Services, L&R Clearing Agency CC",
+  description: "Tariff classification, valuation, origin, duty drawback, and trade compliance advisory, consultative support that goes beyond filing declarations.",
   alternates: { canonical: '/compliance/customs-advisory' },
 };
 
@@ -16,7 +16,7 @@ export default function CustomsAdvisoryPage() {
   const services = [
     {
       title: 'Tariff Classification',
-      detail: 'Binding advice on the correct HS code for your commodity — the foundation of duty calculation, permit requirements, and trade statistics. Wrong classification is the single most common cause of customs queries and post-clearance audits.',
+      detail: 'Binding advice on the correct HS code for your commodity, the foundation of duty calculation, permit requirements, and trade statistics. Wrong classification is the single most common cause of customs queries and post-clearance audits.',
     },
     {
       title: 'Customs Valuation',
@@ -28,11 +28,11 @@ export default function CustomsAdvisoryPage() {
     },
     {
       title: 'Duty Drawback & Refunds',
-      detail: 'Identification of drawback, rebate, and refund opportunities on previously paid duties — including re-exported inputs, manufactured exports, and specific industry rebates.',
+      detail: 'Identification of drawback, rebate, and refund opportunities on previously paid duties, including re-exported inputs, manufactured exports, and specific industry rebates.',
     },
     {
       title: 'Trade Compliance Reviews',
-      detail: 'A periodic audit of your import and export history to identify classification, valuation, or documentation issues before Customs does — and to quantify potential exposure.',
+      detail: 'A periodic audit of your import and export history to identify classification, valuation, or documentation issues before Customs does, and to quantify potential exposure.',
     },
     {
       title: 'Permit & Licence Strategy',
@@ -68,7 +68,7 @@ export default function CustomsAdvisoryPage() {
               <h3 className="font-display font-bold text-2xl text-white mb-3">A consultative, not transactional, relationship.</h3>
               <p className="font-body text-[1.0625rem] text-[var(--color-secondary)] max-w-3xl leading-relaxed">
                 Most clearing agents file what you give them. We review what you give them and tell you when
-                something can be done better — a different tariff heading that reduces duty, a permit you did
+                something can be done better, a different tariff heading that reduces duty, a permit you did
                 not know you needed, or a valuation method that will not survive an audit. Advisory is built
                 into our service, not billed as an extra.
               </p>
@@ -78,7 +78,7 @@ export default function CustomsAdvisoryPage() {
 
         <ContactCTA
           title="Have a classification or valuation question?"
-          description="Send us your HS code, product description, and import scenario — we will respond with our advisory view, normally within one business day."
+          description="Send us your HS code, product description, and import scenario, we will respond with our advisory view, normally within one business day."
         />
       </main>
       <Footer />

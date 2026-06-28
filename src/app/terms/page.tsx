@@ -6,7 +6,7 @@ import { PageHeader } from '@/components/PageHeader';
 import { company } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions — L&R Clearing Agency CC",
+  title: "Terms & Conditions, L&R Clearing Agency CC",
   description:
     "Terms and conditions governing the use of L&R Clearing Agency CC's website and the provision of customs clearing and freight forwarding services.",
   alternates: { canonical: '/terms' },
@@ -60,8 +60,8 @@ export default function TermsPage() {
               <Section title="5. Fees and Payment">
                 Our fees are quoted per engagement and are typically denominated in Namibian
                 Dollars (NAD), which is pegged 1:1 to the South African Rand (ZAR). Disbursements
-                incurred on your behalf — including but not limited to port charges, customs duty,
-                VAT, transport, and inspection fees — are billed at cost plus an administrative
+                incurred on your behalf, including but not limited to port charges, customs duty,
+                VAT, transport, and inspection fees, are billed at cost plus an administrative
                 margin where applicable. Unless otherwise agreed, invoices are payable within 30
                 days of issue.
               </Section>
@@ -80,7 +80,7 @@ export default function TermsPage() {
                 Excise regulations.
               </Section>
               <Section title="8. Intellectual Property">
-                All content on this website — including text, logos, graphics, and code — is the
+                All content on this website, including text, logos, graphics, and code, is the
                 property of {company.legalName} or its licensors and may not be reproduced without
                 our prior written consent.
               </Section>

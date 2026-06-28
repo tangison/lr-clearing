@@ -8,8 +8,8 @@ import { company } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
 export const metadata: Metadata = {
-  title: "Operational Coverage — L&R Clearing Agency CC",
-  description: "Ports, border posts, and corridors we cover across Namibia and the Southern African region — Walvis Bay, Lüderitz, and major border crossings.",
+  title: "Operational Coverage, L&R Clearing Agency CC",
+  description: "Ports, border posts, and corridors we cover across Namibia and the Southern African region, Walvis Bay, Lüderitz, and major border crossings.",
   alternates: { canonical: '/about/operational-coverage' },
 };
 

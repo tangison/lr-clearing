@@ -8,7 +8,7 @@ import { healthSafety, company } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
 export const metadata: Metadata = {
-  title: "Health & Safety — L&R Clearing Agency CC",
+  title: "Health & Safety, L&R Clearing Agency CC",
   description: "Our commitment to maintaining the highest standards of safety, ethical conduct, and regulatory compliance in customs clearing and freight forwarding.",
   alternates: { canonical: '/compliance/health-safety' },
 };

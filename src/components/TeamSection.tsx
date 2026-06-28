@@ -3,7 +3,7 @@ import { team } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
 /**
- * TeamSection — side-by-side team cards for the About page.
+ * TeamSection, side-by-side team cards for the About page.
  * Server Component (no hooks, no event handlers, no browser APIs).
  *
  * Layout:
@@ -34,7 +34,7 @@ export function TeamSection() {
           <p className="mt-5 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/75">
             L&amp;R Clearing Agency CC is led by a small, hands-on team that combines academic
             depth in logistics with day-to-day operational discipline. You will work directly
-            with the directors below — not a call centre.
+            with the directors below, not a call centre.
           </p>
         </div>
 

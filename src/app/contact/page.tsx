@@ -8,9 +8,9 @@ import { Icon } from '@/lib/icons';
 import { ContactForm } from '@/components/ContactForm';
 
 export const metadata: Metadata = {
-  title: "Contact — L&R Clearing Agency CC",
+  title: "Contact, L&R Clearing Agency CC",
   description:
-    "Speak to our customs clearing team in Walvis Bay, Namibia. Phone, email, WhatsApp, or submit an inquiry online — we respond within one business hour during office hours.",
+    "Speak to our customs clearing team in Walvis Bay, Namibia. Phone, email, WhatsApp, or submit an inquiry online, we respond within one business hour during office hours.",
   alternates: { canonical: '/contact' },
 };
 
@@ -23,14 +23,14 @@ export default function ContactPage() {
         <PageHeader
           eyebrow="Contact Us"
           title="Let's get your cargo moving."
-          description="Tell us about your shipment and we'll respond with a clearance or forwarding plan. For urgent matters, WhatsApp or call — we monitor both during office hours."
+          description="Tell us about your shipment and we'll respond with a clearance or forwarding plan. For urgent matters, WhatsApp or call, we monitor both during office hours."
           breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Contact' }]}
         />
 
         <section style={{ backgroundColor: 'var(--color-body-light)' }}>
           <div className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-24">
             <div className="grid lg:grid-cols-2 gap-12">
-              {/* Left — direct contact */}
+              {/* Left, direct contact */}
               <div>
                 <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">
                   Direct Contact
@@ -59,7 +59,7 @@ export default function ContactPage() {
                     <div>
                       <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Phone</p>
                       <p className="font-display font-bold text-lg text-[var(--color-primary)] mt-1">{company.phoneDisplay}</p>
-                      <p className="font-body text-sm text-[var(--color-primary)]/70 mt-1">07:30–17:00 CAT, Mon–Fri</p>
+                      <p className="font-body text-sm text-[var(--color-primary)]/70 mt-1">{company.officeHours} CAT</p>
                     </div>
                   </a>
 
@@ -118,7 +118,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Right — inquiry form */}
+              {/* Right, inquiry form */}
               <div>
                 <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">
                   Inquiry Form
@@ -131,7 +131,7 @@ export default function ContactPage() {
                 </h2>
                 <p className="mt-4 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/80">
                   Fill in the details below and we'll open WhatsApp with your inquiry
-                  pre-filled — just hit send. The more we know about your cargo, route, and
+                  pre-filled, just hit send. The more we know about your cargo, route, and
                   timeline, the more precise our response will be.
                 </p>
                 <div className="mt-8">

@@ -7,7 +7,7 @@ import { PageHeader } from '@/components/PageHeader';
 import { services, nav as navData } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: "Sitemap — L&R Clearing Agency CC",
+  title: "Sitemap, L&R Clearing Agency CC",
   description: "Complete index of all pages on the L&R Clearing Agency CC website.",
   alternates: { canonical: '/sitemap' },
 };

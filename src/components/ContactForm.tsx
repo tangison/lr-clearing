@@ -8,7 +8,7 @@ import { Icon } from '@/lib/icons';
 type Status = 'idle' | 'submitting';
 
 /**
- * ContactForm — gathers inquiry details, then redirects to WhatsApp
+ * ContactForm, gathers inquiry details, then redirects to WhatsApp
  * with a pre-filled message addressed to the L&R ops team.
  *
  * Rationale: the client requested that all contact form submissions
@@ -37,7 +37,7 @@ export function ContactForm() {
 
     // Build a clean WhatsApp message
     const lines: string[] = [];
-    lines.push('*L&R Clearing — New Inquiry*');
+    lines.push('*L&R Clearing, New Inquiry*');
     lines.push('');
     if (name) lines.push(`*Name:* ${name}`);
     if (company_name) lines.push(`*Company:* ${company_name}`);
@@ -105,7 +105,7 @@ export function ContactForm() {
           <option value="Documentation support">Documentation support</option>
           <option value="Supply chain / 3PL">Supply chain / 3PL</option>
           <option value="Specialized cargo">Specialized cargo</option>
-          <option value="Not sure — please advise">Not sure — please advise</option>
+          <option value="Not sure, please advise">Not sure, please advise</option>
         </select>
       </div>
       <div>
@@ -134,7 +134,7 @@ export function ContactForm() {
       </button>
 
       <p className="font-body text-xs text-[var(--color-secondary)] text-center leading-relaxed">
-        Submitting opens WhatsApp with your details pre-filled — just hit send. We respond within one business hour during office hours (07:30–17:00 CAT, Mon–Fri).
+        Submitting opens WhatsApp with your details pre-filled, just hit send. We respond within one business hour during office hours (07:30–17:00 CAT, Mon–Fri).
       </p>
     </form>
   );

@@ -28,7 +28,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "L&R Clearing Agency CC — Customs Clearing, Freight Forwarding & Logistics",
+    default: "L&R Clearing Agency CC, Customs Clearing, Freight Forwarding & Logistics",
     template: "%s",
   },
   description:
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
   applicationName: company.legalName,
   icons: {
     // TODO: export a 180×180 square apple-touch-icon from the logo source.
-    // logo-icon.png is 669×373 — works but not ideal for iOS home screen.
+    // logo-icon.png is 669×373, works but not ideal for iOS home screen.
     icon: "/brand/logo-icon.png",
     apple: "/brand/logo-icon.png",
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
-    title: "L&R Clearing Agency CC — Customs Clearing & Freight Forwarding",
+    title: "L&R Clearing Agency CC, Customs Clearing & Freight Forwarding",
     description:
       "Proudly Namibian-owned customs clearing and forwarding company. Professional, efficient, and reliable logistics solutions across Namibia and Southern Africa.",
     siteName: company.legalName,
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "L&R Clearing Agency CC — Customs Clearing & Freight Forwarding",
+    title: "L&R Clearing Agency CC, Customs Clearing & Freight Forwarding",
     description:
       "Proudly Namibian-owned customs clearing and forwarding company operating across Namibia and Southern Africa.",
     images: ["/images/hero.jpeg"],
@@ -124,8 +124,8 @@ const jsonLdOrganization = {
     "SACU customs",
     "SADC trade",
   ],
-  // TODO: add social profile URLs when available (LinkedIn, Facebook, etc.)
-  sameAs: [],
+  // TODO: add LinkedIn, Facebook, and Instagram URLs when available.
+  sameAs: ['https://studio.tangison.com'],
 };
 
 const jsonLdWebsite = {

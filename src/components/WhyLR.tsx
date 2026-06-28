@@ -58,7 +58,7 @@ export function WhyLR() {
           </h2>
           <p className="mt-5 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/75">
             We compete on professionalism, not price alone. The advantages below are the ones our
-            clients cite when they refer us — and the ones we hold ourselves to on every shipment.
+            clients cite when they refer us, and the ones we hold ourselves to on every shipment.
           </p>
         </div>
 
@@ -89,7 +89,7 @@ export function WhyLR() {
             </div>
           ))}
 
-          {/* 8th tile — link to Why Choose Us page */}
+          {/* 8th tile, link to Why Choose Us page */}
           <a
             href="/about/why-choose-us"
             className="advantage-block p-6 rounded-[var(--radius-card)] flex flex-col justify-between transition-all duration-300 hover:translate-x-1 group"

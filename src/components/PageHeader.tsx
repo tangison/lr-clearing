@@ -1,5 +1,5 @@
 /**
- * PageHeader — consistent hero header for interior pages.
+ * PageHeader, consistent hero header for interior pages.
  */
 export function PageHeader({
   eyebrow,

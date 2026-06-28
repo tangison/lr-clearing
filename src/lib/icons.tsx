@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 /**
- * Icon registry — single component to render inline SVG icons by name.
+ * Icon registry. Single component to render inline SVG icons by name.
  * Keeps icons consistent and lightweight (no external icon library).
  */
 export type IconName =

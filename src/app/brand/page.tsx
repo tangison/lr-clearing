@@ -54,7 +54,7 @@ export default function BrandPage() {
               <div className="p-8 md:p-12 flex flex-col items-center justify-center gap-6" style={{ backgroundColor: 'var(--color-primary)', borderRadius: '0px' }}>
                 <Image
                   src="/brand/logo-full.png"
-                  alt="L&R Clearing Agency Logo — Full variant"
+                  alt="L&R Clearing Agency Logo, Full variant"
                   width={200}
                   height={68}
                   className="h-16 md:h-20 w-auto object-contain"
@@ -62,7 +62,7 @@ export default function BrandPage() {
                 />
                 <div className="text-center">
                   <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-1 text-[var(--color-body-light)]">
-                    Logo — Full (Light)
+                    Logo, Full (Light)
                   </p>
                   <p className="font-body font-normal text-xs text-[var(--color-secondary)]">
                     For use on dark backgrounds
@@ -81,14 +81,14 @@ export default function BrandPage() {
               <div className="p-8 md:p-12 flex flex-col items-center justify-center gap-6 border" style={{ backgroundColor: 'white', borderRadius: '0px', borderColor: 'var(--color-light-bg)' }}>
                 <Image
                   src="/brand/logo-icon.png"
-                  alt="L&R Clearing Agency Logo — Icon mark"
+                  alt="L&R Clearing Agency Logo, Icon mark"
                   width={80}
                   height={80}
                   className="h-16 md:h-20 w-auto object-contain"
                 />
                 <div className="text-center">
                   <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-1 text-[var(--color-primary)]">
-                    Logo — Icon Mark
+                    Logo, Icon Mark
                   </p>
                   <p className="font-body font-normal text-xs text-[var(--color-secondary)]">
                     For use on light backgrounds / navbar
@@ -148,7 +148,7 @@ export default function BrandPage() {
               {/* Barlow Condensed */}
               <div className="p-6 md:p-8 bg-white border" style={{ borderColor: 'rgba(0,0,0,0.05)' }}>
                 <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-accent)]">
-                  Display — Headlines
+                  Display, Headlines
                 </p>
                 <p className="font-display font-extrabold text-[3rem] uppercase tracking-tight leading-none mb-3 text-[var(--color-primary)]">
                   Barlow Condensed
@@ -169,7 +169,7 @@ export default function BrandPage() {
               {/* DM Sans */}
               <div className="p-6 md:p-8 bg-white border" style={{ borderColor: 'rgba(0,0,0,0.05)' }}>
                 <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-accent)]">
-                  Body — Copy &amp; Navigation
+                  Body, Copy &amp; Navigation
                 </p>
                 <p className="font-body font-medium text-[2.25rem] leading-tight mb-3 text-[var(--color-primary)]">
                   DM Sans
@@ -190,7 +190,7 @@ export default function BrandPage() {
               {/* JetBrains Mono */}
               <div className="p-6 md:p-8 bg-white border" style={{ borderColor: 'rgba(0,0,0,0.05)' }}>
                 <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-accent)]">
-                  Mono — Metadata &amp; Ticker
+                  Mono, Metadata &amp; Ticker
                 </p>
                 <p className="font-mono font-normal text-[2rem] leading-tight mb-3 text-[var(--color-primary)]">
                   JetBrains Mono

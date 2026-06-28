@@ -32,7 +32,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
           {/* Logo + tagline */}
           <div className="space-y-4">
-            <Link href="/" className="inline-block" aria-label="L&R Clearing Agency CC — Home">
+            <Link href="/" className="inline-block" aria-label="L&R Clearing Agency CC, Home">
               <Image
                 src="/brand/logo-full.png"
                 alt="L&R Clearing Agency CC"
@@ -136,6 +136,22 @@ export function Footer() {
             <Link href="/sitemap" aria-current={pathname === '/sitemap' ? 'page' : undefined} className="hover:text-[var(--color-accent)] transition-colors">Sitemap</Link>
             <span>© {new Date().getFullYear()} {company.legalName}</span>
           </div>
+        </div>
+
+        {/* Studio credit */}
+        <div className="mt-6 pt-6" style={{ borderTop: '1px solid var(--border-subtle)' }}>
+          <p className="font-body text-xs text-[var(--color-secondary)]/70 text-center md:text-left">
+            Website by{' '}
+            <a
+              href="https://studio.tangison.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-display font-medium text-[var(--color-accent)] hover:underline"
+            >
+              Tangison Studio
+            </a>
+            .
+          </p>
         </div>
       </div>
     </footer>

@@ -1,5 +1,5 @@
 /**
- * L&R Clearing Agency CC — Central content registry
+ * L&R Clearing Agency CC. Central content registry.
  * Single source of truth for all copy across the site.
  * Aligns with the official Company Profile supplied by the client.
  * No invented facts (no founding year, no fake client names, no fake metrics).
@@ -14,9 +14,11 @@ export const company = {
   regions: ["Namibia", "Southern Africa"],
   registration: "CC/2012/1572",
   vat: "05757590615",
-  email: "ops.clearing@gmail.com",
-  phone: "+264 81 375 9901",
-  phoneDisplay: "+264 81 375 9901",
+  email: "hello@lrclearing.com",
+  altEmail: "ops.clearing@gmail.com",
+  phone: "+264 83 785 7640",
+  phoneDisplay: "+264 83 785 7640",
+  officeHours: "07:30 to 17:00, Monday to Friday",
   whatsapp: "264813759901",
   address: {
     line1: "Cnr 10th Road & Sam Nujoma Ave",
@@ -36,7 +38,7 @@ export const about = {
   body: [
     "We specialize in customs clearance, freight forwarding, cargo coordination, and supply chain support, ensuring that goods move seamlessly through ports, border posts, and various transport networks. Our objective is to simplify the import and export process while ensuring full compliance with Namibian and regional customs regulations.",
     "Through a customer-focused approach and a commitment to excellence, L&R Clearing Agency CC strives to become a trusted logistics partner within Namibia, Southern Africa, and beyond. Our team combines operational discipline with deep regulatory knowledge, allowing clients to navigate complex cross-border trade requirements with confidence.",
-    "Our operational footprint covers both major Namibian ports — Walvis Bay and Lüderitz — as well as key border posts connecting Namibia to Angola, Zambia, Zimbabwe, Botswana, and South Africa. We coordinate with shipping lines, airlines, road haulers, port authorities, and customs officials to deliver end-to-end cargo visibility and timely clearance.",
+    "Our operational footprint covers both major Namibian ports (Walvis Bay and Lüderitz), as well as key border posts connecting Namibia to Angola, Zambia, Zimbabwe, Botswana, and South Africa. We coordinate with shipping lines, airlines, road haulers, port authorities, and customs officials to deliver end-to-end cargo visibility and timely clearance.",
   ],
 };
 
@@ -122,7 +124,7 @@ export const services: Service[] = [
     shortDescription:
       "Sea, air, and road freight coordination across Namibia, SADC, and global trade lanes.",
     longDescription:
-      "We plan, book, and coordinate the movement of cargo by sea, air, and road — selecting the most efficient mode (or combination of modes) for each shipment. Our forwarding desk works with established carriers, shipping lines, and airlines to secure space, negotiate rates, and manage the documentation required at each leg of the journey. Cross-border road freight is a particular strength, given Namibia's strategic position linking Atlantic ports with SADC inland markets.",
+      "We plan, book, and coordinate the movement of cargo by sea, air, and road, selecting the most efficient mode (or combination of modes) for each shipment. Our forwarding desk works with established carriers, shipping lines, and airlines to secure space, negotiate rates, and manage the documentation required at each leg of the journey. Cross-border road freight is a particular strength, given Namibia's strategic position linking Atlantic ports with SADC inland markets.",
     items: [
       "Sea freight forwarding (FCL & LCL)",
       "Air freight forwarding",
@@ -142,7 +144,7 @@ export const services: Service[] = [
     shortDescription:
       "On-the-ground clearance at Walvis Bay, Lüderitz, and major Southern African border posts.",
     longDescription:
-      "Our port and border teams are physically present where it matters — at Walvis Bay Port, Lüderitz Port, and at the border posts connecting Namibia to its neighbours. We coordinate container releases, terminal handling, port health and agriculture inspections, and the multi-step release process that follows customs clearance. For cross-border traffic, we manage the documentation handover between clearing agents on either side of the border to keep transit times predictable.",
+      "Our port and border teams are physically present where it matters: at Walvis Bay Port, Lüderitz Port, and at the border posts connecting Namibia to its neighbours. We coordinate container releases, terminal handling, port health and agriculture inspections, and the multi-step release process that follows customs clearance. For cross-border traffic, we manage the documentation handover between clearing agents on either side of the border to keep transit times predictable.",
     items: [
       "Walvis Bay Port cargo clearance",
       "Lüderitz Port cargo clearance",
@@ -161,7 +163,7 @@ export const services: Service[] = [
     shortDescription:
       "Accurate preparation, verification, and submission of all SARS/SAD and supporting trade documents.",
     longDescription:
-      "Correct documentation is the foundation of a smooth clearance. Our documentation desk prepares and verifies every document required by Namibian Customs, port authorities, and destination countries. We check commercial invoices, packing lists, certificates of origin, permits, and shipping documents for consistency before submission — because a single mismatched figure can hold cargo for days. We also assist clients in applying for the permits and licences relevant to their commodity.",
+      "Correct documentation is the foundation of a smooth clearance. Our documentation desk prepares and verifies every document required by Namibian Customs, port authorities, and destination countries. We check commercial invoices, packing lists, certificates of origin, permits, and shipping documents for consistency before submission, because a single mismatched figure can hold cargo for days. We also assist clients in applying for the permits and licences relevant to their commodity.",
     items: [
       "Bills of Entry",
       "Commercial invoices verification",
@@ -182,7 +184,7 @@ export const services: Service[] = [
     shortDescription:
       "End-to-end cargo tracking, status updates, and release coordination for every shipment.",
     longDescription:
-      "Once a shipment is in motion, our cargo management service keeps it visible. We monitor container movements, terminal status, customs progress, and carrier ETAs — then relay concise updates to clients at each milestone. When exceptions arise (a customs hold, a port congestion delay, a missed connection), we flag them immediately and propose a corrective action rather than waiting for the client to ask.",
+      "Once a shipment is in motion, our cargo management service keeps it visible. We monitor container movements, terminal status, customs progress, and carrier ETAs, then relay concise updates to clients at each milestone. When exceptions arise (a customs hold, a port congestion delay, a missed connection), we flag them immediately and propose a corrective action rather than waiting for the client to ask.",
     items: [
       "Cargo tracking and monitoring",
       "Shipment status updates",
@@ -220,7 +222,7 @@ export const services: Service[] = [
     shortDescription:
       "Project cargo, mining, agriculture, vehicles, abnormal loads, and dangerous goods documentation.",
     longDescription:
-      "Some shipments fall outside standard clearance patterns. Our specialized desk handles project cargo for mining and industrial sites, agricultural product logistics (including permits and phytosanitary requirements), household and personal effects clearance, vehicle imports and exports, dangerous goods documentation assistance, and oversized or abnormal cargo coordination. Each of these requires a different regulatory path — and we know which path to take.",
+      "Some shipments fall outside standard clearance patterns. Our specialized desk handles project cargo for mining and industrial sites, agricultural product logistics (including permits and phytosanitary requirements), household and personal effects clearance, vehicle imports and exports, dangerous goods documentation assistance, and oversized or abnormal cargo coordination. Each of these requires a different regulatory path, and we know which path to take.",
     items: [
       "Project cargo coordination",
       "Mining and industrial shipments",
@@ -391,7 +393,7 @@ export const faqs: FAQItem[] = [
     category: "Freight Forwarding",
     question: "Which ports do you operate through?",
     answer:
-      "We clear cargo through both Namibian ports — Walvis Bay and Lüderitz — and arrange cross-border road freight via the major border posts (Ariamsveld, Noordoewer, Ngoma, Katima Mulilo, Oshikango, Trans-Kalahari) into South Africa, Botswana, Zambia, Zimbabwe, and beyond.",
+      "We clear cargo through both Namibian ports (Walvis Bay and Lüderitz), and arrange cross-border road freight via the major border posts (Ariamsveld, Noordoewer, Ngoma, Katima Mulilo, Oshikango, Trans-Kalahari) into South Africa, Botswana, Zambia, Zimbabwe, and beyond.",
   },
   {
     category: "Imports",
@@ -421,13 +423,13 @@ export const faqs: FAQItem[] = [
     category: "Documentation",
     question: "What is SAD documentation?",
     answer:
-      "SAD stands for Single Administrative Document — the standard customs declaration form used across SACU member states. In Namibia it is the SAD 500 for imports and SAD 504 for exports. We complete and submit these declarations electronically via ASYCUDA World on your behalf.",
+      "SAD stands for Single Administrative Document: the standard customs declaration form used across SACU member states. In Namibia it is the SAD 500 for imports and SAD 504 for exports. We complete and submit these declarations electronically via ASYCUDA World on your behalf.",
   },
   {
     category: "Documentation",
     question: "What happens if my documents contain an error?",
     answer:
-      "Errors are corrected through a customs amendment process (VOC — Voluntary Disclosure or a formal SAD 500 amendment, depending on timing and severity). Minor clerical errors are routinely corrected post-release; material errors affecting value or tariff must be disclosed to avoid penalty. We handle the entire correction process for you.",
+      "Errors are corrected through a customs amendment process (VOC (Voluntary Disclosure) or a formal SAD 500 amendment, depending on timing and severity). Minor clerical errors are routinely corrected post-release; material errors affecting value or tariff must be disclosed to avoid penalty. We handle the entire correction process for you.",
   },
   {
     category: "Logistics",
@@ -445,7 +447,7 @@ export const faqs: FAQItem[] = [
     category: "Vehicle Imports",
     question: "What rules apply to importing a used vehicle into Namibia?",
     answer:
-      "Used vehicle imports are subject to specific permit requirements, roadworthiness inspection, and the standard customs duty plus VAT on the customs value. We handle the import permit, clearance, and coordination with the relevant testing station. Bring your export documentation, vehicle registration, and purchase invoice — we will guide you through the rest.",
+      "Used vehicle imports are subject to specific permit requirements, roadworthiness inspection, and the standard customs duty plus VAT on the customs value. We handle the import permit, clearance, and coordination with the relevant testing station. Bring your export documentation, vehicle registration, and purchase invoice, and we will guide you through the rest.",
   },
   {
     category: "Vehicle Imports",
@@ -490,13 +492,13 @@ export const team: TeamMember[] = [
   {
     name: "Linus Sibungo",
     title: "Founder & Managing Director",
-    credentials: "PhD — Transportation & Logistics Management",
+    credentials: "PhD, Transportation & Logistics Management",
     bio: "Linus founded L&R Clearing Agency CC with a vision to build a world-class, proudly Namibian customs clearing and freight forwarding company. With a doctorate in Transportation & Logistics Management and years of hands-on experience at Namibia's ports and border posts, he leads the company's operations, strategic growth, and international partnerships.",
     phone: "+264 83 785 7640",
     whatsapp: "+264 81 375 9901",
-    email: "ops.clearing@gmail.com",
+    email: "hello@lrclearing.com",
     image: "/images/team/linus-sibungo.jpeg",
-    imageAlt: "Linus Sibungo — Founder & Managing Director of L&R Clearing Agency CC",
+    imageAlt: "Linus Sibungo, Founder & Managing Director of L&R Clearing Agency CC",
   },
   {
     name: "Patience Sibungo",
@@ -505,21 +507,165 @@ export const team: TeamMember[] = [
     bio: "Patience oversees the financial health, administrative operations, and compliance framework of L&R Clearing Agency CC. Her meticulous approach to financial management and client administration ensures that every shipment is handled with full accountability and transparency from first contact through to final delivery.",
     phone: "+264 81 842 5922",
     whatsapp: "+264 81 842 5922",
-    email: "ops.clearing@gmail.com",
+    email: "hello@lrclearing.com",
     image: "/images/team/patience-sibungo.jpeg",
-    imageAlt: "Patience Sibungo — Admin & Finance Director of L&R Clearing Agency CC",
+    imageAlt: "Patience Sibungo, Admin & Finance Director of L&R Clearing Agency CC",
   },
 ];
 
-// TODO: source a real construction.jpeg — current placeholder remains on the
+// TODO: source a real construction.jpeg. The current placeholder remains on the
 // Construction industry card only. All other industry/scene/service images
 // have been replaced with client-supplied Namibia-authentic photos (2026-06-26).
+
+/**
+ * Instant Quote pricing.
+ *
+ * Flat-fee customs clearing for the most common vehicle and equipment
+ * movements across SACU and SADC lanes. Sourced directly from the client
+ * (L&R Clearing Agency CC, 2026-06-27). All prices are in Namibian Dollars
+ * (N$), pegged 1:1 to the South African Rand, and represent the clearing
+ * agent fee only. Duties, VAT, port charges, and transport are billed
+ * separately at cost.
+ *
+ * For lanes marked as "quote on request" (Japan/UK imports, project cargo),
+ * the ops manager prepares a detailed quote based on vehicle type, origin
+ * port, and any applicable permits.
+ */
+export type InstantQuote = {
+  slug: string;
+  category: "Vehicles" | "Commercial & Mining Equipment";
+  title: string;
+  jurisdiction: string;
+  direction: "Import" | "Export" | "Import & Export";
+  priceNad: number | null; // null = quote on request
+  priceLabel: string; // formatted display
+  notes?: string;
+  whatsappPrefill: string; // pre-filled WhatsApp message
+};
+
+const WA_BASE = "https://wa.me/264813759901?text=";
+
+export const instantQuotes: InstantQuote[] = [
+  {
+    slug: "namibia-namra-vehicle-import",
+    category: "Vehicles",
+    title: "Namibia NAMRA Vehicle Import Clearance",
+    jurisdiction: "Namibia (NAMRA)",
+    direction: "Import",
+    priceNad: 3500,
+    priceLabel: "N$ 3,500",
+    notes:
+      "Covers SAD 500 submission, duty/VAT calculation, and coordination with the testing station for used vehicle imports.",
+    whatsappPrefill:
+      WA_BASE +
+      encodeURIComponent(
+        "Hi L&R Clearing, I would like to book a Namibia NAMRA vehicle import clearance (N$ 3,500). Vehicle details:"
+      ),
+  },
+  {
+    slug: "namibia-namra-vehicle-export",
+    category: "Vehicles",
+    title: "Namibia NAMRA Vehicle Export Clearance",
+    jurisdiction: "Namibia (NAMRA)",
+    direction: "Export",
+    priceNad: 2500,
+    priceLabel: "N$ 2,500",
+    notes:
+      "Covers SAD 504 export declaration, port handling coordination, and RORO or container booking.",
+    whatsappPrefill:
+      WA_BASE +
+      encodeURIComponent(
+        "Hi L&R Clearing, I would like to book a Namibia NAMRA vehicle export clearance (N$ 2,500). Vehicle details:"
+      ),
+  },
+  {
+    slug: "south-africa-sars-vehicle-import",
+    category: "Vehicles",
+    title: "South Africa SARS Vehicle Import Clearance",
+    jurisdiction: "South Africa (SARS)",
+    direction: "Import",
+    priceNad: 4500,
+    priceLabel: "N$ 4,500",
+    notes:
+      "Covers SARS clearance for vehicles imported into South Africa via the relevant border post.",
+    whatsappPrefill:
+      WA_BASE +
+      encodeURIComponent(
+        "Hi L&R Clearing, I would like to book a South Africa SARS vehicle import clearance (N$ 4,500). Vehicle details:"
+      ),
+  },
+  {
+    slug: "south-africa-sars-vehicle-export",
+    category: "Vehicles",
+    title: "South Africa SARS Vehicle Export Clearance",
+    jurisdiction: "South Africa (SARS)",
+    direction: "Export",
+    priceNad: 2500,
+    priceLabel: "N$ 2,500",
+    notes:
+      "Covers SARS export declaration and border-side documentation handover.",
+    whatsappPrefill:
+      WA_BASE +
+      encodeURIComponent(
+        "Hi L&R Clearing, I would like to book a South Africa SARS vehicle export clearance (N$ 2,500). Vehicle details:"
+      ),
+  },
+  {
+    slug: "commercial-mining-equipment-namibia",
+    category: "Commercial & Mining Equipment",
+    title: "Commercial & Mining Equipment Clearance (Namibia)",
+    jurisdiction: "Namibia",
+    direction: "Import & Export",
+    priceNad: 4500,
+    priceLabel: "N$ 4,500",
+    notes:
+      "Flat fee for clearing heavy machinery, mining equipment, and commercial vehicles through Walvis Bay or Lüderitz.",
+    whatsappPrefill:
+      WA_BASE +
+      encodeURIComponent(
+        "Hi L&R Clearing, I would like to book a commercial & mining equipment clearance for Namibia (N$ 4,500). Equipment details:"
+      ),
+  },
+  {
+    slug: "commercial-mining-equipment-south-africa",
+    category: "Commercial & Mining Equipment",
+    title: "Commercial & Mining Equipment Clearance (South Africa)",
+    jurisdiction: "South Africa",
+    direction: "Import & Export",
+    priceNad: 4500,
+    priceLabel: "N$ 4,500",
+    notes:
+      "Flat fee for clearing heavy machinery, mining equipment, and commercial vehicles through South African border posts.",
+    whatsappPrefill:
+      WA_BASE +
+      encodeURIComponent(
+        "Hi L&R Clearing, I would like to book a commercial & mining equipment clearance for South Africa (N$ 4,500). Equipment details:"
+      ),
+  },
+  {
+    slug: "imported-vehicles-japan-uk",
+    category: "Vehicles",
+    title: "Imported Vehicles from Japan & UK",
+    jurisdiction: "Namibia & South Africa",
+    direction: "Import",
+    priceNad: null,
+    priceLabel: "Quote on request",
+    notes:
+      "Pricing depends on vehicle type, origin port (Japan or UK), and destination. Contact the ops manager for a detailed quote including freight, duty estimate, and permit requirements.",
+    whatsappPrefill:
+      WA_BASE +
+      encodeURIComponent(
+        "Hi L&R Clearing, I would like a detailed quote for importing a vehicle from Japan/UK. Vehicle details, origin port, and destination:"
+      ),
+  },
+];
 
 export const nav = {
   primary: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Industries", href: "/industries" },
     { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },

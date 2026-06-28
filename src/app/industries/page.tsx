@@ -9,7 +9,7 @@ import { industries } from '@/lib/content';
 import { Icon, type IconName } from '@/lib/icons';
 
 export const metadata: Metadata = {
-  title: "Industries We Serve — L&R Clearing Agency CC",
+  title: "Industries We Serve, L&R Clearing Agency CC",
   description:
     "Customs clearing and logistics expertise for mining, agriculture, manufacturing, construction, retail, automotive, fisheries, oil & gas, and SMEs across Namibia and Southern Africa.",
   alternates: { canonical: '/industries' },
@@ -24,7 +24,7 @@ export default function IndustriesPage() {
         <PageHeader
           eyebrow="Industries We Serve"
           title="Sector expertise that moves your cargo correctly."
-          description="Every industry has its own permits, tariff structures, and clearance patterns. We have handled them all — and we apply that experience to every shipment we file."
+          description="Every industry has its own permits, tariff structures, and clearance patterns. We have handled them all, and we apply that experience to every shipment we file."
           breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Industries' }]}
         />
 

@@ -6,7 +6,7 @@ import { PageHeader } from '@/components/PageHeader';
 import { company } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — L&R Clearing Agency CC",
+  title: "Privacy Policy, L&R Clearing Agency CC",
   description:
     "How L&R Clearing Agency CC collects, uses, and protects personal and commercial information submitted through this website or in the course of providing customs clearing services.",
   alternates: { canonical: '/privacy' },
@@ -57,7 +57,7 @@ export default function PrivacyPage() {
               </Section>
               <Section title="5. Information Sharing">
                 We share your information with third parties only where necessary to perform the
-                services you have engaged us for — for example with carriers, port authorities,
+                services you have engaged us for, for example with carriers, port authorities,
                 customs, and other government agencies. We may also share information where
                 required by law or to protect our legal rights. We do not sell your personal data.
               </Section>

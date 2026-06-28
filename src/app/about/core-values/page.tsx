@@ -7,8 +7,8 @@ import { PageHeader } from '@/components/PageHeader';
 import { coreValues } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: "Core Values — L&R Clearing Agency CC",
-  description: "Integrity, excellence, reliability, efficiency, customer focus, and compliance — the six principles that guide every customs declaration we file.",
+  title: "Core Values, L&R Clearing Agency CC",
+  description: "Integrity, excellence, reliability, efficiency, customer focus, and compliance, the six principles that guide every customs declaration we file.",
   alternates: { canonical: '/about/core-values' },
 };
 
@@ -21,7 +21,7 @@ export default function CoreValuesPage() {
         <PageHeader
           eyebrow="Our Principles"
           title="Core Values"
-          description="Six principles guide every decision we make — from the order in which we process shipments to the way we communicate with clients, carriers, and regulators."
+          description="Six principles guide every decision we make, from the order in which we process shipments to the way we communicate with clients, carriers, and regulators."
           breadcrumb={[{ label: 'Home', href: '/' }, { label: 'About', href: '/about' }, { label: 'Core Values' }]}
         />
 
@@ -66,9 +66,9 @@ export default function CoreValuesPage() {
 
 function getPracticalExample(name: string): string {
   const map: Record<string, string> = {
-    Integrity: 'If we spot an under-declared value on your commercial invoice, we will flag it before submission — not after Customs raises a query.',
+    Integrity: 'If we spot an under-declared value on your commercial invoice, we will flag it before submission, not after Customs raises a query.',
     Excellence: 'Every Bill of Entry is reviewed by a second pair of eyes before submission, not just the agent who prepared it.',
-    Reliability: 'Once we commit to a release date, we hold ourselves to it. If a risk emerges, we communicate it the same day — not at the next status meeting.',
+    Reliability: 'Once we commit to a release date, we hold ourselves to it. If a risk emerges, we communicate it the same day, not at the next status meeting.',
     Efficiency: 'We file electronic declarations via ASYCUDA World the moment documentation is complete, rather than batching files end-of-day.',
     'Customer Focus': 'You receive proactive status updates at each milestone, not only when something goes wrong. Silence from us means progress, not neglect.',
     Compliance: 'We will not facilitate a clearance we believe to be non-compliant, even under commercial pressure. Our licence and your cargo both depend on it.',

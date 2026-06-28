@@ -10,7 +10,7 @@ import { services } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
 export const metadata: Metadata = {
-  title: "Services — L&R Clearing Agency CC",
+  title: "Services, L&R Clearing Agency CC",
   description:
     "Customs clearing, freight forwarding, port & border operations, import/export documentation, cargo management, supply chain solutions, and specialized services across Namibia and Southern Africa.",
   alternates: { canonical: '/services' },
@@ -25,7 +25,7 @@ export default function ServicesPage() {
         <PageHeader
           eyebrow="Our Services"
           title="End-to-end customs, freight, and supply chain services."
-          description="From the first Bill of Entry to the final delivery, we handle every link in the cross-border trade chain — so your cargo moves compliantly, predictably, and on time."
+          description="From the first Bill of Entry to the final delivery, we handle every link in the cross-border trade chain, so your cargo moves compliantly, predictably, and on time."
           breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Services' }]}
         />
 

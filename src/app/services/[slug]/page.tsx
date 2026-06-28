@@ -9,6 +9,7 @@ import { ContactCTA } from '@/components/ContactCTA';
 import { PageHeader } from '@/components/PageHeader';
 import { services } from '@/lib/content';
 import { Icon } from '@/lib/icons';
+import { siteUrl } from '@/lib/siteConfig';
 
 type Params = { slug: string };
 
@@ -39,11 +40,48 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
 
   const others = services.filter((s) => s.slug !== slug);
 
+  // BreadcrumbList JSON-LD for SEO
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteUrl}/services` },
+      { '@type': 'ListItem', position: 3, name: service.title, item: `${siteUrl}/services/${service.slug}` },
+    ],
+  };
+
+  // Service schema for rich results
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.shortDescription,
+    provider: {
+      '@type': 'Organization',
+      name: 'L&R Clearing Agency CC',
+      url: siteUrl,
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'Namibia' },
+      { '@type': 'Place', name: 'Southern Africa' },
+    ],
+    url: `${siteUrl}/services/${service.slug}`,
+  };
+
   return (
     <>
       <Navbar />
       <Ticker />
       <main id="main-content">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        />
         <PageHeader
           eyebrow={`Service ${service.number}`}
           title={service.title}
@@ -119,7 +157,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
                   </span>
                   <h3 className="font-display font-bold text-white text-lg mb-2">Need this service?</h3>
                   <p className="font-body text-sm text-[var(--color-secondary)] mb-5">
-                    Send us your shipment details — we will respond within one business hour with a costed plan.
+                    Send us your shipment details; we will respond within one business hour with a costed plan.
                   </p>
                   <Link
                     href="/contact"

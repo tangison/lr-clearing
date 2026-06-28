@@ -7,7 +7,7 @@ import { PageHeader } from '@/components/PageHeader';
 import { Icon } from '@/lib/icons';
 
 export const metadata: Metadata = {
-  title: "Risk Management — L&R Clearing Agency CC",
+  title: "Risk Management, L&R Clearing Agency CC",
   description: "How we identify, mitigate, and manage the operational, compliance, and commercial risks involved in cross-border cargo movement.",
   alternates: { canonical: '/compliance/risk-management' },
 };

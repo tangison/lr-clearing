@@ -8,7 +8,7 @@ import { competitiveAdvantages } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
 export const metadata: Metadata = {
-  title: "Why Choose Us — L&R Clearing Agency CC",
+  title: "Why Choose Us, L&R Clearing Agency CC",
   description: "Professional and responsive service, deep customs regulatory knowledge, efficient cargo processing, competitive pricing, and reliable communication on every shipment.",
   alternates: { canonical: '/about/why-choose-us' },
 };
@@ -22,7 +22,7 @@ export default function WhyChooseUsPage() {
         <PageHeader
           eyebrow="Competitive Advantage"
           title="Why choose L&R Clearing Agency CC."
-          description="A clearing agent is a long-term partner, not a transactional vendor. The reasons below are why clients stay with us — and why they refer us to others."
+          description="A clearing agent is a long-term partner, not a transactional vendor. The reasons below are why clients stay with us, and why they refer us to others."
           breadcrumb={[{ label: 'Home', href: '/' }, { label: 'About', href: '/about' }, { label: 'Why Choose Us' }]}
         />
 
@@ -64,11 +64,11 @@ function getAdvantageDetail(adv: string): string {
   const map: Record<string, string> = {
     'Professional and responsive service': 'Phone, email, and WhatsApp answered during office hours; after-hours queries acknowledged first thing the next morning.',
     'Strong understanding of customs regulations': 'Daily engagement with Customs & Excise keeps us current on tariff changes, permit requirements, and procedural updates.',
-    'Efficient cargo processing': 'We batch our documentation reviews daily and file electronically via ASYCUDA World — no paper, no overnight queues.',
+    'Efficient cargo processing': 'We batch our documentation reviews daily and file electronically via ASYCUDA World, no paper, no overnight queues.',
     'Customer-focused approach': 'Each client is assigned a primary contact who knows your commodities, your suppliers, and your typical routing.',
     'Competitive and cost-effective solutions': 'Transparent per-line or per-shipment pricing. No hidden disbursements. We quote the full landed cost before you commit.',
     'Commitment to compliance and excellence': 'We will not file a declaration we believe to be incorrect, and we will tell you why.',
-    'Reliable communication and shipment updates': 'Status updates at booking, dispatch, arrival, assessment, release, and delivery — without being asked.',
+    'Reliable communication and shipment updates': 'Status updates at booking, dispatch, arrival, assessment, release, and delivery, without being asked.',
   };
   return map[adv] ?? '';
 }

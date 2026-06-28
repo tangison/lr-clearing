@@ -39,7 +39,7 @@ export function Hero() {
       />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10 pt-24 pb-12 lg:pt-0 lg:pb-0">
-        {/* Left Column — Text */}
+        {/* Left Column, Text */}
         <div className="flex flex-col justify-center order-2 lg:order-1">
           {/* Eyebrow */}
           <div
@@ -71,29 +71,29 @@ export function Hero() {
 
           {/* Subtext */}
           <p className="font-body font-normal text-base max-w-xl leading-relaxed mb-10 text-[var(--color-secondary)]">
-            Your trusted partner in customs clearing, freight forwarding, and logistics solutions — operating across Namibia and the Southern African region.
+            Your trusted partner in customs clearing, freight forwarding, and logistics solutions, operating across Namibia and the Southern African region.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 items-center mb-12">
+            <Link
+              href="/pricing"
+              className="lr-btn-quote font-body font-medium px-8 py-4 text-white text-sm tracking-widest uppercase transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
+            >
+              INSTANT QUOTE →
+            </Link>
             <a
               href={company.social.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="lr-btn-quote font-body font-medium px-8 py-4 text-white text-sm tracking-widest uppercase transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
-            >
-              GET A QUOTE →
-            </a>
-            <Link
-              href="/services"
-              className="lr-btn-services font-body font-medium px-8 py-4 text-sm tracking-widest uppercase transition-all duration-300 text-[var(--color-body-light)] rounded-[var(--radius-btn)]"
+              className="lr-btn-wa font-body font-medium px-8 py-4 text-sm tracking-widest uppercase transition-all duration-300 text-[var(--color-body-light)] rounded-[var(--radius-btn)]"
               style={{ border: `1px solid var(--border-ghost)` }}
             >
-              OUR SERVICES
-            </Link>
+              WHATSAPP US
+            </a>
           </div>
 
-          {/* Micro-stats Row — driven by stats[] in content.ts (single source of truth) */}
+          {/* Micro-stats Row, driven by stats[] in content.ts (single source of truth) */}
           <div
             className="grid grid-cols-3 pt-8 gap-4"
             style={{ borderTop: `1px solid var(--border-faint)` }}
@@ -115,7 +115,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Right Column — Hero Image */}
+        {/* Right Column, Hero Image */}
         <div className="relative order-1 lg:order-2 h-[260px] lg:h-[650px] overflow-hidden lg:min-h-screen">
           <Image
             src="/images/hero.jpeg"

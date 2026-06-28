@@ -8,8 +8,8 @@ import { company } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
 export const metadata: Metadata = {
-  title: "Compliance & Regulations — L&R Clearing Agency CC",
-  description: "The legal and regulatory framework that governs customs clearing and freight forwarding in Namibia — and how we keep our clients on the right side of it.",
+  title: "Compliance & Regulations, L&R Clearing Agency CC",
+  description: "The legal and regulatory framework that governs customs clearing and freight forwarding in Namibia, and how we keep our clients on the right side of it.",
   alternates: { canonical: '/compliance/regulations' },
 };
 

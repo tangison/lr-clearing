@@ -8,7 +8,7 @@ import { faqs, company } from '@/lib/content';
 import { FAQClient } from '@/components/FAQClient';
 
 export const metadata: Metadata = {
-  title: "FAQ — L&R Clearing Agency CC",
+  title: "FAQ, L&R Clearing Agency CC",
   description:
     "Answers to common questions on customs clearance, freight forwarding, imports, exports, documentation, logistics, vehicle imports, and port operations in Namibia.",
   alternates: { canonical: '/faq' },

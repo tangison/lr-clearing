@@ -1,4 +1,4 @@
-// Server Component — no hooks, no event handlers, no browser APIs.
+// Server Component, no hooks, no event handlers, no browser APIs.
 // The marquee animation is pure CSS (see .ticker-animate in globals.css).
 
 export function Ticker() {
