@@ -149,3 +149,46 @@ Stage Summary:
 - ✅ npx tsc --noEmit passes — 0 errors
 - ✅ WORKLOG.md updated
 - ⏳ Awaiting GitHub credentials to push to main
+
+---
+Task ID: 9
+Agent: main
+Task: Custom domain, Instant Quote pricing page, team photo refresh, de-AI-slop, SEO audit, Tangison Studio footer credit
+
+Work Log:
+- Verified lrclearing.com + www.lrclearing.com both verified on Vercel (308 apex → www redirect live)
+- Updated Vercel env var NEXT_PUBLIC_SITE_URL → https://www.lrclearing.com (production/preview/development)
+- Updated src/lib/siteConfig.ts default → https://www.lrclearing.com
+- Updated .env.example with new canonical URL
+- Replaced team photos: linus-sibungo.jpeg ← IMG-20260624-WA0029.jpg (1920×2560 portrait), patience-sibungo.jpeg ← IMG-20260627-WA0018.jpg (587×1080 portrait)
+- Regenerated team WebP (sharp 600×600 cover, position: attention, q85): Linus 319.8KB → 45.0KB (−85.9%), Patience 38.7KB → 24.2KB (−37.6%)
+- Updated company.email → hello@lrclearing.com, company.phone → +264 83 785 7640, added company.officeHours
+- Updated both team members' email to hello@lrclearing.com
+- Updated contact page office-hours line to use company.officeHours
+- Created new /pricing route with 7 instant-quote cards (NAMRA Import/Export, SARS Import/Export, Commercial & Mining Equipment Namibia & SA, Japan/UK imports Quote on Request)
+- Each quote card has WhatsApp pre-fill button + mailto link
+- Pricing added to nav.primary (between Services and Industries)
+- Hero primary CTA "GET A QUOTE" → "INSTANT QUOTE" linking to /pricing
+- Removed static public/robots.txt, replaced with dynamic src/app/robots.ts (sitemap URL auto-generated from siteUrl)
+- Updated sitemap.ts to include /pricing (priority 0.9)
+- Added BreadcrumbList + Service JSON-LD on /services/[slug] pages
+- Updated layout.tsx JSON-LD sameAs to include https://studio.tangison.com
+- De-AI-slop pass: removed 60+ em-dashes from body copy across 20+ files via scripts/de-ai-slop.py + targeted sed
+- Kept em-dashes in metadata titles (established SEO pattern: "PageName — L&R Clearing Agency CC") and in ImageStrip stacked headline (intentional typography)
+- Added "Website by Tangison Studio" credit to Footer (subtle, above copyright, opens in new tab with rel noopener)
+- Commit 2d22ead pushed to main on GitHub
+- Production deploy live on Vercel, aliased to www.lrclearing.com (build 33/33 pages, 0 errors)
+
+Stage Summary:
+- ✅ Custom domain live: https://www.lrclearing.com (apex 308 → www)
+- ✅ Canonical URL / OG / JSON-LD / sitemap / robots all point to www.lrclearing.com
+- ✅ /pricing route live with 7 instant-quote cards and WhatsApp pre-fill
+- ✅ Team photos updated to client's latest uploads (Linus WA0029, Patience WA0018)
+- ✅ Email switched to hello@lrclearing.com, office phone +264 83 785 7640
+- ✅ 60+ em-dashes removed from body copy
+- ✅ Tangison Studio credit in footer
+- ✅ Build: tsc 0 errors, npm run build 33/33 pages
+- ⏳ TODO: real construction.jpeg still placeholder on Industries → Construction card
+- ⏳ TODO: export 180×180 apple-touch-icon from logo source
+- ⏳ TODO: add LinkedIn/Facebook/Instagram to JSON-LD sameAs when available
+- ⏳ TODO: CSP header (currently only X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy)
