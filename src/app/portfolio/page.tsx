@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
+
+export const metadata: Metadata = {
+  title: 'Portfolio, L&R Clearing Agency CC',
+  description: 'Redirected to /services. Browse our customs clearing and freight forwarding services.',
+  alternates: { canonical: '/services' },
+};
 
 /**
  * Legacy /portfolio route, replaced by /services in v3.

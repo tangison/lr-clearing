@@ -9,7 +9,7 @@ import { Icon } from '@/lib/icons';
 
 export const metadata: Metadata = {
   title: "Vision & Mission, L&R Clearing Agency CC",
-  description: "Our vision to be the preferred customs clearing and logistics partner in Namibia and Southern Africa, and our mission to deliver compliant, timely, customer-focused service.",
+  description: "Our vision to be the preferred customs clearing and logistics partner in Namibia and Southern Africa, and our mission to deliver compliant, timely service.",
   alternates: { canonical: '/about/vision-mission' },
 };
 

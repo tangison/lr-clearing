@@ -12,7 +12,7 @@ import { Icon } from '@/lib/icons';
 export const metadata: Metadata = {
   title: "Services, L&R Clearing Agency CC",
   description:
-    "Customs clearing, freight forwarding, port & border operations, import/export documentation, cargo management, supply chain solutions, and specialized services across Namibia and Southern Africa.",
+    "Customs clearing, freight forwarding, port & border operations, documentation, cargo management, and supply chain services across Namibia and Southern Africa.",
   alternates: { canonical: '/services' },
 };
 

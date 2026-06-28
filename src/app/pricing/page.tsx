@@ -11,7 +11,7 @@ import type { IconName } from '@/lib/icons';
 export const metadata: Metadata = {
   title: 'Instant Quote: Customs Clearing Fees — L&R Clearing Agency CC',
   description:
-    'Flat-fee customs clearing for vehicles and commercial & mining equipment across Namibia (NAMRA) and South Africa (SARS). Clear, upfront N$ pricing. Book instantly on WhatsApp.',
+    'Flat-fee customs clearing for vehicles and mining equipment across Namibia (NAMRA) and South Africa (SARS). Clear N$ pricing. Book on WhatsApp.',
   alternates: { canonical: '/pricing' },
   openGraph: {
     title: 'Instant Quote: Customs Clearing Fees — L&R Clearing Agency CC',

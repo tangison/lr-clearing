@@ -11,7 +11,7 @@ import { Icon, type IconName } from '@/lib/icons';
 export const metadata: Metadata = {
   title: "Industries We Serve, L&R Clearing Agency CC",
   description:
-    "Customs clearing and logistics expertise for mining, agriculture, manufacturing, construction, retail, automotive, fisheries, oil & gas, and SMEs across Namibia and Southern Africa.",
+    "Customs clearing and logistics expertise for mining, agriculture, manufacturing, retail, automotive, fisheries, oil & gas, and SMEs across Namibia and Southern Africa.",
   alternates: { canonical: '/industries' },
 };
 

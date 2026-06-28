@@ -104,8 +104,8 @@ All images have WebP-optimized counterparts (same path, `.webp` extension) gener
 - **L&R Clearing Agency CC**
 - **CC/2012/1572 · VAT 05757590615**
 - Cnr 10th Road & Sam Nujoma Ave, Walvis Bay, Namibia
-- Phone: +264 81 375 9901
-- Email: ops.clearing@gmail.com
+- Phone: +264 83 785 7640
+- Email: hello@lrclearing.com
 - WhatsApp: https://wa.me/264813759901
 
 ## Development
@@ -119,13 +119,13 @@ npm run lint
 
 ## Deployment
 
-The site is configured for Vercel. Push to `main` on GitHub to trigger an automatic production deployment. Production URL: https://lr-clearing-ten.vercel.app
+The site is configured for Vercel. Push to `main` on GitHub to trigger an automatic production deployment. Production URL: https://www.lrclearing.com
 
 The contact form on `/contact` does **not** POST to a backend — it builds a pre-filled WhatsApp message and opens `wa.me` in a new tab. The root API endpoint at `/api` returns basic service metadata for uptime checks.
 
 ## Canonical URL
 
-`src/lib/siteConfig.ts` exports `siteUrl`, read from `NEXT_PUBLIC_SITE_URL` env var with fallback to `https://lr-clearing-ten.vercel.app`. Update the env var in Vercel when the custom domain (www.lrclearing.com) goes live.
+`src/lib/siteConfig.ts` exports `siteUrl`, read from `NEXT_PUBLIC_SITE_URL` env var with fallback to `https://www.lrclearing.com`. The apex `lrclearing.com` redirects (308) to `www.lrclearing.com`.
 
 ## Skills
 

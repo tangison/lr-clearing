@@ -8,7 +8,7 @@ import { company } from '@/lib/content';
 export const metadata: Metadata = {
   title: "Privacy Policy, L&R Clearing Agency CC",
   description:
-    "How L&R Clearing Agency CC collects, uses, and protects personal and commercial information submitted through this website or in the course of providing customs clearing services.",
+    "How L&R Clearing Agency CC collects, uses, and protects personal and commercial information submitted through this website or during customs clearing services.",
   alternates: { canonical: '/privacy' },
 };
 

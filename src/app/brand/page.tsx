@@ -1,9 +1,23 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Ticker } from '@/components/Ticker';
 import { Footer } from '@/components/Footer';
 import { company } from '@/lib/content';
+
+export const metadata: Metadata = {
+  title: 'Brand Guidelines, L&R Clearing Agency CC',
+  description:
+    'Official L&R Clearing Agency CC brand assets, colours, typography, and logo variants. For partners, media, and suppliers requiring branded materials.',
+  alternates: { canonical: '/brand' },
+  openGraph: {
+    title: 'Brand Guidelines, L&R Clearing Agency CC',
+    description:
+      'Official brand assets, colours, typography, and logo variants for L&R Clearing Agency CC.',
+    type: 'website',
+  },
+};
 
 const brandColors = [
   { name: 'Navy Deep', hex: '#1B2A4A', usage: 'Primary backgrounds, headers, footers' },

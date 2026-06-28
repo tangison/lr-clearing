@@ -8,7 +8,7 @@ import { services, nav as navData } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: "Sitemap, L&R Clearing Agency CC",
-  description: "Complete index of all pages on the L&R Clearing Agency CC website.",
+  description: "Complete index of every page on the L&R Clearing Agency CC website, including services, industries, compliance, and contact information.",
   alternates: { canonical: '/sitemap' },
 };
 
