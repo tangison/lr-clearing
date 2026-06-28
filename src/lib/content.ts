@@ -497,7 +497,7 @@ export const team: TeamMember[] = [
     phone: "+264 83 785 7640",
     whatsapp: "+264 81 375 9901",
     email: "hello@lrclearing.com",
-    image: "/images/team/linus-sibungo.jpeg",
+    image: "/images/team/linus-sibungo.webp",
     imageAlt: "Linus Sibungo, Founder & Managing Director of L&R Clearing Agency CC",
   },
   {
@@ -508,7 +508,7 @@ export const team: TeamMember[] = [
     phone: "+264 81 842 5922",
     whatsapp: "+264 81 842 5922",
     email: "hello@lrclearing.com",
-    image: "/images/team/patience-sibungo.jpeg",
+    image: "/images/team/patience-sibungo.webp",
     imageAlt: "Patience Sibungo, Admin & Finance Director of L&R Clearing Agency CC",
   },
 ];
