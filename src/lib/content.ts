@@ -481,15 +481,16 @@ export const stats = [
  *
  * Single source of truth — consumed by:
  *   - src/app/about/operational-coverage/page.tsx  (renders cards with images)
+ *   - src/app/page.tsx                            (home page border posts slider)
  *   - src/components/Ticker.tsx                    (marquee strip)
  *   - FAQ answer string below (kept in sync manually)
  *
- * All six images are licence-free (CC0 / CC BY / CC BY-SA) from Wikimedia
- * Commons. See /public/images/borders/SOURCES.md for full attribution.
- *
- * Note on oshikango-border.jpeg: no Oshikango-specific photo was available;
- * the image shows a similar Namibia-Angola border crossing facility
- * (Okavango River bridges). Flagged per task spec preference order #2.
+ * Images:
+ *   - 4 of 6 are authentic on-site photos supplied by the client
+ *     (Trans-Kalahari, Ariamsvlei, Ngoma, Oshikango).
+ *   - 2 are sourced from Wikimedia Commons under free CC licences
+ *     (Noordoewer, Wenela).
+ *   - See /public/images/borders/SOURCES.md for full attribution.
  */
 export type BorderPost = {
   /** Display name (without "Border Post" suffix — that's added in render) */
@@ -513,7 +514,7 @@ export const borderPosts: BorderPost[] = [
     corridor: "Walvis Bay → Windhoek → Buitepos → Lobatse → Johannesburg",
     image: "/images/borders/trans-kalahari-border.jpeg",
     imageAlt: "Trans-Kalahari Border Post — L&R Clearing Agency CC operations",
-    imageNote: "Buitepos border post on the Namibia-Botswana border.",
+    imageNote: "Trans-Kalahari Border Post commercial terminal at Buitepos, Namibia.",
   },
   {
     name: "Ariamsvlei",
@@ -521,7 +522,7 @@ export const borderPosts: BorderPost[] = [
     corridor: "Keetmanshoop → Upington → Gauteng",
     image: "/images/borders/ariamsvlei-border.jpeg",
     imageAlt: "Ariamsvlei Border Post — L&R Clearing Agency CC operations",
-    imageNote: "Ariamsvlei border post between Namibia and South Africa.",
+    imageNote: "Ariamsvlei NamRA border post between Namibia and South Africa.",
   },
   {
     name: "Noordoewer",
@@ -545,7 +546,7 @@ export const borderPosts: BorderPost[] = [
     corridor: "Katima Mulilo → Chobe → Livingstone",
     image: "/images/borders/ngoma-border.jpeg",
     imageAlt: "Ngoma Border Post — L&R Clearing Agency CC operations",
-    imageNote: "Ngoma Bridge on the Chobe River, Namibia-Botswana border.",
+    imageNote: "Ngoma border checkpoint on the Namibia-Botswana crossing.",
   },
   {
     name: "Oshikango",
@@ -553,7 +554,7 @@ export const borderPosts: BorderPost[] = [
     corridor: "Oshakati → Santa Clara → Lubango",
     image: "/images/borders/oshikango-border.jpeg",
     imageAlt: "Oshikango Border Post — L&R Clearing Agency CC operations",
-    imageNote: "Namibia-Angola border crossing infrastructure (stand-in for Oshikango).",
+    imageNote: "Oshikango border post, Ohangwena Region, on the Namibia-Angola crossing.",
   },
 ];
 

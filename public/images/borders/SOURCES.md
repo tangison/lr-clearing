@@ -1,48 +1,64 @@
 # Border Post Image Sources — lrclearing.com
 
-All six images sourced from [Wikimedia Commons](https://commons.wikimedia.org) under free licences (CC0 / Public Domain / CC BY / CC BY-SA).
+This directory contains six border post images used on the Operational Coverage
+page (and the home page border posts slider). Four images were supplied
+directly by the client (L&R Clearing Agency CC) — these are authentic on-site
+photos of the actual border posts. Two images are sourced from Wikimedia
+Commons under free licences.
 
-Optimisation pipeline applied to each file:
+## Optimisation Pipeline
 
-1. Crop to 16:9 aspect ratio, attention-biased toward salient subject (sharp).
-2. Resize to maximum 1920×1080 px (downscale only).
-3. JPEG quality 82 with mozjpeg (trellis quantisation, chroma subsampling 4:2:0, progressive).
+Applied uniformly to every file:
+
+1. 16:9 aspect ratio crop (attention-biased toward salient subject via sharp).
+2. Resize to maximum 1920×1080 px (downscale only). Client images that arrived
+   smaller than 960×540 are upscaled to 1280×720 using Lanczos3 resampling for
+   clean 2× retina coverage on a 640px card slot.
+3. JPEG quality 82 with mozjpeg (trellis quantisation, chroma subsampling 4:2:0,
+   progressive scan).
 4. EXIF / ICC / thumbnail metadata stripped.
-5. If file exceeds 300 KB at q70 1920×1080, fall back to 1600×900 → 1440×810 → 1280×720.
+5. If a file exceeds 300 KB at q82, automatically re-encode at progressively
+   lower quality (80, 78, 75, 72, 70) until under budget, then fall back to
+   smaller dimensions if still over.
+
+All six files are under 300 KB (range: 54–296 KB, average 154 KB).
 
 ## Source Attribution
 
-| File | Source URL | Licence | Notes |
+| File | Source | Licence | Notes |
 |---|---|---|---|
-| trans-kalahari-border.jpeg | https://commons.wikimedia.org/wiki/File:Buitepos_border_post.jpg | cc-by-sa-4.0 | Buitepos border post By Hp.Baumeler |
-| ariamsvlei-border.jpeg | https://commons.wikimedia.org/wiki/File:Borderlands_(23963395372).jpg | cc-by-2.0 | Ariamsvlei Border post Namibia By Paul Keller |
-| noordoewer-border.jpeg | https://commons.wikimedia.org/wiki/File:Noordoewer_border_post.jpg | cc-by-2.0 | Noordoewer border post at the Namibia - South Africa Border By Paul Keller |
-| wenela-border.jpeg | https://commons.wikimedia.org/wiki/File:Katima_Mulilo_Bridge.jpg | CC BY | Katima Mulilo Bridge IS the Wenela border crossing structure connecting Namibia and Zambia over the Zambezi River. By Eugen Zibiso |
-| ngoma-border.jpeg | https://commons.wikimedia.org/wiki/File:%C5%98eka_Chobe_River_na_hranici_Botswana_-_Namibie,_Ngoma_Bridge_-_panoramio_(1).jpg | cc-by-3.0 | Řeka Chobe River na hranici Botswana - Namibie, Ngoma Bridge By Pavel Špindler |
-| oshikango-border.jpeg | https://commons.wikimedia.org/wiki/File:Border_Traffic_between_Namibia_and_Angola.jpg | CC BY-SA | STAND-IN: No Oshikango-specific border post photo was available on Wikimedia Commons. By Tim Huebschle |
+| trans-kalahari-border.jpeg | Client-supplied photo | © L&R Clearing Agency CC | "TRANS-KALAHARI BORDER POST — COMMERCIAL TERMINAL" sign visible. The Namibia-side facility at Buitepos on the Walvis Bay–Windhoek–Gaborone–Johannesburg corridor. |
+| ariamsvlei-border.jpeg | Client-supplied photo | © L&R Clearing Agency CC | "NamRA — ARIAMSVLEI BORDER POST" sign visible. The Namibia–South Africa crossing on the Keetmanshoop–Upington–Gauteng lane. |
+| noordoewer-border.jpeg | [Wikimedia Commons: File:Noordoewer border post.jpg](https://commons.wikimedia.org/wiki/File:Noordoewer_border_post.jpg) | CC BY 2.0 (Paul Keller) | "Noordoewer border post at the Namibia - South Africa Border" — original photo by Paul Keller, kept as the client did not supply a Noordoewer image. |
+| wenela-border.jpeg | [Wikimedia Commons: File:Katima Mulilo Bridge.jpg](https://commons.wikimedia.org/wiki/File:Katima_Mulilo_Bridge.jpg) | CC BY (Eugen Zibiso) | The Katima Mulilo Bridge IS the Wenela border crossing structure connecting Namibia and Zambia over the Zambezi River. The "Wenela" name comes from the Witwatersrand Native Labour Association (WENELA) which historically operated at this crossing. Photo by Eugen Zibiso. |
+| ngoma-border.jpeg | Client-supplied photo | © L&R Clearing Agency CC | Namibia–Botswana border checkpoint with the Botswana flag visible. The Ngoma crossing on the Katima Mulilo–Chobe–Livingstone lane. |
+| oshikango-border.jpeg | Client-supplied photo | © L&R Clearing Agency CC | "WELCOME TO THE REPUBLIC OF NAMIBIA — Ohangwena Region" sign visible (with Portuguese translation). The Oshikango / Santa Clara crossing into Angola. |
 
 ## File Sizes After Optimisation
 
 | File | Dimensions | Quality | Size (KB) | Under 300 KB target |
 |---|---|---|---|---|
-| trans-kalahari-border.jpeg | 1440x810 | q72 | 289.6 KB | Yes |
-| ariamsvlei-border.jpeg | 1920x1080 | q82 | 156.1 KB | Yes |
-| noordoewer-border.jpeg | 1920x1080 | q78 | 295.6 KB | Yes |
-| wenela-border.jpeg | 1920x1080 | q72 | 286.4 KB | Yes |
-| ngoma-border.jpeg | 1920x1080 | q82 | 194.6 KB | Yes |
-| oshikango-border.jpeg | 1920x1080 | q82 | 270.3 KB | Yes |
+| trans-kalahari-border.jpeg | 1280×720 | q82 | 54.1 KB | Yes |
+| ariamsvlei-border.jpeg | 1280×720 | q82 | 83.0 KB | Yes |
+| noordoewer-border.jpeg | 1920×1080 | q78 | 295.6 KB | Yes |
+| wenela-border.jpeg | 1920×1080 | q72 | 286.4 KB | Yes |
+| ngoma-border.jpeg | 1280×720 | q82 | 113.3 KB | Yes |
+| oshikango-border.jpeg | 1280×720 | q82 | 93.7 KB | Yes |
 
-**Total: 1492.7 KB across 6 images (avg 248.8 KB/image)**
+**Total: 926.2 KB across 6 images (average 154.4 KB/image)**
 
 ## Licence Notes
 
-- **CC0 / Public Domain**: No attribution required. Used freely for any purpose.
-- **CC BY**: Attribution required. Credit the original author (linked in Source URL).
-- **CC BY-SA**: Attribution required, derivative works must use the same licence.
-- All images are welcome for commercial use under these licences.
-- For full licence text, follow the Source URL → file page on Wikimedia Commons.
+- **Client-supplied photos** (4 of 6): © L&R Clearing Agency CC. The client
+  owns these photos and has authorised their use on this site only.
+- **Wikimedia Commons photos** (2 of 6): Used under the Creative Commons
+  licences indicated above. Attribution is required for CC BY and CC BY-SA;
+  the original author is linked in the Source column.
+- All images are appropriate for commercial use under these terms.
 
 ## Stand-in Disclosure
 
-- **oshikango-border.jpeg**: No Oshikango-specific border post photo was available on Wikimedia Commons. The selected image shows actual Namibia–Angola border crossing infrastructure (Okavango River crossing bridges between the two countries) — a similar facility to the Oshikango / Santa Clara crossing. Per the task spec preference order #2: *'Photograph of a similar Namibian/SADC border post facility if no specific image exists — label with comment in code.'*
-- **wenela-border.jpeg**: The Katima Mulilo Bridge IS the Wenela border crossing structure connecting Namibia and Zambia over the Zambezi River. The 'Wenela' name comes from the Witwatersrand Native Labour Association (WENELA) which historically operated at this crossing.
+- **wenela-border.jpeg**: The Katima Mulilo Bridge IS the Wenela border
+  crossing structure over the Zambezi. The "Wenela" name comes from the
+  Witwatersrand Native Labour Association (WENELA) which historically operated
+  at this crossing.

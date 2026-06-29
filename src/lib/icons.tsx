@@ -33,6 +33,7 @@ export type IconName =
   | "ship"
   | "check"
   | "arrow-right"
+  | "arrow-left"
   | "phone"
   | "mail"
   | "map-pin"
@@ -221,6 +222,12 @@ export function Icon({ name, className = "w-6 h-6" }: { name: IconName; classNam
       return (
         <svg {...common}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+        </svg>
+      );
+    case "arrow-left":
+      return (
+        <svg {...common}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5M11 19l-7-7 7-7" />
         </svg>
       );
     case "phone":

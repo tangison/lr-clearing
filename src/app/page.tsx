@@ -7,6 +7,7 @@ import { Services } from '@/components/Services';
 import { WhyLR } from '@/components/WhyLR';
 import { ImageStrip } from '@/components/ImageStrip';
 import { ScenesGallery } from '@/components/ScenesGallery';
+import { BorderPostsSlider } from '@/components/BorderPostsSlider';
 import { ContactCTA } from '@/components/ContactCTA';
 import { Footer } from '@/components/Footer';
 
@@ -33,6 +34,7 @@ export default function Home() {
         <TrustBar />
         <Services />
         <ScenesGallery />
+        <BorderPostsSlider />
         <WhyLR />
         <ImageStrip />
         <ContactCTA />
