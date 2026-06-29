@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // Strip console.* in production (keep error for diagnostics). P3-6 audit fix.
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error'] } : false,
+  },
   // Security headers — applied to all routes.
   // CSP allows: self, Vercel CDN assets, inline styles (Next.js requires),
   // inline scripts (Next.js hydration), wa.me / api.whatsapp.com (WhatsApp links),

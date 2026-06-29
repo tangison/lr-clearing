@@ -70,7 +70,7 @@ export function BorderPostsSlider() {
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
           <div className="max-w-2xl">
-            <span className="font-mono font-normal text-[0.6875rem] block mb-3 uppercase tracking-widest text-[var(--color-accent)]">
+            <span className="font-mono font-normal text-[0.6875rem] block mb-3 uppercase tracking-widest text-[var(--color-accent-text)]">
               Border Posts Covered
             </span>
             <h2
@@ -79,7 +79,7 @@ export function BorderPostsSlider() {
             >
               Six crossings. One handover.
             </h2>
-            <p className="mt-5 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/75">
+            <p className="mt-5 font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]">
               From the Atlantic ports to the SADC interior, we clear cargo through every
               major Namibian border post. Swipe through to see the actual facilities.
             </p>
@@ -146,11 +146,11 @@ export function BorderPostsSlider() {
                   boxShadow: '0 2px 12px -6px rgba(27,42,74,0.10)',
                 }}
               >
-                {/* 16:9 image */}
+                {/* 16:9 image — decorative, link text conveys destination (P3-1 audit fix) */}
                 <div className="relative w-full overflow-hidden" style={{ aspectRatio: '16 / 9' }}>
                   <Image
                     src={b.image}
-                    alt={b.imageAlt}
+                    alt=""
                     fill
                     sizes="(max-width: 768px) 85vw, (max-width: 1024px) 42vw, 32vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -168,17 +168,17 @@ export function BorderPostsSlider() {
                     <p className="font-display font-bold text-white text-lg md:text-xl leading-tight">
                       {b.name}
                     </p>
-                    <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent)] mt-0.5">
+                    <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent-text)] mt-0.5">
                       {b.country}
                     </p>
                   </div>
                 </div>
                 {/* Body */}
                 <div className="p-4 md:p-5">
-                  <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] mb-2">
+                  <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-2">
                     Corridor
                   </p>
-                  <p className="font-body text-sm text-[var(--color-primary)]/85 leading-relaxed">
+                  <p className="font-body text-sm text-[var(--color-body-text)] leading-relaxed">
                     {b.corridor}
                   </p>
                 </div>
@@ -191,7 +191,7 @@ export function BorderPostsSlider() {
         <div className="mt-8 md:mt-10 text-center md:text-left">
           <Link
             href="/about/operational-coverage"
-            className="inline-flex items-center gap-2 font-display font-semibold text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors"
+            className="inline-flex items-center gap-2 font-display font-semibold text-[var(--color-primary)] hover:text-[var(--color-accent-text)] transition-colors"
           >
             See all border posts and corridors
             <Icon name="arrow-right" className="w-4 h-4" />

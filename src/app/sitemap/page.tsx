@@ -45,7 +45,7 @@ export default function SitemapPage() {
 function Column({ title, links }: { title: string; links: { label: string; href: string }[] }) {
   return (
     <div>
-      <h2 className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-5">
+      <h2 className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-5">
         {title}
       </h2>
       <ul className="space-y-3">
@@ -53,7 +53,7 @@ function Column({ title, links }: { title: string; links: { label: string; href:
           <li key={l.href}>
             <Link
               href={l.href}
-              className="font-body text-[0.9375rem] text-[var(--color-primary)]/80 hover:text-[var(--color-accent)] transition-colors"
+              className="font-body text-[0.9375rem] text-[var(--color-body-text)] hover:text-[var(--color-accent-text)] transition-colors"
             >
               {l.label}
             </Link>

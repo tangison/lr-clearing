@@ -68,18 +68,18 @@ export default function RegulationsPage() {
                     <span className="inline-flex w-10 h-10 items-center justify-center rounded-[var(--radius-card)] mb-3" style={{ backgroundColor: 'var(--color-light-bg)', color: 'var(--color-accent)' }}>
                       <Icon name="shield" className="w-5 h-5" />
                     </span>
-                    <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] mb-1">{f.role}</p>
+                    <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-1">{f.role}</p>
                     <h3 className="font-display font-bold text-lg text-[var(--color-primary)]">{f.name}</h3>
                   </div>
                   <div className="md:col-span-9">
-                    <p className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/80">{f.detail}</p>
+                    <p className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]">{f.detail}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             <div className="mt-12 p-8 rounded-[var(--radius-card)]" style={{ backgroundColor: 'var(--color-primary)' }}>
-              <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent)] mb-3">Important</p>
+              <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-3">Important</p>
               <p className="font-body text-[1.0625rem] text-white leading-relaxed">
                 The information on this page is a general summary for client orientation and is not legal advice.
                 Tariff rates, permit requirements, and procedural rules change frequently. For the position

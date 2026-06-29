@@ -22,7 +22,7 @@ export function TrustBar() {
                   i < items.length - 1 ? `1px solid var(--border-divider)` : 'none',
               }}
             >
-              <span className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest text-[var(--color-primary)] opacity-60">
+              <span className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest text-[var(--color-muted-on-light)]">
                 {item}
               </span>
             </div>

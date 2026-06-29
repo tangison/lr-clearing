@@ -19,7 +19,7 @@ export function Services() {
     if (prefersReduced) return;
     if (cardsRef.current) {
       const cards = cardsRef.current.querySelectorAll('.service-card');
-      gsap.fromTo(
+      const tween = gsap.fromTo(
         cards,
         { y: 40, opacity: 0 },
         {
@@ -35,10 +35,11 @@ export function Services() {
           },
         }
       );
+      const trigger = tween.scrollTrigger;
+      return () => {
+        trigger?.kill();
+      };
     }
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
   }, []);
 
   const homeServices = services.slice(0, 4);
@@ -52,7 +53,7 @@ export function Services() {
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <span className="font-mono font-normal text-[0.6875rem] block mb-3 uppercase tracking-widest text-[var(--color-accent)]">
+            <span className="font-mono font-normal text-[0.6875rem] block mb-3 uppercase tracking-widest text-[var(--color-accent-text)]">
               What We Do
             </span>
             <h2
@@ -68,7 +69,7 @@ export function Services() {
           </div>
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] hover:underline"
+            className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] hover:underline"
           >
             View all services →
           </Link>
@@ -108,17 +109,17 @@ export function Services() {
                   <span className="inline-flex w-9 h-9 items-center justify-center rounded-[var(--radius-card)] backdrop-blur-sm" style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: 'var(--color-accent)' }}>
                     <Icon name={service.icon} className="w-5 h-5" />
                   </span>
-                  <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
+                  <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">
                     {service.number}
                   </span>
                 </div>
-                <h3 className="font-display font-bold text-[1.375rem] mb-2 text-white group-hover:text-[var(--color-accent)] transition-colors">
+                <h3 className="font-display font-bold text-[1.375rem] mb-2 text-white group-hover:text-[var(--color-accent-text)] transition-colors">
                   {service.title}
                 </h3>
-                <p className="font-body font-normal text-[0.9375rem] leading-[1.6] text-[var(--color-secondary)] line-clamp-2">
+                <p className="font-body font-normal text-[0.9375rem] leading-[1.6] text-[var(--color-secondary-strong)] line-clamp-2">
                   {service.shortDescription}
                 </p>
-                <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent)] mt-4 inline-flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent-text)] mt-4 inline-flex items-center gap-2 group-hover:translate-x-1 transition-transform">
                   Explore →
                 </span>
               </div>

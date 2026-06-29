@@ -39,7 +39,7 @@ export default function BrandPage() {
           <div className="mx-auto max-w-7xl px-6 md:px-12">
             <Link
               href="/"
-              className="font-body font-normal inline-block mb-6 transition-colors text-sm text-[var(--color-secondary)]"
+              className="font-body font-normal inline-block mb-6 transition-colors text-sm text-[var(--color-secondary-strong)]"
             >
               ← Back to Home
             </Link>
@@ -49,7 +49,7 @@ export default function BrandPage() {
             >
               Brand Guidelines
             </h1>
-            <p className="font-body font-normal text-base mt-4 max-w-2xl text-[var(--color-secondary)]">
+            <p className="font-body font-normal text-base mt-4 max-w-2xl text-[var(--color-secondary-strong)]">
               The official brand system for L&amp;R Clearing Agency Close Corporation. Use these assets and guidelines to maintain consistent visual identity across all communications.
             </p>
             <div className="mt-6" style={{ width: '64px', height: '2px', backgroundColor: 'var(--color-accent)' }} />
@@ -78,14 +78,14 @@ export default function BrandPage() {
                   <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-1 text-[var(--color-body-light)]">
                     Logo, Full (Light)
                   </p>
-                  <p className="font-body font-normal text-xs text-[var(--color-secondary)]">
+                  <p className="font-body font-normal text-xs text-[var(--color-secondary-strong)]">
                     For use on dark backgrounds
                   </p>
                 </div>
                 <a
                   href="/brand/logo-full.png"
                   download
-                  className="font-body font-medium text-white text-xs tracking-widest uppercase px-6 py-3 transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
+                  className="font-body font-medium text-white text-xs tracking-widest uppercase px-6 py-3 transition-all duration-300 bg-[var(--color-accent-button)] rounded-[var(--radius-btn)]"
                 >
                   DOWNLOAD PNG
                 </a>
@@ -104,14 +104,14 @@ export default function BrandPage() {
                   <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-1 text-[var(--color-primary)]">
                     Logo, Icon Mark
                   </p>
-                  <p className="font-body font-normal text-xs text-[var(--color-secondary)]">
+                  <p className="font-body font-normal text-xs text-[var(--color-secondary-strong)]">
                     For use on light backgrounds / navbar
                   </p>
                 </div>
                 <a
                   href="/brand/logo-icon.png"
                   download
-                  className="font-body font-medium text-white text-xs tracking-widest uppercase px-6 py-3 transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
+                  className="font-body font-medium text-white text-xs tracking-widest uppercase px-6 py-3 transition-all duration-300 bg-[var(--color-accent-button)] rounded-[var(--radius-btn)]"
                 >
                   DOWNLOAD PNG
                 </a>
@@ -141,7 +141,7 @@ export default function BrandPage() {
                     <p className="font-display font-bold text-sm mt-0.5 text-[var(--color-primary)]">
                       {color.name}
                     </p>
-                    <p className="font-body font-normal text-xs mt-0.5 leading-relaxed text-[var(--color-secondary)]">
+                    <p className="font-body font-normal text-xs mt-0.5 leading-relaxed text-[var(--color-secondary-strong)]">
                       {color.usage}
                     </p>
                   </div>
@@ -161,13 +161,13 @@ export default function BrandPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Barlow Condensed */}
               <div className="p-6 md:p-8 bg-white border" style={{ borderColor: 'rgba(0,0,0,0.05)' }}>
-                <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-accent)]">
+                <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-accent-text)]">
                   Display, Headlines
                 </p>
                 <p className="font-display font-extrabold text-[3rem] uppercase tracking-tight leading-none mb-3 text-[var(--color-primary)]">
                   Barlow Condensed
                 </p>
-                <p className="font-body font-normal text-sm text-[var(--color-secondary)]">
+                <p className="font-body font-normal text-sm text-[var(--color-secondary-strong)]">
                   Weights: 700, 800. Used for all headlines, section titles, and display text. Always uppercase.
                 </p>
                 <div className="mt-6 space-y-2">
@@ -182,13 +182,13 @@ export default function BrandPage() {
 
               {/* DM Sans */}
               <div className="p-6 md:p-8 bg-white border" style={{ borderColor: 'rgba(0,0,0,0.05)' }}>
-                <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-accent)]">
+                <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-accent-text)]">
                   Body, Copy &amp; Navigation
                 </p>
                 <p className="font-body font-medium text-[2.25rem] leading-tight mb-3 text-[var(--color-primary)]">
                   DM Sans
                 </p>
-                <p className="font-body font-normal text-sm text-[var(--color-secondary)]">
+                <p className="font-body font-normal text-sm text-[var(--color-secondary-strong)]">
                   Weights: 400, 500. Used for all body copy, navigation labels, button text, and subheadings.
                 </p>
                 <div className="mt-6 space-y-2">
@@ -203,13 +203,13 @@ export default function BrandPage() {
 
               {/* JetBrains Mono */}
               <div className="p-6 md:p-8 bg-white border" style={{ borderColor: 'rgba(0,0,0,0.05)' }}>
-                <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-accent)]">
+                <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-accent-text)]">
                   Mono, Metadata &amp; Ticker
                 </p>
                 <p className="font-mono font-normal text-[2rem] leading-tight mb-3 text-[var(--color-primary)]">
                   JetBrains Mono
                 </p>
-                <p className="font-body font-normal text-sm text-[var(--color-secondary)]">
+                <p className="font-body font-normal text-sm text-[var(--color-secondary-strong)]">
                   Weight: 400. Used for ticker text, captions, registration numbers, metadata, and labels.
                 </p>
                 <div className="mt-6 space-y-2">
@@ -231,12 +231,12 @@ export default function BrandPage() {
             <h2 className="font-display font-extrabold text-[1.75rem] uppercase tracking-tight mb-4 text-[var(--color-primary)]">
               Need Brand Assets?
             </h2>
-            <p className="font-body font-normal text-base mb-8 max-w-lg mx-auto text-[var(--color-secondary)]">
+            <p className="font-body font-normal text-base mb-8 max-w-lg mx-auto text-[var(--color-secondary-strong)]">
               For high-resolution logo files, brand guidelines PDF, or custom asset requests, contact our team.
             </p>
             <a
               href={`mailto:${company.email}`}
-              className="font-body font-medium inline-flex items-center justify-center text-white text-sm tracking-widest uppercase px-7 py-3.5 transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
+              className="font-body font-medium inline-flex items-center justify-center text-white text-sm tracking-widest uppercase px-7 py-3.5 transition-all duration-300 bg-[var(--color-accent-button)] rounded-[var(--radius-btn)]"
             >
               {company.email}
             </a>

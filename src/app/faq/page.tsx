@@ -41,7 +41,7 @@ export default function FAQPage() {
               >
                 Still have a question?
               </h2>
-              <p className="font-body text-[var(--color-secondary)] max-w-xl mx-auto mb-6">
+              <p className="font-body text-[var(--color-secondary-strong)] max-w-xl mx-auto mb-6">
                 Our team is available {company.phoneDisplay} during office hours, or reach us on WhatsApp any time.
               </p>
               <div className="flex flex-wrap justify-center gap-4">

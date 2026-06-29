@@ -46,7 +46,7 @@ export function Hero() {
             className="pl-3 mb-6"
             style={{ borderLeft: '2px solid var(--color-accent)' }}
           >
-            <span className="font-mono font-normal text-xs md:text-sm tracking-widest uppercase text-[var(--color-accent)]">
+            <span className="font-mono font-normal text-xs md:text-sm tracking-widest uppercase text-[var(--color-accent-text)]">
               NAMIBIA · WALVIS BAY · LÜDERITZ
             </span>
           </div>
@@ -66,7 +66,7 @@ export function Hero() {
             <span className="hero-word">FREIGHT </span>
             <span className="hero-word">FORWARDING </span>
             <span className="hero-word">IN </span>
-            <span className="hero-word text-[var(--color-accent)]">NAMIBIA.</span>
+            <span className="hero-word text-[var(--color-accent-text)]">NAMIBIA.</span>
           </h1>
 
           {/* Subtext */}
@@ -78,7 +78,7 @@ export function Hero() {
           <div className="flex flex-wrap gap-4 items-center mb-12">
             <Link
               href="/pricing"
-              className="lr-btn-quote font-body font-medium px-8 py-4 text-white text-sm tracking-widest uppercase transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
+              className="lr-btn-quote font-body font-medium px-8 py-4 text-white text-sm tracking-widest uppercase transition-all duration-300 bg-[var(--color-accent-button)] rounded-[var(--radius-btn)]"
             >
               INSTANT QUOTE →
             </Link>
@@ -95,16 +95,15 @@ export function Hero() {
 
           {/* Micro-stats Row, driven by stats[] in content.ts (single source of truth) */}
           <div
-            className="grid grid-cols-3 pt-8 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-3 pt-8 gap-4 sm:gap-0"
             style={{ borderTop: `1px solid var(--border-faint)` }}
           >
             {stats.map((s, i) => (
               <div
                 key={s.label}
-                className={i > 0 ? 'pl-4 md:pl-6' : ''}
-                style={i > 0 ? { borderLeft: `1px solid var(--border-subtle)` } : undefined}
+                className={`pl-0 sm:pl-4 md:pl-6 py-2 sm:py-0 ${i > 0 ? 'sm:border-l sm:border-[var(--border-subtle)]' : ''}`}
               >
-                <p className="font-display font-bold text-[1.75rem] mb-1 text-[var(--color-body-light)]">
+                <p className="font-display font-bold text-[1.25rem] sm:text-[1.75rem] mb-1 text-[var(--color-body-light)]">
                   {s.value}{s.suffix}
                 </p>
                 <p className="font-mono font-normal text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">

@@ -17,7 +17,7 @@ function FooterLink({ href, label }: { href: string; label: string }) {
     <Link
       href={href}
       aria-current={isCurrent ? 'page' : undefined}
-      className="hover:text-[var(--color-accent)] transition-colors py-1 inline-block"
+      className="hover:text-[var(--color-accent-text)] transition-colors py-1 inline-block"
     >
       {label}
     </Link>
@@ -52,9 +52,9 @@ export function Footer() {
 
           {/* Services column */}
           <div className="space-y-3">
-            <h4 className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-body-light)]">
+            <h2 className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-body-light)]">
               Services
-            </h4>
+            </h2>
             <ul className="font-body font-normal text-sm space-y-2 text-[var(--color-secondary)]">
               {services.slice(0, 5).map((s) => (
                 <li key={s.slug}>
@@ -69,9 +69,9 @@ export function Footer() {
 
           {/* Company column */}
           <div className="space-y-3">
-            <h4 className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-body-light)]">
+            <h2 className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-body-light)]">
               Company
-            </h4>
+            </h2>
             <ul className="font-body font-normal text-sm space-y-2 text-[var(--color-secondary)]">
               {navData.company.map((l) => (
                 <li key={l.href}>
@@ -89,20 +89,20 @@ export function Footer() {
 
           {/* Contact column */}
           <div className="space-y-3">
-            <h4 className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-body-light)]">
+            <h2 className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest mb-4 text-[var(--color-body-light)]">
               Contact
-            </h4>
+            </h2>
             <div className="font-body font-normal text-sm space-y-3 text-[var(--color-secondary)]">
-              <a href={`tel:${company.phone}`} className="flex items-start gap-2 hover:text-[var(--color-accent)] transition-colors">
-                <Icon name="phone" className="w-4 h-4 mt-0.5 text-[var(--color-accent)]" />
+              <a href={`tel:${company.phone}`} className="flex items-start gap-2 hover:text-[var(--color-accent-text)] transition-colors">
+                <Icon name="phone" className="w-4 h-4 mt-0.5 text-[var(--color-accent-text)]" />
                 {company.phoneDisplay}
               </a>
-              <a href={`mailto:${company.email}`} className="flex items-start gap-2 hover:text-[var(--color-accent)] transition-colors break-all">
-                <Icon name="mail" className="w-4 h-4 mt-0.5 text-[var(--color-accent)]" />
+              <a href={`mailto:${company.email}`} className="flex items-start gap-2 hover:text-[var(--color-accent-text)] transition-colors break-all">
+                <Icon name="mail" className="w-4 h-4 mt-0.5 text-[var(--color-accent-text)]" />
                 {company.email}
               </a>
               <p className="flex items-start gap-2">
-                <Icon name="map-pin" className="w-4 h-4 mt-0.5 text-[var(--color-accent)]" />
+                <Icon name="map-pin" className="w-4 h-4 mt-0.5 text-[var(--color-accent-text)]" />
                 <span>
                   {company.address.line1}
                   <br />
@@ -113,9 +113,9 @@ export function Footer() {
                 href={company.social.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-2 hover:text-[var(--color-accent)] transition-colors"
+                className="inline-flex items-center gap-2 mt-2 hover:text-[var(--color-accent-text)] transition-colors"
               >
-                <Icon name="whatsapp" className="w-4 h-4 text-[var(--color-accent)]" />
+                <Icon name="whatsapp" className="w-4 h-4 text-[var(--color-accent-text)]" />
                 WhatsApp us
               </a>
             </div>
@@ -131,9 +131,9 @@ export function Footer() {
             {company.registration} · VAT {company.vat} · {company.address.line1}, {company.address.city}, {company.address.country}
           </p>
           <div className="flex flex-wrap gap-4 md:justify-end font-body font-normal text-xs text-[var(--color-secondary)]">
-            <Link href="/terms" aria-current={pathname === '/terms' ? 'page' : undefined} className="hover:text-[var(--color-accent)] transition-colors">Terms &amp; Conditions</Link>
-            <Link href="/privacy" aria-current={pathname === '/privacy' ? 'page' : undefined} className="hover:text-[var(--color-accent)] transition-colors">Privacy Policy</Link>
-            <Link href="/sitemap" aria-current={pathname === '/sitemap' ? 'page' : undefined} className="hover:text-[var(--color-accent)] transition-colors">Sitemap</Link>
+            <Link href="/terms" aria-current={pathname === '/terms' ? 'page' : undefined} className="hover:text-[var(--color-accent-text)] transition-colors">Terms &amp; Conditions</Link>
+            <Link href="/privacy" aria-current={pathname === '/privacy' ? 'page' : undefined} className="hover:text-[var(--color-accent-text)] transition-colors">Privacy Policy</Link>
+            <Link href="/sitemap" aria-current={pathname === '/sitemap' ? 'page' : undefined} className="hover:text-[var(--color-accent-text)] transition-colors">Sitemap</Link>
             <span>© {new Date().getFullYear()} {company.legalName}</span>
           </div>
         </div>
@@ -146,7 +146,7 @@ export function Footer() {
               href="https://studio.tangison.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-display font-medium text-[var(--color-accent)] hover:underline"
+              className="font-display font-medium text-[var(--color-accent-text)] hover:underline"
             >
               Tangison Studio
             </a>

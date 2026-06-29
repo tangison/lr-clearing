@@ -22,7 +22,7 @@ export function TeamSection() {
       <div className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-24">
         {/* Section header */}
         <div className="max-w-2xl mb-12 md:mb-16">
-          <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">
+          <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-4">
             Meet the Team
           </p>
           <h2
@@ -31,7 +31,7 @@ export function TeamSection() {
           >
             The people behind your clearance.
           </h2>
-          <p className="mt-5 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/75">
+          <p className="mt-5 font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]">
             L&amp;R Clearing Agency CC is led by a small, hands-on team that combines academic
             depth in logistics with day-to-day operational discipline. You will work directly
             with the directors below, not a call centre.
@@ -130,7 +130,7 @@ export function TeamSection() {
                       className="inline-flex items-center gap-2 font-body text-sm transition-colors hover:underline"
                       style={{ color: 'var(--color-primary)' }}
                     >
-                      <Icon name="mail" className="w-4 h-4 text-[var(--color-accent)]" />
+                      <Icon name="mail" className="w-4 h-4 text-[var(--color-accent-text)]" />
                       Email
                     </a>
                     <a
@@ -138,7 +138,7 @@ export function TeamSection() {
                       className="inline-flex items-center gap-2 font-body text-sm transition-colors hover:underline"
                       style={{ color: 'var(--color-primary)' }}
                     >
-                      <Icon name="phone" className="w-4 h-4 text-[var(--color-accent)]" />
+                      <Icon name="phone" className="w-4 h-4 text-[var(--color-accent-text)]" />
                       {member.phone}
                     </a>
                     <a
@@ -148,7 +148,7 @@ export function TeamSection() {
                       className="inline-flex items-center gap-2 font-body text-sm transition-colors hover:underline"
                       style={{ color: 'var(--color-primary)' }}
                     >
-                      <Icon name="whatsapp" className="w-4 h-4 text-[var(--color-accent)]" />
+                      <Icon name="whatsapp" className="w-4 h-4 text-[var(--color-accent-text)]" />
                       WhatsApp
                     </a>
                   </div>

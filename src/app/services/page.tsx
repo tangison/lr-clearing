@@ -56,7 +56,7 @@ export default function ServicesPage() {
                   {/* Content */}
                   <div className="md:col-span-8 flex flex-col justify-center">
                     <div className="flex items-center gap-4 mb-3">
-                      <span className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)]">
+                      <span className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)]">
                         {s.number}
                       </span>
                       <span className="inline-flex w-8 h-8 items-center justify-center rounded-[var(--radius-card)]" style={{ backgroundColor: 'var(--color-light-bg)', color: 'var(--color-accent)' }}>
@@ -64,15 +64,15 @@ export default function ServicesPage() {
                       </span>
                     </div>
                     <h3
-                      className="font-display font-bold text-[var(--color-primary)] mb-3 group-hover:text-[var(--color-accent)] transition-colors"
+                      className="font-display font-bold text-[var(--color-primary)] mb-3 group-hover:text-[var(--color-accent-text)] transition-colors"
                       style={{ fontSize: '1.75rem', lineHeight: 1.2 }}
                     >
                       {s.title}
                     </h3>
-                    <p className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/75 mb-4">
+                    <p className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)] mb-4">
                       {s.shortDescription}
                     </p>
-                    <span className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] group-hover:translate-x-1 transition-transform">
+                    <span className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] group-hover:translate-x-1 transition-transform">
                       Explore
                       <Icon name="arrow-right" className="w-4 h-4" />
                     </span>

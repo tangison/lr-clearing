@@ -16,15 +16,17 @@ export function FAQAccordion({ items }: { items: FAQItem[] }) {
               type="button"
               onClick={() => setOpen(isOpen ? null : i)}
               aria-expanded={isOpen}
+              aria-controls={`faq-panel-${i}`}
+              id={`faq-button-${i}`}
               className="w-full text-left py-6 flex items-start justify-between gap-6 group"
             >
               <div className="flex-1">
-                <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent)] mb-2">
+                <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-2">
                   {item.category}
                 </p>
                 <h3
                   className={`font-display font-bold tracking-tight transition-colors ${
-                    isOpen ? 'text-[var(--color-accent)]' : 'text-[var(--color-primary)]'
+                    isOpen ? 'text-[var(--color-accent-text)]' : 'text-[var(--color-primary)]'
                   }`}
                   style={{ fontSize: '1.25rem', lineHeight: 1.3 }}
                 >
@@ -44,6 +46,9 @@ export function FAQAccordion({ items }: { items: FAQItem[] }) {
               </span>
             </button>
             <div
+              id={`faq-panel-${i}`}
+              role="region"
+              aria-labelledby={`faq-button-${i}`}
               className="overflow-hidden transition-all duration-300"
               style={{
                 display: 'grid',
@@ -53,7 +58,7 @@ export function FAQAccordion({ items }: { items: FAQItem[] }) {
             >
               <div style={{ overflow: 'hidden' }}>
                 <p
-                  className="pb-6 pr-12 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/80"
+                  className="pb-6 pr-12 font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]"
                 >
                   {item.answer}
                 </p>

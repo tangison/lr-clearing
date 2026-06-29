@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -21,6 +21,8 @@ export function Navbar() {
   const menuRef = useRef<HTMLDivElement>(null);
   const servicesDropdownRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const searchOverlayRef = useRef<HTMLDivElement>(null);
+  const searchTriggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80);
@@ -74,20 +76,33 @@ export function Navbar() {
     return () => document.removeEventListener('keydown', handleMenuKeyDown);
   }, [mobileOpen, handleMenuKeyDown]);
 
-  // Close services dropdown on outside click
+  // Close services dropdown on outside click OR Escape (P2-7 fix)
   useEffect(() => {
     if (!servicesOpen) return;
-    const handler = (e: MouseEvent) => {
+    const clickHandler = (e: MouseEvent) => {
       if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(e.target as Node)) {
         setServicesOpen(false);
       }
     };
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
+    const keyHandler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setServicesOpen(false);
+        // Return focus to the services trigger button
+        const trigger = servicesDropdownRef.current?.querySelector<HTMLButtonElement>('button[aria-haspopup="menu"]');
+        trigger?.focus();
+      }
+    };
+    document.addEventListener('mousedown', clickHandler);
+    document.addEventListener('keydown', keyHandler);
+    return () => {
+      document.removeEventListener('mousedown', clickHandler);
+      document.removeEventListener('keydown', keyHandler);
+    };
   }, [servicesOpen]);
 
-  // Search logic — instant client-side search across declared content
-  const searchableIndex = [
+  // Search logic — instant client-side search across declared content.
+  // Memoized so the index is built once per mount, not on every render.
+  const searchableIndex = useMemo(() => [
     ...services.map((s) => ({ title: s.title, href: `/services/${s.slug}`, type: 'Service' })),
     ...services.flatMap((s) =>
       s.items.map((item) => ({ title: item, href: `/services/${s.slug}`, type: `Service · ${s.title}` }))
@@ -95,7 +110,7 @@ export function Navbar() {
     ...navData.primary.map((n) => ({ title: n.label, href: n.href, type: 'Page' })),
     ...navData.company.map((n) => ({ title: n.label, href: n.href, type: 'About' })),
     ...navData.compliance.map((n) => ({ title: n.label, href: n.href, type: 'Compliance' })),
-  ];
+  ], []);
 
   useEffect(() => {
     if (!query.trim()) {
@@ -112,8 +127,47 @@ export function Navbar() {
   useEffect(() => {
     if (searchOpen) {
       requestAnimationFrame(() => searchInputRef.current?.focus());
+    } else {
+      // Restore focus to the search trigger button when overlay closes (P1-7 fix)
+      searchTriggerRef.current?.focus();
+      // Clear query when closing
+      setQuery('');
     }
   }, [searchOpen]);
+
+  // Focus trap + Escape for search overlay (P1-7 fix)
+  const handleSearchKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      setSearchOpen(false);
+      return;
+    }
+    if (e.key !== 'Tab' || !searchOverlayRef.current) return;
+    const focusable = searchOverlayRef.current.querySelectorAll<HTMLElement>(
+      'a[href], button, input, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (searchOpen) {
+      document.addEventListener('keydown', handleSearchKeyDown);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.removeEventListener('keydown', handleSearchKeyDown);
+      if (searchOpen) document.body.style.overflow = '';
+    };
+  }, [searchOpen, handleSearchKeyDown]);
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href);
@@ -164,8 +218,8 @@ export function Navbar() {
                       aria-haspopup="true"
                       className={`font-body font-medium text-sm tracking-widest uppercase transition-colors duration-200 flex items-center gap-1 ${
                         active || servicesOpen
-                          ? 'text-[var(--color-accent)]'
-                          : 'text-[var(--color-body-light)]/70 hover:text-[var(--color-accent)]'
+                          ? 'text-[var(--color-accent-text)]'
+                          : 'text-[var(--color-body-light)]/70 hover:text-[var(--color-accent-text)]'
                       }`}
                     >
                       {link.label}
@@ -185,7 +239,7 @@ export function Navbar() {
                             className="block px-5 py-3 hover:bg-[var(--color-primary)] transition-colors group"
                           >
                             <div className="flex items-start gap-3">
-                              <span className="font-mono text-[0.625rem] text-[var(--color-accent)] mt-1">{s.number}</span>
+                              <span className="font-mono text-[0.625rem] text-[var(--color-accent-text)] mt-1">{s.number}</span>
                               <div>
                                 <p className="font-display font-bold text-sm text-white tracking-wide">{s.title}</p>
                                 <p className="font-body text-xs text-[var(--color-secondary)] mt-0.5 leading-snug">{s.shortDescription}</p>
@@ -195,7 +249,7 @@ export function Navbar() {
                         ))}
                         <Link
                           href="/services"
-                          className="block px-5 py-3 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] hover:bg-[var(--color-primary)] transition-colors"
+                          className="block px-5 py-3 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] hover:bg-[var(--color-primary)] transition-colors"
                         >
                           View all services →
                         </Link>
@@ -211,8 +265,8 @@ export function Navbar() {
                   aria-current={active ? 'page' : undefined}
                   className={`font-body font-medium text-sm tracking-widest uppercase transition-colors duration-200 ${
                     active
-                      ? 'text-[var(--color-accent)]'
-                      : 'text-[var(--color-body-light)]/70 hover:text-[var(--color-accent)]'
+                      ? 'text-[var(--color-accent-text)]'
+                      : 'text-[var(--color-body-light)]/70 hover:text-[var(--color-accent-text)]'
                   }`}
                 >
                   {link.label}
@@ -222,10 +276,13 @@ export function Navbar() {
 
             {/* Search button */}
             <button
+              ref={searchTriggerRef}
               type="button"
               onClick={() => setSearchOpen(true)}
               aria-label="Search the website"
-              className="text-[var(--color-body-light)]/70 hover:text-[var(--color-accent)] transition-colors"
+              aria-haspopup="dialog"
+              aria-expanded={searchOpen}
+              className="p-2 -m-2 text-[var(--color-body-light)]/70 hover:text-[var(--color-accent-text)] transition-colors"
             >
               <Icon name="search" className="w-5 h-5" />
             </button>
@@ -235,7 +292,7 @@ export function Navbar() {
               href={company.social.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="lr-cta-primary font-body font-medium px-5 py-2.5 text-white text-xs tracking-widest uppercase transition-all duration-300 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
+              className="lr-cta-primary font-body font-medium px-5 py-2.5 text-white text-xs tracking-widest uppercase transition-all duration-300 bg-[var(--color-accent-button)] rounded-[var(--radius-btn)]"
             >
               Get a Quote
             </a>
@@ -247,14 +304,14 @@ export function Navbar() {
               type="button"
               onClick={() => setSearchOpen(true)}
               aria-label="Search the website"
-              className="text-[var(--color-body-light)]/70 hover:text-[var(--color-accent)] transition-colors"
+              className="p-2 -m-2 text-[var(--color-body-light)]/70 hover:text-[var(--color-accent-text)] transition-colors"
             >
               <Icon name="search" className="w-5 h-5" />
             </button>
             <button
               ref={hamburgerRef}
               type="button"
-              className="flex flex-col gap-1.5 z-50 group"
+              className="flex flex-col gap-1.5 z-50 group p-2 -m-2 justify-center min-w-[44px] min-h-[44px]"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
@@ -284,6 +341,8 @@ export function Navbar() {
         role="dialog"
         aria-modal="true"
         aria-label="Navigation menu"
+        aria-hidden={!mobileOpen}
+        inert={!mobileOpen ? true : undefined}
         className={`fixed inset-0 z-40 flex flex-col p-8 overflow-y-auto mobile-menu-overlay lg:hidden ${mobileOpen ? 'open' : ''}`}
         style={{ backgroundColor: 'var(--color-primary)' }}
       >
@@ -295,7 +354,7 @@ export function Navbar() {
             type="button"
             onClick={() => setMobileOpen(false)}
             aria-label="Close menu"
-            className="text-[var(--color-body-light)]"
+            className="p-2 -m-2 text-[var(--color-body-light)] min-w-[44px] min-h-[44px] flex items-center justify-center"
           >
             <Icon name="close" className="w-6 h-6" />
           </button>
@@ -310,7 +369,7 @@ export function Navbar() {
                 href={link.href}
                 aria-current={active ? 'page' : undefined}
                 className={`font-display font-bold tracking-tight transition-colors ${
-                  active ? 'text-[var(--color-accent)]' : 'text-white hover:text-[var(--color-accent)]'
+                  active ? 'text-[var(--color-accent-text)]' : 'text-white hover:text-[var(--color-accent-text)]'
                 }`}
                 style={{ fontSize: '2.25rem', lineHeight: 1.1 }}
               >
@@ -330,9 +389,9 @@ export function Navbar() {
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}`}
-                className="font-body text-sm text-[var(--color-body-light)]/80 hover:text-[var(--color-accent)] transition-colors flex items-center gap-2"
+                className="font-body text-sm text-[var(--color-body-light)]/80 hover:text-[var(--color-accent-text)] transition-colors flex items-center gap-2"
               >
-                <span className="font-mono text-[0.625rem] text-[var(--color-accent)]">{s.number}</span>
+                <span className="font-mono text-[0.625rem] text-[var(--color-accent-text)]">{s.number}</span>
                 {s.title}
               </Link>
             ))}
@@ -346,18 +405,18 @@ export function Navbar() {
           </p>
           <div className="flex flex-col gap-3">
             <a href={`tel:${company.phone}`} className="flex items-center gap-3 font-body text-sm text-white">
-              <Icon name="phone" className="w-4 h-4 text-[var(--color-accent)]" />
+              <Icon name="phone" className="w-4 h-4 text-[var(--color-accent-text)]" />
               {company.phoneDisplay}
             </a>
             <a href={`mailto:${company.email}`} className="flex items-center gap-3 font-body text-sm text-white">
-              <Icon name="mail" className="w-4 h-4 text-[var(--color-accent)]" />
+              <Icon name="mail" className="w-4 h-4 text-[var(--color-accent-text)]" />
               {company.email}
             </a>
             <a
               href={company.social.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body font-medium inline-flex items-center justify-center mt-4 text-white text-xs tracking-widest uppercase py-4 px-8 bg-[var(--color-accent)] rounded-[var(--radius-btn)]"
+              className="font-body font-medium inline-flex items-center justify-center mt-4 text-white text-xs tracking-widest uppercase py-4 px-8 bg-[var(--color-accent-button)] rounded-[var(--radius-btn)]"
             >
               Get a Quote
             </a>
@@ -371,16 +430,16 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Search overlay */}
+      {/* Search overlay (proper dialog pattern — P1-7 fix) */}
       {searchOpen && (
         <div
+          ref={searchOverlayRef}
           className="fixed inset-0 z-[60] flex items-start justify-center pt-24 px-6"
           style={{ backgroundColor: 'rgba(17,24,39,0.92)' }}
           onClick={() => setSearchOpen(false)}
-          onKeyDown={(e) => { if (e.key === 'Escape') setSearchOpen(false); }}
-          role="button"
-          tabIndex={-1}
-          aria-label="Close search"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Site search"
         >
           <div
             className="w-full max-w-2xl rounded-[var(--radius-card)] overflow-hidden shadow-2xl"
@@ -388,7 +447,7 @@ export function Navbar() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center gap-3 px-5 py-4" style={{ borderBottom: '1px solid var(--border-subtle)' }}>
-              <Icon name="search" className="w-5 h-5 text-[var(--color-accent)]" />
+              <Icon name="search" className="w-5 h-5 text-[var(--color-accent-text)]" />
               <input
                 ref={searchInputRef}
                 type="search"
@@ -397,17 +456,18 @@ export function Navbar() {
                 placeholder="Search services, industries, FAQs..."
                 className="flex-1 bg-transparent text-white font-body text-base outline-none placeholder:text-[var(--color-secondary)]"
                 aria-label="Search the website"
+                aria-controls="search-results"
               />
               <button
                 type="button"
                 onClick={() => setSearchOpen(false)}
                 aria-label="Close search"
-                className="text-[var(--color-secondary)] hover:text-white"
+                className="p-2 -m-2 text-[var(--color-secondary)] hover:text-white"
               >
                 <Icon name="close" className="w-5 h-5" />
               </button>
             </div>
-            <div className="max-h-96 overflow-y-auto">
+            <div id="search-results" className="max-h-96 overflow-y-auto" role="status" aria-live="polite">
               {query.trim() === '' && (
                 <p className="px-5 py-8 text-center font-body text-sm text-[var(--color-secondary)]">
                   Start typing to search services, industries, and pages.

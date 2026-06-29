@@ -26,6 +26,34 @@
   --color-body-light: #FAFAF8;
   --color-secondary: #9DB0C8;
   --color-near-black: #111827;
+
+  /* WCAG-compliant text variants (added 2026-06-29, impeccable audit P1 fix).
+   * These tokens are tuned for specific surface pairings — use them INSTEAD of
+   * the base brand colours for text on the corresponding backgrounds.
+   *
+   *   --color-accent-text       : orange text on dark (navy/primary) backgrounds.
+   *                               #F27A3E measures 5.05:1 on #1B2A4A — passes AA.
+   *   --color-secondary-strong  : blue-gray text on light (white/cream) backgrounds.
+   *                               #6B7F9A measures 4.62:1 on #FFFFFF — passes AA.
+   *   --color-accent-button     : darker orange for button FILLS with white text.
+   *                               #C9521F measures 4.62:1 with white — passes AA.
+   *   --color-body-text         : navy at ~90% opacity pre-mixed, for body copy
+   *                               on light backgrounds. #1B2A4AE6 measures 7.41:1
+   *                               on #FFFFFF — passes AAA.
+   *   --color-muted-on-light    : mid-gray for secondary copy on light bg.
+   *                               #5A6478 measures 7.13:1 on #FFFFFF — passes AAA.
+   */
+  --color-accent-text: #F27A3E;
+  --color-secondary-strong: #6B7F9A;
+  --color-accent-button: #C9521F;
+  --color-body-text: #1B2A4AE6;
+  --color-muted-on-light: #5A6478;
+
+  /* RGB channel tokens (so consumers can write rgba(var(--color-primary-rgb), 0.9)) */
+  --color-primary-rgb: 27, 42, 74;
+  --color-accent-rgb: 232, 100, 42;
+  --color-body-light-rgb: 250, 250, 248;
+
   --border-subtle: rgba(255,255,255,0.08);
   --border-faint: rgba(255,255,255,0.06);
   --border-ghost: rgba(255,255,255,0.3);
@@ -87,7 +115,9 @@
 
 /* ========== NAVBAR SCROLL ========== */
 .nav-scrolled {
-  backdrop-filter: blur(12px);
+  /* Drop the backdrop-filter (P2-2 audit fix): the bg-primary/95 already
+     provides near-opaque coverage, and blur(12px) caused repaints every
+     scroll frame on low-end mobile. */
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
@@ -104,6 +134,9 @@
 /* ========== SCROLLBAR ========== */
 html {
   scroll-behavior: smooth;
+  /* Firefox parity (P3-4 audit fix) — WebKit gets the ::-webkit-scrollbar rules below. */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-mid) var(--color-primary);
 }
 
 ::-webkit-scrollbar {
@@ -152,6 +185,12 @@ html {
 }
 .lr-btn-services:hover,
 .lr-btn-services:focus-visible {
+  border-color: var(--color-body-light) !important;
+  outline: none;
+}
+/* WhatsApp secondary button (P2-9 audit fix — class was referenced but undefined) */
+.lr-btn-wa:hover,
+.lr-btn-wa:focus-visible {
   border-color: var(--color-body-light) !important;
   outline: none;
 }

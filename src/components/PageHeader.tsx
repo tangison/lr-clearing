@@ -25,12 +25,12 @@ export function PageHeader({
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         {breadcrumb && breadcrumb.length > 0 && (
           <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
+            <ol className="flex items-center gap-2 font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">
               {breadcrumb.map((c, i) => (
                 <li key={i} className="flex items-center gap-2">
                   {i > 0 && <span aria-hidden="true">/</span>}
                   {c.href ? (
-                    <a href={c.href} className="hover:text-[var(--color-accent)] transition-colors">
+                    <a href={c.href} className="hover:text-[var(--color-accent-text)] transition-colors">
                       {c.label}
                     </a>
                   ) : (
@@ -42,7 +42,7 @@ export function PageHeader({
           </nav>
         )}
         {eyebrow && (
-          <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">
+          <p className="font-mono font-normal text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-4">
             {eyebrow}
           </p>
         )}
@@ -54,7 +54,7 @@ export function PageHeader({
         </h1>
         {description && (
           <p
-            className="mt-6 max-w-2xl font-body font-normal text-[var(--color-secondary)]"
+            className="mt-6 max-w-2xl font-body font-normal text-[var(--color-secondary-strong)]"
             style={{ fontSize: "1.0625rem", lineHeight: 1.7 }}
           >
             {description}

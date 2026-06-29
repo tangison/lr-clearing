@@ -26,7 +26,7 @@ export default function PrivacyPage() {
         />
         <section style={{ backgroundColor: 'var(--color-body-light)' }}>
           <div className="mx-auto max-w-3xl px-6 md:px-12 py-16 md:py-24">
-            <article className="space-y-10 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/85">
+            <article className="space-y-10 font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]">
               <Section title="1. Who We Are">
                 {company.legalName} ({company.registration}) is a Namibian Close Corporation
                 providing customs clearing and freight forwarding services. For the purposes of
@@ -92,11 +92,11 @@ export default function PrivacyPage() {
               </Section>
               <Section title="11. Contact">
                 For any privacy-related questions or requests, contact us at:{' '}
-                <a href={`mailto:${company.email}`} className="text-[var(--color-accent)] underline">{company.email}</a>{' '}
+                <a href={`mailto:${company.email}`} className="text-[var(--color-accent-text)] underline">{company.email}</a>{' '}
                 or {company.phoneDisplay}, or write to us at {company.address.line1},{' '}
                 {company.address.city}, {company.address.country}.
               </Section>
-              <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] pt-8" style={{ borderTop: '1px solid var(--border-divider)' }}>
+              <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] pt-8" style={{ borderTop: '1px solid var(--border-divider)' }}>
                 Effective date: 17 June 2026 · {company.legalName} · {company.registration} · VAT {company.vat}
               </p>
             </article>

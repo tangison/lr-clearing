@@ -69,7 +69,7 @@ export default function IndustriesPage() {
                   </div>
                   {/* Body */}
                   <div className="p-6">
-                    <p className="font-body text-[0.9375rem] leading-relaxed text-[var(--color-primary)]/75">
+                    <p className="font-body text-[0.9375rem] leading-relaxed text-[var(--color-body-text)]">
                       {ind.description}
                     </p>
                   </div>

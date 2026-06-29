@@ -66,13 +66,13 @@ export default function RiskManagementPage() {
               {risks.map((r, i) => (
                 <div key={r.title} className="p-8 rounded-[var(--radius-card)]" style={{ backgroundColor: 'white', border: '1px solid var(--border-divider)' }}>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">{String(i + 1).padStart(2, '0')}</span>
                     <span className="inline-flex w-8 h-8 items-center justify-center rounded-[var(--radius-btn)]" style={{ backgroundColor: 'var(--color-light-bg)', color: 'var(--color-accent)' }}>
                       <Icon name="shield" className="w-4 h-4" />
                     </span>
                   </div>
                   <h3 className="font-display font-bold text-lg text-[var(--color-primary)] mb-3">{r.title}</h3>
-                  <p className="font-body text-[0.9375rem] leading-relaxed text-[var(--color-primary)]/75">{r.mitigation}</p>
+                  <p className="font-body text-[0.9375rem] leading-relaxed text-[var(--color-body-text)]">{r.mitigation}</p>
                 </div>
               ))}
             </div>

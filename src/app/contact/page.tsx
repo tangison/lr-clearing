@@ -32,7 +32,7 @@ export default function ContactPage() {
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Left, direct contact */}
               <div>
-                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">
+                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-4">
                   Direct Contact
                 </p>
                 <h2
@@ -41,7 +41,7 @@ export default function ContactPage() {
                 >
                   Reach our team directly.
                 </h2>
-                <p className="mt-4 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/80">
+                <p className="mt-4 font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]">
                   Our office in Walvis Bay is strategically positioned between the port and the
                   town's commercial district, allowing us to maintain close working relationships
                   with Namport, Customs &amp; Excise, and the major shipping lines.
@@ -57,7 +57,7 @@ export default function ContactPage() {
                       <Icon name="phone" className="w-5 h-5" />
                     </span>
                     <div>
-                      <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Phone</p>
+                      <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">Phone</p>
                       <p className="font-display font-bold text-lg text-[var(--color-primary)] mt-1">{company.phoneDisplay}</p>
                       <p className="font-body text-sm text-[var(--color-primary)]/70 mt-1">{company.officeHours} CAT</p>
                     </div>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                       <Icon name="mail" className="w-5 h-5" />
                     </span>
                     <div>
-                      <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Email</p>
+                      <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">Email</p>
                       <p className="font-display font-bold text-lg text-[var(--color-primary)] mt-1 break-all">{company.email}</p>
                       <p className="font-body text-sm text-[var(--color-primary)]/70 mt-1">For all clearance &amp; forwarding inquiries</p>
                     </div>
@@ -89,7 +89,7 @@ export default function ContactPage() {
                       <Icon name="whatsapp" className="w-5 h-5" />
                     </span>
                     <div>
-                      <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">WhatsApp</p>
+                      <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">WhatsApp</p>
                       <p className="font-display font-bold text-lg text-[var(--color-primary)] mt-1">{company.phoneDisplay}</p>
                       <p className="font-body text-sm text-[var(--color-primary)]/70 mt-1">Fastest channel for urgent matters</p>
                     </div>
@@ -103,7 +103,7 @@ export default function ContactPage() {
                       <Icon name="map-pin" className="w-5 h-5" />
                     </span>
                     <div>
-                      <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Office</p>
+                      <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">Office</p>
                       <p className="font-display font-bold text-lg text-[var(--color-primary)] mt-1">{company.address.line1}</p>
                       <p className="font-body text-sm text-[var(--color-primary)]/70 mt-1">{company.address.city}, {company.address.country}</p>
                     </div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="mt-8 p-6 rounded-[var(--radius-card)]" style={{ backgroundColor: 'var(--color-light-bg)' }}>
-                  <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] mb-2">Registration</p>
+                  <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-2">Registration</p>
                   <p className="font-body text-sm text-[var(--color-primary)]">
                     {company.legalName} · {company.registration} · VAT {company.vat}
                   </p>
@@ -120,7 +120,7 @@ export default function ContactPage() {
 
               {/* Right, inquiry form */}
               <div>
-                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">
+                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-4">
                   Inquiry Form
                 </p>
                 <h2
@@ -129,7 +129,7 @@ export default function ContactPage() {
                 >
                   Submit a shipment inquiry.
                 </h2>
-                <p className="mt-4 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/80">
+                <p className="mt-4 font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]">
                   Fill in the details below and we'll open WhatsApp with your inquiry
                   pre-filled, just hit send. The more we know about your cargo, route, and
                   timeline, the more precise our response will be.

@@ -39,7 +39,7 @@ export default function WhyChooseUsPage() {
                     <Icon name="check" className="w-5 h-5" />
                   </span>
                   <div>
-                    <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] mb-1">
+                    <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-1">
                       {String(i + 1).padStart(2, '0')}
                     </p>
                     <p className="font-display font-bold text-lg text-[var(--color-primary)]">{adv}</p>

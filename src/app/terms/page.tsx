@@ -26,7 +26,7 @@ export default function TermsPage() {
         />
         <section style={{ backgroundColor: 'var(--color-body-light)' }}>
           <div className="mx-auto max-w-3xl px-6 md:px-12 py-16 md:py-24">
-            <article className="space-y-10 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/85">
+            <article className="space-y-10 font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]">
               <Section title="1. Introduction">
                 These terms and conditions ("Terms") govern your access to and use of the website
                 operated by {company.legalName} ("we", "us", "our"), a Namibian-registered Close
@@ -96,7 +96,7 @@ export default function TermsPage() {
                 website or our services after a change constitutes acceptance of the updated
                 Terms.
               </Section>
-              <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] pt-8" style={{ borderTop: '1px solid var(--border-divider)' }}>
+              <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] pt-8" style={{ borderTop: '1px solid var(--border-divider)' }}>
                 Effective date: 17 June 2026 · {company.legalName} · {company.registration} · VAT {company.vat}
               </p>
             </article>

@@ -15,7 +15,7 @@ export function ImageStrip() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced) return;
     if (imageRef.current && containerRef.current) {
-      gsap.fromTo(
+      const tween = gsap.fromTo(
         imageRef.current,
         { scale: 1.08 },
         {
@@ -29,16 +29,17 @@ export function ImageStrip() {
           },
         }
       );
+      const trigger = tween.scrollTrigger;
+      return () => {
+        trigger?.kill();
+      };
     }
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
   }, []);
 
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden will-change-transform"
       style={{ height: 'clamp(280px, 30vw, 400px)' }}
     >
       {/* Port sunset image */}
@@ -72,7 +73,7 @@ export function ImageStrip() {
             FROM WALVIS BAY TO THE BORDER —
           </p>
           <p
-            className="font-display font-extrabold leading-none mt-1 text-[var(--color-accent)]"
+            className="font-display font-extrabold leading-none mt-1 text-[var(--color-accent-text)]"
             style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)' }}
           >
             WE CLEAR IT.

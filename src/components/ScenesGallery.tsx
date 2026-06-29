@@ -54,8 +54,9 @@ export function ScenesGallery() {
     if (prefersReduced) return;
     if (sectionRef.current) {
       const items = sectionRef.current.querySelectorAll('.scene-item');
+      const triggers: ScrollTrigger[] = [];
       items.forEach((item) => {
-        gsap.fromTo(
+        const tween = gsap.fromTo(
           item,
           { y: 30, opacity: 0 },
           {
@@ -70,11 +71,12 @@ export function ScenesGallery() {
             },
           }
         );
+        if (tween.scrollTrigger) triggers.push(tween.scrollTrigger);
       });
+      return () => {
+        triggers.forEach((t) => t.kill());
+      };
     }
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
   }, []);
 
   return (
@@ -85,7 +87,7 @@ export function ScenesGallery() {
     >
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-12 md:mb-16 max-w-2xl">
-          <span className="font-mono font-normal text-[0.6875rem] block mb-3 uppercase tracking-widest text-[var(--color-accent)]">
+          <span className="font-mono font-normal text-[0.6875rem] block mb-3 uppercase tracking-widest text-[var(--color-accent-text)]">
             Operations Gallery
           </span>
           <h2
@@ -126,7 +128,7 @@ export function ScenesGallery() {
                 <p className="font-display font-bold text-white text-base md:text-lg leading-tight">
                   {scene.caption}
                 </p>
-                <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent)] mt-1">
+                <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent-text)] mt-1">
                   {scene.sub}
                 </p>
               </div>

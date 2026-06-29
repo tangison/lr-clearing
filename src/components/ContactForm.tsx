@@ -86,7 +86,7 @@ export function ContactForm() {
         <Field label="Destination" name="destination" placeholder="e.g. Walvis Bay" />
       </div>
       <div>
-        <label htmlFor="serviceType" className="block font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] mb-2">
+        <label htmlFor="serviceType" className="block font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-2">
           Service required
         </label>
         <select
@@ -109,7 +109,7 @@ export function ContactForm() {
         </select>
       </div>
       <div>
-        <label htmlFor="message" className="block font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] mb-2">
+        <label htmlFor="message" className="block font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-2">
           Message
         </label>
         <textarea
@@ -133,7 +133,7 @@ export function ContactForm() {
         {status === 'submitting' ? 'Opening WhatsApp…' : 'Send via WhatsApp'}
       </button>
 
-      <p className="font-body text-xs text-[var(--color-secondary)] text-center leading-relaxed">
+      <p className="font-body text-xs text-[var(--color-secondary-strong)] text-center leading-relaxed">
         Submitting opens WhatsApp with your details pre-filled, just hit send. We respond within one business hour during office hours (07:30–17:00 CAT, Mon–Fri).
       </p>
     </form>
@@ -157,8 +157,8 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="block font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] mb-2">
-        {label}{required && <span className="text-[var(--color-accent)] ml-1">*</span>}
+      <label htmlFor={name} className="block font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-2">
+        {label}{required && <span className="text-[var(--color-accent-text)] ml-1">*</span>}
       </label>
       <input
         id={name}

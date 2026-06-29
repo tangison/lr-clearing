@@ -44,7 +44,7 @@ export default function AboutPage() {
                 {about.body.map((p, i) => (
                   <p
                     key={i}
-                    className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/85"
+                    className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]"
                   >
                     {p}
                   </p>
@@ -70,7 +70,7 @@ export default function AboutPage() {
                     }}
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent)] mb-2">
+                    <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-2">
                       Based in
                     </p>
                     <p className="font-display font-bold text-white text-2xl leading-tight">
@@ -84,32 +84,32 @@ export default function AboutPage() {
                   className="rounded-[var(--radius-card)] p-8"
                   style={{ backgroundColor: 'var(--color-light-bg)', border: '1px solid var(--border-divider)' }}
                 >
-                  <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">
+                  <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-4">
                     At a Glance
                   </p>
                   <dl className="space-y-4 font-body text-sm">
                     <div>
-                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Legal Name</dt>
+                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">Legal Name</dt>
                       <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.legalName}</dd>
                     </div>
                     <div>
-                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Registration</dt>
+                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">Registration</dt>
                       <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.registration}</dd>
                     </div>
                     <div>
-                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">VAT Number</dt>
+                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">VAT Number</dt>
                       <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.vat}</dd>
                     </div>
                     <div>
-                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Country</dt>
+                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">Country</dt>
                       <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.country}</dd>
                     </div>
                     <div>
-                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Ports Served</dt>
+                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">Ports Served</dt>
                       <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.ports.join(' · ')}</dd>
                     </div>
                     <div>
-                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">Region</dt>
+                      <dt className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">Region</dt>
                       <dd className="font-display font-bold text-[var(--color-primary)] mt-1">{company.regions.join(' · ')}</dd>
                     </div>
                   </dl>
@@ -130,7 +130,7 @@ export default function AboutPage() {
                 className="p-10 rounded-[var(--radius-card)]"
                 style={{ backgroundColor: 'var(--color-primary-mid)', border: '1px solid var(--border-subtle)' }}
               >
-                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">Vision</p>
+                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-4">Vision</p>
                 <p className="font-display font-bold text-2xl md:text-3xl text-white leading-tight">
                   {vision.statement}
                 </p>
@@ -139,7 +139,7 @@ export default function AboutPage() {
                 className="p-10 rounded-[var(--radius-card)]"
                 style={{ backgroundColor: 'var(--color-primary-mid)', border: '1px solid var(--border-subtle)' }}
               >
-                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">Mission</p>
+                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-4">Mission</p>
                 <p className="font-display font-bold text-2xl md:text-3xl text-white leading-tight">
                   {mission.statement}
                 </p>
@@ -148,7 +148,7 @@ export default function AboutPage() {
             <div className="mt-8">
               <Link
                 href="/about/vision-mission"
-                className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] hover:underline"
+                className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] hover:underline"
               >
                 Read the full vision & mission →
               </Link>
@@ -160,7 +160,7 @@ export default function AboutPage() {
         <section style={{ backgroundColor: 'var(--color-body-light)' }}>
           <div className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-24">
             <div className="max-w-2xl mb-12">
-              <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">
+              <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-4">
                 Core Values
               </p>
               <h2
@@ -181,11 +181,11 @@ export default function AboutPage() {
                     borderLeft: '3px solid var(--color-accent)',
                   }}
                 >
-                  <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
+                  <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <h3 className="font-display font-bold text-xl text-[var(--color-primary)] mt-2 mb-3">{v.name}</h3>
-                  <p className="font-body text-[0.9375rem] leading-relaxed text-[var(--color-primary)]/75">
+                  <p className="font-body text-[0.9375rem] leading-relaxed text-[var(--color-body-text)]">
                     {v.description}
                   </p>
                 </div>
@@ -199,7 +199,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">
+                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-4">
                   {commitment.title}
                 </p>
                 <h2
@@ -208,7 +208,7 @@ export default function AboutPage() {
                 >
                   Building long-term relationships founded on trust.
                 </h2>
-                <p className="mt-6 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/80">
+                <p className="mt-6 font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]">
                   {commitment.body}
                 </p>
               </div>
@@ -216,12 +216,12 @@ export default function AboutPage() {
                 className="p-10 rounded-[var(--radius-card)]"
                 style={{ backgroundColor: 'var(--color-primary)' }}
               >
-                <Icon name="shield" className="w-10 h-10 text-[var(--color-accent)] mb-6" />
+                <Icon name="shield" className="w-10 h-10 text-[var(--color-accent-text)] mb-6" />
                 <p className="font-display font-bold text-2xl text-white leading-tight">
                   {company.tagline}
                 </p>
                 <div className="mt-8 pt-8" style={{ borderTop: '1px solid var(--border-subtle)' }}>
-                  <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] mb-2">
+                  <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-2">
                     Registered &amp; compliant
                   </p>
                   <p className="font-body text-sm text-white">

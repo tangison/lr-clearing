@@ -35,16 +35,16 @@ export default function CoreValuesPage() {
                   style={{ backgroundColor: 'white', border: '1px solid var(--border-divider)' }}
                 >
                   <div className="lg:col-span-2 flex lg:flex-col items-start gap-4">
-                    <span className="font-display font-extrabold text-6xl text-[var(--color-accent)] leading-none">
+                    <span className="font-display font-extrabold text-6xl text-[var(--color-accent-text)] leading-none">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
+                    <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">
                       Principle
                     </span>
                   </div>
                   <div className="lg:col-span-10">
                     <h2 className="font-display font-bold text-3xl text-[var(--color-primary)] mb-4">{v.name}</h2>
-                    <p className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/80">
+                    <p className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]">
                       {v.description}
                     </p>
                     <p className="font-body text-[0.9375rem] leading-relaxed text-[var(--color-primary)]/70 mt-4">

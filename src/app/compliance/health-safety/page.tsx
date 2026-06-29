@@ -29,7 +29,7 @@ export default function HealthSafetyPage() {
         <section style={{ backgroundColor: 'var(--color-body-light)' }}>
           <div className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-24">
             <div className="grid lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-2 space-y-8 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/85">
+              <div className="lg:col-span-2 space-y-8 font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]">
                 <p>
                   As a licensed customs clearing agency operating in {company.country}, we are bound by the
                   Customs and Excise Act, the Value Added Tax Act, the Close Corporations Act, and the
@@ -59,19 +59,19 @@ export default function HealthSafetyPage() {
 
               <aside className="space-y-5">
                 <div className="p-8 rounded-[var(--radius-card)]" style={{ backgroundColor: 'var(--color-primary)' }}>
-                  <Icon name="shield" className="w-10 h-10 text-[var(--color-accent)] mb-5" />
+                  <Icon name="shield" className="w-10 h-10 text-[var(--color-accent-text)] mb-5" />
                   <h3 className="font-display font-bold text-white text-lg mb-3">Compliance Commitments</h3>
-                  <ul className="space-y-3 font-body text-sm text-[var(--color-secondary)]">
-                    <li className="flex gap-2"><span className="text-[var(--color-accent)]">•</span> Accurate tariff classification on every declaration</li>
-                    <li className="flex gap-2"><span className="text-[var(--color-accent)]">•</span> Full disclosure of dutiable value including assists and royalties</li>
-                    <li className="flex gap-2"><span className="text-[var(--color-accent)]">•</span> Verification of permit validity before submission</li>
-                    <li className="flex gap-2"><span className="text-[var(--color-accent)]">•</span> Honest communication with Customs &amp; Excise</li>
-                    <li className="flex gap-2"><span className="text-[var(--color-accent)]">•</span> Records retained for the statutory minimum period</li>
-                    <li className="flex gap-2"><span className="text-[var(--color-accent)]">•</span> Refusal to facilitate sanctions or CITES violations</li>
+                  <ul className="space-y-3 font-body text-sm text-[var(--color-secondary-strong)]">
+                    <li className="flex gap-2"><span className="text-[var(--color-accent-text)]">•</span> Accurate tariff classification on every declaration</li>
+                    <li className="flex gap-2"><span className="text-[var(--color-accent-text)]">•</span> Full disclosure of dutiable value including assists and royalties</li>
+                    <li className="flex gap-2"><span className="text-[var(--color-accent-text)]">•</span> Verification of permit validity before submission</li>
+                    <li className="flex gap-2"><span className="text-[var(--color-accent-text)]">•</span> Honest communication with Customs &amp; Excise</li>
+                    <li className="flex gap-2"><span className="text-[var(--color-accent-text)]">•</span> Records retained for the statutory minimum period</li>
+                    <li className="flex gap-2"><span className="text-[var(--color-accent-text)]">•</span> Refusal to facilitate sanctions or CITES violations</li>
                   </ul>
                 </div>
                 <div className="p-6 rounded-[var(--radius-card)]" style={{ backgroundColor: 'var(--color-light-bg)' }}>
-                  <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] mb-2">Regulator</p>
+                  <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-2">Regulator</p>
                   <p className="font-body text-sm text-[var(--color-primary)]">
                     Namibia Customs &amp; Excise (Ministry of Finance) · Namport · Namibian Revenue Agency
                   </p>

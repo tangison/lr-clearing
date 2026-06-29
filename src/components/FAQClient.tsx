@@ -31,13 +31,13 @@ export function FAQClient({ items }: { items: FAQItem[] }) {
         className="flex items-center gap-3 px-5 py-4 rounded-[var(--radius-card)] mb-8"
         style={{ backgroundColor: 'white', border: '1px solid var(--border-divider)' }}
       >
-        <Icon name="search" className="w-5 h-5 text-[var(--color-accent)]" />
+        <Icon name="search" className="w-5 h-5 text-[var(--color-accent-text)]" />
         <input
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search FAQs..."
-          className="flex-1 bg-transparent outline-none font-body text-base text-[var(--color-primary)] placeholder:text-[var(--color-secondary)]"
+          className="flex-1 bg-transparent outline-none font-body text-base text-[var(--color-primary)] placeholder:text-[var(--color-secondary-strong)]"
           aria-label="Search frequently asked questions"
         />
       </div>
@@ -59,7 +59,10 @@ export function FAQClient({ items }: { items: FAQItem[] }) {
         ))}
       </div>
 
-      {/* Results */}
+      {/* Results — aria-live region announces result count changes to screen readers */}
+      <div role="status" aria-live="polite" className="sr-only">
+        {filtered.length} {filtered.length === 1 ? 'question' : 'questions'} available
+      </div>
       {filtered.length === 0 ? (
         <div
           className="p-10 rounded-[var(--radius-card)] text-center"
@@ -98,9 +101,9 @@ function CategoryChip({
       aria-pressed={active}
       className="font-mono text-[0.6875rem] uppercase tracking-widest px-4 py-2 rounded-[var(--radius-btn)] transition-all"
       style={{
-        backgroundColor: active ? 'var(--color-accent)' : 'transparent',
+        backgroundColor: active ? 'var(--color-accent-button)' : 'transparent',
         color: active ? 'white' : 'var(--color-primary)',
-        border: `1px solid ${active ? 'var(--color-accent)' : 'var(--border-divider)'}`,
+        border: `1px solid ${active ? 'var(--color-accent-button)' : 'var(--border-divider)'}`,
       }}
     >
       {label}

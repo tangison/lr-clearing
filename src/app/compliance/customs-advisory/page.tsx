@@ -58,15 +58,15 @@ export default function CustomsAdvisoryPage() {
               {services.map((s) => (
                 <div key={s.title} className="p-8 rounded-[var(--radius-card)]" style={{ backgroundColor: 'white', border: '1px solid var(--border-divider)', borderLeft: '3px solid var(--color-accent)' }}>
                   <h3 className="font-display font-bold text-xl text-[var(--color-primary)] mb-3">{s.title}</h3>
-                  <p className="font-body text-[0.9375rem] leading-relaxed text-[var(--color-primary)]/75">{s.detail}</p>
+                  <p className="font-body text-[0.9375rem] leading-relaxed text-[var(--color-body-text)]">{s.detail}</p>
                 </div>
               ))}
             </div>
 
             <div className="mt-12 p-10 rounded-[var(--radius-card)]" style={{ backgroundColor: 'var(--color-primary)' }}>
-              <Icon name="shield" className="w-10 h-10 text-[var(--color-accent)] mb-5" />
+              <Icon name="shield" className="w-10 h-10 text-[var(--color-accent-text)] mb-5" />
               <h3 className="font-display font-bold text-2xl text-white mb-3">A consultative, not transactional, relationship.</h3>
-              <p className="font-body text-[1.0625rem] text-[var(--color-secondary)] max-w-3xl leading-relaxed">
+              <p className="font-body text-[1.0625rem] text-[var(--color-secondary-strong)] max-w-3xl leading-relaxed">
                 Most clearing agents file what you give them. We review what you give them and tell you when
                 something can be done better, a different tariff heading that reduces duty, a permit you did
                 not know you needed, or a valuation method that will not survive an audit. Advisory is built

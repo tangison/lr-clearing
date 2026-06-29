@@ -115,7 +115,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
                 }}
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
-                <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent)] mb-2">
+                <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-2">
                   Service {service.number}
                 </p>
                 <h2 className="font-display font-extrabold text-white text-2xl md:text-4xl leading-tight">
@@ -130,12 +130,12 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
           <div className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-24">
             <div className="grid lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
-                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-4">Overview</p>
-                <p className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/85">
+                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-4">Overview</p>
+                <p className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]">
                   {service.longDescription}
                 </p>
 
-                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mt-12 mb-6">
+                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mt-12 mb-6">
                   What this service includes
                 </p>
                 <ul className="space-y-3">
@@ -144,7 +144,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
                       <span className="shrink-0 mt-0.5 inline-flex w-6 h-6 items-center justify-center rounded-[var(--radius-btn)]" style={{ backgroundColor: 'var(--color-accent)', color: 'white' }}>
                         <Icon name="check" className="w-3.5 h-3.5" />
                       </span>
-                      <span className="font-body text-[1.0625rem] text-[var(--color-primary)]/85">{item}</span>
+                      <span className="font-body text-[1.0625rem] text-[var(--color-body-text)]">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -156,7 +156,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
                     <Icon name={service.icon} className="w-6 h-6" />
                   </span>
                   <h3 className="font-display font-bold text-white text-lg mb-2">Need this service?</h3>
-                  <p className="font-body text-sm text-[var(--color-secondary)] mb-5">
+                  <p className="font-body text-sm text-[var(--color-secondary-strong)] mb-5">
                     Send us your shipment details; we will respond within one business hour with a costed plan.
                   </p>
                   <Link
@@ -170,8 +170,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
                 </div>
 
                 <div className="p-6 rounded-[var(--radius-card)]" style={{ backgroundColor: 'var(--color-light-bg)' }}>
-                  <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] mb-3">Service Code</p>
-                  <p className="font-display font-bold text-3xl text-[var(--color-accent)]">{service.number}</p>
+                  <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-3">Service Code</p>
+                  <p className="font-display font-bold text-3xl text-[var(--color-accent-text)]">{service.number}</p>
                   <p className="font-body text-xs text-[var(--color-primary)]/70 mt-2">
                     Use this code when referencing this service in correspondence.
                   </p>
@@ -185,12 +185,12 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
           <div className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-24">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
               <div>
-                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-3">Other Services</p>
+                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-3">Other Services</p>
                 <h2 className="font-display font-extrabold tracking-tight text-white" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', lineHeight: 1.1 }}>
                   Explore the rest of our service portfolio.
                 </h2>
               </div>
-              <Link href="/services" className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] hover:underline">
+              <Link href="/services" className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] hover:underline">
                 View all →
               </Link>
             </div>
@@ -206,12 +206,12 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
                     <span className="inline-flex w-10 h-10 items-center justify-center rounded-[var(--radius-card)]" style={{ backgroundColor: 'var(--color-primary)', color: 'var(--color-accent)' }}>
                       <Icon name={s.icon} className="w-5 h-5" />
                     </span>
-                    <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">{s.number}</span>
+                    <span className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">{s.number}</span>
                   </div>
-                  <h3 className="font-display font-bold text-white text-lg mb-2 group-hover:text-[var(--color-accent)] transition-colors">
+                  <h3 className="font-display font-bold text-white text-lg mb-2 group-hover:text-[var(--color-accent-text)] transition-colors">
                     {s.title}
                   </h3>
-                  <p className="font-body text-sm text-[var(--color-secondary)] leading-relaxed">
+                  <p className="font-body text-sm text-[var(--color-secondary-strong)] leading-relaxed">
                     {s.shortDescription}
                   </p>
                 </Link>

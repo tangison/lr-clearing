@@ -72,7 +72,7 @@ export default function PricingPage() {
                     <Icon name={item.icon as IconName} className="w-5 h-5" />
                   </span>
                   <div className="min-w-0">
-                    <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)]">
+                    <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">
                       {item.label}
                     </p>
                     <p className="font-display font-bold text-[var(--color-primary)] truncate">
@@ -88,7 +88,7 @@ export default function PricingPage() {
               {grouped.map(({ category, quotes }) => (
                 <div key={category}>
                   <div className="max-w-2xl mb-10">
-                    <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent)] mb-3">
+                    <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-3">
                       {category}
                     </p>
                     <h2
@@ -99,7 +99,7 @@ export default function PricingPage() {
                         ? 'Clearing of vehicles from all SACU and SADC countries.'
                         : 'Commercial and mining equipment.'}
                     </h2>
-                    <p className="mt-4 font-body text-[1.0625rem] leading-relaxed text-[var(--color-primary)]/75">
+                    <p className="mt-4 font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]">
                       {categoryBlurb[category]}
                     </p>
                   </div>
@@ -116,7 +116,7 @@ export default function PricingPage() {
                       >
                         <div className="flex items-start justify-between gap-4 mb-4">
                           <div>
-                            <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] mb-2">
+                            <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-2">
                               {q.jurisdiction} · {q.direction}
                             </p>
                             <h3
@@ -128,13 +128,13 @@ export default function PricingPage() {
                           </div>
                           <div className="text-right shrink-0">
                             <p
-                              className="font-display font-extrabold text-[var(--color-accent)]"
+                              className="font-display font-extrabold text-[var(--color-accent-text)]"
                               style={{ fontSize: '1.875rem', lineHeight: 1 }}
                             >
                               {q.priceLabel}
                             </p>
                             {q.priceNad !== null && (
-                              <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary)] mt-1">
+                              <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mt-1">
                                 clearing fee
                               </p>
                             )}
@@ -142,7 +142,7 @@ export default function PricingPage() {
                         </div>
 
                         {q.notes && (
-                          <p className="font-body text-sm leading-relaxed text-[var(--color-primary)]/75 mb-6">
+                          <p className="font-body text-sm leading-relaxed text-[var(--color-body-text)] mb-6">
                             {q.notes}
                           </p>
                         )}
@@ -192,14 +192,14 @@ export default function PricingPage() {
               <h3 className="font-display font-bold text-[var(--color-primary)] mb-3" style={{ fontSize: '1.125rem' }}>
                 What is included, and what is not.
               </h3>
-              <p className="font-body text-sm leading-relaxed text-[var(--color-primary)]/80 mb-4">
+              <p className="font-body text-sm leading-relaxed text-[var(--color-body-text)] mb-4">
                 The fees above cover the customs clearing agent fee only: SAD 500/504
                 preparation and submission, duty and VAT calculation, customs liaison, and
                 release coordination. Duties, VAT, port handling charges, transport, and any
                 applicable permits are billed separately at cost. We will provide a full
                 estimate before you commit.
               </p>
-              <p className="font-body text-sm leading-relaxed text-[var(--color-primary)]/80">
+              <p className="font-body text-sm leading-relaxed text-[var(--color-body-text)]">
                 For lanes marked <strong>Quote on request</strong> (Japan/UK imports, project
                 cargo), the ops manager prepares a detailed quote based on vehicle type, origin
                 port, and destination. Tap the WhatsApp button to start the conversation.
