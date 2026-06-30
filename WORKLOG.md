@@ -337,3 +337,26 @@ Stage Summary:
 - ✅ Build: tsc 0 errors, lint 0 errors, Next.js 34 routes
 - ✅ Commit prepared: `fix(audit): heading hierarchy on /services/[slug] permits card (h4→h3)`
 - ⏳ Next: push to GitHub main, then deploy to Vercel with provided vcp_ token
+
+---
+Task ID: TANGISON-AUDIT-DEPLOY
+Agent: super-z (main)
+Task: Push audit fix to GitHub main and deploy to Vercel production using provided vcp_ token.
+
+Work Log:
+- Committed audit fix: 51572c7 "fix(audit): heading hierarchy on /services/[slug] permits card (h4->h3)"
+- Pushed to GitHub: de87e45..51572c7 main -> main
+- Vercel deploy: vercel --prod --yes --token=vcp_... — Build Completed in 18s, Ready in 36s
+- Production URL: https://lr-clearing-aivgsil1a-tangison-s-projects.vercel.app
+- Aliased to: https://www.lrclearing.com
+- Live smoke test: 10/10 routes return HTTP 200 (/, /services, /services/customs-clearing, /permits, /pricing, /about, /contact, /faq, /sitemap.xml, /robots.txt)
+- Heading fix verified live on /services/customs-clearing: <h3>View the full permits catalogue →</h3>
+- Tangison Audit final report saved to /home/z/my-project/download/tangison-audit-report.md
+
+Stage Summary:
+- ✅ GitHub main branch updated (commit 51572c7)
+- ✅ Vercel production deploy successful (alias: www.lrclearing.com)
+- ✅ 10/10 live routes return HTTP 200
+- ✅ Heading hierarchy fix verified live on production
+- ✅ Tangison Audit cycle 1 complete: 5 -> 4 findings (-1 autonomous fix), 0 regressions
+- ⏳ Backlog: 4 TODOs blocked on client-supplied assets (real construction.jpeg, square PWA icons, apple-touch-icon, social media URLs)
