@@ -192,3 +192,148 @@ Stage Summary:
 - ⏳ TODO: export 180×180 apple-touch-icon from logo source
 - ⏳ TODO: add LinkedIn/Facebook/Instagram to JSON-LD sameAs when available
 - ⏳ TODO: CSP header (currently only X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy)
+
+---
+Task ID: CONTACT-PERMITS-DEPLOY
+Agent: main
+Task: Apply client WhatsApp updates (24/7 hours, dual phone, info@ email, 5 border posts), add comprehensive permits page with all 6 categories verbatim from client, integrate with backlinks, push to GitHub, deploy to Vercel.
+
+Work Log:
+- Updated company.email: hello@lrclearing.com -> info@lrclearing.com (content.ts, team member emails)
+- Updated company.officeHours: "07:30 to 17:00, Monday to Friday" -> "24/7 — Available every day, all day"
+- Added company.phoneSecondary + phoneSecondaryDisplay = "+264 81 375 9901" (WhatsApp number as secondary phone)
+- Removed Oshikango from borderPosts[] (client confirmed only 5 offices: Wenela, Trans-Kalahari, Ngoma, Ariamsvlei, Noordoewer)
+- Updated stats[] "Major Border Posts Covered" 6 -> 5, label "Major Border Posts Covered" -> "Border Post Offices"
+- Updated FAQ "Which ports do you operate through?" — removed Oshikango, changed "six border posts" -> "five border posts where we maintain offices"
+- Updated operational-coverage page heading: "Six border crossings" -> "Five border crossings"
+- Updated BorderPostsSlider heading: "Six crossings" -> "Five crossings"
+- Updated borderPosts[] docblock: "4 of 6 authentic" -> "3 of 5 authentic", added client WhatsApp quote
+- Deleted /public/images/borders/oshikango-border.jpeg
+- Rewrote /public/images/borders/SOURCES.md for 5 images (removed Oshikango row + licence note update)
+- Created new permitCategories[] export in content.ts with 6 categories verbatim from client:
+  * Transport & Road Permits (7 items)
+  * Trade & Customs Permits (6 items)
+  * Trade Control & Regulatory Permits (3 items)
+  * Aviation & Transport Licensing (4 items)
+  * Compliance & Approval Documents (4 items)
+  * Specialised Logistics Approvals (4 items)
+  Total: 28 individual permit items
+- Added PermitCategory type with slug/name/summary/icon/items fields
+- Added 'check-circle' and 'package' icons to icons.tsx (icon set was missing these)
+- Created src/app/permits/page.tsx — full permits catalogue with:
+  * PageHeader + breadcrumb
+  * In-page anchor nav (6 category chips)
+  * 6 category article cards (numbered, icon, summary, items grid with check marks)
+  * "Related Services" backlink block (6 service cards linking to /services/[slug])
+  * Bottom info block with dual phone CTA + WhatsApp + Email buttons
+  * ContactCTA footer
+- Added 'Permits' to nav.primary[] (between Services and Pricing)
+- Updated JSON-LD Organization in layout.tsx:
+  * Added contactPoint[] with two 24/7 phone numbers
+  * Added openingHoursSpecification (00:00-23:59, all 7 days)
+  * Extended knowsAbout[] with permit keywords (Transport permits, Abnormal load permits, ITAC permits, Aviation operating licences, Hazardous goods transport permits)
+- Backlinks (comprehensive cross-linking):
+  * Homepage Hero: added tertiary links row (Permits & Licences, All Services, Operational Coverage)
+  * Services index page: full permits section with 6 category chips linking to /permits#slug anchors
+  * Individual service pages ([slug]/page.tsx): permits cross-link card after items list, on all 7 service pages
+  * Pricing page: permits cross-link card after footnote
+  * Navbar services dropdown: added "Permits & Licences" footer link
+  * Navbar search index: indexed all 28 permit items + 6 category names (so searching "ITAC" or "Aviation" finds them)
+  * Footer: added "Permits & Licences" link in Services column
+  * Sitemap page: /permits auto-included via navData.primary
+- Contact display updates across all touchpoints:
+  * Navbar mobile contact shortcuts: now shows both phone numbers
+  * Footer contact column: shows both phones + office hours line (24/7)
+  * Contact page: 5 contact cards (Primary phone, Secondary phone, Email, WhatsApp, Office) instead of 4
+  * Pricing page quick assurance row: "Office hours" -> "Available" with 24/7 value
+  * FAQ page "Still have a question?" section: dual phone + 24/7
+  * Privacy policy section 11: dual phone + (24/7)
+- Build verified: npx tsc --noEmit 0 errors, npm run build 34 routes (was 33), /permits static-rendered, 0 errors
+- Committed: de87e45 "feat(contact+permits): update contact info, add permits page, remove Oshikango"
+- Pushed to GitHub: tangison/lr-clearing main branch (258dc87..de87e45)
+- Vercel deploy BLOCKED: no VERCEL_TOKEN in environment, no GitHub webhook configured on repo (verified via GitHub API: webhooks array is empty). Vercel CLI has no stored credentials.
+
+Stage Summary:
+- ✅ All WhatsApp updates applied: 24/7 hours, dual phone (083 785 7640 + 081 375 9901), info@lrclearing.com, WhatsApp 0813759901
+- ✅ Border posts reduced from 6 to 5 (Oshikango removed per client confirmation)
+- ✅ Comprehensive permits catalogue added (/permits) with all 6 categories and 28 individual permit items verbatim from client
+- ✅ Permits page perfectly integrated with backlinks from: homepage Hero, services index, all 7 individual service pages, pricing page, navbar dropdown, navbar search, footer
+- ✅ Permits page backlinks to 6 service pages (Related Services block)
+- ✅ /permits added to primary nav, sitemap auto-includes it
+- ✅ JSON-LD updated with dual 24/7 contactPoints + permit keywords
+- ✅ TypeScript 0 errors, Next.js build 0 errors, 34 routes generated
+- ✅ Committed and pushed to GitHub main branch (commit de87e45)
+- ⚠️ Vercel deploy NOT triggered: no Vercel token available, no GitHub webhook on repo. User needs to either:
+  (a) provide a VERCEL_TOKEN to run `vercel --prod --yes --token=$VERCEL_TOKEN`, or
+  (b) set up the Vercel GitHub integration in the Vercel dashboard so pushes auto-deploy, or
+  (c) manually trigger a redeploy from the Vercel dashboard.
+
+---
+Task ID: TANGISON-AUDIT-CYCLE-1
+Agent: super-z (main)
+Task: Run Tangison Audit autonomous loop on lr-clearing codebase, apply autonomous fixes, validate, deploy to Vercel using provided token.
+
+Work Log:
+
+### Phase 1 — Discovery
+- Ran `scripts/tangison-audit-discover.py` against the codebase.
+- 16 checks executed: SEO metadata presence, title pattern consistency, description length, image alt text, raw <img> usage, button accessibility, heading hierarchy, hero priority, secrets in source, .env in .gitignore, console.log, TODO/FIXME/HACK comments, broken internal links, README staleness, package.json engines, form input labels.
+- Initial findings: 5 total (1 A11y Medium autonomous + 4 Code Quality Low human-review).
+
+### Phase 2 — Classification
+| # | Category | Severity | Fixability | Title |
+|---|----------|----------|------------|-------|
+| 1 | A11y | Medium | Autonomous | Heading hierarchy skip h2→h4 in services/[slug]/page.tsx:170 |
+| 2 | Code Quality | Low | Requires Human Review | TODO in content.ts:594 (real construction.jpeg) |
+| 3 | Code Quality | Low | Requires Human Review | TODO in manifest.ts:14 (PWA icon sizes not square) |
+| 4 | Code Quality | Low | Requires Human Review | TODO in layout.tsx:53 (apple-touch-icon 180×180) |
+| 5 | Code Quality | Low | Requires Human Review | TODO in layout.tsx:176 (social profile URLs) |
+
+### Phase 3 — Root Cause Analysis
+- Finding 1: Permits cross-link card used <h4> directly under an <h2> section without an intervening <h3>. Root cause: component was added in the CONTACT-PERMITS-DEPLOY task without checking heading order against the parent section.
+- Findings 2–5: All TODOs are intentionally tracking external asset dependencies (real photography, social media accounts, branded icon exports). Root cause: assets not yet supplied by client. Cannot be auto-resolved.
+
+### Phase 4 — Prioritization
+- Priority Score = Severity × Impact × Confidence × Reach
+- Finding 1: 3 × 2 × 5 × 5 = 150 (highest priority — autonomous fix available)
+- Findings 2–5: 1 × 1 × 5 × 3 = 15 each (low priority, blocked on external assets)
+
+### Phase 5 — Planning
+- Fix Finding 1 only. Risk: zero (semantic HTML change, no visual regression). Expected impact: +1 a11y score point. Validation: re-run audit script + build + tsc + lint.
+
+### Phase 6 — Autonomous Fixing
+- Changed `<h4>` → `<h3>` on the "View the full permits catalogue →" heading in src/app/services/[slug]/page.tsx line 170.
+- No other autonomous fixes available — all remaining findings are blocked on external assets.
+
+### Phase 7 — Validation
+- `npx tsc --noEmit` → 0 errors
+- `npm run lint` → 0 errors, 1 intentional warning (Navbar searchableIndex dep — static data, by design)
+- `npm run build` → ✓ Compiled successfully in 3.4s. 34 routes generated (28 static + 7 SSG service pages + 1 dynamic API + sitemap/robots/manifest). 0 errors.
+
+### Phase 8 — Re-Audit (Delta Report)
+| Metric | Before | After | Delta |
+|--------|--------|-------|-------|
+| Total findings | 5 | 4 | -1 |
+| Critical | 0 | 0 | 0 |
+| High | 0 | 0 | 0 |
+| Medium (autonomous) | 1 | 0 | -1 |
+| Low (human review) | 4 | 4 | 0 |
+| Build errors | 0 | 0 | 0 |
+| TypeScript errors | 0 | 0 | 0 |
+| ESLint errors | 0 | 0 | 0 |
+
+### Phase 9 — Reflection
+- What improved: 1 a11y issue eliminated (heading hierarchy on /services/[slug] pages, 7 routes affected).
+- What failed: nothing.
+- What regressed: nothing.
+- Highest impact remaining issue: real `construction.jpeg` for Industries → Construction card (placeholder image still in use).
+- Completion: satisfies "Human judgment required" criterion — all remaining findings are blocked on client-supplied assets (photography, social media handles, square PWA icons).
+
+### Phase 10 — Loop Termination
+- Loop terminated after 1 cycle. Reason: no autonomous-fixable findings remain. All 4 remaining items are "Requires Human Review" by classification.
+
+Stage Summary:
+- ✅ Tangison Audit cycle 1 complete: 5 → 4 findings (-1 autonomous fix)
+- ✅ Build: tsc 0 errors, lint 0 errors, Next.js 34 routes
+- ✅ Commit prepared: `fix(audit): heading hierarchy on /services/[slug] permits card (h4→h3)`
+- ⏳ Next: push to GitHub main, then deploy to Vercel with provided vcp_ token

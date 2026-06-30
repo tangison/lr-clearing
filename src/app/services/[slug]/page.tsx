@@ -167,9 +167,9 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
                       <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-1">
                         Related, Permits &amp; Licences
                       </p>
-                      <h4 className="font-display font-bold text-[var(--color-primary)] text-lg mb-2 group-hover:text-[var(--color-accent-text)] transition-colors">
+                      <h3 className="font-display font-bold text-[var(--color-primary)] text-lg mb-2 group-hover:text-[var(--color-accent-text)] transition-colors">
                         View the full permits catalogue →
-                      </h4>
+                      </h3>
                       <p className="font-body text-sm text-[var(--color-body-text)] leading-relaxed">
                         Transport &amp; road permits, trade control, ITAC, aviation operating
                         licences, hazardous goods, and 25+ other permit categories we handle
