@@ -5,13 +5,13 @@ import { Ticker } from '@/components/Ticker';
 import { Footer } from '@/components/Footer';
 import { ContactCTA } from '@/components/ContactCTA';
 import { PageHeader } from '@/components/PageHeader';
-import { industries } from '@/lib/content';
+import { industries, immigrationGroups } from '@/lib/content';
 import { Icon, type IconName } from '@/lib/icons';
 
 export const metadata: Metadata = {
   title: "Industries We Serve, L&R Clearing Agency CC",
   description:
-    "Customs clearing and logistics expertise for mining, agriculture, manufacturing, retail, automotive, fisheries, oil & gas, and SMEs across Namibia and Southern Africa.",
+    "Customs clearing and logistics for mining, agriculture, manufacturing, fisheries, oil & gas, and SMEs across Namibia and SADC, plus immigration permit support.",
   alternates: { canonical: '/industries' },
 };
 
@@ -73,6 +73,88 @@ export default function IndustriesPage() {
                       {ind.description}
                     </p>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Immigration Permits & Visas */}
+        <section style={{ backgroundColor: 'var(--color-primary)' }}>
+          <div className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-24">
+            {/* Section header — matches the page header rhythm */}
+            <div className="mb-12 md:mb-16 max-w-3xl">
+              <span className="font-mono font-normal text-[0.6875rem] block mb-3 uppercase tracking-widest text-[var(--color-accent-text)]">
+                Cross-Border Mobility Support
+              </span>
+              <h2
+                className="font-display font-extrabold uppercase tracking-tight text-[var(--color-body-light)]"
+                style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}
+              >
+                Immigration Permits &amp; Visas
+              </h2>
+              <div
+                className="mt-4 mb-6"
+                style={{ width: '64px', height: '2px', backgroundColor: 'var(--color-accent)' }}
+              />
+              <p className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-secondary)]">
+                L&amp;R Clearing Agency assists clients and their personnel with Namibian
+                immigration permits and visa applications alongside customs and logistics
+                clearance, so a single team handles the paperwork for cargo, equipment, and
+                the people who move with it.
+              </p>
+            </div>
+
+            {/* Two subgroup columns */}
+            <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+              {immigrationGroups.map((group) => (
+                <div
+                  key={group.slug}
+                  id={group.slug}
+                  className="rounded-[var(--radius-card)] p-8 md:p-10 scroll-mt-24"
+                  style={{
+                    backgroundColor: 'var(--color-primary-mid)',
+                    border: '1px solid var(--border-subtle)',
+                  }}
+                >
+                  {/* Sub-heading with icon badge */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <span
+                      className="inline-flex w-12 h-12 items-center justify-center rounded-[var(--radius-card)]"
+                      style={{
+                        backgroundColor: 'rgba(232,100,42,0.12)',
+                        color: 'var(--color-accent)',
+                      }}
+                    >
+                      <Icon name={group.icon} className="w-6 h-6" />
+                    </span>
+                    <h3 className="font-display font-bold text-[1.375rem] text-[var(--color-body-light)]">
+                      {group.name}
+                    </h3>
+                  </div>
+
+                  {/* Item list */}
+                  <ul className="space-y-3" role="list">
+                    {group.items.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3"
+                      >
+                        <span
+                          className="shrink-0 mt-0.5 inline-flex w-6 h-6 items-center justify-center rounded-[var(--radius-btn)]"
+                          style={{
+                            backgroundColor: 'var(--color-accent)',
+                            color: 'white',
+                          }}
+                        >
+                          <Icon name="check" className="w-3.5 h-3.5" />
+                        </span>
+                        <span className="font-body text-[1rem] leading-relaxed text-[var(--color-secondary)]">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>

@@ -709,6 +709,62 @@ export const permitCategories: PermitCategory[] = [
 ];
 
 /**
+ * Immigration Permits & Visas.
+ *
+ * Two subgroups: long-stay/residence permits and short-stay visas. L&R
+ * Clearing Agency assists expatriates, investors, and their families with
+ * Namibian immigration paperwork in parallel with customs and logistics
+ * clearance — particularly useful for clients relocating equipment, staff,
+ * or operations into Namibia.
+ *
+ * Source: client-supplied list, 2026-06-30. Verbatim wording preserved.
+ */
+export type ImmigrationGroup = {
+  /** Stable key for React lists */
+  slug: string;
+  /** Sub-heading shown above the list */
+  name: string;
+  /** Icon key for the sub-heading badge */
+  icon: "documents" | "globe";
+  /** Verbatim permit/visa line items */
+  items: string[];
+};
+
+export const immigrationGroups: ImmigrationGroup[] = [
+  {
+    slug: "immigration-permits",
+    name: "Immigration Permits",
+    icon: "documents",
+    items: [
+      "Employment Permit (Work Permit)",
+      "Temporary Residence Permit",
+      "Permanent Residence Permit",
+      "Study Permit",
+      "Dependant's Permit",
+      "Spouse Permit",
+      "Retirement Permit",
+      "Investor Permit (where applicable under investment regulations)",
+    ],
+  },
+  {
+    slug: "visas",
+    name: "Visas",
+    icon: "globe",
+    items: [
+      "Holiday/Tourist Visa",
+      "Business Visa",
+      "Short-Term Employment Visa (Work Visa)",
+      "Study Visa",
+      "Transit Visa",
+      "Re-entry Visa",
+      "Visa on Arrival",
+      "Digital Nomad Visa",
+      "Meetings, Incentives, Conferences and Events (MICE) Visa",
+    ],
+  },
+];
+
+/**
  * Instant Quote pricing.
  *
  * Flat-fee customs clearing for the most common vehicle and equipment

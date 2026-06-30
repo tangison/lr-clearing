@@ -360,3 +360,78 @@ Stage Summary:
 - ✅ Heading hierarchy fix verified live on production
 - ✅ Tangison Audit cycle 1 complete: 5 -> 4 findings (-1 autonomous fix), 0 regressions
 - ⏳ Backlog: 4 TODOs blocked on client-supplied assets (real construction.jpeg, square PWA icons, apple-touch-icon, social media URLs)
+
+---
+Task ID: OILGAS-IMMIGRATION
+Agent: super-z (main)
+Task: Remove broken/duplicate Oil & Gas promotional banner image from /industries (image had L&R Clearing Agency branding baked into the JPEG itself, overlapping card heading text). Add new "Immigration Permits & Visas" section. Verify all 6 permit categories from client are on /permits page.
+
+Work Log:
+
+### Investigation
+- User reported: "redundant promotional banner image (logo + L&R Clearing Agency / Oil & Gas Division / Port Operations, Walvis Bay, Namibia graphic) sitting on top of / overlapping the About L&R Clearing Agency and Oil & Gas Industry heading text"
+- VLM analysis of /industries page confirmed: port-sunset.jpeg (used as Oil & Gas Industry card background AND as homepage ImageStrip background) had THREE baked-in text overlays:
+  * Top: "L&R Clearing Agency" logo + "Building your dream empire is our speciality" tagline
+  * Middle: "Oil & Gas Division" + "Port Operations, Walvis Bay, Namibia contact @keing.nou"
+  * Bottom: "About L&R Clearing Agency" + "A legacy of precision and reliability in global logistics"
+- Image file was supplied by client as AI-generated mockup with promotional text baked in — not a code-level branding issue, but an image-asset issue.
+- Same port-sunset.jpeg file was used in TWO places: /industries Oil & Gas card + homepage ImageStrip section. Replacing the file fixes both.
+
+### Task 1 — Remove broken banner image
+- Generated a clean replacement image using z-ai image generation (1344x768, photorealistic port at sunset, NO baked-in text/branding).
+- VLM-verified the new image: "NO. The image shows a busy port at sunset with cargo ships loaded with colorful containers docked alongside towering cranes, with a vibrant orange and pink sky reflecting on the water."
+- Wrote /home/z/my-project/scripts/replace-portsunset.js — uses sharp to convert source PNG to JPEG (q85, max 1920px) + WebP (q80, max 1920px).
+- Replaced public/images/scenes/port-sunset.jpeg (683KB -> 188KB, -72%) and port-sunset.webp (95KB -> 149KB).
+- No code changes needed — same image path used everywhere, file swap propagates automatically.
+- Verified all 6 permit categories from user's message are already present on /permits page (added in commit de87e45):
+  * Transport & Road Permits (7 items) ✓
+  * Trade & Customs Permits (6 items) ✓
+  * Trade Control & Regulatory Permits (3 items) ✓
+  * Aviation & Transport Licensing (4 items) ✓
+  * Compliance & Approval Documents (4 items) ✓
+  * Specialised Logistics Approvals (4 items) ✓
+  Total: 28 permit items, all verbatim from client.
+
+### Task 2 — Add Immigration Permits & Visas section
+- Added `ImmigrationGroup` type and `immigrationGroups` export to src/lib/content.ts with 2 subgroups:
+  * Immigration Permits (8 items: Employment, Temporary Residence, Permanent Residence, Study, Dependant's, Spouse, Retirement, Investor)
+  * Visas (9 items: Holiday/Tourist, Business, Short-Term Employment, Study, Transit, Re-entry, Visa on Arrival, Digital Nomad, MICE)
+  All items verbatim from client message.
+- Inserted a new full-width <section> in src/app/industries/page.tsx BETWEEN the industries grid section and the ContactCTA:
+  * Section eyebrow: "Cross-Border Mobility Support"
+  * h2: "Immigration Permits & Visas" (with orange divider)
+  * Intro paragraph (no marketing buzzwords): "L&R Clearing Agency assists clients and their personnel with Namibian immigration permits and visa applications alongside customs and logistics clearance, so a single team handles the paperwork for cargo, equipment, and the people who move with it."
+  * Two-column grid (stacks to single column on mobile): each column is a card with an icon badge + h3 sub-heading + bulleted <ul> list
+  * Sub-headings ("Immigration Permits" / "Visas") are real <h3> elements, not bold text — preserves heading hierarchy
+  * Anchor IDs (#immigration-permits, #visas) for future deep-linking
+- Used existing Icon component (globe + documents icons), existing design tokens (var(--color-primary), var(--color-accent), var(--radius-card) etc.) — no new CSS, no new dependencies.
+- Updated /industries metadata description to mention immigration support (trimmed to 158 chars after Tangison Audit flagged original 210-char version as too long).
+
+### Validation
+- npx tsc --noEmit: 0 errors
+- npm run lint: 0 errors, 1 intentional warning (Navbar searchableIndex dep — pre-existing)
+- npm run build: 0 errors, 34 routes generated (no new routes, /industries is still static)
+- Tangison Audit discovery: 4 findings (all pre-existing TODOs blocked on external assets — no new findings introduced)
+- VLM visual verification (desktop 1280px):
+  * Oil & Gas Industry card: clean port sunset image, no baked-in text ✓
+  * Immigration Permits & Visas section: visible with two subgroups, sub-headings, bulleted lists ✓
+  * Homepage ImageStrip: clean image, only the "FROM WALVIS BAY TO THE BORDER — WE CLEAR IT" overlay text visible ✓
+- VLM visual verification (mobile 375px):
+  * Two subgroups stacked vertically ✓
+  * Bullet lists readable ✓
+  * h2 → h3 heading hierarchy preserved ✓
+  * No layout breakage ✓
+
+### Branch / Commit / PR / Deploy plan
+- Branch: fix/remove-oilgas-banner-add-immigration
+- Commit: fix(homepage): remove duplicate oil & gas banner image, add immigration permits & visas section
+- Push branch, open PR, merge to main, deploy to Vercel production with provided vcp_ token.
+
+Stage Summary:
+- ✅ Broken promotional banner image (port-sunset.jpeg with baked-in L&R branding text) replaced with clean AI-generated port sunset image — fixes BOTH /industries Oil & Gas card AND homepage ImageStrip
+- ✅ Image asset size: 683KB -> 188KB (-72%)
+- ✅ Immigration Permits & Visas section added to /industries with 2 subgroups (8 permits + 9 visas = 17 items, all verbatim from client)
+- ✅ All 6 existing permit categories verified present on /permits page (28 items)
+- ✅ Mobile-responsive: 2-col on desktop, 1-col on mobile
+- ✅ Accessibility: h2 → h3 heading hierarchy, semantic <ul>/<li> lists, role="list" on lists
+- ✅ tsc 0 errors, lint 0 errors, build 34 routes, audit 4 findings (no new)
