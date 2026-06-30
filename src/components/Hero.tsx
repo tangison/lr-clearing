@@ -93,6 +93,28 @@ export function Hero() {
             </a>
           </div>
 
+          {/* Tertiary link row */}
+          <div className="flex flex-wrap gap-x-6 gap-y-2 -mt-6 mb-12">
+            <Link
+              href="/permits"
+              className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-secondary)] hover:text-[var(--color-accent-text)] transition-colors"
+            >
+              Permits &amp; Licences →
+            </Link>
+            <Link
+              href="/services"
+              className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-secondary)] hover:text-[var(--color-accent-text)] transition-colors"
+            >
+              All Services →
+            </Link>
+            <Link
+              href="/about/operational-coverage"
+              className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-secondary)] hover:text-[var(--color-accent-text)] transition-colors"
+            >
+              Operational Coverage →
+            </Link>
+          </div>
+
           {/* Micro-stats Row, driven by stats[] in content.ts (single source of truth) */}
           <div
             className="grid grid-cols-1 sm:grid-cols-3 pt-8 gap-4 sm:gap-0"

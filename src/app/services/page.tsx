@@ -6,7 +6,7 @@ import { Ticker } from '@/components/Ticker';
 import { Footer } from '@/components/Footer';
 import { ContactCTA } from '@/components/ContactCTA';
 import { PageHeader } from '@/components/PageHeader';
-import { services } from '@/lib/content';
+import { services, permitCategories } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
 export const metadata: Metadata = {
@@ -79,6 +79,69 @@ export default function ServicesPage() {
                   </div>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Permits & Licences section */}
+        <section style={{ backgroundColor: 'var(--color-primary)' }}>
+          <div className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-24">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+              {/* Left: heading */}
+              <div className="lg:col-span-5">
+                <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-4">
+                  Permits &amp; Licences
+                </p>
+                <h2
+                  className="font-display font-extrabold tracking-tight text-white mb-5"
+                  style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', lineHeight: 1.1 }}
+                >
+                  Every permit your cargo needs, handled.
+                </h2>
+                <p className="font-body text-[1.0625rem] leading-relaxed text-[var(--color-secondary-strong)] mb-8">
+                  Beyond the seven core services above, we prepare, submit, and track 30+ permit
+                  and approval documents across six regulatory categories — from abnormal load
+                  permits to ITAC submissions and aviation operating licences. Whatever your
+                  commodity, origin, or destination, the paperwork is part of the service.
+                </p>
+                <Link
+                  href="/permits"
+                  className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] hover:underline"
+                >
+                  View all permits &amp; licences →
+                </Link>
+              </div>
+              {/* Right: category chips */}
+              <div className="lg:col-span-7">
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {permitCategories.map((c) => (
+                    <Link
+                      key={c.slug}
+                      href={`/permits#${c.slug}`}
+                      className="group flex items-center gap-3 p-4 rounded-[var(--radius-card)] transition-all hover:translate-x-1"
+                      style={{
+                        backgroundColor: 'var(--color-primary-mid)',
+                        border: '1px solid var(--border-subtle)',
+                      }}
+                    >
+                      <span
+                        className="shrink-0 inline-flex w-9 h-9 items-center justify-center rounded-[var(--radius-card)]"
+                        style={{ backgroundColor: 'var(--color-primary)', color: 'var(--color-accent)' }}
+                      >
+                        <Icon name={c.icon} className="w-4 h-4" />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="font-display font-bold text-white text-sm leading-tight group-hover:text-[var(--color-accent-text)] transition-colors">
+                          {c.name}
+                        </p>
+                        <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mt-0.5">
+                          {c.items.length} items
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>

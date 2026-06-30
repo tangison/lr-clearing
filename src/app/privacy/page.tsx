@@ -93,7 +93,7 @@ export default function PrivacyPage() {
               <Section title="11. Contact">
                 For any privacy-related questions or requests, contact us at:{' '}
                 <a href={`mailto:${company.email}`} className="text-[var(--color-accent-text)] underline">{company.email}</a>{' '}
-                or {company.phoneDisplay}, or write to us at {company.address.line1},{' '}
+                or {company.phoneDisplay} / {company.phoneSecondaryDisplay} (24/7), or write to us at {company.address.line1},{' '}
                 {company.address.city}, {company.address.country}.
               </Section>
               <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] pt-8" style={{ borderTop: '1px solid var(--border-divider)' }}>

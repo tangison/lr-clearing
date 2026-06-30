@@ -14,11 +14,13 @@ export const company = {
   regions: ["Namibia", "Southern Africa"],
   registration: "CC/2012/1572",
   vat: "05757590615",
-  email: "hello@lrclearing.com",
+  email: "info@lrclearing.com",
   altEmail: "ops.clearing@gmail.com",
   phone: "+264 83 785 7640",
   phoneDisplay: "+264 83 785 7640",
-  officeHours: "07:30 to 17:00, Monday to Friday",
+  phoneSecondary: "+264 81 375 9901",
+  phoneSecondaryDisplay: "+264 81 375 9901",
+  officeHours: "24/7 — Available every day, all day",
   whatsapp: "264813759901",
   address: {
     line1: "Cnr 10th Road & Sam Nujoma Ave",
@@ -393,7 +395,7 @@ export const faqs: FAQItem[] = [
     category: "Freight Forwarding",
     question: "Which ports do you operate through?",
     answer:
-      "We clear cargo through both Namibian ports (Walvis Bay and Lüderitz), and arrange cross-border road freight via the major border posts (Trans-Kalahari, Ariamsvlei, Noordoewer, Wenela, Ngoma, Oshikango) into Botswana, South Africa, Zambia, Zimbabwe, and Angola.",
+      "We clear cargo through both Namibian ports (Walvis Bay and Lüderitz), and arrange cross-border road freight via the five border posts where we maintain offices — Trans-Kalahari, Ariamsvlei, Noordoewer, Wenela, and Ngoma — into Botswana, South Africa, Zambia, and Zimbabwe.",
   },
   {
     category: "Imports",
@@ -471,13 +473,15 @@ export const faqs: FAQItem[] = [
 
 export const stats = [
   { value: "2", label: "Namibian Ports Served", suffix: "" },
-  { value: "6", label: "Major Border Posts Covered", suffix: "" },
+  { value: "5", label: "Border Post Offices", suffix: "" },
   { value: "7", label: "Service Categories", suffix: "" },
   { value: "10", label: "Industries Served", suffix: "" },
 ];
 
 /**
- * Canonical list of border posts L&R Clearing Agency CC operates through.
+ * Canonical list of border posts where L&R Clearing Agency CC maintains
+ * offices — confirmed by the client via WhatsApp on 2026-06-29:
+ *   "We have a office at Wenela, Trans-Kalahari, Ngoma, Ariamsvlei, Noordoewer."
  *
  * Single source of truth — consumed by:
  *   - src/app/about/operational-coverage/page.tsx  (renders cards with images)
@@ -486,8 +490,8 @@ export const stats = [
  *   - FAQ answer string below (kept in sync manually)
  *
  * Images:
- *   - 4 of 6 are authentic on-site photos supplied by the client
- *     (Trans-Kalahari, Ariamsvlei, Ngoma, Oshikango).
+ *   - 3 of 5 are authentic on-site photos supplied by the client
+ *     (Trans-Kalahari, Ariamsvlei, Ngoma).
  *   - 2 are sourced from Wikimedia Commons under free CC licences
  *     (Noordoewer, Wenela).
  *   - See /public/images/borders/SOURCES.md for full attribution.
@@ -548,14 +552,6 @@ export const borderPosts: BorderPost[] = [
     imageAlt: "Ngoma Border Post — L&R Clearing Agency CC operations",
     imageNote: "Ngoma border checkpoint on the Namibia-Botswana crossing.",
   },
-  {
-    name: "Oshikango",
-    country: "Angola",
-    corridor: "Oshakati → Santa Clara → Lubango",
-    image: "/images/borders/oshikango-border.jpeg",
-    imageAlt: "Oshikango Border Post — L&R Clearing Agency CC operations",
-    imageNote: "Oshikango border post, Ohangwena Region, on the Namibia-Angola crossing.",
-  },
 ];
 
 export type TeamMember = {
@@ -578,7 +574,7 @@ export const team: TeamMember[] = [
     bio: "Linus founded L&R Clearing Agency CC with a vision to build a world-class, proudly Namibian customs clearing and freight forwarding company. With a doctorate in Transportation & Logistics Management and years of hands-on experience at Namibia's ports and border posts, he leads the company's operations, strategic growth, and international partnerships.",
     phone: "+264 83 785 7640",
     whatsapp: "+264 81 375 9901",
-    email: "hello@lrclearing.com",
+    email: "info@lrclearing.com",
     image: "/images/team/linus-sibungo.webp",
     imageAlt: "Linus Sibungo, Founder & Managing Director of L&R Clearing Agency CC",
   },
@@ -589,7 +585,7 @@ export const team: TeamMember[] = [
     bio: "Patience oversees the financial health, administrative operations, and compliance framework of L&R Clearing Agency CC. Her meticulous approach to financial management and client administration ensures that every shipment is handled with full accountability and transparency from first contact through to final delivery.",
     phone: "+264 81 842 5922",
     whatsapp: "+264 81 842 5922",
-    email: "hello@lrclearing.com",
+    email: "info@lrclearing.com",
     image: "/images/team/patience-sibungo.webp",
     imageAlt: "Patience Sibungo, Admin & Finance Director of L&R Clearing Agency CC",
   },
@@ -598,6 +594,119 @@ export const team: TeamMember[] = [
 // TODO: source a real construction.jpeg. The current placeholder remains on the
 // Construction industry card only. All other industry/scene/service images
 // have been replaced with client-supplied Namibia-authentic photos (2026-06-26).
+
+/**
+ * Permits & Licences catalogue.
+ *
+ * Comprehensive list of every permit, licence, and approval document L&R
+ * Clearing Agency CC prepares, applies for, and manages on behalf of clients.
+ * Sourced directly from the client via WhatsApp on 2026-06-29.
+ *
+ * Grouped into six categories. Each entry is the exact service label the client
+ * uses in conversation — no invented items, no marketing padding.
+ *
+ * Consumed by:
+ *   - src/app/permits/page.tsx  (the canonical permits catalogue page)
+ *   - src/app/services/page.tsx (cross-link card on the services index)
+ *   - src/components/Navbar.tsx (services mega-menu)
+ */
+export type PermitCategory = {
+  /** Slug for anchor links / scroll targets */
+  slug: string;
+  /** Display name (e.g. "Transport & Road Permits") */
+  name: string;
+  /** One-line summary shown above the items list */
+  summary: string;
+  /** Icon key (matches the Icon component in src/lib/icons.ts) */
+  icon: "truck" | "documents" | "shield" | "plane" | "check-circle" | "package";
+  /** Exact service line items — keep wording verbatim from the client */
+  items: string[];
+};
+
+export const permitCategories: PermitCategory[] = [
+  {
+    slug: "transport-road-permits",
+    name: "Transport & Road Permits",
+    summary:
+      "Every road-movement permit your cargo needs to cross SADC legally — from abnormal loads to single-journey trip permits and escort vehicle arrangements.",
+    icon: "truck",
+    items: [
+      "Abnormal Load Permits (oversize / overweight cargo)",
+      "Temporary Import Permits for vehicles",
+      "Cross-Border Transport Permits (SADC permits)",
+      "Road Carrier Permits / Operator Authorisation",
+      "Trip Permits (single journey permits)",
+      "Escort Vehicle Permits (for abnormal loads)",
+      "Special Movement Permits (restricted roads / hours)",
+    ],
+  },
+  {
+    slug: "trade-customs-permits",
+    name: "Trade & Customs Permits",
+    summary:
+      "Import, export, transit, and SACU-specific customs documentation. We handle the full clearance paper trail and any duty or VAT exemption applications you may be eligible for.",
+    icon: "documents",
+    items: [
+      "Import & Export Permits",
+      "Customs Clearance Documentation",
+      "Transit Permits (in-transit cargo across countries)",
+      "Temporary Import/Export Permits (ATA Carnet handling where applicable)",
+      "SACU-related customs documentation support",
+      "Duty & VAT exemption applications (where eligible)",
+    ],
+  },
+  {
+    slug: "trade-control-regulatory-permits",
+    name: "Trade Control & Regulatory Permits",
+    summary:
+      "Permits required for controlled, restricted, or strategic goods. We prepare the ITAC submissions and prohibited/restricted goods applications and follow them through to issuance.",
+    icon: "shield",
+    items: [
+      "ITAC Permits (import/export control permits)",
+      "Prohibited & Restricted Goods Permits",
+      "Strategic Goods Import/Export Approvals",
+    ],
+  },
+  {
+    slug: "aviation-transport-licensing",
+    name: "Aviation & Transport Licensing",
+    summary:
+      "Aviation operating licences, air cargo clearance, and aircraft-related permits. We coordinate with the Namibia Civil Aviation Authority and counterpart regulators on your behalf.",
+    icon: "plane",
+    items: [
+      "Aviation Operating Licenses",
+      "Air Cargo Import/Export Clearance Support",
+      "Aviation Regulatory Compliance Applications",
+      "Aircraft-related permits (import/export or temporary admission where applicable)",
+    ],
+  },
+  {
+    slug: "compliance-approval-documents",
+    name: "Compliance & Approval Documents",
+    summary:
+      "Letters of Authority, regulatory submissions, industry registrations, and tender compliance packs. The paperwork that sits behind the paperwork — handled end to end.",
+    icon: "check-circle",
+    items: [
+      "Letter of Authority (LOA) applications",
+      "Regulatory compliance submissions",
+      "Industry registration and licensing support",
+      "Government tender compliance documentation support",
+    ],
+  },
+  {
+    slug: "specialised-logistics-approvals",
+    name: "Specialised Logistics Approvals",
+    summary:
+      "Approvals for the cargo that does not fit a standard box — hazardous goods, project cargo, heavy equipment relocation, and mining or construction logistics permits.",
+    icon: "package",
+    items: [
+      "Hazardous goods transport permits (DG permits)",
+      "Project cargo movement approvals",
+      "Heavy equipment relocation permits",
+      "Mining & construction logistics permits",
+    ],
+  },
+];
 
 /**
  * Instant Quote pricing.
@@ -747,6 +856,7 @@ export const nav = {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
+    { label: "Permits", href: "/permits" },
     { label: "Pricing", href: "/pricing" },
     { label: "Industries", href: "/industries" },
     { label: "FAQ", href: "/faq" },

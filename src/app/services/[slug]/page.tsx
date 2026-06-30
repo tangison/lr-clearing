@@ -148,6 +148,36 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
                     </li>
                   ))}
                 </ul>
+
+                {/* Permits & Licences cross-link */}
+                <Link
+                  href="/permits"
+                  className="group mt-10 block p-6 md:p-8 rounded-[var(--radius-card)] transition-all duration-300 hover:translate-x-1"
+                  style={{
+                    backgroundColor: 'white',
+                    border: '1px solid var(--border-divider)',
+                    borderLeft: '4px solid var(--color-accent)',
+                  }}
+                >
+                  <div className="flex items-start gap-4">
+                    <span className="shrink-0 inline-flex w-12 h-12 items-center justify-center rounded-[var(--radius-card)]" style={{ backgroundColor: 'var(--color-light-bg)', color: 'var(--color-accent)' }}>
+                      <Icon name="documents" className="w-6 h-6" />
+                    </span>
+                    <div className="flex-1">
+                      <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-1">
+                        Related, Permits &amp; Licences
+                      </p>
+                      <h4 className="font-display font-bold text-[var(--color-primary)] text-lg mb-2 group-hover:text-[var(--color-accent-text)] transition-colors">
+                        View the full permits catalogue →
+                      </h4>
+                      <p className="font-body text-sm text-[var(--color-body-text)] leading-relaxed">
+                        Transport &amp; road permits, trade control, ITAC, aviation operating
+                        licences, hazardous goods, and 25+ other permit categories we handle
+                        on behalf of clients.
+                      </p>
+                    </div>
+                  </div>
+                </Link>
               </div>
 
               <aside className="space-y-6">

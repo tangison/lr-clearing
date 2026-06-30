@@ -43,7 +43,9 @@ export type IconName =
   | "globe"
   | "search"
   | "menu"
-  | "close";
+  | "close"
+  | "check-circle"
+  | "package";
 
 export function Icon({ name, className = "w-6 h-6" }: { name: IconName; className?: string }) {
   const common = {
@@ -294,6 +296,20 @@ export function Icon({ name, className = "w-6 h-6" }: { name: IconName; classNam
       return (
         <svg {...common}>
           <path strokeLinecap="round" d="M6 6l12 12M6 18L18 6" />
+        </svg>
+      );
+    case "check-circle":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="9" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 12.5l2.5 2.5L16 9" />
+        </svg>
+      );
+    case "package":
+      return (
+        <svg {...common}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21 8l-9-5-9 5v8l9 5 9-5V8z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l9 5 9-5M12 13v9" />
         </svg>
       );
     default:

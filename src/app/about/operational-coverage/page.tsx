@@ -70,7 +70,7 @@ export default function OperationalCoveragePage() {
             <div className="max-w-2xl mb-12">
               <p className="font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] mb-4">Border Posts</p>
               <h2 className="font-display font-extrabold tracking-tight text-white" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}>
-                Six border crossings. One paperwork handover.
+                Five border crossings. One paperwork handover.
               </h2>
               <p className="mt-4 font-body text-[1.0625rem] leading-relaxed text-[var(--color-secondary-strong)]">
                 We coordinate with counterpart clearing agents on the other side of each border to ensure

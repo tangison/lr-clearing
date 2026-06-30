@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { services, company, nav as navData } from '@/lib/content';
+import { services, company, nav as navData, permitCategories } from '@/lib/content';
 import { Icon } from '@/lib/icons';
 
 const primaryLinks = navData.primary;
@@ -106,6 +106,10 @@ export function Navbar() {
     ...services.map((s) => ({ title: s.title, href: `/services/${s.slug}`, type: 'Service' })),
     ...services.flatMap((s) =>
       s.items.map((item) => ({ title: item, href: `/services/${s.slug}`, type: `Service · ${s.title}` }))
+    ),
+    ...permitCategories.map((c) => ({ title: c.name, href: `/permits#${c.slug}`, type: 'Permit Category' })),
+    ...permitCategories.flatMap((c) =>
+      c.items.map((item) => ({ title: item, href: `/permits#${c.slug}`, type: `Permit · ${c.name}` }))
     ),
     ...navData.primary.map((n) => ({ title: n.label, href: n.href, type: 'Page' })),
     ...navData.company.map((n) => ({ title: n.label, href: n.href, type: 'About' })),
@@ -252,6 +256,13 @@ export function Navbar() {
                           className="block px-5 py-3 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] hover:bg-[var(--color-primary)] transition-colors"
                         >
                           View all services →
+                        </Link>
+                        <Link
+                          href="/permits"
+                          className="block px-5 py-3 font-mono text-[0.6875rem] uppercase tracking-widest text-[var(--color-accent-text)] hover:bg-[var(--color-primary)] transition-colors"
+                          style={{ borderTop: '1px solid var(--border-subtle)' }}
+                        >
+                          Permits &amp; Licences →
                         </Link>
                       </div>
                     )}
@@ -407,6 +418,10 @@ export function Navbar() {
             <a href={`tel:${company.phone}`} className="flex items-center gap-3 font-body text-sm text-white">
               <Icon name="phone" className="w-4 h-4 text-[var(--color-accent-text)]" />
               {company.phoneDisplay}
+            </a>
+            <a href={`tel:${company.phoneSecondary}`} className="flex items-center gap-3 font-body text-sm text-white">
+              <Icon name="phone" className="w-4 h-4 text-[var(--color-accent-text)]" />
+              {company.phoneSecondaryDisplay}
             </a>
             <a href={`mailto:${company.email}`} className="flex items-center gap-3 font-body text-sm text-white">
               <Icon name="mail" className="w-4 h-4 text-[var(--color-accent-text)]" />

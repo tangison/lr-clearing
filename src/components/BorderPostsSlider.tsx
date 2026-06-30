@@ -77,7 +77,7 @@ export function BorderPostsSlider() {
               className="font-display font-extrabold tracking-tight text-[var(--color-primary)]"
               style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}
             >
-              Six crossings. One handover.
+              Five crossings. One handover.
             </h2>
             <p className="mt-5 font-body text-[1.0625rem] leading-relaxed text-[var(--color-body-text)]">
               From the Atlantic ports to the SADC interior, we clear cargo through every

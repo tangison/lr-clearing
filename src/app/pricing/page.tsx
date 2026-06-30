@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Ticker } from '@/components/Ticker';
 import { Footer } from '@/components/Footer';
@@ -58,7 +59,7 @@ export default function PricingPage() {
               {[
                 { icon: 'phone', label: 'Talk to a person', value: company.phoneDisplay },
                 { icon: 'mail', label: 'Email', value: company.email },
-                { icon: 'clock', label: 'Office hours', value: company.officeHours },
+                { icon: 'clock', label: 'Available', value: company.officeHours },
               ].map((item) => (
                 <div
                   key={item.label}
@@ -205,6 +206,39 @@ export default function PricingPage() {
                 port, and destination. Tap the WhatsApp button to start the conversation.
               </p>
             </div>
+
+            {/* Permits cross-link */}
+            <Link
+              href="/permits"
+              className="group mt-8 block p-6 md:p-8 rounded-[var(--radius-card)] transition-all hover:translate-x-1"
+              style={{
+                backgroundColor: 'white',
+                border: '1px solid var(--border-divider)',
+                borderLeft: '4px solid var(--color-accent)',
+              }}
+            >
+              <div className="flex items-start gap-4">
+                <span
+                  className="shrink-0 inline-flex w-12 h-12 items-center justify-center rounded-[var(--radius-card)]"
+                  style={{ backgroundColor: 'var(--color-light-bg)', color: 'var(--color-accent)' }}
+                >
+                  <Icon name="documents" className="w-6 h-6" />
+                </span>
+                <div>
+                  <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)] mb-1">
+                    Related, Permits &amp; Licences
+                  </p>
+                  <h4 className="font-display font-bold text-[var(--color-primary)] text-lg mb-2 group-hover:text-[var(--color-accent-text)] transition-colors">
+                    Need an import permit, ITAC, or abnormal load permit? →
+                  </h4>
+                  <p className="font-body text-sm text-[var(--color-body-text)] leading-relaxed">
+                    We prepare and track 30+ permit and approval documents across six regulatory
+                    categories — transport, customs, trade control, aviation, compliance, and
+                    specialised logistics.
+                  </p>
+                </div>
+              </div>
+            </Link>
           </div>
         </section>
 

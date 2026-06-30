@@ -10,7 +10,7 @@ import { ContactForm } from '@/components/ContactForm';
 export const metadata: Metadata = {
   title: "Contact, L&R Clearing Agency CC",
   description:
-    "Speak to our customs clearing team in Walvis Bay, Namibia. Phone, email, WhatsApp, or submit an inquiry online, we respond within one business hour during office hours.",
+    "Speak to our customs clearing team in Walvis Bay, Namibia. Phone, email, WhatsApp, or submit an inquiry online, we are available 24/7 and respond within the hour.",
   alternates: { canonical: '/contact' },
 };
 
@@ -23,7 +23,7 @@ export default function ContactPage() {
         <PageHeader
           eyebrow="Contact Us"
           title="Let's get your cargo moving."
-          description="Tell us about your shipment and we'll respond with a clearance or forwarding plan. For urgent matters, WhatsApp or call, we monitor both during office hours."
+          description="Tell us about your shipment and we'll respond with a clearance or forwarding plan. We are available 24/7 — call or WhatsApp any time, day or night."
           breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Contact' }]}
         />
 
@@ -57,9 +57,24 @@ export default function ContactPage() {
                       <Icon name="phone" className="w-5 h-5" />
                     </span>
                     <div>
-                      <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">Phone</p>
+                      <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">Phone (Primary)</p>
                       <p className="font-display font-bold text-lg text-[var(--color-primary)] mt-1">{company.phoneDisplay}</p>
-                      <p className="font-body text-sm text-[var(--color-primary)]/70 mt-1">{company.officeHours} CAT</p>
+                      <p className="font-body text-sm text-[var(--color-primary)]/70 mt-1">{company.officeHours}</p>
+                    </div>
+                  </a>
+
+                  <a
+                    href={`tel:${company.phoneSecondary}`}
+                    className="flex items-start gap-4 p-5 rounded-[var(--radius-card)] transition-all hover:translate-x-1"
+                    style={{ backgroundColor: 'white', border: '1px solid var(--border-divider)', borderLeft: '3px solid var(--color-accent)' }}
+                  >
+                    <span className="shrink-0 inline-flex w-10 h-10 items-center justify-center rounded-[var(--radius-card)]" style={{ backgroundColor: 'var(--color-light-bg)', color: 'var(--color-accent)' }}>
+                      <Icon name="phone" className="w-5 h-5" />
+                    </span>
+                    <div>
+                      <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">Phone (Secondary)</p>
+                      <p className="font-display font-bold text-lg text-[var(--color-primary)] mt-1">{company.phoneSecondaryDisplay}</p>
+                      <p className="font-body text-sm text-[var(--color-primary)]/70 mt-1">Also on WhatsApp</p>
                     </div>
                   </a>
 
@@ -90,7 +105,7 @@ export default function ContactPage() {
                     </span>
                     <div>
                       <p className="font-mono text-[0.625rem] uppercase tracking-widest text-[var(--color-secondary-strong)]">WhatsApp</p>
-                      <p className="font-display font-bold text-lg text-[var(--color-primary)] mt-1">{company.phoneDisplay}</p>
+                      <p className="font-display font-bold text-lg text-[var(--color-primary)] mt-1">{company.phoneSecondaryDisplay}</p>
                       <p className="font-body text-sm text-[var(--color-primary)]/70 mt-1">Fastest channel for urgent matters</p>
                     </div>
                   </a>

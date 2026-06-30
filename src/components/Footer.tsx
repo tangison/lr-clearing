@@ -64,6 +64,9 @@ export function Footer() {
               <li>
                 <FooterLink href="/services" label="View all →" />
               </li>
+              <li>
+                <FooterLink href="/permits" label="Permits & Licences" />
+              </li>
             </ul>
           </div>
 
@@ -97,10 +100,18 @@ export function Footer() {
                 <Icon name="phone" className="w-4 h-4 mt-0.5 text-[var(--color-accent-text)]" />
                 {company.phoneDisplay}
               </a>
+              <a href={`tel:${company.phoneSecondary}`} className="flex items-start gap-2 hover:text-[var(--color-accent-text)] transition-colors">
+                <Icon name="phone" className="w-4 h-4 mt-0.5 text-[var(--color-accent-text)]" />
+                {company.phoneSecondaryDisplay}
+              </a>
               <a href={`mailto:${company.email}`} className="flex items-start gap-2 hover:text-[var(--color-accent-text)] transition-colors break-all">
                 <Icon name="mail" className="w-4 h-4 mt-0.5 text-[var(--color-accent-text)]" />
                 {company.email}
               </a>
+              <p className="flex items-start gap-2">
+                <Icon name="clock" className="w-4 h-4 mt-0.5 text-[var(--color-accent-text)]" />
+                <span>{company.officeHours}</span>
+              </p>
               <p className="flex items-start gap-2">
                 <Icon name="map-pin" className="w-4 h-4 mt-0.5 text-[var(--color-accent-text)]" />
                 <span>
